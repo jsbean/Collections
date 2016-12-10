@@ -60,7 +60,7 @@ public struct OrderedDictionary <K: Hashable, V> {
         values[key] = value
     }
     
-    /// Append the contens of another `OrderedDictionary` structure.
+    /// Append the contents of another `OrderedDictionary` structure.
     public mutating func appendContents(of orderedDictionary: OrderedDictionary<K,V>) {
         keys.append(contentsOf: orderedDictionary.keys)
         for key in orderedDictionary.keys {
