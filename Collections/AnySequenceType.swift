@@ -25,7 +25,7 @@ public protocol AnySequenceType: Sequence, ExpressibleByArrayLiteral {
     
     // MARK: Associated Types
     
-    /// The contained type
+    /// The contained type.
     associatedtype Element
     
     // MARK: - Instance Properties
