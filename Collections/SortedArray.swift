@@ -78,14 +78,7 @@ extension SortedArray: Equatable { }
 
 /// - returns: `true` if all elements in both arrays are equivalent. Otherwise, `false`.
 public func == <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> Bool {
-    
-    for pair in zip(lhs, rhs) {
-        if pair.0 != pair.1 {
-            return false
-        }
-    }
-    
-    return true
+    return lhs.array == rhs.array
 }
 
 extension SortedArray: Collection {
