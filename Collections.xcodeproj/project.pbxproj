@@ -139,7 +139,6 @@
 				07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
 				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
-				07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -205,6 +204,7 @@
 				C3B5E929D2933C7995C19611 /* Supporting Files */,
 				077AED191DFB8520004CDD86 /* TreeNodeTests.swift */,
 				07C582961DFBBF21008BE5D0 /* AnySequenceTypeTests.swift */,
+				07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */,
 				07C5829C1DFBC26B008BE5D0 /* StackTests.swift */,
 			);
 			name = CollectionsTests;
