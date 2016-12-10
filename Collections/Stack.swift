@@ -14,7 +14,9 @@ public struct Stack <T> {
     // MARK: - Instance Properties
     
     /// Last element in `Stack`.
-    public var top: T? { return items.last }
+    public var top: T? {
+        return items.last
+    }
     
     // MARK: - Initializers
 
@@ -38,7 +40,7 @@ public struct Stack <T> {
         items.append(item)
     }
     
-    /// Pop item from end of `Stack` if there are any items. Otherwise, `nil`.
+    /// - returns: Item from top of `Stack` if there are any. Otherwise, `nil`.
     public mutating func pop() -> T? {
         return items.popLast()
     }
