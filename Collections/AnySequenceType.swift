@@ -6,7 +6,6 @@
 //
 //
 
-
 /// `AnySequenceType` is a type-erasing protocol that allows a `Sequence`-conforming structure
 /// to wrap any underlying `Sequence` implementation.
 ///
