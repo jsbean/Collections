@@ -20,7 +20,7 @@ public enum TreeNode <T> {
     // MARK: - Instance Properties
     
     /// Leaves of this `TreeNode`.
-    var leaves: [T] {
+    public var leaves: [T] {
         
         func flatten(accum: [T], node: TreeNode) -> [T] {
             switch node {
@@ -37,7 +37,7 @@ public enum TreeNode <T> {
     // MARK: - Initializers
     
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
-    init <S: Sequence> (_ sequence: S) where S.Iterator.Element == T {
+    public init <S: Sequence> (_ sequence: S) where S.Iterator.Element == T {
         self = .container(sequence.map(TreeNode.leaf))
     }
 }
