@@ -22,16 +22,16 @@ public enum TreeNode <T> {
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
         
-        func flatten(accum: [T], node: TreeNode) -> [T] {
+        func flattened(accum: [T], node: TreeNode) -> [T] {
             switch node {
             case .container(let children):
-                return children.reduce(accum, flatten)
+                return children.reduce(accum, flattened)
             case .leaf(let value):
                 return accum + [value]
             }
         }
         
-        return flatten(accum: [], node: self)
+        return flattened(accum: [], node: self)
     }
     
     // MARK: - Initializers
