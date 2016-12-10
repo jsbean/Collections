@@ -38,13 +38,15 @@ public struct SortedArray <T: Comparable> {
     }
     
     /// Insert the contents of another sequence of `T`.
-    public mutating func insertContents<S: Sequence> (of elements: S)
+    public mutating func insertContents <S: Sequence> (of elements: S)
         where S.Iterator.Element == T
     {
         elements.forEach { insert($0) }
     }
     
-    // Use binary search to find insertion point
+    /// Binary search to find insertion point
+    ///
+    /// - TODO: Move to extension on `BidirectionCollection where Element: Comparable`.
     private func insertionPoint(for element: T) -> Int {
         var range = 0 ..< array.count
         while range.startIndex < range.endIndex {
