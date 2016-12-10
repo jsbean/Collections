@@ -24,6 +24,8 @@ public struct Matrix <T> {
         self.grid = Array(repeating: initial, count: Int(amountRows * amountColumns))
     }
     
+    // MARK: - Subscripts
+    
     /// Get and set the value for the given `row` and `column`, if these are valid indices.
     /// Otherwise, `nil` is returned or nothing is set.
     public subscript (row: Int, column: Int) -> T? {
