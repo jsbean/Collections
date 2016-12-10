@@ -11,17 +11,17 @@
 /// - TODO: Conform to `CustomStringConvertible`.
 public struct Matrix <T> {
     
-    fileprivate let amountRows: Int
-    fileprivate let amountColumns: Int
+    fileprivate let rowCount: Int
+    fileprivate let columnCount: Int
     fileprivate var grid: [T] = []
     
     // MARK: - Initializers
     
     /// Create a `Matrix` with the given dimensions and given `defaultValue`.
-    public init(_ amountRows: Int, _ amountColumns: Int, initial: T) {
-        self.amountRows = amountRows
-        self.amountColumns = amountColumns
-        self.grid = Array(repeating: initial, count: Int(amountRows * amountColumns))
+    public init(_ rowCount: Int, _ columnCount: Int, initial: T) {
+        self.rowCount = rowCount
+        self.columnCount = columnCount
+        self.grid = Array(repeating: initial, count: Int(rowCount * columnCount))
     }
     
     // MARK: - Subscripts
@@ -54,7 +54,7 @@ public struct Matrix <T> {
     
     private func index(_ row: Int, _ column: Int) -> Int? {
         
-        guard row < amountRows && column < amountColumns else {
+        guard row < rowCount && column < columnCount else {
             return nil
         }
         
