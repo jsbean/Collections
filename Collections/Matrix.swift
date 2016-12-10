@@ -18,10 +18,10 @@ public struct Matrix <T> {
     // MARK: - Initializers
     
     /// Create a `Matrix` with the given dimensions and given `defaultValue`.
-    public init(amountRows: Int, amountColumns: Int, defaultValue: T) {
+    public init(_ amountRows: Int, _ amountColumns: Int, initial: T) {
         self.amountRows = amountRows
         self.amountColumns = amountColumns
-        self.grid = Array(repeating: defaultValue, count: Int(amountRows * amountColumns))
+        self.grid = Array(repeating: initial, count: Int(amountRows * amountColumns))
     }
     
     /// Get and set the value for the given `row` and `column`, if these are valid indices.

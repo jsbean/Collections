@@ -25,6 +25,8 @@
 		07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */; };
 		07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A51DFBC9D6008BE5D0 /* Matrix.swift */; };
 		07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A51DFBC9D6008BE5D0 /* Matrix.swift */; };
+		07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A81DFBD079008BE5D0 /* MatrixTests.swift */; };
+		07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A81DFBD079008BE5D0 /* MatrixTests.swift */; };
 		15BC5F9DD7F8EBE1582D4BC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
 		35C574BA375C413FA8822BA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		64D9FFBF2638EA83B8CD50C7 /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,6 +87,7 @@
 		07C5829F1DFBC635008BE5D0 /* SortedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArray.swift; path = Collections/SortedArray.swift; sourceTree = "<group>"; };
 		07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayTests.swift; path = CollectionsTests/SortedArrayTests.swift; sourceTree = "<group>"; };
 		07C582A51DFBC9D6008BE5D0 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = Collections/Matrix.swift; sourceTree = "<group>"; };
+		07C582A81DFBD079008BE5D0 /* MatrixTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixTests.swift; path = CollectionsTests/MatrixTests.swift; sourceTree = "<group>"; };
 		114F7E877A2B51AD889245B0 /* CollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C94A0D81FFA92F1DD68894C /* Collections.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8092CA26121C80EEFDE45C /* Collections.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Collections.h; path = Collections/Collections.h; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 				07C582961DFBBF21008BE5D0 /* AnySequenceTypeTests.swift */,
 				07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */,
 				07C5829C1DFBC26B008BE5D0 /* StackTests.swift */,
+				07C582A81DFBD079008BE5D0 /* MatrixTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				077AED1B1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */,
 				07C582981DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */,
@@ -373,6 +378,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */,
 				07C582971DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */,
