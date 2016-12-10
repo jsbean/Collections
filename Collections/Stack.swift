@@ -6,9 +6,7 @@
 //
 //
 
-///
 /// Stack structure.
-///
 public struct Stack <T> {
     
     fileprivate var items: [T] = []
