@@ -27,6 +27,10 @@
 		07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A51DFBC9D6008BE5D0 /* Matrix.swift */; };
 		07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A81DFBD079008BE5D0 /* MatrixTests.swift */; };
 		07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582A81DFBD079008BE5D0 /* MatrixTests.swift */; };
+		07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */; };
+		07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */; };
+		07C582AF1DFBDD67008BE5D0 /* Flipped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582AE1DFBDD67008BE5D0 /* Flipped.swift */; };
+		07C582B01DFBDD67008BE5D0 /* Flipped.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582AE1DFBDD67008BE5D0 /* Flipped.swift */; };
 		15BC5F9DD7F8EBE1582D4BC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
 		35C574BA375C413FA8822BA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		64D9FFBF2638EA83B8CD50C7 /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,6 +92,8 @@
 		07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayTests.swift; path = CollectionsTests/SortedArrayTests.swift; sourceTree = "<group>"; };
 		07C582A51DFBC9D6008BE5D0 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = Collections/Matrix.swift; sourceTree = "<group>"; };
 		07C582A81DFBD079008BE5D0 /* MatrixTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixTests.swift; path = CollectionsTests/MatrixTests.swift; sourceTree = "<group>"; };
+		07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderedDictionary.swift; path = Collections/OrderedDictionary.swift; sourceTree = "<group>"; };
+		07C582AE1DFBDD67008BE5D0 /* Flipped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flipped.swift; path = Collections/Flipped.swift; sourceTree = "<group>"; };
 		114F7E877A2B51AD889245B0 /* CollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C94A0D81FFA92F1DD68894C /* Collections.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8092CA26121C80EEFDE45C /* Collections.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Collections.h; path = Collections/Collections.h; sourceTree = "<group>"; };
@@ -142,6 +148,8 @@
 			children = (
 				DB48D1C28DB0350B0CED6B0F /* Supporting Files */,
 				077AED161DFB82C9004CDD86 /* TreeNode.swift */,
+				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
+				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
 				07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
 				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
@@ -393,8 +401,10 @@
 				07C582A11DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */,
+				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				07C5829B1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07C582951DFBBEE8008BE5D0 /* AnySequenceType.swift in Sources */,
+				07C582B01DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,8 +415,10 @@
 				07C582A01DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */,
+				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07C582941DFBBEE8008BE5D0 /* AnySequenceType.swift in Sources */,
+				07C582AF1DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
