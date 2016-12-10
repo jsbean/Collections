@@ -6,7 +6,9 @@
 //
 //
 
-/// Array that keeps itself sorted.
+/// `Array` that keeps itself sorted.
+///
+/// - note: Qol: Consider implementing with self-balancing BST or heap.
 public struct SortedArray <T: Comparable> {
     
     fileprivate var array: [T] = []
@@ -110,7 +112,7 @@ extension SortedArray: Collection {
 
 extension SortedArray: ExpressibleByArrayLiteral {
     
-    // MARK: - ArrayLiteralConvertible
+    // MARK: - `ExpressibleByArrayLiteral`
     
     /// - returns: Create a `SortedArray` with an array literal.
     public init(arrayLiteral elements: T...) {

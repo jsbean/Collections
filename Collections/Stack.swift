@@ -88,6 +88,17 @@ extension Stack: Collection {
     }
 }
 
+extension Stack: ExpressibleByArrayLiteral {
+    
+    // MARK: - `ExpressibleByArrayLiteral`.
+    
+    /// - returns: Create a `SortedArray` with an array literal.
+    public init(arrayLiteral elements: T...) {
+        self.init(elements)
+    }
+}
+
+
 /// - returns: `true` if all items in both `Stack` structs are equivalent. Otherwise `false`.
 public func == <T: Equatable> (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
     return lhs.items == rhs.items
