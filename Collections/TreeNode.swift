@@ -41,8 +41,6 @@ public enum TreeNode <T> {
     
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
     public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
-        self = .node(value, [])
-        //self = .container(sequence.map(TreeNode.leaf))
         self = .node(value, Array(sequence.map { .node($0, []) }))
     }
 }
