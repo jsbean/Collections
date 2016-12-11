@@ -6,28 +6,30 @@
 //
 //
 
-/// Node in tree structure
+/// Node in tree structure.
 public enum TreeNode <T> {
     
     // MARK: - Cases
     
-    /// Container node.
-    case container([TreeNode])
+    case empty
     
-    /// Leaf node.
-    case leaf(T)
+    indirect case node(T, [TreeNode<T>])
     
-    // MARK: - Instance Properties
     
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
         
-        func flattened(accum: [T], node: TreeNode) -> [T] {
+        func flattened(accum: [T], node: TreeNode<T>) -> [T] {
             switch node {
-            case .container(let children):
+            case .empty:
+                return accum
+            case .node(let value, let children):
+                
+                guard children.count > 0 else {
+                    return accum + [value]
+                }
+                
                 return children.reduce(accum, flattened)
-            case .leaf(let value):
-                return accum + [value]
             }
         }
         
@@ -36,8 +38,11 @@ public enum TreeNode <T> {
     
     // MARK: - Initializers
     
+    
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
-    public init <S: Sequence> (_ sequence: S) where S.Iterator.Element == T {
-        self = .container(sequence.map(TreeNode.leaf))
+    public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
+        self = .node(value, [])
+        //self = .container(sequence.map(TreeNode.leaf))
+        self = .node(value, Array(sequence.map { .node($0, []) }))
     }
 }
