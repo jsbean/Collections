@@ -11,10 +11,11 @@ public enum TreeNode <T> {
     
     // MARK: - Cases
     
+    /// Empty.
     case empty
     
+    /// Node with value, and 0 or more children nodes.
     indirect case node(T, [TreeNode<T>])
-    
     
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
@@ -37,7 +38,6 @@ public enum TreeNode <T> {
     }
     
     // MARK: - Initializers
-    
     
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
     public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
