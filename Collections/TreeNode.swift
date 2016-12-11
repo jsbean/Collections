@@ -19,7 +19,7 @@ public enum TreeNode <T> {
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
         
-        func flattened(accum: [T], node: TreeNode<T>) -> [T] {
+        func flattened(accum: [T], node: TreeNode) -> [T] {
             switch node {
             case .empty:
                 return accum
