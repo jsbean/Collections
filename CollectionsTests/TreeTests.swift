@@ -28,17 +28,20 @@ class TreeTests: XCTestCase {
         }
     }
     
+    func testLeavesEmpty() {
+        let tree: Tree<Int> = .empty
+        XCTAssertEqual(tree.leaves, [])
+    }
+    
     func testLeavesLeaf() {
         let leaf: Tree = .node(1, [])
         XCTAssertEqual(leaf.leaves, [1])
     }
     
-    
     func testLeavesContainerSingleChild() {
         let container: Tree = .node(0, [.node(1, [])])
         XCTAssertEqual(container.leaves, [1])
     }
-    
     
     func testLeavesContainerMultipleChildren() {
         let container: Tree = .node(0, [.node(1, []), .node(2, []), .node(3, [])])
