@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
-		077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
-		077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
-		077AED1B1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
+		077AED171DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
+		077AED181DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
+		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
+		077AED1B1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
 		07C582941DFBBEE8008BE5D0 /* AnySequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */; };
 		07C582951DFBBEE8008BE5D0 /* AnySequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */; };
 		07C582971DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582961DFBBF21008BE5D0 /* AnySequenceTypeTests.swift */; };
@@ -84,8 +84,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		077AED161DFB82C9004CDD86 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = Collections/TreeNode.swift; sourceTree = "<group>"; };
-		077AED191DFB8520004CDD86 /* TreeNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNodeTests.swift; path = CollectionsTests/TreeNodeTests.swift; sourceTree = "<group>"; };
+		077AED161DFB82C9004CDD86 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = Collections/Tree.swift; sourceTree = "<group>"; };
+		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
 		07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceType.swift; path = Collections/AnySequenceType.swift; sourceTree = "<group>"; };
 		07C582961DFBBF21008BE5D0 /* AnySequenceTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceTypeTests.swift; path = CollectionsTests/AnySequenceTypeTests.swift; sourceTree = "<group>"; };
 		07C582991DFBC052008BE5D0 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Collections/Stack.swift; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				DB48D1C28DB0350B0CED6B0F /* Supporting Files */,
-				077AED161DFB82C9004CDD86 /* TreeNode.swift */,
+				077AED161DFB82C9004CDD86 /* Tree.swift */,
 				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
 				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
 				07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */,
@@ -220,7 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				C3B5E929D2933C7995C19611 /* Supporting Files */,
-				077AED191DFB8520004CDD86 /* TreeNodeTests.swift */,
+				077AED191DFB8520004CDD86 /* TreeTests.swift */,
 				07C582961DFBBF21008BE5D0 /* AnySequenceTypeTests.swift */,
 				07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */,
 				07C5829C1DFBC26B008BE5D0 /* StackTests.swift */,
@@ -380,7 +380,7 @@
 			files = (
 				07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
-				077AED1B1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */,
+				077AED1B1DFB8520004CDD86 /* TreeTests.swift in Sources */,
 				07C582B31DFBE174008BE5D0 /* OrderedDictionaryTests.swift in Sources */,
 				07C582981DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */,
 				07C5829E1DFBC26B008BE5D0 /* StackTests.swift in Sources */,
@@ -393,7 +393,7 @@
 			files = (
 				07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
-				077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */,
+				077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */,
 				07C582B21DFBE174008BE5D0 /* OrderedDictionaryTests.swift in Sources */,
 				07C582971DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */,
 				07C5829D1DFBC26B008BE5D0 /* StackTests.swift in Sources */,
@@ -406,7 +406,7 @@
 			files = (
 				07C582A11DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
-				077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */,
+				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				07C5829B1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07C582951DFBBEE8008BE5D0 /* AnySequenceType.swift in Sources */,
@@ -420,7 +420,7 @@
 			files = (
 				07C582A01DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
-				077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */,
+				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07C582941DFBBEE8008BE5D0 /* AnySequenceType.swift in Sources */,
