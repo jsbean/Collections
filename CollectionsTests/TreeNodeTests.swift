@@ -11,55 +11,68 @@ import Collections
 
 class TreeNodeTests: XCTestCase {
     
-    func testLeafInit() {
-        let _ = TreeNode.leaf(1)
+    func testEmpty() {
+        let _ = TreeNode<Int>.empty
     }
+    
+    func testLeaf() {
+        let _ = TreeNode.node(0, [])
+    }
+    
+    /*
+    func testLeafInit() {
+        let _ = TreeNode.node(1, [])
+    }
+    */
+    
     
     func testInitWithSequence() {
         
         let seq = [1,2,3,4,5]
-        let container = TreeNode(seq)
-        
-        guard case .container = container else {
+        let root = TreeNode(0, seq)
+ 
+        guard case .node = root else {
             XCTFail()
             return
         }
     }
     
+    
     func testLeavesLeaf() {
-        let leaf: TreeNode = .leaf(1)
+        let leaf = TreeNode(0, [1])
         XCTAssertEqual(leaf.leaves, [1])
     }
     
     func testLeavesContainerSingleChild() {
-        let container: TreeNode = .container([.leaf(1)])
-        XCTAssertEqual(container.leaves, [1])
+        let root = TreeNode.node(0, [.node(1, [])])
+        XCTAssertEqual(root.leaves, [1])
     }
     
     func testLeavesContainerMultipleChildren() {
-        let container = TreeNode.container([.leaf(1), .leaf(2), .leaf(3)])
-        XCTAssertEqual(container.leaves, [1,2,3])
+        let root = TreeNode(0, [1,2,3])
+        XCTAssertEqual(root.leaves, [1,2,3])
     }
+    
     
     func testLeavesMultipleDepth() {
         
-        let container = TreeNode.container([
-            .leaf(1),
-            .container([
-                .leaf(2),
-                .leaf(3),
-                .leaf(4)
-            ]),
-            .leaf(5),
-            .container([
-                .leaf(6),
-                .container([
-                    .leaf(7),
-                    .leaf(8)
+        let root = TreeNode.node(0,
+            [
+                .node(1, []),
+                .node(0, [
+                    .node(2, []),
+                    .node(3, []),
+                    .node(4, [])
+                ]),
+                .node(5, []),
+                .node(0, [
+                    .node(6, []),
+                    .node(7, []),
+                    .node(8, [])
                 ])
-            ])
-        ])
+            ]
+        )
         
-        XCTAssertEqual(container.leaves, [1,2,3,4,5,6,7,8])
+        XCTAssertEqual(root.leaves, [1,2,3,4,5,6,7,8])
     }
 }
