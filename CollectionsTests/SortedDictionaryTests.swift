@@ -31,7 +31,6 @@ class SortedDictionaryTests: XCTestCase {
         XCTAssert(dict.count == 1)
     }
     
-    /*
     func testSorted() {
         
         var dict = SortedDictionary<Int, String>()
@@ -41,9 +40,8 @@ class SortedDictionaryTests: XCTestCase {
         dict.insert("one", key: 1)
         dict.insert("three", key: 3)
         
-        XCTAssertEqual(dict.keyStorage, [1,2,3,4,5])
+        XCTAssertEqual(dict.keys, [1,2,3,4,5])
     }
-    */
     
     func testIterationSorted() {
         
