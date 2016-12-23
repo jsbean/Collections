@@ -39,10 +39,7 @@ extension Collection where Index == Int, IndexDistance == Int {
                     )
                 )
             }
-            return []
-        }
-        
-        if isEmpty || count < k {
+            
             return []
         }
         
