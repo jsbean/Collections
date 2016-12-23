@@ -36,6 +36,9 @@
 ## `RangeReplaceableCollection` extensions
 - `stableSort()`
 
+## `enum` extensions
+- `cases: [Self]`
+
 <a name="integration"></a>
 ## Integration
 
