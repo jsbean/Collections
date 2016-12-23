@@ -162,6 +162,7 @@
 				077AED161DFB82C9004CDD86 /* TreeNode.swift */,
 				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
 				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
+				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
 				07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
 				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
@@ -173,7 +174,6 @@
 		00F2CDF978BD434DD6674EA1 = {
 			isa = PBXGroup;
 			children = (
-				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
 				162280B92120984627F27291 /* Products */,
 				B56DC3544D1F7178A1245286 /* Frameworks */,
 				00DC35FEB35FC3DB0D8F8627 /* Collections */,
