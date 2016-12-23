@@ -6,9 +6,8 @@
 //
 //
 
-/**
- Ordered Dictionary that keeps its `keys` sorted.
- */
+
+/// Ordered dictionary which has sorted `keys`.
 public struct SortedDictionary<Key, Value> where Key: Hashable, Key: Comparable {
     
     // MARK: - Instance Properties
@@ -48,9 +47,7 @@ public struct SortedDictionary<Key, Value> where Key: Hashable, Key: Comparable 
         }
     }
 
-    
     // MARK: - Instance Methods
-    
     
     /// Insert the given `value` for the given `key`. Order will be maintained.
     public mutating func insert(_ value: Value, key: Key) {
