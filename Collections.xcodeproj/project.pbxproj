@@ -37,6 +37,8 @@
 		07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
 		07690BDC1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
 		07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
+		07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
+		07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
 		077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
@@ -149,6 +151,7 @@
 		07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndicesTests.swift; path = CollectionsTests/ElementsAtIndicesTests.swift; sourceTree = "<group>"; };
 		07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceElementsTests.swift; path = CollectionsTests/ReplaceElementsTests.swift; sourceTree = "<group>"; };
 		07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIteration.swift; path = Collections/EnumIteration.swift; sourceTree = "<group>"; };
+		07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIterationTests.swift; path = CollectionsTests/EnumIterationTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = Collections/TreeNode.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNodeTests.swift; path = CollectionsTests/TreeNodeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -326,6 +329,7 @@
 				07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */,
 				07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */,
 				07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */,
+				07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
@@ -485,6 +489,7 @@
 				07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
+				07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */,
 				078F49171E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49111E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
 				07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */,
@@ -510,6 +515,7 @@
 				07125DD01E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
+				07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */,
 				078F49161E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49101E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
 				07690BD91E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */,

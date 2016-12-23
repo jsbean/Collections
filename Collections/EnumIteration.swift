@@ -16,7 +16,7 @@ public extension RawRepresentable where Self: Hashable {
     /// 
     /// print(ABorC.allCases.joined(separator: ","))
     /// ```
-    static var allCases: [Self] {
+    static var cases: [Self] {
         return iterateEnum(Self.self).map { $0 }
     }
 }
