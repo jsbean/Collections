@@ -21,7 +21,7 @@
 ///
 /// In the `init` method of the conforming `struct`, set the value of this private `var` with 
 /// the given `sequence`.
-public protocol AnySequenceType: Sequence, ExpressibleByArrayLiteral {
+public protocol AnySequenceWrapping: Sequence, ExpressibleByArrayLiteral {
     
     // MARK: Associated Types
     
@@ -44,7 +44,7 @@ public protocol AnySequenceType: Sequence, ExpressibleByArrayLiteral {
     init <S: Sequence> (_ sequence: S) where S.Iterator.Element == Element
 }
 
-extension AnySequenceType {
+extension AnySequenceWrapping {
     
     // MARK: - `Sequence`
     
