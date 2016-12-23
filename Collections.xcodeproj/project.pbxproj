@@ -33,6 +33,8 @@
 		07690BD41E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */; };
 		07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */; };
 		07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */; };
+		07690BD91E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
+		07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
 		077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
@@ -143,6 +145,7 @@
 		07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListProcessingTests.swift; path = CollectionsTests/ListProcessingTests.swift; sourceTree = "<group>"; };
 		07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndices.swift; path = Collections/ElementsAtIndices.swift; sourceTree = "<group>"; };
 		07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndicesTests.swift; path = CollectionsTests/ElementsAtIndicesTests.swift; sourceTree = "<group>"; };
+		07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceElementsTests.swift; path = CollectionsTests/ReplaceElementsTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = Collections/TreeNode.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNodeTests.swift; path = CollectionsTests/TreeNodeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -316,6 +319,7 @@
 				078F49211E0D60A400B8F316 /* SubsetsTests.swift */,
 				07690BBD1E0D64D00095F1D5 /* AdjacentPairsTests.swift */,
 				07690BC31E0D66750095F1D5 /* RemoveElementsTests.swift */,
+				07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */,
 				07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */,
 				07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */,
 			);
@@ -479,6 +483,7 @@
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
 				078F49171E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49111E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
+				07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */,
 				077AED1B1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */,
 				07C582B31DFBE174008BE5D0 /* OrderedDictionaryTests.swift in Sources */,
 				07C582981DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */,
@@ -503,6 +508,7 @@
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
 				078F49161E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49101E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
+				07690BD91E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */,
 				077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */,
 				07C582B21DFBE174008BE5D0 /* OrderedDictionaryTests.swift in Sources */,
 				07C582971DFBBF21008BE5D0 /* AnySequenceTypeTests.swift in Sources */,
