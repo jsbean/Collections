@@ -67,7 +67,7 @@ extension Sequence {
     public func extremity <T: Comparable> (
         _ compare: (T, T) -> Bool,
         valueToCompare extractValue: (Iterator.Element) -> T
-        ) -> T?
+    ) -> T?
     {
         guard let first = sorted (by: { compare(extractValue($0), extractValue($1)) }).first
             else { return nil }
