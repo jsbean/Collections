@@ -4,7 +4,7 @@
 [![GitHub version](https://badge.fury.io/gh/dn-m%2FCollections.svg)](https://badge.fury.io/gh/dn-m%2FCollections)
 
 ## Protocols
-- `AnySequenceType` (rename: `AnySequenceWrapping`)
+- `AnySequenceWrapping`
 
 ## Structures
 - `SortedArray`
