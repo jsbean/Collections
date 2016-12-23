@@ -7,15 +7,15 @@
 //
 
 /// Ordered Dictionary.
-public struct OrderedDictionary <K: Hashable, V> {
+public struct OrderedDictionary <Key: Hashable, Value> {
     
     // MARK: - Instance Properties
     
     /// Ordered keys.
-    public var keys: [K] = []
+    public var keys: [Key] = []
     
     /// Values.
-    public var values: [K: V] = [:]
+    public var values: [Key: Value] = [:]
     
     // MARK: - Initializers
     
@@ -25,7 +25,7 @@ public struct OrderedDictionary <K: Hashable, V> {
     // MARK: - Subscripts
     
     /// - returns: Value for the given `key`, if available. Otherwise, `nil`.
-    public subscript(key: K) -> V? {
+    public subscript(key: Key) -> Value? {
         
         get {
             return values[key]
@@ -49,19 +49,19 @@ public struct OrderedDictionary <K: Hashable, V> {
     // MARK: - Instance Methods
     
     /// Append `value` for given `key`.
-    public mutating func append(_ value: V, key: K) {
+    public mutating func append(_ value: Value, key: Key) {
         keys.append(key)
         values[key] = value
     }
     
     /// Insert `value` for given `key` at `index`.
-    public mutating func insert(_ value: V, key: K, index: Int) {
+    public mutating func insert(_ value: Value, key: Key, index: Int) {
         keys.insert(key, at: index)
         values[key] = value
     }
     
     /// Append the contents of another `OrderedDictionary` structure.
-    public mutating func appendContents(of orderedDictionary: OrderedDictionary<K,V>) {
+    public mutating func appendContents(of orderedDictionary: OrderedDictionary<Key,Value>) {
         keys.append(contentsOf: orderedDictionary.keys)
         for key in orderedDictionary.keys {
             values.updateValue(orderedDictionary[key]!, forKey: key)
@@ -69,7 +69,7 @@ public struct OrderedDictionary <K: Hashable, V> {
     }
     
     /// - returns: The value at the given `index`.
-    public func value(index: Int) -> V? {
+    public func value(index: Int) -> Value? {
         
         guard index >= 0 && index < keys.count else {
             return nil
@@ -104,7 +104,7 @@ extension OrderedDictionary: Collection {
     }
     
     /// - returns: Element at the given `index`.
-    public subscript (index: Int) -> (K,V) {
+    public subscript (index: Int) -> (Key, Value) {
         let key = keys[index]
         let value = values[key]!
         return (key, value)
@@ -116,7 +116,7 @@ extension OrderedDictionary: ExpressibleByDictionaryLiteral {
     // MARK: - `OrderedDictionary`
     
     /// Create an `OrderedDictionary` with a `DictionaryLiteral`.
-    public init(dictionaryLiteral elements: (K,V)...) {
+    public init(dictionaryLiteral elements: (Key, Value)...) {
         
         self.init()
         

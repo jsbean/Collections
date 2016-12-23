@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07125DCD1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */; };
+		07125DCE1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */; };
 		077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
@@ -84,6 +86,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = Collections/SortedDictionary.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = Collections/TreeNode.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNodeTests.swift; path = CollectionsTests/TreeNodeTests.swift; sourceTree = "<group>"; };
 		07C582931DFBBEE8008BE5D0 /* AnySequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceType.swift; path = Collections/AnySequenceType.swift; sourceTree = "<group>"; };
@@ -164,6 +167,7 @@
 		00F2CDF978BD434DD6674EA1 = {
 			isa = PBXGroup;
 			children = (
+				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
 				162280B92120984627F27291 /* Products */,
 				B56DC3544D1F7178A1245286 /* Frameworks */,
 				00DC35FEB35FC3DB0D8F8627 /* Collections */,
@@ -404,6 +408,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07125DCE1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
 				07C582A11DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */,
@@ -418,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07125DCD1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
 				07C582A01DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */,
