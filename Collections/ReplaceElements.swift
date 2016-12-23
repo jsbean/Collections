@@ -35,11 +35,10 @@ extension Array {
         append(element)
     }
     
-    /**
-     Replace first element in Array with a new element.
-     
-     - parameter newElement: New element to replace first element.
-     */
+    
+    /// Replace first element in Array with a new element.
+    ///
+    /// - throws: `ArrayError.removalError` if `self` is empty.
     public mutating func replaceFirst(with element: Element) throws {
         try removeFirst()
         insert(element, at: 0)

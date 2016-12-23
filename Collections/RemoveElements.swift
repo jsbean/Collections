@@ -11,11 +11,11 @@ extension Array {
     // MARK: - Remove Elements
     
     /**
-     Remove first element of Array
+     Remove first element of Array.
      
      >`[1,2,3].removeFirst -> [2,3]`
      
-     >`[].removeFirst throws ArrayError.RemovalError`
+     >`[].removeFirst throws ArrayError.removalError`
      */
     public mutating func removeFirst() throws {
         
@@ -27,11 +27,11 @@ extension Array {
     }
     
     /**
-     Remove first number of elements from Array
+     Remove first number of elements from Array.
      
      >`[1,2,3].removeFirst(amount: 2) -> [1]`
      
-     >`[1,2,3].removeFirst(amount: 4) throws ArrayError.RemovalError`
+     >`[1,2,3].removeFirst(amount: 4) throws ArrayError.removalError`
      
      - parameter amount: Amount of elements to remove from beginning of Array
      */
@@ -47,11 +47,11 @@ extension Array {
     }
     
     /**
-     Remove last number of elements from Array
+     Remove last number of elements from Array.
      
      >`[1,2,3].removeLast(amount: 3) -> []`
      
-     >`[1,2,3].removeLast(amount: 4) throws ArrayError.RemovalError`
+     >`[1,2,3].removeLast(amount: 4) throws ArrayError.removalError`
      
      - parameter amount: Amount of elements to remove from end of Array
      */
