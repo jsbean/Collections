@@ -14,8 +14,6 @@ public struct SortedDictionary<Key, Value> where Key: Hashable, Key: Comparable 
     // MARK: - Instance Properties
     
     /// Sorted keys.
-    //public var keyStorage: KeyStorage = []
-    
     public var keys: SortedArray<Key> = []
     
     /// Backing dictionary.
@@ -23,32 +21,50 @@ public struct SortedDictionary<Key, Value> where Key: Hashable, Key: Comparable 
     
     // MARK: - Initializers
     
-    /**
-     Create an empty `SortedOrderedDictionary`.
-     */
+    /// Create an empty `SortedOrderedDictionary`.
     public init() { }
+    
+    // MARK: - Subscripts
+    
+    /// - returns: Value for the given `key`, if available. Otherwise, `nil`.
+    public subscript(key: Key) -> Value? {
+        
+        get {
+            return values[key]
+        }
+        
+        set {
+            
+            guard let newValue = newValue else {
+                values.removeValue(forKey: key)
+                keys.remove(key)
+                return
+            }
+            
+            let oldValue = values.updateValue(newValue, forKey: key)
+            if oldValue == nil {
+                keys.insert(key)
+            }
+        }
+    }
+
     
     // MARK: - Instance Methods
     
-    /**
-     Insert the given `value` for the given `key`. Order will be maintained.
-     */
+    
+    /// Insert the given `value` for the given `key`. Order will be maintained.
     public mutating func insert(_ value: Value, key: Key) {
         keys.insert(key)
         values[key] = value
     }
     
-    /**
-     Insert the contents of another `SortedDictionary` value.
-     */
-    public mutating func insertContents(of sortedDictionary: SortedDictionary<Key, Value>)
-    {
+    /// Insert the contents of another `SortedDictionary` value.
+    public mutating func insertContents(of sortedDictionary: SortedDictionary<Key, Value>) {
         sortedDictionary.forEach { insert($0.1, key: $0.0) }
     }
     
-    /**
-     - returns: Value at the given `index`, if present. Otherwise, `nil`.
-     */
+    
+    /// - returns: Value at the given `index`, if present. Otherwise, `nil`.
     public func value(at index: Int) -> Value? {
         if index >= keys.count { return nil }
         return values[keys[index]]
@@ -59,7 +75,7 @@ extension SortedDictionary: Collection {
     
     // MARK: - `Collection`
     
-    /// - Index after given index `i`.
+    /// Index after given index `i`.
     public func index(after i: Int) -> Int {
         
         guard i != endIndex else {
@@ -69,12 +85,12 @@ extension SortedDictionary: Collection {
         return i + 1
     }
     
-    /// - Start index.
+    /// Start index.
     public var startIndex: Int {
         return 0
     }
     
-    /// - End index.
+    /// End index.
     public var endIndex: Int {
         return keys.count
     }
@@ -89,9 +105,9 @@ extension SortedDictionary: Collection {
 
 extension SortedDictionary: ExpressibleByDictionaryLiteral {
     
-    // MARK: - `OrderedDictionary`
+    // MARK: - `ExpressibleByDictionaryLiteral`
     
-    /// Create an `OrderedDictionary` with a `DictionaryLiteral`.
+    /// Create a `SortedDictionary` with a `DictionaryLiteral`.
     public init(dictionaryLiteral elements: (Key, Value)...) {
         
         self.init()
@@ -102,63 +118,40 @@ extension SortedDictionary: ExpressibleByDictionaryLiteral {
     }
 }
 
-/*
-extension SortedDictionary: DictionaryType {
+/// - returns: `true` if all values contained in both `SortedDictionary` values are
+/// equivalent. Otherwise, `false`.
+public func == <K, V: Equatable> (lhs: SortedDictionary<K,V>, rhs: SortedDictionary<K,V>)
+    -> Bool
+{
     
-    // MARK: - `DictionaryType`
+    guard lhs.keys == rhs.keys else {
+        return false
+    }
     
-    // Key type.
-    public typealias Key = K
-    
-    // Value type.
-    public typealias Value = V
-    
-    /**
-     - returns: Value for the given `key`, if available. Otherise `nil`.
-     */
-    public subscript(key: Key) -> Value? {
+    for key in lhs.keys {
         
-        get {
-            return values[key]
-        }
-        
-        set(newValue) {
-            
-            if newValue == nil {
-                values.removeValue(forKey: key)
-                keyStorage = SortedArray(keyStorage.filter { $0 != key })
-                return
-            }
-            
-            let oldValue = values.updateValue(newValue!, forKey: key)
-            if oldValue == nil { keyStorage.insert(key) }
+        if rhs.values[key] == nil || rhs.values[key]! != lhs.values[key]! {
+            return false
         }
     }
-}
- */
-
-/*
-extension SortedDictionary: OrderedDictionaryType {
     
-    // MARK: - `OrderedDictionaryType`
+    for key in rhs.keys {
+        
+        if lhs.values[key] == nil || lhs.values[key]! != rhs.values[key]! {
+            return false
+        }
+    }
     
-    /// `CollectionType` storing keys.
-    public typealias KeyStorage = SortedArray<Key>
+    return true
 }
 
-// TODO: Conform to `DictionaryLiteralConvertible`
-
-
-/**
- - returns: `SortedOrderedDictionary` with values of two `SortedOrderedDictionary` values.
- */
+/// - returns: `SortedOrderedDictionary` with values of two `SortedOrderedDictionary` values.
 public func + <Value, Key> (
     lhs: SortedDictionary<Value, Key>,
     rhs: SortedDictionary<Value, Key>
-    ) -> SortedDictionary<Value, Key> where Key: Hashable, Key: Comparable
+) -> SortedDictionary<Value, Key> where Key: Hashable, Key: Comparable
 {
     var result = lhs
     rhs.forEach { result.insert($0.1, key: $0.0) }
     return result
 }
-*/

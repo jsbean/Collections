@@ -93,12 +93,12 @@ extension OrderedDictionary: Collection {
         return i + 1
     }
     
-    /// - Start index.
+    /// Start index.
     public var startIndex: Int {
         return 0
     }
     
-    /// - End index.
+    /// End index.
     public var endIndex: Int {
         return keys.count
     }
@@ -113,7 +113,7 @@ extension OrderedDictionary: Collection {
 
 extension OrderedDictionary: ExpressibleByDictionaryLiteral {
     
-    // MARK: - `OrderedDictionary`
+    // MARK: - `ExpressibleByDictionaryLiteral`
     
     /// Create an `OrderedDictionary` with a `DictionaryLiteral`.
     public init(dictionaryLiteral elements: (Key, Value)...) {
