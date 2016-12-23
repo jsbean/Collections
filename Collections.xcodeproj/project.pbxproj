@@ -35,6 +35,8 @@
 		07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */; };
 		07690BD91E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
 		07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
+		07690BDC1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
+		07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
 		077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
@@ -146,6 +148,7 @@
 		07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndices.swift; path = Collections/ElementsAtIndices.swift; sourceTree = "<group>"; };
 		07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndicesTests.swift; path = CollectionsTests/ElementsAtIndicesTests.swift; sourceTree = "<group>"; };
 		07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceElementsTests.swift; path = CollectionsTests/ReplaceElementsTests.swift; sourceTree = "<group>"; };
+		07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIteration.swift; path = Collections/EnumIteration.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = Collections/TreeNode.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNodeTests.swift; path = CollectionsTests/TreeNodeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -223,6 +226,7 @@
 			children = (
 				DB48D1C28DB0350B0CED6B0F /* Supporting Files */,
 				077AED161DFB82C9004CDD86 /* TreeNode.swift */,
+				07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */,
 				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
 				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
 				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
@@ -542,6 +546,7 @@
 				078F490E1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				07C582B01DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
+				07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +573,7 @@
 				078F490D1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				07C582AF1DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
+				07690BDC1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
