@@ -35,7 +35,7 @@ extension Sequence {
      leastElements == [S(value: 1)]
      ```
      */
-    public func extremeElements<T: Comparable>(
+    public func extremeElements <T: Comparable> (
         _ compare: (T, T) -> Bool,
         valueToCompare extractValue: (Iterator.Element) -> T
     ) -> [Iterator.Element]
@@ -48,7 +48,7 @@ extension Sequence {
     
     /// - returns: The greatest value held by an element held herein, if there are more than 0
     /// elements. Otherwise, `nil`.
-    public func greatest<T: Comparable>(valueToCompare extractValue: (Iterator.Element) -> T)
+    public func greatest <T: Comparable> (valueToCompare extractValue: (Iterator.Element) -> T)
         -> T?
     {
         return extremity(>, valueToCompare: extractValue)
@@ -56,7 +56,7 @@ extension Sequence {
     
     /// - returns: The least value held by an element held herein, if there are more than 0
     /// elements. Otherwise, `nil`.
-    public func least<T: Comparable>(valueToCompare extractValue: (Iterator.Element) -> T)
+    public func least <T: Comparable> (valueToCompare extractValue: (Iterator.Element) -> T)
         -> T?
     {
         return extremity(<, valueToCompare: extractValue)
@@ -64,7 +64,7 @@ extension Sequence {
     
     /// - returns: The most extreme value held by an element held herein, if there are more 
     /// than 0 elements. Otherwise, `nil`.
-    public func extremity<T: Comparable>(
+    public func extremity <T: Comparable> (
         _ compare: (T, T) -> Bool,
         valueToCompare extractValue: (Iterator.Element) -> T
     ) -> T?
