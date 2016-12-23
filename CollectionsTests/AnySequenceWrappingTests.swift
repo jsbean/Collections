@@ -11,7 +11,7 @@ import Collections
 
 class AnySequenceTypeTests: XCTestCase {
     
-    struct TestSequence: AnySequenceType {
+    struct TestSequence: AnySequenceWrapping {
         
         typealias Element = Int
         

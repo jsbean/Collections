@@ -1,13 +1,13 @@
 //
-//  AnySequenceType.swift
+//  AnySequenceWrapping.swift
 //  Collections
 //
 //  Created by James Bean on 12/9/16.
 //
 //
 
-/// `AnySequenceType` is a type-erasing protocol that allows a `Sequence`-conforming structure
-/// to wrap any underlying `Sequence` implementation.
+/// `AnySequenceWrapping` is a type-erasing protocol that allows a `Sequence`-conforming 
+/// structure to wrap any underlying `Sequence` implementation.
 ///
 /// For example, `PitchSet` and `PitchCollection` are both containers for `Pitch` values, and
 /// should both be able to be used as `Sequence` conforming structures. 
@@ -16,12 +16,12 @@
 /// model, while `PitchSequence` can use an `Array<Pitch>` as its underlying model.
 ///
 /// In the conforming `struct`, it is necessary to add a private `var` which is an
-/// implementation of a `SequenceType` conforming `struct`, which is then given by the 
+/// implementation of a `Sequence`-conforming `struct`, which is then given by the
 /// `sequence` getter.
 ///
 /// In the `init` method of the conforming `struct`, set the value of this private `var` with 
 /// the given `sequence`.
-public protocol AnySequenceType: Sequence, ExpressibleByArrayLiteral {
+public protocol AnySequenceWrapping: Sequence, ExpressibleByArrayLiteral {
     
     // MARK: Associated Types
     
@@ -44,7 +44,7 @@ public protocol AnySequenceType: Sequence, ExpressibleByArrayLiteral {
     init <S: Sequence> (_ sequence: S) where S.Iterator.Element == Element
 }
 
-extension AnySequenceType {
+extension AnySequenceWrapping {
     
     // MARK: - `Sequence`
     
