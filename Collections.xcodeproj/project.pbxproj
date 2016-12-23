@@ -39,6 +39,10 @@
 		07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
 		07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
 		07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
+		07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryType.swift */; };
+		07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryType.swift */; };
+		07690BEE1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */; };
+		07690BEF1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */; };
 		077AED171DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED181DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
@@ -152,6 +156,8 @@
 		07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceElementsTests.swift; path = CollectionsTests/ReplaceElementsTests.swift; sourceTree = "<group>"; };
 		07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIteration.swift; path = Collections/EnumIteration.swift; sourceTree = "<group>"; };
 		07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIterationTests.swift; path = CollectionsTests/EnumIterationTests.swift; sourceTree = "<group>"; };
+		07690BEA1E0D97500095F1D5 /* DictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryType.swift; path = Collections/DictionaryType.swift; sourceTree = "<group>"; };
+		07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTypeTests.swift; path = CollectionsTests/DictionaryTypeTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = Collections/Tree.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -228,16 +234,10 @@
 			isa = PBXGroup;
 			children = (
 				DB48D1C28DB0350B0CED6B0F /* Supporting Files */,
-				077AED161DFB82C9004CDD86 /* Tree.swift */,
-				07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */,
+				07690BE91E0D96BC0095F1D5 /* Protocols */,
+				07690BE81E0D96AA0095F1D5 /* Structures */,
 				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
-				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
-				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
-				07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */,
-				07C582991DFBC052008BE5D0 /* Stack.swift */,
-				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
-				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
-				078F49001E0D258700B8F316 /* KeyPath.swift */,
+				07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */,
 				078F490C1E0D5C1C00B8F316 /* SequenceExtensions.swift */,
 				078F49121E0D5D4C00B8F316 /* StableSort.swift */,
 				078F491E1E0D608800B8F316 /* Subsets.swift */,
@@ -248,6 +248,7 @@
 				07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */,
 				078F49181E0D5EA500B8F316 /* Combinations.swift */,
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
+				07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -261,6 +262,29 @@
 				CAB2BE6E4455A917AA0EF6EE /* CollectionsTests */,
 				5C8092CA26121C80EEFDE45C /* Collections.h */,
 			);
+			sourceTree = "<group>";
+		};
+		07690BE81E0D96AA0095F1D5 /* Structures */ = {
+			isa = PBXGroup;
+			children = (
+				077AED161DFB82C9004CDD86 /* Tree.swift */,
+				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
+				07C582991DFBC052008BE5D0 /* Stack.swift */,
+				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
+				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
+				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
+				078F49001E0D258700B8F316 /* KeyPath.swift */,
+			);
+			name = Structures;
+			sourceTree = "<group>";
+		};
+		07690BE91E0D96BC0095F1D5 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */,
+				07690BEA1E0D97500095F1D5 /* DictionaryType.swift */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		162280B92120984627F27291 /* Products */ = {
@@ -501,6 +525,7 @@
 				07690BBF1E0D64D00095F1D5 /* AdjacentPairsTests.swift in Sources */,
 				078F49231E0D60A400B8F316 /* SubsetsTests.swift in Sources */,
 				078F491D1E0D5F0300B8F316 /* CombinationsTests.swift in Sources */,
+				07690BEF1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +552,7 @@
 				07690BBE1E0D64D00095F1D5 /* AdjacentPairsTests.swift in Sources */,
 				078F49221E0D60A400B8F316 /* SubsetsTests.swift in Sources */,
 				078F491C1E0D5F0300B8F316 /* CombinationsTests.swift in Sources */,
+				07690BEE1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -540,6 +566,7 @@
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				07690BD41E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
 				07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
+				07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49021E0D258700B8F316 /* KeyPath.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
@@ -567,6 +594,7 @@
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				07690BD31E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
 				07690BCD1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
+				07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49011E0D258700B8F316 /* KeyPath.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
