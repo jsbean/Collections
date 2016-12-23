@@ -13,7 +13,7 @@ extension RangeReplaceableCollection where
 {
     public func stableSort(
         _ isOrderedBefore: @escaping (Iterator.Element, Iterator.Element) -> Bool
-        ) -> [Iterator.Element]
+    ) -> [Iterator.Element]
     {
         var result = self // make copy of self to return
         let count = result.count
