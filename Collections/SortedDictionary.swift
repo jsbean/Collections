@@ -1,25 +1,27 @@
 //
-//  OrderedDictionary.swift
+//  SortedDictionary.swift
 //  Collections
 //
-//  Created by James Bean on 12/10/16.
+//  Created by James Bean on 12/23/16.
 //
 //
 
-/// Ordered Dictionary.
-public struct OrderedDictionary <Key: Hashable, Value> {
+/**
+ Ordered Dictionary that keeps its `keys` sorted.
+ */
+public struct SortedDictionary<Key, Value> where Key: Hashable, Key: Comparable {
     
     // MARK: - Instance Properties
     
-    /// Ordered keys.
-    public var keys: [Key] = []
+    /// Sorted keys.
+    public var keys: SortedArray<Key> = []
     
-    /// Values.
+    /// Backing dictionary.
     public var values: [Key: Value] = [:]
     
     // MARK: - Initializers
     
-    /// Create an empty `OrderedDictionary`
+    /// Create an empty `SortedOrderedDictionary`.
     public init() { }
     
     // MARK: - Subscripts
@@ -35,55 +37,45 @@ public struct OrderedDictionary <Key: Hashable, Value> {
             
             guard let newValue = newValue else {
                 values.removeValue(forKey: key)
-                keys = keys.filter { $0 != key }
+                keys.remove(key)
                 return
             }
             
             let oldValue = values.updateValue(newValue, forKey: key)
             if oldValue == nil {
-                keys.append(key)
+                keys.insert(key)
             }
         }
     }
+
     
     // MARK: - Instance Methods
     
-    /// Append `value` for given `key`.
-    public mutating func append(_ value: Value, key: Key) {
-        keys.append(key)
+    
+    /// Insert the given `value` for the given `key`. Order will be maintained.
+    public mutating func insert(_ value: Value, key: Key) {
+        keys.insert(key)
         values[key] = value
     }
     
-    /// Insert `value` for given `key` at `index`.
-    public mutating func insert(_ value: Value, key: Key, index: Int) {
-        keys.insert(key, at: index)
-        values[key] = value
+    /// Insert the contents of another `SortedDictionary` value.
+    public mutating func insertContents(of sortedDictionary: SortedDictionary<Key, Value>) {
+        sortedDictionary.forEach { insert($0.1, key: $0.0) }
     }
     
-    /// Append the contents of another `OrderedDictionary` structure.
-    public mutating func appendContents(of orderedDictionary: OrderedDictionary<Key,Value>) {
-        keys.append(contentsOf: orderedDictionary.keys)
-        for key in orderedDictionary.keys {
-            values.updateValue(orderedDictionary[key]!, forKey: key)
-        }
-    }
     
-    /// - returns: The value at the given `index`.
-    public func value(index: Int) -> Value? {
-        
-        guard index >= 0 && index < keys.count else {
-            return nil
-        }
-        
+    /// - returns: Value at the given `index`, if present. Otherwise, `nil`.
+    public func value(at index: Int) -> Value? {
+        if index >= keys.count { return nil }
         return values[keys[index]]
     }
 }
 
-extension OrderedDictionary: Collection {
+extension SortedDictionary: Collection {
     
     // MARK: - `Collection`
     
-    /// - Index after given index `i`.
+    /// Index after given index `i`.
     public func index(after i: Int) -> Int {
         
         guard i != endIndex else {
@@ -111,24 +103,24 @@ extension OrderedDictionary: Collection {
     }
 }
 
-extension OrderedDictionary: ExpressibleByDictionaryLiteral {
+extension SortedDictionary: ExpressibleByDictionaryLiteral {
     
     // MARK: - `ExpressibleByDictionaryLiteral`
     
-    /// Create an `OrderedDictionary` with a `DictionaryLiteral`.
+    /// Create a `SortedDictionary` with a `DictionaryLiteral`.
     public init(dictionaryLiteral elements: (Key, Value)...) {
         
         self.init()
         
         elements.forEach { (k, v) in
-            append(v, key: k)
+            insert(v, key: k)
         }
     }
 }
 
-/// - returns: `true` if all values contained in both `OrderedDictionary` values are
+/// - returns: `true` if all values contained in both `SortedDictionary` values are
 /// equivalent. Otherwise, `false`.
-public func == <K, V: Equatable> (lhs: OrderedDictionary<K,V>, rhs: OrderedDictionary<K,V>)
+public func == <K, V: Equatable> (lhs: SortedDictionary<K,V>, rhs: SortedDictionary<K,V>)
     -> Bool
 {
     
@@ -151,4 +143,15 @@ public func == <K, V: Equatable> (lhs: OrderedDictionary<K,V>, rhs: OrderedDicti
     }
     
     return true
+}
+
+/// - returns: `SortedOrderedDictionary` with values of two `SortedOrderedDictionary` values.
+public func + <Value, Key> (
+    lhs: SortedDictionary<Value, Key>,
+    rhs: SortedDictionary<Value, Key>
+) -> SortedDictionary<Value, Key> where Key: Hashable, Key: Comparable
+{
+    var result = lhs
+    rhs.forEach { result.insert($0.1, key: $0.0) }
+    return result
 }
