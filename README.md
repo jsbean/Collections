@@ -3,8 +3,7 @@
 ![Swift](https://img.shields.io/badge/%20in-swift%203.0-orange.svg) [![Build Status](https://travis-ci.org/dn-m/Collections.svg?branch=master)](https://travis-ci.org/dn-m/Collections) [![codecov](https://codecov.io/gh/dn-m/Collections/branch/master/graph/badge.svg)](https://codecov.io/gh/dn-m/Collections/) [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![GitHub version](https://badge.fury.io/gh/dn-m%2FCollections.svg)](https://badge.fury.io/gh/dn-m%2FCollections)
 
-### Protocols
-- `AnySequenceWrapping`
+## Contents
 
 ### Structures
 - `SortedArray`
@@ -13,6 +12,13 @@
 - `Stack`
 - `Matrix`
 - `Tree`
+
+---
+
+### Protocols
+- `AnySequenceWrapping`
+
+---
 
 ### `Array` extensions
 
@@ -37,15 +43,23 @@
 - `replaceLast(with element: Element) throws`
 - `replaceFirst(with element: Element) throws`
 
+---
+
 ### `Collection` extensions
 - `subsets(cardinality: Int) -> [[Iterator.Element]]`
 - `adjacentPairs: [(Element,Element)]`
 
+---
+
 ### `RangeReplaceableCollection` extensions
 - `stableSort()`
 
+---
+
 ### `enum` extensions
 - `cases: [Self]`
+
+---
 
 <a name="integration"></a>
 ## Integration
