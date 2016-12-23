@@ -29,6 +29,10 @@
 		07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */; };
 		07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */; };
 		07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */; };
+		07690BD31E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */; };
+		07690BD41E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */; };
+		07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */; };
+		07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */; };
 		077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* TreeNode.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeNodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeNodeTests.swift */; };
@@ -137,6 +141,8 @@
 		07690BC91E0D66D40095F1D5 /* ArrayError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayError.swift; path = Collections/ArrayError.swift; sourceTree = "<group>"; };
 		07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListProcessing.swift; path = Collections/ListProcessing.swift; sourceTree = "<group>"; };
 		07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ListProcessingTests.swift; path = CollectionsTests/ListProcessingTests.swift; sourceTree = "<group>"; };
+		07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndices.swift; path = Collections/ElementsAtIndices.swift; sourceTree = "<group>"; };
+		07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndicesTests.swift; path = CollectionsTests/ElementsAtIndicesTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* TreeNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNode.swift; path = Collections/TreeNode.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeNodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeNodeTests.swift; path = CollectionsTests/TreeNodeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -229,6 +235,7 @@
 				07690BC91E0D66D40095F1D5 /* ArrayError.swift */,
 				07690BC01E0D65690095F1D5 /* RemoveElements.swift */,
 				07690BC61E0D669B0095F1D5 /* ReplaceElements.swift */,
+				07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */,
 				078F49181E0D5EA500B8F316 /* Combinations.swift */,
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
 			);
@@ -310,6 +317,7 @@
 				07690BBD1E0D64D00095F1D5 /* AdjacentPairsTests.swift */,
 				07690BC31E0D66750095F1D5 /* RemoveElementsTests.swift */,
 				07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */,
+				07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
@@ -462,6 +470,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD41E0D13AB004E3411 /* FlippedTest.swift in Sources */,
 				07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
@@ -485,6 +494,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD31E0D13AB004E3411 /* FlippedTest.swift in Sources */,
 				07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
@@ -512,6 +522,7 @@
 				07690BCB1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
 				07C582A11DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
+				07690BD41E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
 				07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				078F49021E0D258700B8F316 /* KeyPath.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* TreeNode.swift in Sources */,
@@ -537,6 +548,7 @@
 				07690BCA1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
 				07C582A01DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
+				07690BD31E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
 				07690BCD1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				078F49011E0D258700B8F316 /* KeyPath.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* TreeNode.swift in Sources */,
