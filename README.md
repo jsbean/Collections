@@ -9,6 +9,7 @@
 - `SortedDictionary`
 - `Stack`
 - `Matrix`
+- `Tree`
 
 <a name="integration"></a>
 ## Integration
