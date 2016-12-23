@@ -1,5 +1,5 @@
 //
-//  TreeNode.swift
+//  Tree.swift
 //  Collections
 //
 //  Created by James Bean on 12/9/16.
@@ -7,12 +7,12 @@
 //
 
 /// Node in tree structure
-public enum TreeNode <T> {
+public enum Tree <T> {
     
     // MARK: - Cases
     
     /// Container node.
-    case container([TreeNode])
+    case container([Tree])
     
     /// Leaf node.
     case leaf(T)
@@ -22,7 +22,7 @@ public enum TreeNode <T> {
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
         
-        func flattened(accum: [T], node: TreeNode) -> [T] {
+        func flattened(accum: [T], node: Tree) -> [T] {
             switch node {
             case .container(let children):
                 return children.reduce(accum, flattened)
@@ -38,6 +38,6 @@ public enum TreeNode <T> {
     
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
     public init <S: Sequence> (_ sequence: S) where S.Iterator.Element == T {
-        self = .container(sequence.map(TreeNode.leaf))
+        self = .container(sequence.map(Tree.leaf))
     }
 }
