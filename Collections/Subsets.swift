@@ -9,8 +9,7 @@
 extension Collection where Index == Int, IndexDistance == Int {
     
     /// - returns: All combinations of with a given cardinality
-    /// (how many elements chosen per combination) if self is not empty or count < k.
-    /// Otherwise, `nil`.
+    /// (how many elements chosen per combination).
     public func subsets(cardinality k: Int) -> [[Iterator.Element]] {
         
         func subsets(
