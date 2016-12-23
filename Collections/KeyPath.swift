@@ -20,6 +20,9 @@ public struct KeyPath {
 
 extension KeyPath: ExpressibleByArrayLiteral {
     
+    // MARK: - `ExpressibleByArrayLiteral`
+    
+    /// Create a `KeyPath` with an array literal.
     public init(arrayLiteral elements: AnyHashable...) {
         self.keys = elements
     }
@@ -27,14 +30,17 @@ extension KeyPath: ExpressibleByArrayLiteral {
 
 extension KeyPath: ExpressibleByStringLiteral {
     
+    /// Create a `KeyPath` with a string literal.
     public init(stringLiteral value: String) {
         self.keys = value.components(separatedBy: ".")
     }
     
+    /// Create a `KeyPath` with an extendedGraphemeCluster literal.
     public init(extendedGraphemeClusterLiteral value: String) {
         self.init(stringLiteral: value)
     }
     
+    /// Create a `KeyPath` with an unicodeScalar literal.
     public init(unicodeScalarLiteral value: String) {
         self.init(stringLiteral: value)
     }
