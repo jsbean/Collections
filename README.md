@@ -33,7 +33,7 @@
 - `subsets(cardinality: Int) -> [[Iterator.Element]]`
 - `adjacentPairs: [(Element,Element)]`
 
-## RangeReplaceableCollection extensions
+## `RangeReplaceableCollection` extensions
 - `stableSort()`
 
 <a name="integration"></a>
