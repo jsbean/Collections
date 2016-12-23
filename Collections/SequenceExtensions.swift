@@ -126,3 +126,12 @@ extension Sequence where Iterator.Element: Equatable {
         return !isHomogeneous
     }
 }
+
+/// - returns: `true` if all elements in both `AnySequence` values are equivalent. Otherwise, 
+/// `false`.
+public func == <T: Equatable> (lhs: AnySequence<T>, rhs: AnySequence<T>) -> Bool {
+    for (a,b) in zip(lhs,rhs) where a != b {
+        return false
+    }
+    return true
+}
