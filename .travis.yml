@@ -2,17 +2,17 @@ language: objective-c
 osx_image: xcode8
 env:
   matrix:
-    - DESTINATION="platform=iOS Simulator,OS=9.3,name=iPad 2" 
+    - DESTINATION="platform=iOS Simulator,OS=9.3,name=iPad 2"
       SCHEME="Collections"
     - DESTINATION="platform=iOS Simulator,OS=10.0,name=iPad Pro (12.9 inch)"
-      SCHEME="Collections"
-    - DESTINATION="platform=OS X" 
-      SCHEME="CollectionsMac"
+      SCHEME="test"
+    - DESTINATION="platform=OS X"
+      SCHEME="testMac"
 
-before_script: if [ -f ./Cartfile ]; then carthage update; fi;
+before_script: if [ -f ./Cartresult ]; then carthage update; fi;
 
-script: travis_retry xcodebuild test 
-  -project Collections.xcodeproj
+script: travis_retry xcodebuild test
+  -project test.xcodeproj
   -scheme "${SCHEME}"
   -destination "${DESTINATION}"
   TOOLCHAINS=swift
