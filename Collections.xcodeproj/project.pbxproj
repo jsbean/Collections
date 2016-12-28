@@ -92,6 +92,10 @@
 		15BC5F9DD7F8EBE1582D4BC1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
 		35C574BA375C413FA8822BA9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		64D9FFBF2638EA83B8CD50C7 /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6A3575221E144DFC00646220 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3575211E144DFC00646220 /* LinkedList.swift */; };
+		6A3575251E144F4F00646220 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3575211E144DFC00646220 /* LinkedList.swift */; };
+		6A3575271E144F9000646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3575231E144ECF00646220 /* LinkedListTests.swift */; };
+		6A3575281E144F9100646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3575231E144ECF00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
@@ -186,6 +190,8 @@
 		5C8092CA26121C80EEFDE45C /* Collections.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Collections.h; path = Collections/Collections.h; sourceTree = "<group>"; };
 		5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5E24C7235755B438647A0CBA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Collections/Info.plist; sourceTree = "<group>"; };
+		6A3575211E144DFC00646220 /* LinkedList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		6A3575231E144ECF00646220 /* LinkedListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinkedListTests.swift; sourceTree = "<group>"; };
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE25EF15345DBA6825B742 /* CollectionsMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -248,7 +254,6 @@
 				07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */,
 				078F49181E0D5EA500B8F316 /* Combinations.swift */,
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
-				07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */,
 				07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */,
 				078F49001E0D258700B8F316 /* KeyPath.swift */,
+				6A3575211E144DFC00646220 /* LinkedList.swift */,
 			);
 			name = Structures;
 			sourceTree = "<group>";
@@ -336,6 +342,8 @@
 			children = (
 				C3B5E929D2933C7995C19611 /* Supporting Files */,
 				077AED191DFB8520004CDD86 /* TreeTests.swift */,
+				6A3575231E144ECF00646220 /* LinkedListTests.swift */,
+				07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */,
 				07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */,
 				07C582A21DFBC8B6008BE5D0 /* SortedArrayTests.swift */,
 				07C5829C1DFBC26B008BE5D0 /* StackTests.swift */,
@@ -510,6 +518,7 @@
 				07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD41E0D13AB004E3411 /* FlippedTest.swift in Sources */,
 				07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
+				6A3575281E144F9100646220 /* LinkedListTests.swift in Sources */,
 				07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
@@ -537,6 +546,7 @@
 				07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD31E0D13AB004E3411 /* FlippedTest.swift in Sources */,
 				07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
+				6A3575271E144F9000646220 /* LinkedListTests.swift in Sources */,
 				07125DD01E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
@@ -580,6 +590,7 @@
 				07C582B01DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */,
+				6A3575251E144F4F00646220 /* LinkedList.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -608,6 +619,7 @@
 				07C582AF1DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				07690BDC1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */,
+				6A3575221E144DFC00646220 /* LinkedList.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
