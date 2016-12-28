@@ -12,6 +12,7 @@
 - `Stack`
 - `Matrix`
 - `Tree`
+- `LinkedList`
 
 ---
 
