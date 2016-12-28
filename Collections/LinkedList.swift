@@ -2,13 +2,13 @@
 //  LinkedList.swift
 //  Collections
 //
-//  Adapted and modified from Airspeed Velocity and Chris Eidhof. 
+//  Adapted and modified from Airspeed Velocity and Chris Eidhof.
 //  Created by Jeremy Corren on 12/28/16.
 //
 //
 
 /// The `LinkedList`.
-public enum LinkedList<T> {
+public enum LinkedList <T> {
     
     /// Last node in list.
     case end
@@ -37,7 +37,8 @@ extension LinkedList {
     public mutating func pop() -> T? {
         
         switch self {
-        case .end: return nil
+        case .end:
+            return nil
         case let .node(x, next: xs):
             self = xs
             return x
@@ -50,12 +51,14 @@ extension LinkedList: Collection {
     // MARK: - `Collection`
     
     /// Index after given index `i`.
-    public func index(after: Int) -> Int {
-        return after + 1
+    public func index(after i: Int) -> Int {
+        return i + 1
     }
     
     /// Start index.
-    public var startIndex: Int { return 0 }
+    public var startIndex: Int {
+        return 0
+    }
     
     /// End index.
     public var endIndex: Int {
@@ -77,7 +80,7 @@ extension LinkedList: Collection {
         case (.node(let x, _), 0):
             return x
         case (.node(_, let tail), _):
-            return tail[position-1]
+            return tail[position - 1]
         }
     }
 }
@@ -89,9 +92,9 @@ extension LinkedList: ExpressibleByArrayLiteral {
     /// Create a `LinkedList` with an array literal.
     
     public init(arrayLiteral elements: T...) {
-        self = elements.reversed().reduce(.end) {
-            $0.cons(value: $1)
-        }
+        self = elements
+            .lazy
+            .reversed()
+            .reduce(.end) { $0.cons(value: $1) }
     }
 }
-

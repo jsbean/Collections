@@ -1,6 +1,6 @@
 //
 //  LinkedListTests.swift
-//  LinkedListTests
+//  Collections
 //
 //  Created by Jeremy Corren on 12/22/16.
 //  Copyright © 2016 Jeremy Corren. All rights reserved.
@@ -16,7 +16,8 @@ class LinkedListTests: XCTestCase {
     }
     
     func testInitArray() {
-        let _: LinkedList<Int> = [3,2,1]
+        let array = [3,2,1]
+        let _ = LinkedList(arrayLiteral: array)
     }
     
     func testPush() {
