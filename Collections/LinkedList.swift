@@ -90,7 +90,6 @@ extension LinkedList: ExpressibleByArrayLiteral {
     // - MARK: `ExpressibleByArrayLiteral`
     
     /// Create a `LinkedList` with an array literal.
-    
     public init(arrayLiteral elements: T...) {
         self = elements
             .lazy
