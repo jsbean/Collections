@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2C7332CF1A5D0F4344C04F0B"
                BuildableName = "Collections.framework"
-               BlueprintName = "Collections"
+               BlueprintName = "Collections iOS"
                ReferencedContainer = "container:Collections.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7EA6ACCE3473DB3C33263FD3"
-               BuildableName = "CollectionsTests.xctest"
-               BlueprintName = "CollectionsTests"
+               BuildableName = "Collections iOS Tests.xctest"
+               BlueprintName = "Collections iOS Tests"
                ReferencedContainer = "container:Collections.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "7EA6ACCE3473DB3C33263FD3"
-               BuildableName = "CollectionsTests.xctest"
-               BlueprintName = "CollectionsTests"
+               BuildableName = "Collections iOS Tests.xctest"
+               BlueprintName = "Collections iOS Tests"
                ReferencedContainer = "container:Collections.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -72,7 +72,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2C7332CF1A5D0F4344C04F0B"
             BuildableName = "Collections.framework"
-            BlueprintName = "Collections"
+            BlueprintName = "Collections iOS"
             ReferencedContainer = "container:Collections.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

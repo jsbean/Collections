@@ -181,14 +181,14 @@
 		07C582AB1DFBD877008BE5D0 /* OrderedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderedDictionary.swift; path = Collections/OrderedDictionary.swift; sourceTree = "<group>"; };
 		07C582AE1DFBDD67008BE5D0 /* Flipped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Flipped.swift; path = Collections/Flipped.swift; sourceTree = "<group>"; };
 		07C582B11DFBE174008BE5D0 /* OrderedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OrderedDictionaryTests.swift; path = CollectionsTests/OrderedDictionaryTests.swift; sourceTree = "<group>"; };
-		114F7E877A2B51AD889245B0 /* CollectionsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		114F7E877A2B51AD889245B0 /* Collections iOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections iOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C94A0D81FFA92F1DD68894C /* Collections.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C8092CA26121C80EEFDE45C /* Collections.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Collections.h; path = Collections/Collections.h; sourceTree = "<group>"; };
 		5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.11.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
 		5E24C7235755B438647A0CBA /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = Collections/Info.plist; sourceTree = "<group>"; };
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B0FE25EF15345DBA6825B742 /* CollectionsMacTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CollectionsMacTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F3BB5A4A059D9090F60C3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CollectionsTests/Info.plist; sourceTree = "<group>"; };
 		DA78A611E34DD8CE3E264DA5 /* Collections.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCF94A4596C6F0B263CB6B2B /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -291,9 +291,9 @@
 			isa = PBXGroup;
 			children = (
 				7EE87C52FF3F3B876D69FE38 /* Collections.framework */,
-				114F7E877A2B51AD889245B0 /* CollectionsTests.xctest */,
+				114F7E877A2B51AD889245B0 /* Collections iOS Tests.xctest */,
 				FCF94A4596C6F0B263CB6B2B /* Collections.framework */,
-				B0FE25EF15345DBA6825B742 /* CollectionsMacTests.xctest */,
+				B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,9 +388,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		2C7332CF1A5D0F4344C04F0B /* Collections */ = {
+		2C7332CF1A5D0F4344C04F0B /* Collections iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 21AC6249485C966C6A950251 /* Build configuration list for PBXNativeTarget "Collections" */;
+			buildConfigurationList = 21AC6249485C966C6A950251 /* Build configuration list for PBXNativeTarget "Collections iOS" */;
 			buildPhases = (
 				FC87AEDF4DDDFDA8920CA781 /* Sources */,
 				72819C3D6C9B0DEC6B70C146 /* Frameworks */,
@@ -400,14 +400,14 @@
 			);
 			dependencies = (
 			);
-			name = Collections;
+			name = "Collections iOS";
 			productName = Collections;
 			productReference = 7EE87C52FF3F3B876D69FE38 /* Collections.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		7EA6ACCE3473DB3C33263FD3 /* CollectionsTests */ = {
+		7EA6ACCE3473DB3C33263FD3 /* Collections iOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C11A3BE9774B721C534892A3 /* Build configuration list for PBXNativeTarget "CollectionsTests" */;
+			buildConfigurationList = C11A3BE9774B721C534892A3 /* Build configuration list for PBXNativeTarget "Collections iOS Tests" */;
 			buildPhases = (
 				5205EAA6B26335527E760168 /* Sources */,
 				8C8AE3133CB2906686CBB087 /* Frameworks */,
@@ -418,14 +418,14 @@
 			dependencies = (
 				8E0C5D682F1919BF65431A5F /* PBXTargetDependency */,
 			);
-			name = CollectionsTests;
+			name = "Collections iOS Tests";
 			productName = CollectionsTests;
-			productReference = 114F7E877A2B51AD889245B0 /* CollectionsTests.xctest */;
+			productReference = 114F7E877A2B51AD889245B0 /* Collections iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		9DB1D14D284DEE05F91E466D /* CollectionsMacTests */ = {
+		9DB1D14D284DEE05F91E466D /* Collections macOS Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F3D840385BF51B7CB384E02F /* Build configuration list for PBXNativeTarget "CollectionsMacTests" */;
+			buildConfigurationList = F3D840385BF51B7CB384E02F /* Build configuration list for PBXNativeTarget "Collections macOS Tests" */;
 			buildPhases = (
 				27F5B089CCCAE543F06057A3 /* Sources */,
 				9DFD43D449D071BBF788D417 /* Frameworks */,
@@ -436,14 +436,14 @@
 			dependencies = (
 				850395DEE6A347B55DF682AA /* PBXTargetDependency */,
 			);
-			name = CollectionsMacTests;
+			name = "Collections macOS Tests";
 			productName = CollectionsMacTests;
-			productReference = B0FE25EF15345DBA6825B742 /* CollectionsMacTests.xctest */;
+			productReference = B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		D738D360F99D76CDA19CC372 /* CollectionsMac */ = {
+		D738D360F99D76CDA19CC372 /* Collections macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "CollectionsMac" */;
+			buildConfigurationList = A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "Collections macOS" */;
 			buildPhases = (
 				6F80BC3FB781BE6BC2144911 /* Sources */,
 				4AFE29A7738061896B662B50 /* Frameworks */,
@@ -453,7 +453,7 @@
 			);
 			dependencies = (
 			);
-			name = CollectionsMac;
+			name = "Collections macOS";
 			productName = CollectionsMac;
 			productReference = FCF94A4596C6F0B263CB6B2B /* Collections.framework */;
 			productType = "com.apple.product-type.framework";
@@ -493,10 +493,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2C7332CF1A5D0F4344C04F0B /* Collections */,
-				7EA6ACCE3473DB3C33263FD3 /* CollectionsTests */,
-				D738D360F99D76CDA19CC372 /* CollectionsMac */,
-				9DB1D14D284DEE05F91E466D /* CollectionsMacTests */,
+				2C7332CF1A5D0F4344C04F0B /* Collections iOS */,
+				7EA6ACCE3473DB3C33263FD3 /* Collections iOS Tests */,
+				D738D360F99D76CDA19CC372 /* Collections macOS */,
+				9DB1D14D284DEE05F91E466D /* Collections macOS Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -618,13 +618,13 @@
 		850395DEE6A347B55DF682AA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CollectionsMac;
-			target = D738D360F99D76CDA19CC372 /* CollectionsMac */;
+			target = D738D360F99D76CDA19CC372 /* Collections macOS */;
 			targetProxy = B42F20C9B1FBBC0E9C52BAC6 /* PBXContainerItemProxy */;
 		};
 		8E0C5D682F1919BF65431A5F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Collections;
-			target = 2C7332CF1A5D0F4344C04F0B /* Collections */;
+			target = 2C7332CF1A5D0F4344C04F0B /* Collections iOS */;
 			targetProxy = 7592ABE63203290E66B647AA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -916,7 +916,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		21AC6249485C966C6A950251 /* Build configuration list for PBXNativeTarget "Collections" */ = {
+		21AC6249485C966C6A950251 /* Build configuration list for PBXNativeTarget "Collections iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				23957B88E14C066F3CEFDE5B /* Release */,
@@ -934,7 +934,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "CollectionsMac" */ = {
+		A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "Collections macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				636411E4663D62AEA75FA313 /* Release */,
@@ -943,7 +943,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C11A3BE9774B721C534892A3 /* Build configuration list for PBXNativeTarget "CollectionsTests" */ = {
+		C11A3BE9774B721C534892A3 /* Build configuration list for PBXNativeTarget "Collections iOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4CCCE16DDD85309F4BF0DA2 /* Release */,
@@ -952,7 +952,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F3D840385BF51B7CB384E02F /* Build configuration list for PBXNativeTarget "CollectionsMacTests" */ = {
+		F3D840385BF51B7CB384E02F /* Build configuration list for PBXNativeTarget "Collections macOS Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				6E3771E2BC8EFEB7DEE5C6F3 /* Release */,

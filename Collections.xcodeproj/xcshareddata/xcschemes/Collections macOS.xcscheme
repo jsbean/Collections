@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D738D360F99D76CDA19CC372"
                BuildableName = "Collections.framework"
-               BlueprintName = "CollectionsMac"
+               BlueprintName = "Collections macOS"
                ReferencedContainer = "container:Collections.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -29,8 +29,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9DB1D14D284DEE05F91E466D"
-               BuildableName = "CollectionsMacTests.xctest"
-               BlueprintName = "CollectionsMacTests"
+               BuildableName = "Collections macOS Tests.xctest"
+               BlueprintName = "Collections macOS Tests"
                ReferencedContainer = "container:Collections.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,8 +48,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9DB1D14D284DEE05F91E466D"
-               BuildableName = "CollectionsMacTests.xctest"
-               BlueprintName = "CollectionsMacTests"
+               BuildableName = "Collections macOS Tests.xctest"
+               BlueprintName = "Collections macOS Tests"
                ReferencedContainer = "container:Collections.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -72,7 +72,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D738D360F99D76CDA19CC372"
             BuildableName = "Collections.framework"
-            BlueprintName = "CollectionsMac"
+            BlueprintName = "Collections macOS"
             ReferencedContainer = "container:Collections.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
