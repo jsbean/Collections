@@ -41,3 +41,31 @@ public enum Tree <T> {
         self = .container(sequence.map(Tree.leaf))
     }
 }
+
+extension Tree: CustomStringConvertible {
+    
+    public var description: String {
+        
+        func indents(_ amount: Int) -> String {
+            return (0 ..< amount).reduce("") { accum, _ in accum + "  " }
+        }
+        
+        func traverse(node: Tree, indentation: Int = 0) -> String {
+            
+            switch node {
+            case .leaf(let value):
+                return indents(indentation) + "\(value)"
+            case .container(let children):
+                return (
+                    indents(indentation) + "(\n" +
+                    children
+                        .map { traverse(node: $0, indentation: indentation + 1) }
+                        .joined(separator: "\n") +
+                    "\n" + indents(indentation) + ")"
+                )
+            }
+        }
+        
+        return traverse(node: self)
+    }
+}
