@@ -73,7 +73,6 @@ extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
         for (k,v) in dictionary { self[k] = v }
     }
     
-    
     /// - returns: A new `Dictionary` with the contents of the given `dictionary` merged `self`
     /// over those of `self`.
     public func merged(with dictionary: Self) -> Self {
@@ -85,32 +84,24 @@ extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
 
 extension DictionaryType where Value: ArrayType {
     
-    /**
-     Ensure that an Array-type value exists for the given `key`.
-     */
+    /// Ensure that an Array-type value exists for the given `key`.
     public mutating func ensureValue(for key: Key) {
         if self[key] == nil {
             self[key] = Value()
         }
     }
     
-    /**
-     Safely append the given `value` to the Array-type `value` for the given `key`.
-     */
+    /// Safely append the given `value` to the Array-type `value` for the given `key`.
     public mutating func safelyAppend(_ value: Value.Element, toArrayWith key: Key) {
         ensureValue(for: key)
         self[key]!.append(value)
     }
     
-    /**
-     Safely append the contents of an array to the Array-type `value` for the given `key`.
-     */
+    /// Safely append the contents of an array to the Array-type `value` for the given `key`.
     public mutating func safelyAppendContents(of values: Value, toArrayWith key: Key) {
         ensureValue(for: key)
         self[key]!.append(contentsOf: values)
     }
-    
-    // TODO: Implement `merge` and `merged`
 }
 
 extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
@@ -173,15 +164,10 @@ extension DictionaryType where
     Iterator.Element == (Key, Value),
     Value.Iterator.Element == (Value.Key, Value.Value)
 {
-    
-    // TODO: Implement `merged(with:)`
-    
-    /**
-     Merge the contents of the given `dictionary` destructively into this one.
-     
-     - warning: The value of a given key of the given `dictionary` will override that of this
-     one.
-     */
+    /// Merge the contents of the given `dictionary` destructively into this one.
+    ///
+    /// - warning: The value of a given key of the given `dictionary` will override that of 
+    /// this one.
     public mutating func merge(with dictionary: Self) {
         for (key, subDict) in dictionary {
             ensureValue(for: key)
@@ -189,6 +175,14 @@ extension DictionaryType where
                 self[key]![subKey] = value
             }
         }
+    }
+    
+    /// - returns: A new `Dictionary` with the contents of the given `dictionary` merged `self`
+    /// over those of `self`.
+    public mutating func merged(with dictionary: Self) -> Self {
+        var copy = self
+        copy.merge(with: dictionary)
+        return copy
     }
 }
 

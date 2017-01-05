@@ -144,6 +144,29 @@ class DictionaryTypeTests: XCTestCase {
         XCTAssertEqual(result, expected)
     }
     
+    func testMergeNestedDict() {
+        
+        var a = ["1": ["a": 0], "2": ["b": 1], "3": ["c": 2]]
+        let b =  ["1": ["a": 2], "2": ["b": 1], "3": ["c": 0]]
+        a.merge(with: b)
+        
+        for (key, subDict) in a {
+            XCTAssertEqual(subDict, b[key]!)
+        }
+    }
+    
+    func testMergedNestedDict() {
+        
+        let a = ["1": ["a": 0], "2": ["b": 1], "3": ["c": 2]]
+        let b =  ["1": ["a": 2], "2": ["b": 1], "3": ["c": 0]]
+        let result = a.merged(with: b)
+        let expected = b
+
+        for (key, subDict) in result {
+            XCTAssertEqual(subDict, expected[key]!)
+        }
+    }
+    
     func testDictionaryInitWithArrays() {
         
         let xs = [0,1,2,3,4]
