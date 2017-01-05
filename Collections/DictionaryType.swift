@@ -128,7 +128,9 @@ extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
         ensureValue(for: key)
         
         // FIXME: Find a way to not cast to Array!
-        if (self[key] as! Array).contains(value) { return }
+        if (self[key] as! Array).contains(value) {
+            return
+        }
         
         self[key]!.append(value)
     }
@@ -139,9 +141,7 @@ extension DictionaryType where
     Value.Key: Hashable
 {
     
-    /**
-     Ensure there is a value for a given `key`.
-     */
+    /// Ensure there is a value for a given `key`.
     public mutating func ensureValue(for key: Key) {
         if self[key] == nil {
             self[key] = Value()
@@ -154,12 +154,14 @@ extension DictionaryType where
      - TODO: Use subscript (keyPath: KeyPath) { get set }
      - TODO: Make `throws`.
      */
-    public mutating func update(_ value: Value.Value, keyPath: KeyPath) {
+    public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
         
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
-            else { return }
+        else {
+            throw DictinaryTypeError.illFormedKeyPath
+        }
         
         self.ensureValue(for: key)
         self[key]?[subKey] = value
@@ -200,12 +202,14 @@ extension DictionaryType where
     /// Ensure that there is an Array-type value for the given `keyPath`.
     ///
     /// - TODO: Make `throws`.
-    public mutating func ensureValue(for keyPath: KeyPath) {
+    public mutating func ensureValue(for keyPath: KeyPath) throws {
         
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
-            else { return }
+        else {
+            throw DictinaryTypeError.illFormedKeyPath
+        }
         
         ensureValue(for: key)
         self[key]!.ensureValue(for: subKey)
@@ -214,38 +218,38 @@ extension DictionaryType where
     /// Append the given `value` to the array at the given `keyPath`.
     ///
     /// > If no such subdictionary or array exists, these structures will be created.
-    ///
-    /// - TODO: Make `throws`.
     public mutating func safelyAppend(
         _ value: Value.Value.Element,
         toArrayWith keyPath: KeyPath
-    )
+    ) throws
     {
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
-            else { return }
+        else {
+            throw DictinaryTypeError.illFormedKeyPath
+        }
         
-        ensureValue(for: keyPath)
+        try ensureValue(for: keyPath)
         self[key]!.safelyAppend(value, toArrayWith: subKey)
     }
     
     /// Append the given `values` to the array at the given `keyPath`.
     ///
     /// > If no such subdictionary or array exists, these structures will be created.
-    ///
-    /// - TODO: Make `throws`.
     public mutating func safelyAppendContents(
         of values: Value.Value,
         toArrayWith keyPath: KeyPath
-    )
+    ) throws
     {
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
-            else { return }
+        else {
+            throw DictinaryTypeError.illFormedKeyPath
+        }
         
-        ensureValue(for: keyPath)
+        try ensureValue(for: keyPath)
         self[key]!.safelyAppendContents(of: values, toArrayWith: subKey)
     }
 }
@@ -262,27 +266,26 @@ extension DictionaryType where
     /// duplicates.
     ///
     /// > If no such subdictionary or array exists, these structures will be created.
-    /// - TODO: Make `throws`.
     public mutating func safelyAndUniquelyAppend(
         _ value: Value.Value.Element,
         toArrayWith keyPath: KeyPath
-    )
+    ) throws
     {
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
-            else { return }
+        else {
+            throw DictinaryTypeError.illFormedKeyPath
+        }
         
-        ensureValue(for: keyPath)
+        try ensureValue(for: keyPath)
         self[key]!.safelyAndUniquelyAppend(value, toArrayWith: subKey)
     }
 }
 
 // MARK: - Evaluating the equality of `DictionaryType` values
 
-/**
- - returns: `true` if all values in `[H: T]` types are equivalent. Otherwise, `false`.
- */
+/// - returns: `true` if all values in `[H: T]` types are equivalent. Otherwise, `false`.
 public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Equatable
@@ -295,9 +298,8 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return true
 }
 
-/**
- - returns: `true` if any values in `[H: T]` types are not equivalent. Otherwise, `false`.
- */
+
+/// - returns: `true` if any values in `[H: T]` types are not equivalent. Otherwise, `false`.
 public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Equatable
@@ -305,9 +307,7 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return !(lhs == rhs)
 }
 
-/**
- - returns: `true` if all values in `[H: [T]]` types are equivalent. Otherwise, `false`.
- */
+/// - returns: `true` if all values in `[H: [T]]` types are equivalent. Otherwise, `false`.
 public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Collection,
@@ -324,9 +324,7 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return true
 }
 
-/**
- - returns: `true` if any values in `[H: [T]]` types are not equivalent. Otherwise, `false`.
- */
+/// - returns: `true` if any values in `[H: [T]]` types are not equivalent. Otherwise, `false`.
 public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Collection,
@@ -336,9 +334,8 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return !(lhs == rhs)
 }
 
-/**
- - returns: `true` if all values in `[H: [HH: T]]` types are equivalent. Otherwise, `false`.
- */
+
+/// - returns: `true` if all values in `[H: [HH: T]]` types are equivalent. Otherwise, `false`.
 public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: DictionaryType,
@@ -353,9 +350,9 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return true
 }
 
-/**
- - returns: `true` if any values in `[H: [HH: T]]` types are not equivalent. Otherwise, `false`.
- */
+
+/// - returns: `true` if any values in `[H: [HH: T]]` types are not equivalent. Otherwise,
+/// `false`.
 public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: DictionaryType,
@@ -365,9 +362,8 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return !(lhs == rhs)
 }
 
-/**
- - returns: `true` if all values in `[H: [HH: [T]]]` types are equivalent. Otherwise, `false`.
- */
+/// - returns: `true` if all values in `[H: [HH: [T]]]` types are equivalent. Otherwise,
+/// `false`.
 public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: DictionaryType,
@@ -383,10 +379,9 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return true
 }
 
-/**
- - returns: `true` if any values in `[H: [HH: [T]]]` types are not equivalent.
- Otherwise, `false`.
- */
+
+/// - returns: `true` if any values in `[H: [HH: [T]]]` types are not equivalent.
+// Otherwise, `false`.
 public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: DictionaryType,
