@@ -367,8 +367,14 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Value.Value.Index == Int // FIXME: Find a way to do without this constraint
 {
     for (key, lhsDict) in lhs {
-        guard let rhsDict = rhs[key] else { return false }
-        if lhsDict != rhsDict { return false }
+        
+        guard let rhsDict = rhs[key] else {
+            return false
+        }
+        
+        if lhsDict != rhsDict {
+            return false
+        }
     }
     return true
 }
