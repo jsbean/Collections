@@ -64,21 +64,22 @@ extension DictionaryType {
     }
 }
 
-
 extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
     
     // MARK: - Instance Methods
     
-    // TODO: Implement `merged(with:)`
-    
-    /**
-     Merge the contents of the given `dictionary` destructively into this one.
-     
-     - warning: The value of a given key of the given `dictionary` will override that of this
-     one.
-     */
+    /// Merge the contents of the given `dictionary` destructively into this one.
     public mutating func merge(with dictionary: Self) {
         for (k,v) in dictionary { self[k] = v }
+    }
+    
+    
+    /// - returns: A new `Dictionary` with the contents of the given `dictionary` merged `self`
+    /// over those of `self`.
+    public func merged(with dictionary: Self) -> Self {
+        var copy = self
+        copy.merge(with: dictionary)
+        return copy
     }
 }
 
@@ -152,7 +153,6 @@ extension DictionaryType where
      Update the `value` for the given `keyPath`.
      
      - TODO: Use subscript (keyPath: KeyPath) { get set }
-     - TODO: Make `throws`.
      */
     public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
         

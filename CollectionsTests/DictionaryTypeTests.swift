@@ -134,6 +134,16 @@ class DictionaryTypeTests: XCTestCase {
         XCTAssertEqual(a,b)
     }
     
+    func testMergedNewDictOvercomesOriginal() {
+        
+        let a = ["1": 1, "2": 2, "3": 3]
+        let b = ["1": 0 ,"2": 1, "3": 2]
+        let result = a.merged(with: b)
+        let expected = b
+        
+        XCTAssertEqual(result, expected)
+    }
+    
     func testDictionaryInitWithArrays() {
         
         let xs = [0,1,2,3,4]
