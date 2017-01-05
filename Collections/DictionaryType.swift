@@ -16,6 +16,10 @@ public protocol ArrayType: Collection {
 
 extension Array: ArrayType { }
 
+public enum DictinaryTypeError: Error {
+    case illFormedKeyPath
+}
+
 
 /**
  Interface for Dictionary-like structures.
@@ -115,7 +119,11 @@ extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
      
      If this value already exists in desired array, the new value will not be added.
      */
-    public mutating func safelyAndUniquelyAppend(_ value: Value.Element, toArrayWith key: Key) {
+    public mutating func safelyAndUniquelyAppend(
+        _ value: Value.Element,
+        toArrayWith key: Key
+    )
+    {
         
         ensureValue(for: key)
         
@@ -144,6 +152,7 @@ extension DictionaryType where
      Update the `value` for the given `keyPath`.
      
      - TODO: Use subscript (keyPath: KeyPath) { get set }
+     - TODO: Make `throws`.
      */
     public mutating func update(_ value: Value.Value, keyPath: KeyPath) {
         
@@ -188,9 +197,9 @@ extension DictionaryType where
     Value.Value: ArrayType
 {
     
-    /**
-     Ensure that there is an Array-type value for the given `keyPath`.
-     */
+    /// Ensure that there is an Array-type value for the given `keyPath`.
+    ///
+    /// - TODO: Make `throws`.
     public mutating func ensureValue(for keyPath: KeyPath) {
         
         guard
@@ -202,15 +211,15 @@ extension DictionaryType where
         self[key]!.ensureValue(for: subKey)
     }
     
-    /**
-     Append the given `value` to the array at the given `keyPath`.
-     
-     > If no such subdictionary or array exists, these structures will be created.
-     */
+    /// Append the given `value` to the array at the given `keyPath`.
+    ///
+    /// > If no such subdictionary or array exists, these structures will be created.
+    ///
+    /// - TODO: Make `throws`.
     public mutating func safelyAppend(
         _ value: Value.Value.Element,
         toArrayWith keyPath: KeyPath
-        )
+    )
     {
         guard
             let key = keyPath[0] as? Key,
@@ -221,15 +230,15 @@ extension DictionaryType where
         self[key]!.safelyAppend(value, toArrayWith: subKey)
     }
     
-    /**
-     Append the given `values` to the array at the given `keyPath`.
-     
-     > If no such subdictionary or array exists, these structures will be created.
-     */
+    /// Append the given `values` to the array at the given `keyPath`.
+    ///
+    /// > If no such subdictionary or array exists, these structures will be created.
+    ///
+    /// - TODO: Make `throws`.
     public mutating func safelyAppendContents(
         of values: Value.Value,
         toArrayWith keyPath: KeyPath
-        )
+    )
     {
         guard
             let key = keyPath[0] as? Key,
@@ -249,16 +258,15 @@ extension DictionaryType where
     Value.Value.Element: Equatable
 {
     
-    /**
-     Append given `value` to the array at the given `keyPath`, ensuring that there are no
-     duplicates.
-     
-     > If no such subdictionary or array exists, these structures will be created.
-     */
+    /// Append given `value` to the array at the given `keyPath`, ensuring that there are no
+    /// duplicates.
+    ///
+    /// > If no such subdictionary or array exists, these structures will be created.
+    /// - TODO: Make `throws`.
     public mutating func safelyAndUniquelyAppend(
         _ value: Value.Value.Element,
         toArrayWith keyPath: KeyPath
-        )
+    )
     {
         guard
             let key = keyPath[0] as? Key,
