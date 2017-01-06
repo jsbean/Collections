@@ -91,10 +91,28 @@ class DictionaryTypeTests: XCTestCase {
         XCTAssertNotNil(dict[1])
     }
     
+    func testUpdateValueForKeyPathThrowsAllIllFormed() {
+        
+        var dict = ["parent": ["child": 0]]
+        XCTAssertThrowsError(try dict.update(1, keyPath: [1,2]))
+    }
+    
+    func testUpdateValueForKeyPathThrowsRootIllFormed() {
+        
+        var dict = ["parent": ["child": 0]]
+        XCTAssertThrowsError(try dict.update(1, keyPath: ["parent", 0]))
+    }
+    
+    func testUpdateValueForKeyPathThrowsNestedIllFormed() {
+        
+        var dict = ["parent": ["child": 0]]
+        XCTAssertThrowsError(try dict.update(1, keyPath: [1, "child"]))
+    }
+    
     func testUpdateValueForKeyPathStringKeys() {
         
         var dict = ["parent": ["child": 0]]
-        dict.update(1, keyPath: "parent.child")
+        try! dict.update(1, keyPath: "parent.child")
         
         XCTAssertEqual(dict["parent"]!["child"], 1)
     }
@@ -102,9 +120,51 @@ class DictionaryTypeTests: XCTestCase {
     func testUpdateValueForKeyPathHeterogeneousKeys() {
         
         var dict = ["0": [1: 2.0]]
-        dict.update(2.1, keyPath: ["0", 1])
+        try! dict.update(2.1, keyPath: ["0", 1])
         
         XCTAssertEqual(dict["0"]![1], 2.1)
+    }
+    
+    func testMergeNewDictOvercomesOriginal() {
+        
+        var a = ["1": 1, "2": 2, "3": 3]
+        let b = ["1": 0 ,"2": 1, "3": 2]
+        a.merge(with: b)
+
+        XCTAssertEqual(a,b)
+    }
+    
+    func testMergedNewDictOvercomesOriginal() {
+        
+        let a = ["1": 1, "2": 2, "3": 3]
+        let b = ["1": 0 ,"2": 1, "3": 2]
+        let result = a.merged(with: b)
+        let expected = b
+        
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testMergeNestedDict() {
+        
+        var a = ["1": ["a": 0], "2": ["b": 1], "3": ["c": 2]]
+        let b =  ["1": ["a": 2], "2": ["b": 1], "3": ["c": 0]]
+        a.merge(with: b)
+        
+        for (key, subDict) in a {
+            XCTAssertEqual(subDict, b[key]!)
+        }
+    }
+    
+    func testMergedNestedDict() {
+        
+        let a = ["1": ["a": 0], "2": ["b": 1], "3": ["c": 2]]
+        let b =  ["1": ["a": 2], "2": ["b": 1], "3": ["c": 0]]
+        let result = a.merged(with: b)
+        let expected = b
+
+        for (key, subDict) in result {
+            XCTAssertEqual(subDict, expected[key]!)
+        }
     }
     
     func testDictionaryInitWithArrays() {
