@@ -35,8 +35,8 @@
 		07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */; };
 		07690BD91E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
 		07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */; };
-		07690BDC1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
-		07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */; };
+		07690BDC1E0D6F4B0095F1D5 /* AllCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* AllCases.swift */; };
+		07690BDD1E0D6F4B0095F1D5 /* AllCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* AllCases.swift */; };
 		07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
 		07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
 		07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryType.swift */; };
@@ -67,6 +67,14 @@
 		078F49201E0D608800B8F316 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F491E1E0D608800B8F316 /* Subsets.swift */; };
 		078F49221E0D60A400B8F316 /* SubsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F49211E0D60A400B8F316 /* SubsetsTests.swift */; };
 		078F49231E0D60A400B8F316 /* SubsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F49211E0D60A400B8F316 /* SubsetsTests.swift */; };
+		07C5636A1E225EF400E73FB2 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563691E225EF400E73FB2 /* Comparable.swift */; };
+		07C5636B1E225EF400E73FB2 /* Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563691E225EF400E73FB2 /* Comparable.swift */; };
+		07C5636D1E225F5E00E73FB2 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C5636C1E225F5E00E73FB2 /* Equatable.swift */; };
+		07C5636E1E225F5E00E73FB2 /* Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C5636C1E225F5E00E73FB2 /* Equatable.swift */; };
+		07C563701E225FA800E73FB2 /* EnumComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */; };
+		07C563711E225FA800E73FB2 /* EnumComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */; };
+		07C563731E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */; };
+		07C563741E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */; };
 		07C582941DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */; };
 		07C582951DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */; };
 		07C582971DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */; };
@@ -158,7 +166,7 @@
 		07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndices.swift; path = Collections/ElementsAtIndices.swift; sourceTree = "<group>"; };
 		07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ElementsAtIndicesTests.swift; path = CollectionsTests/ElementsAtIndicesTests.swift; sourceTree = "<group>"; };
 		07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceElementsTests.swift; path = CollectionsTests/ReplaceElementsTests.swift; sourceTree = "<group>"; };
-		07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIteration.swift; path = Collections/EnumIteration.swift; sourceTree = "<group>"; };
+		07690BDB1E0D6F4B0095F1D5 /* AllCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AllCases.swift; path = Collections/AllCases.swift; sourceTree = "<group>"; };
 		07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIterationTests.swift; path = CollectionsTests/EnumIterationTests.swift; sourceTree = "<group>"; };
 		07690BEA1E0D97500095F1D5 /* DictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryType.swift; path = Collections/DictionaryType.swift; sourceTree = "<group>"; };
 		07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTypeTests.swift; path = CollectionsTests/DictionaryTypeTests.swift; sourceTree = "<group>"; };
@@ -174,6 +182,10 @@
 		078F491B1E0D5F0300B8F316 /* CombinationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinationsTests.swift; path = CollectionsTests/CombinationsTests.swift; sourceTree = "<group>"; };
 		078F491E1E0D608800B8F316 /* Subsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Subsets.swift; path = Collections/Subsets.swift; sourceTree = "<group>"; };
 		078F49211E0D60A400B8F316 /* SubsetsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SubsetsTests.swift; path = CollectionsTests/SubsetsTests.swift; sourceTree = "<group>"; };
+		07C563691E225EF400E73FB2 /* Comparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Comparable.swift; path = Collections/Comparable.swift; sourceTree = "<group>"; };
+		07C5636C1E225F5E00E73FB2 /* Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Equatable.swift; path = Collections/Equatable.swift; sourceTree = "<group>"; };
+		07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumComparableTests.swift; path = CollectionsTests/EnumComparableTests.swift; sourceTree = "<group>"; };
+		07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumEquatableTests.swift; path = CollectionsTests/EnumEquatableTests.swift; sourceTree = "<group>"; };
 		07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceWrapping.swift; path = Collections/AnySequenceWrapping.swift; sourceTree = "<group>"; };
 		07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceWrappingTests.swift; path = CollectionsTests/AnySequenceWrappingTests.swift; sourceTree = "<group>"; };
 		07C582991DFBC052008BE5D0 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Collections/Stack.swift; sourceTree = "<group>"; };
@@ -242,8 +254,8 @@
 				DB48D1C28DB0350B0CED6B0F /* Supporting Files */,
 				07690BE91E0D96BC0095F1D5 /* Protocols */,
 				07690BE81E0D96AA0095F1D5 /* Structures */,
-				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
-				07690BDB1E0D6F4B0095F1D5 /* EnumIteration.swift */,
+				07C563671E225ECD00E73FB2 /* Enum */,
+				07C563681E225EE500E73FB2 /* Tuple */,
 				078F490C1E0D5C1C00B8F316 /* SequenceExtensions.swift */,
 				078F49121E0D5D4C00B8F316 /* StableSort.swift */,
 				078F491E1E0D608800B8F316 /* Subsets.swift */,
@@ -291,6 +303,25 @@
 				07690BEA1E0D97500095F1D5 /* DictionaryType.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		07C563671E225ECD00E73FB2 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				07690BDB1E0D6F4B0095F1D5 /* AllCases.swift */,
+				07C563691E225EF400E73FB2 /* Comparable.swift */,
+				07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */,
+				07C5636C1E225F5E00E73FB2 /* Equatable.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
+		07C563681E225EE500E73FB2 /* Tuple */ = {
+			isa = PBXGroup;
+			children = (
+				07C582AE1DFBDD67008BE5D0 /* Flipped.swift */,
+			);
+			name = Tuple;
 			sourceTree = "<group>";
 		};
 		162280B92120984627F27291 /* Products */ = {
@@ -362,6 +393,7 @@
 				07690BCF1E0D6A800095F1D5 /* ListProcessingTests.swift */,
 				07690BD51E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift */,
 				07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */,
+				07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
@@ -522,6 +554,7 @@
 				07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
+				07C563711E225FA800E73FB2 /* EnumComparableTests.swift in Sources */,
 				07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */,
 				078F49171E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49111E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
@@ -530,6 +563,7 @@
 				07C582B31DFBE174008BE5D0 /* OrderedDictionaryTests.swift in Sources */,
 				07C582981DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */,
 				07C5829E1DFBC26B008BE5D0 /* StackTests.swift in Sources */,
+				07C563741E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */,
 				078F49051E0D267F00B8F316 /* KeyPathTests.swift in Sources */,
 				07690BBF1E0D64D00095F1D5 /* AdjacentPairsTests.swift in Sources */,
 				078F49231E0D60A400B8F316 /* SubsetsTests.swift in Sources */,
@@ -550,6 +584,7 @@
 				07125DD01E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
+				07C563701E225FA800E73FB2 /* EnumComparableTests.swift in Sources */,
 				07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */,
 				078F49161E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49101E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
@@ -558,6 +593,7 @@
 				07C582B21DFBE174008BE5D0 /* OrderedDictionaryTests.swift in Sources */,
 				07C582971DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */,
 				07C5829D1DFBC26B008BE5D0 /* StackTests.swift in Sources */,
+				07C563731E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */,
 				078F49041E0D267F00B8F316 /* KeyPathTests.swift in Sources */,
 				07690BBE1E0D64D00095F1D5 /* AdjacentPairsTests.swift in Sources */,
 				078F49221E0D60A400B8F316 /* SubsetsTests.swift in Sources */,
@@ -576,11 +612,13 @@
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				07690BD41E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
 				6A35752B1E14590200646220 /* LinkedList.swift in Sources */,
+				07C5636E1E225F5E00E73FB2 /* Equatable.swift in Sources */,
 				07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49021E0D258700B8F316 /* KeyPath.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
+				07C5636B1E225EF400E73FB2 /* Comparable.swift in Sources */,
 				078F49201E0D608800B8F316 /* Subsets.swift in Sources */,
 				07690BBC1E0D64B90095F1D5 /* AdjacentPairs.swift in Sources */,
 				07C5829B1DFBC052008BE5D0 /* Stack.swift in Sources */,
@@ -590,7 +628,7 @@
 				078F490E1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				07C582B01DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
-				07690BDD1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */,
+				07690BDD1E0D6F4B0095F1D5 /* AllCases.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,11 +643,13 @@
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				07690BD31E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
 				6A35752A1E14590200646220 /* LinkedList.swift in Sources */,
+				07C5636D1E225F5E00E73FB2 /* Equatable.swift in Sources */,
 				07690BCD1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49011E0D258700B8F316 /* KeyPath.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
+				07C5636A1E225EF400E73FB2 /* Comparable.swift in Sources */,
 				078F491F1E0D608800B8F316 /* Subsets.swift in Sources */,
 				07690BBB1E0D64B90095F1D5 /* AdjacentPairs.swift in Sources */,
 				07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */,
@@ -619,7 +659,7 @@
 				078F490D1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				07C582AF1DFBDD67008BE5D0 /* Flipped.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
-				07690BDC1E0D6F4B0095F1D5 /* EnumIteration.swift in Sources */,
+				07690BDC1E0D6F4B0095F1D5 /* AllCases.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

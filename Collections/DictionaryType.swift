@@ -28,28 +28,20 @@ public protocol DictionaryType: Collection {
     
     // MARK: - Associated Types
     
-    /**
-     Key type.
-     */
+    /// Key type.
     associatedtype Key: Hashable
     
-    /**
-     Value type.
-     */
+    /// Value type.
     associatedtype Value
     
     // MARK: - Initializers
     
-    /**
-     Create an empty `DictionaryType` value.
-     */
+    /// Create an empty `DictionaryType` value.
     init()
     
     // MARK: - Subscripts
     
-    /**
-     - returns: `Value` for the given `key`, if present. Otherwise, `nil`.
-     */
+    /// - returns: `Value` for the given `key`, if present. Otherwise, `nil`.
     subscript (key: Key) -> Value? { get set }
 }
 
@@ -135,6 +127,9 @@ extension DictionaryType where
     
     /// Ensure there is a value for a given `key`.
     public mutating func ensureValue(for key: Key) {
+        
+        print("ensure value: \(key); type: \(type(of: key))")
+        
         if self[key] == nil {
             self[key] = Value()
         }
@@ -146,6 +141,8 @@ extension DictionaryType where
      - TODO: Use subscript (keyPath: KeyPath) { get set }
      */
     public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
+        
+        print("keyPathTypes: \(keyPath.map { type(of: $0) })")
         
         guard
             let key = keyPath[0] as? Key,

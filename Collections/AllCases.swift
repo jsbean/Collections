@@ -1,5 +1,5 @@
 //
-//  EnumIteration.swift
+//  allCases.swift
 //  Collections
 //
 //  Created by James Bean on 12/23/16.
