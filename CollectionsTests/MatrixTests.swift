@@ -80,4 +80,13 @@ class MatrixTests: XCTestCase {
         XCTAssertEqual(matrix[row: 0], ["top left", "top right"])
         XCTAssertEqual(matrix[column: 1], ["top right", "bottom right"])
     }
+    
+    func testPrint() {
+        var matrix = Matrix(height: 2, width: 2, initial: "")
+        matrix[0,0] = "top left"
+        matrix[0,1] = "top right"
+        matrix[1,0] = "bottom left"
+        matrix[1,1] = "bottom right"
+        print(matrix)
+    }
 }

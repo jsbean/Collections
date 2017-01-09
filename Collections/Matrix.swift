@@ -143,3 +143,38 @@ extension Matrix where T: Equatable {
         return lhs.grid == rhs.grid
     }
 }
+
+extension Matrix: CustomStringConvertible {
+    
+    public var description: String {
+        
+        /// - returns: Whitespace with the given width.
+        func space(_ amount: Int) -> String {
+            return String(repeating: " ", count: amount)
+        }
+
+        /// Returns the width of a string-interpolated representation of any value.
+        ///
+        /// - warning: Assumes primitive type with no fancier `CustomStringConvertible` 
+        /// implementation.
+        func width(_ value: Any) -> Int {
+            return "\(value)".characters.count
+        }
+
+        /// - warning: Don't use `\t`, though. Doesn't register correctly.
+        func format <T> (_ row: [T]) -> String {
+            
+            let separator = "  "
+            
+            let columnWidth = columns
+                .flatMap { $0.flatMap(width) }
+                .max() ?? 0
+
+            return row
+                .map { "\($0)\(separator)\(space(columnWidth - width($0)))" }
+                .joined()
+        }
+        
+        return rows.map(format).joined(separator: "\n")
+    }
+}
