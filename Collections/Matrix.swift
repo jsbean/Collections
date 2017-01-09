@@ -136,7 +136,10 @@ extension Matrix: Collection {
     }
 }
 
-/// - returns: `true` if all values of both matrices are equivalent. Otherwise, `false`.
-public func == <T: Equatable> (lhs: Matrix<T>, rhs: Matrix<T>) -> Bool {
-    return lhs.grid == rhs.grid
+extension Matrix where T: Equatable {
+
+    /// - returns: `true` if all values of both matrices are equivalent. Otherwise, `false`.
+    public static func == (lhs: Matrix, rhs: Matrix) -> Bool {
+        return lhs.grid == rhs.grid
+    }
 }
