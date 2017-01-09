@@ -24,18 +24,12 @@ public struct Matrix <T> {
     
     /// - returns: Array of rows.
     public var rows: [[T]] {
-        return stride(from: 0, to: grid.count, by: columnCount).map { startIndex in
-            let end = grid.endIndex
-            let chunkEnd = grid.index(startIndex, offsetBy: columnCount, limitedBy: end) ?? end
-            return Array(grid[startIndex ..< chunkEnd])
-        }
+        return (0 ..< rowCount).map { self[row: $0] }
     }
     
     /// - returns: Array of columns.
     public var columns: [[T]] {
-        return (0 ..< columnCount).map { column in
-            stride(from: column, to: grid.count, by: columnCount).map { index in grid[index] }
-        }
+        return (0 ..< columnCount).map { self[column: $0] }
     }
     
     /// Create a `Matrix` with the given dimensions and given `defaultValue`.
@@ -70,6 +64,38 @@ public struct Matrix <T> {
         }
     }
     
+    /// Get and set an row of values.
+    public subscript (row row: Int) -> [T] {
+        
+        get {
+            let startIndex = row * columnCount
+            let endIndex = row * columnCount + columnCount
+            return Array(grid[startIndex ..< endIndex])
+        }
+        
+        set {
+            let startIndex = row * columnCount
+            let endIndex = row * columnCount + columnCount
+            grid.replaceSubrange(startIndex ..< endIndex, with: newValue)
+        }
+    }
+    
+    /// Get and set a column of values.
+    public subscript (column column: Int) -> [T] {
+        
+        get {
+            return (0 ..< rowCount).map { index in grid[index * columnCount + column] }
+        }
+        
+        set {
+
+            for i in 0 ..< rowCount {
+                let index = i * columnCount + column
+                grid[index] = newValue[i]
+            }
+        }
+    }
+    
     private func index(_ row: Int, _ column: Int) -> Int? {
         
         guard row < rowCount && column < columnCount else {
@@ -84,7 +110,7 @@ extension Matrix: Collection {
     
     // MARK: - `Collection`
     
-    /// - Index after given index `i`.
+    /// Index after given index `i`.
     public func index(after i: Int) -> Int {
         
         guard i != endIndex else {
@@ -94,12 +120,12 @@ extension Matrix: Collection {
         return i + 1
     }
     
-    /// - Start index.
+    /// Start index.
     public var startIndex: Int {
         return 0
     }
     
-    /// - End index.
+    /// End index.
     public var endIndex: Int {
         return grid.count
     }

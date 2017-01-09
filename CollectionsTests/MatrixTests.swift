@@ -51,7 +51,7 @@ class MatrixTests: XCTestCase {
         XCTAssertFalse(matrix1 == matrix2)
     }
 
-    func testRows() {
+    func testRowsAndColumns() {
         var matrix = Matrix(height: 2, width: 2, initial: "")
         matrix[0,0] = "top left"
         matrix[0,1] = "top right"
@@ -61,5 +61,23 @@ class MatrixTests: XCTestCase {
         XCTAssertEqual(matrix.rows[1], ["bottom left", "bottom right"])
         XCTAssertEqual(matrix.columns[0], ["top left", "bottom left"])
         XCTAssertEqual(matrix.columns[1], ["top right", "bottom right"])
+    }
+    
+    func testRowAndColumnSubscriptsGetter() {
+        var matrix = Matrix(height: 2, width: 2, initial: "")
+        matrix[0,0] = "top left"
+        matrix[0,1] = "top right"
+        matrix[1,0] = "bottom left"
+        matrix[1,1] = "bottom right"
+        XCTAssertEqual(matrix[row: 0], ["top left", "top right"])
+        XCTAssertEqual(matrix[column: 1], ["top right", "bottom right"])
+    }
+    
+    func testRowAndColumnSubscriptsSetter() {
+        var matrix = Matrix(height: 2, width: 2, initial: "")
+        matrix[row: 0] = ["top left", "top right"]
+        matrix[column: 1] = ["top right", "bottom right"]
+        XCTAssertEqual(matrix[row: 0], ["top left", "top right"])
+        XCTAssertEqual(matrix[column: 1], ["top right", "bottom right"])
     }
 }
