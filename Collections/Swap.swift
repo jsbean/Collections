@@ -19,6 +19,7 @@ public func swapped <T> (_ a: T, _ b: T, if predicate: () -> Bool) -> (T, T, Boo
 
 /// If the given predicate if `true`, the given `a` and `b` values are swapped in an `inout`
 /// fasion, and `true` is returned. Otherwise, no `swap` takes place, and `false` is returned.
+@discardableResult
 public func swap <T> (_ a: inout T, _ b: inout T, if predicate: () -> Bool) -> Bool {
     
     if predicate() {
