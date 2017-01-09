@@ -26,5 +26,6 @@ public func swap <T> (_ a: inout T, _ b: inout T, if predicate: () -> Bool) -> B
         swap(&a,&b)
         return true
     }
+    
     return false
 }
