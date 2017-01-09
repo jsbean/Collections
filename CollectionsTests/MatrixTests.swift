@@ -15,7 +15,7 @@ class MatrixTests: XCTestCase {
         
         let amountRows = 2
         let amountColumns = 3
-        var matrix = Matrix(amountRows, amountColumns, initial: 0)
+        var matrix = Matrix(height: amountRows, width: amountColumns, initial: 0)
         
         for row in 0 ..< amountRows {
             for column in 0 ..< amountColumns {
@@ -25,39 +25,41 @@ class MatrixTests: XCTestCase {
     }
     
     func testSubscript() {
-        var matrix = Matrix(2, 3, initial: 0)
+        var matrix = Matrix(height: 2, width: 3, initial: 0)
         matrix[1, 2] = 1
         XCTAssertEqual(matrix[1, 2], 1)
     }
     
     func testSequence() {
-        let matrix = Matrix(3, 3, initial: 0)
+        let matrix = Matrix(height: 3, width: 3, initial: 0)
         XCTAssertEqual(matrix.map { $0 }.count, 9)
     }
     
     func testEquivalenceTrue() {
-        var matrix1 = Matrix(2, 3, initial: 0)
-        var matrix2 = Matrix(2, 3, initial: 0)
+        var matrix1 = Matrix(height: 2, width: 3, initial: 0)
+        var matrix2 = Matrix(height: 2, width: 3, initial: 0)
         matrix1[1, 2] = 1
         matrix2[1, 2] = 1
         XCTAssert(matrix1 == matrix2)
     }
     
     func testEquivalenceFalse() {
-        var matrix1 = Matrix(2, 3, initial: 0)
-        var matrix2 = Matrix(2, 3, initial: 0)
+        var matrix1 = Matrix(height: 2, width: 3, initial: 0)
+        var matrix2 = Matrix(height: 2, width: 3, initial: 0)
         matrix1[1, 2] = 1
         matrix2[1, 2] = 0
         XCTAssertFalse(matrix1 == matrix2)
     }
-    
-    func testSubscriptSetOutOfBounds() {
-        var matrix = Matrix(2, 2, initial: 0)
-        matrix[2,2] = 1
-    }
-    
-    func testSubscriptGetOutOfBounds() {
-        var matrix = Matrix(2, 2, initial: 0)
-        XCTAssertNil(matrix[2,2])
+
+    func testRows() {
+        var matrix = Matrix(height: 2, width: 2, initial: "")
+        matrix[0,0] = "top left"
+        matrix[0,1] = "top right"
+        matrix[1,0] = "bottom left"
+        matrix[1,1] = "bottom right"
+        XCTAssertEqual(matrix.rows[0], ["top left", "top right"])
+        XCTAssertEqual(matrix.rows[1], ["bottom left", "bottom right"])
+        XCTAssertEqual(matrix.columns[0], ["top left", "bottom left"])
+        XCTAssertEqual(matrix.columns[1], ["top right", "bottom right"])
     }
 }

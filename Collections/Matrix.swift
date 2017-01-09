@@ -6,19 +6,40 @@
 //
 //
 
-/// Matrix with user-definable dimensions, parameterized over any type `T`.
+/// 2-dimensional matrix with user-definable dimensions, parameterized over any type `T`.
 ///
 /// - TODO: Conform to `CustomStringConvertible`.
 public struct Matrix <T> {
     
+    /// Amount of rows.
     fileprivate let rowCount: Int
+
+    /// Amount of columns.
     fileprivate let columnCount: Int
+    
+    /// Items of type `T` stored as `[row, row, row, ...]`
     fileprivate var grid: [T] = []
     
     // MARK: - Initializers
     
+    /// - returns: Array of rows.
+    public var rows: [[T]] {
+        return stride(from: 0, to: grid.count, by: columnCount).map { startIndex in
+            let end = grid.endIndex
+            let chunkEnd = grid.index(startIndex, offsetBy: columnCount, limitedBy: end) ?? end
+            return Array(grid[startIndex ..< chunkEnd])
+        }
+    }
+    
+    /// - returns: Array of columns.
+    public var columns: [[T]] {
+        return (0 ..< columnCount).map { column in
+            stride(from: column, to: grid.count, by: columnCount).map { index in grid[index] }
+        }
+    }
+    
     /// Create a `Matrix` with the given dimensions and given `defaultValue`.
-    public init(_ rowCount: Int, _ columnCount: Int, initial: T) {
+    public init(height rowCount: Int, width columnCount: Int, initial: T) {
         self.rowCount = rowCount
         self.columnCount = columnCount
         self.grid = Array(repeating: initial, count: Int(rowCount * columnCount))
@@ -28,12 +49,12 @@ public struct Matrix <T> {
     
     /// Get and set the value for the given `row` and `column`, if these are valid indices.
     /// Otherwise, `nil` is returned or nothing is set.
-    public subscript (row: Int, column: Int) -> T? {
+    public subscript (row: Int, column: Int) -> T {
         
         get {
             
             guard let index = index(row, column) else {
-                return nil
+                fatalError("Index out of bounds")
             }
             
             return grid[index]
@@ -41,11 +62,8 @@ public struct Matrix <T> {
         
         set {
             
-            guard
-                let index = index(row, column),
-                let newValue = newValue
-            else {
-                return
+            guard let index = index(row, column) else {
+                fatalError("Index out of bounds")
             }
             
             grid[index] = newValue
@@ -58,7 +76,7 @@ public struct Matrix <T> {
             return nil
         }
         
-        return row * column + column
+        return row * columnCount + column
     }
 }
 
