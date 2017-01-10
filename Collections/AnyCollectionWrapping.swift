@@ -21,11 +21,6 @@ public protocol AnyCollectionWrapping: Collection {
     
     /// `AnyCollection` wrapper that provides shade for the domain specific implementation.
     var collection: AnyCollection<Element> { get }
-    
-    // MARK: - Initializers
-    
-    /// Create an `AnyCollectionWrapping` with a `Collection`.
-    init <C: Collection> (_ collection: C) where C.Iterator.Element == Element
 }
 
 extension AnyCollectionWrapping {
