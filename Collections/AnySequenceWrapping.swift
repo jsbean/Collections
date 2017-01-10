@@ -35,12 +35,7 @@ public protocol AnySequenceWrapping: Sequence, ExpressibleByArrayLiteral {
     
     // MARK: - Initializers
     
-    /**
-     Create an `AnySequenceType` with a `Sequence` of any type.
-     
-     In the `init` method of the conforming `struct`, set the value of this private variable
-     with the given `sequence`.
-     */
+    /// Create an `AnySequenceWrapping` with a `Sequence`.
     init <S: Sequence> (_ sequence: S) where S.Iterator.Element == Element
 }
 
