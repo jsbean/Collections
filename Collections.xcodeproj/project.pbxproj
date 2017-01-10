@@ -13,6 +13,8 @@
 		07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */; };
 		07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
 		07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
+		0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
+		0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
 		07690BBB1E0D64B90095F1D5 /* AdjacentPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */; };
 		07690BBC1E0D64B90095F1D5 /* AdjacentPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */; };
 		07690BBE1E0D64D00095F1D5 /* AdjacentPairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBD1E0D64D00095F1D5 /* AdjacentPairsTests.swift */; };
@@ -155,6 +157,7 @@
 		07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = Collections/SortedDictionary.swift; sourceTree = "<group>"; };
 		07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = CollectionsTests/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
+		0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnyCollectionWrapping.swift; path = Collections/AnyCollectionWrapping.swift; sourceTree = "<group>"; };
 		07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjacentPairs.swift; path = Collections/AdjacentPairs.swift; sourceTree = "<group>"; };
 		07690BBD1E0D64D00095F1D5 /* AdjacentPairsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjacentPairsTests.swift; path = CollectionsTests/AdjacentPairsTests.swift; sourceTree = "<group>"; };
 		07690BC01E0D65690095F1D5 /* RemoveElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveElements.swift; path = Collections/RemoveElements.swift; sourceTree = "<group>"; };
@@ -300,6 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */,
+				0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */,
 				07690BEA1E0D97500095F1D5 /* DictionaryType.swift */,
 			);
 			name = Protocols;
@@ -628,6 +632,7 @@
 				078F490E1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				07C582B01DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
+				0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
 				07690BDD1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
@@ -659,6 +664,7 @@
 				078F490D1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				07C582AF1DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
+				0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
 				07690BDC1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
 			);
