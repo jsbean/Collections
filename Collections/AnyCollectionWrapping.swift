@@ -10,7 +10,7 @@
 /// structure to wrap any underlying `Collection` implementation.
 ///
 /// As a result, all of the `Collection` boilerplate is done for free.
-public protocol AnyCollectionWrapping: Collection, ExpressibleByArrayLiteral {
+public protocol AnyCollectionWrapping: Collection {
     
     // MARK: - Associated Types
     
