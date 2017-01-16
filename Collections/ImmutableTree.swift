@@ -1,5 +1,5 @@
 //
-//  Tree.swift
+//  ImmutableTree.swift
 //  Collections
 //
 //  Created by James Bean on 12/9/16.
