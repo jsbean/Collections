@@ -59,6 +59,14 @@
 		076D04881E2D35C50023ED96 /* MutableTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04861E2D35C50023ED96 /* MutableTreeTests.swift */; };
 		076D048A1E2D37E20023ED96 /* MutableGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04891E2D37E20023ED96 /* MutableGraph.swift */; };
 		076D048B1E2D37E20023ED96 /* MutableGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04891E2D37E20023ED96 /* MutableGraph.swift */; };
+		076D048E1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D048D1E2D3C1B0023ED96 /* MutableGraph+Node.swift */; };
+		076D048F1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D048D1E2D3C1B0023ED96 /* MutableGraph+Node.swift */; };
+		076D04911E2D3C390023ED96 /* MutableGraph+Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04901E2D3C390023ED96 /* MutableGraph+Edge.swift */; };
+		076D04921E2D3C390023ED96 /* MutableGraph+Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04901E2D3C390023ED96 /* MutableGraph+Edge.swift */; };
+		076D04941E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04931E2D3C560023ED96 /* MutableGraph+EdgeList.swift */; };
+		076D04951E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04931E2D3C560023ED96 /* MutableGraph+EdgeList.swift */; };
+		076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */; };
+		076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */; };
 		077AED171DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED181DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
@@ -194,6 +202,10 @@
 		076D04831E2D34D00023ED96 /* MutableTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTree.swift; path = Collections/MutableTree.swift; sourceTree = "<group>"; };
 		076D04861E2D35C50023ED96 /* MutableTreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeTests.swift; path = CollectionsTests/MutableTreeTests.swift; sourceTree = "<group>"; };
 		076D04891E2D37E20023ED96 /* MutableGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableGraph.swift; path = Collections/MutableGraph.swift; sourceTree = "<group>"; };
+		076D048D1E2D3C1B0023ED96 /* MutableGraph+Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+Node.swift"; path = "Collections/MutableGraph+Node.swift"; sourceTree = "<group>"; };
+		076D04901E2D3C390023ED96 /* MutableGraph+Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+Edge.swift"; path = "Collections/MutableGraph+Edge.swift"; sourceTree = "<group>"; };
+		076D04931E2D3C560023ED96 /* MutableGraph+EdgeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+EdgeList.swift"; path = "Collections/MutableGraph+EdgeList.swift"; sourceTree = "<group>"; };
+		076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+AdjacencyList.swift"; path = "Collections/MutableGraph+AdjacencyList.swift"; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = Collections/Tree.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -309,10 +321,10 @@
 		07690BE81E0D96AA0095F1D5 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				076D048C1E2D3C070023ED96 /* MutableGraph */,
 				077AED161DFB82C9004CDD86 /* Tree.swift */,
 				076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */,
 				076D04831E2D34D00023ED96 /* MutableTree.swift */,
-				076D04891E2D37E20023ED96 /* MutableGraph.swift */,
 				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
 				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
@@ -340,6 +352,18 @@
 				076D045A1E2D1A540023ED96 /* StringExtensions.swift */,
 			);
 			name = String;
+			sourceTree = "<group>";
+		};
+		076D048C1E2D3C070023ED96 /* MutableGraph */ = {
+			isa = PBXGroup;
+			children = (
+				076D04891E2D37E20023ED96 /* MutableGraph.swift */,
+				076D048D1E2D3C1B0023ED96 /* MutableGraph+Node.swift */,
+				076D04901E2D3C390023ED96 /* MutableGraph+Edge.swift */,
+				076D04931E2D3C560023ED96 /* MutableGraph+EdgeList.swift */,
+				076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */,
+			);
+			name = MutableGraph;
 			sourceTree = "<group>";
 		};
 		07C563671E225ECD00E73FB2 /* Enum */ = {
@@ -666,6 +690,7 @@
 				076D04551E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
+				076D04951E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */,
 				07C5636B1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
 				078F49201E0D608800B8F316 /* Subsets.swift in Sources */,
 				076D048B1E2D37E20023ED96 /* MutableGraph.swift in Sources */,
@@ -675,12 +700,15 @@
 				07C582951DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */,
 				07690BC21E0D65690095F1D5 /* RemoveElements.swift in Sources */,
 				078F490E1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
+				076D048F1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
 				076D045C1E2D1A540023ED96 /* StringExtensions.swift in Sources */,
 				07C582B01DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
+				076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDD1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
+				076D04921E2D3C390023ED96 /* MutableGraph+Edge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -702,6 +730,7 @@
 				076D04541E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
+				076D04941E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */,
 				07C5636A1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
 				078F491F1E0D608800B8F316 /* Subsets.swift in Sources */,
 				076D048A1E2D37E20023ED96 /* MutableGraph.swift in Sources */,
@@ -711,12 +740,15 @@
 				07C582941DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */,
 				07690BC11E0D65690095F1D5 /* RemoveElements.swift in Sources */,
 				078F490D1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
+				076D048E1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
 				076D045B1E2D1A540023ED96 /* StringExtensions.swift in Sources */,
 				07C582AF1DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
+				076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDC1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
+				076D04911E2D3C390023ED96 /* MutableGraph+Edge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
