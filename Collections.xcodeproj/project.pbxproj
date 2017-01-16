@@ -53,6 +53,10 @@
 		076D045C1E2D1A540023ED96 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D045A1E2D1A540023ED96 /* StringExtensions.swift */; };
 		076D045E1E2D1ADB0023ED96 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D045D1E2D1ADB0023ED96 /* StringExtensionsTests.swift */; };
 		076D045F1E2D1ADB0023ED96 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D045D1E2D1ADB0023ED96 /* StringExtensionsTests.swift */; };
+		076D04841E2D34D00023ED96 /* MutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04831E2D34D00023ED96 /* MutableTree.swift */; };
+		076D04851E2D34D00023ED96 /* MutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04831E2D34D00023ED96 /* MutableTree.swift */; };
+		076D04871E2D35C50023ED96 /* MutableTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04861E2D35C50023ED96 /* MutableTreeTests.swift */; };
+		076D04881E2D35C50023ED96 /* MutableTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04861E2D35C50023ED96 /* MutableTreeTests.swift */; };
 		077AED171DFB82C9004CDD86 /* ImmutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* ImmutableTree.swift */; };
 		077AED181DFB82C9004CDD86 /* ImmutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* ImmutableTree.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
@@ -185,6 +189,8 @@
 		076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeProtocolTests.swift; path = CollectionsTests/MutableTreeProtocolTests.swift; sourceTree = "<group>"; };
 		076D045A1E2D1A540023ED96 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Collections/StringExtensions.swift; sourceTree = "<group>"; };
 		076D045D1E2D1ADB0023ED96 /* StringExtensionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensionsTests.swift; path = CollectionsTests/StringExtensionsTests.swift; sourceTree = "<group>"; };
+		076D04831E2D34D00023ED96 /* MutableTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTree.swift; path = Collections/MutableTree.swift; sourceTree = "<group>"; };
+		076D04861E2D35C50023ED96 /* MutableTreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeTests.swift; path = CollectionsTests/MutableTreeTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* ImmutableTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImmutableTree.swift; path = Collections/ImmutableTree.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -301,6 +307,7 @@
 			isa = PBXGroup;
 			children = (
 				077AED161DFB82C9004CDD86 /* ImmutableTree.swift */,
+				076D04831E2D34D00023ED96 /* MutableTree.swift */,
 				076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */,
 				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
@@ -399,6 +406,7 @@
 				C3B5E929D2933C7995C19611 /* Supporting Files */,
 				077AED191DFB8520004CDD86 /* TreeTests.swift */,
 				076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */,
+				076D04861E2D35C50023ED96 /* MutableTreeTests.swift */,
 				6A35752C1E14592B00646220 /* LinkedListTests.swift */,
 				07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */,
 				07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */,
@@ -580,6 +588,7 @@
 				07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */,
 				07C582AA1DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
 				6A3575301E14594700646220 /* LinkedListTests.swift in Sources */,
+				076D04881E2D35C50023ED96 /* MutableTreeTests.swift in Sources */,
 				07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
@@ -612,6 +621,7 @@
 				07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */,
 				07C582A91DFBD079008BE5D0 /* MatrixTests.swift in Sources */,
 				6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */,
+				076D04871E2D35C50023ED96 /* MutableTreeTests.swift in Sources */,
 				07125DD01E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
@@ -640,6 +650,7 @@
 			files = (
 				07125DCE1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
 				07690BCB1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
+				076D04851E2D34D00023ED96 /* MutableTree.swift in Sources */,
 				07C582A11DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A71DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				07690BD41E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
@@ -674,6 +685,7 @@
 			files = (
 				07125DCD1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
 				07690BCA1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
+				076D04841E2D34D00023ED96 /* MutableTree.swift in Sources */,
 				07C582A01DFBC635008BE5D0 /* SortedArray.swift in Sources */,
 				07C582A61DFBC9D6008BE5D0 /* Matrix.swift in Sources */,
 				07690BD31E0D6B720095F1D5 /* ElementsAtIndices.swift in Sources */,
