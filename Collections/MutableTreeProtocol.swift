@@ -24,7 +24,7 @@ public enum MutableTreeError: Error {
 ///
 /// Provides default implementations for many tree structure operations.
 ///
-/// > Useful for `final class` types.
+/// > Useable only by `final class` types.
 public protocol MutableTreeProtocol: class {
     
     // MARK: - Instance Properties
