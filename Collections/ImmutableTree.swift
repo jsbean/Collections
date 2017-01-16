@@ -1,12 +1,12 @@
 //
-//  Tree.swift
+//  ImmutableTree.swift
 //  Collections
 //
 //  Created by James Bean on 12/9/16.
 //
 //
 
-/// Node in tree structure
+/// Value-semantic, immutable Tree structure.
 public enum Tree <T> {
     
     // MARK: - Cases

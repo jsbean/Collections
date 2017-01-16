@@ -45,8 +45,12 @@
 		07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryType.swift */; };
 		07690BEE1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */; };
 		07690BEF1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */; };
-		077AED171DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
-		077AED181DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
+		076D04541E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */; };
+		076D04551E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */; };
+		076D04571E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */; };
+		076D04581E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */; };
+		077AED171DFB82C9004CDD86 /* ImmutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* ImmutableTree.swift */; };
+		077AED181DFB82C9004CDD86 /* ImmutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* ImmutableTree.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
 		077AED1B1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
 		078F49011E0D258700B8F316 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F49001E0D258700B8F316 /* KeyPath.swift */; };
@@ -173,7 +177,9 @@
 		07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIterationTests.swift; path = CollectionsTests/EnumIterationTests.swift; sourceTree = "<group>"; };
 		07690BEA1E0D97500095F1D5 /* DictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryType.swift; path = Collections/DictionaryType.swift; sourceTree = "<group>"; };
 		07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTypeTests.swift; path = CollectionsTests/DictionaryTypeTests.swift; sourceTree = "<group>"; };
-		077AED161DFB82C9004CDD86 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = Collections/Tree.swift; sourceTree = "<group>"; };
+		076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeProtocol.swift; path = Collections/MutableTreeProtocol.swift; sourceTree = "<group>"; };
+		076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeProtocolTests.swift; path = CollectionsTests/MutableTreeProtocolTests.swift; sourceTree = "<group>"; };
+		077AED161DFB82C9004CDD86 /* ImmutableTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImmutableTree.swift; path = Collections/ImmutableTree.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
 		078F49031E0D267F00B8F316 /* KeyPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPathTests.swift; path = CollectionsTests/KeyPathTests.swift; sourceTree = "<group>"; };
@@ -287,7 +293,8 @@
 		07690BE81E0D96AA0095F1D5 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
-				077AED161DFB82C9004CDD86 /* Tree.swift */,
+				077AED161DFB82C9004CDD86 /* ImmutableTree.swift */,
+				076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */,
 				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
 				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
@@ -376,6 +383,7 @@
 			children = (
 				C3B5E929D2933C7995C19611 /* Supporting Files */,
 				077AED191DFB8520004CDD86 /* TreeTests.swift */,
+				076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */,
 				6A35752C1E14592B00646220 /* LinkedListTests.swift */,
 				07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */,
 				07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */,
@@ -550,6 +558,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D04581E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
 				07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */,
@@ -580,6 +589,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D04571E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
 				07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */,
@@ -620,7 +630,8 @@
 				07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49021E0D258700B8F316 /* KeyPath.swift in Sources */,
-				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
+				076D04551E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
+				077AED181DFB82C9004CDD86 /* ImmutableTree.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				07C5636B1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
 				078F49201E0D608800B8F316 /* Subsets.swift in Sources */,
@@ -652,7 +663,8 @@
 				07690BCD1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49011E0D258700B8F316 /* KeyPath.swift in Sources */,
-				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
+				076D04541E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
+				077AED171DFB82C9004CDD86 /* ImmutableTree.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				07C5636A1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
 				078F491F1E0D608800B8F316 /* Subsets.swift in Sources */,

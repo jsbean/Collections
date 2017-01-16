@@ -21,6 +21,8 @@
 ///
 /// In the `init` method of the conforming `struct`, set the value of this private `var` with 
 /// the given `sequence`.
+/// 
+/// - TODO: Consider removing `ExpressibleByArrayLiteral` and `init` requirements.
 public protocol AnySequenceWrapping: Sequence, ExpressibleByArrayLiteral {
     
     // MARK: Associated Types
