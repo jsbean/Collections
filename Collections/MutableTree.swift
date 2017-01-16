@@ -27,7 +27,7 @@ public class MutableTree {
     // MARK: - Instance Properties
     
     /// Parent `MutableTree`. The root of a tree has no parent.
-    public var parent: MutableTree?
+    public weak var parent: MutableTree?
     
     /// Children `MutableTree` objects.
     public var children: [MutableTree]
