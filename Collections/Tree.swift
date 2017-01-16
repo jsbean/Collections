@@ -6,7 +6,7 @@
 //
 //
 
-/// Node in tree structure
+/// Value-semantic, immutable Tree structure.
 public enum Tree <T> {
     
     // MARK: - Cases
