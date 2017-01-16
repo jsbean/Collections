@@ -67,6 +67,8 @@
 		076D04951E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04931E2D3C560023ED96 /* MutableGraph+EdgeList.swift */; };
 		076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */; };
 		076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */; };
+		076D049A1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04991E2D3D310023ED96 /* MutableGraphTests.swift */; };
+		076D049B1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04991E2D3D310023ED96 /* MutableGraphTests.swift */; };
 		077AED171DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED181DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
@@ -206,6 +208,7 @@
 		076D04901E2D3C390023ED96 /* MutableGraph+Edge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+Edge.swift"; path = "Collections/MutableGraph+Edge.swift"; sourceTree = "<group>"; };
 		076D04931E2D3C560023ED96 /* MutableGraph+EdgeList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+EdgeList.swift"; path = "Collections/MutableGraph+EdgeList.swift"; sourceTree = "<group>"; };
 		076D04961E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "MutableGraph+AdjacencyList.swift"; path = "Collections/MutableGraph+AdjacencyList.swift"; sourceTree = "<group>"; };
+		076D04991E2D3D310023ED96 /* MutableGraphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableGraphTests.swift; path = Collections/MutableGraphTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = Collections/Tree.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
@@ -433,6 +436,7 @@
 			children = (
 				C3B5E929D2933C7995C19611 /* Supporting Files */,
 				077AED191DFB8520004CDD86 /* TreeTests.swift */,
+				076D04991E2D3D310023ED96 /* MutableGraphTests.swift */,
 				076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */,
 				076D04861E2D35C50023ED96 /* MutableTreeTests.swift */,
 				6A35752C1E14592B00646220 /* LinkedListTests.swift */,
@@ -610,6 +614,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D049B1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */,
 				076D04581E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
 				07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
@@ -643,6 +648,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				076D049A1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */,
 				076D04571E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
 				07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,

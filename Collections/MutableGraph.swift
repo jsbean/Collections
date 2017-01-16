@@ -31,7 +31,7 @@ public class MutableGraph {
     // MARK: - Instance Methods
     
     /// Add the given `vertex`.
-    public func addVertex(vertex: Node) {
+    public func addVertex(_ vertex: Node) {
         adjacencyList.addVertex(vertex)
     }
     

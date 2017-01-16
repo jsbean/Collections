@@ -9,6 +9,6 @@
 extension MutableGraph {
     
     public class Node {
-        init() { }
+        public init() { }
     }
 }
