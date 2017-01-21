@@ -9,7 +9,9 @@ env:
     - DESTINATION="platform=OS X" 
       SCHEME="Collections macOS"
 
-before_script: if [ -f ./Cartfile ]; then carthage update; fi;
+before_script: 
+  - if [ -f ./Cartfile ]; then carthage update; fi;
+  - gem instal jazzy
 
 script: travis_retry xcodebuild test 
   -project Collections.xcodeproj
