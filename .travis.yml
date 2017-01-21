@@ -22,12 +22,7 @@ script: travis_retry xcodebuild test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
   - jazzy
-  - cd docs
-  - ls
-  - cd ../
   - git clone https://github.com/dn-m/dn-m.github.io
   - cd dn-m.github.io
-  - ls
-  - cd ../
-  - cd docs
-  
+  - git checkout -b test
+  - git push origin test
