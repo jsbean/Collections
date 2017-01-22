@@ -29,6 +29,8 @@ after_success:
 - cp -r docs dn-m.github.io/Collections
 
 - cd dn-m.github.io
+- git add .
+- git commit -m "Update docs"
 - git push origin master
 
 
