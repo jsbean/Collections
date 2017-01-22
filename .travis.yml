@@ -13,17 +13,22 @@ before_script:
 
 script: travis_retry xcodebuild test -project Collections.xcodeproj -scheme "${SCHEME}"
   -destination "${DESTINATION}" TOOLCHAINS=swift
-  
+
 after_success:
 
 - bash <(curl -s https://codecov.io/bash)
 - gem install jazzy
 
-- git clone https://github.com/dn-m/dn-m.github.io
-- cd dn-m.github.io
-- git checkout -b test
+
 - git config credential.helper "store --file=.git/credentials"
 - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-- git push origin test
 
-# - jazzy
+- git clone https://github.com/dn-m/dn-m.github.io
+
+- jazzy
+- cp -r docs dn-m.github.io/Collections
+
+- cd dn-m.github.io
+- git push origin master
+
+
