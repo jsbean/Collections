@@ -18,11 +18,6 @@ script: travis_retry xcodebuild test -project Collections.xcodeproj -scheme "${S
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - gem install jazzy
-
-#- git config credential.helper "store --file=.git/credentials"
-#- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
-
-
 - git clone https://${GH_TOKEN}@github.com/dn-m/dn-m.github.io.git
 - jazzy
 - cp -r docs dn-m.github.io/Collections
