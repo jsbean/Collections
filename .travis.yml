@@ -7,14 +7,21 @@ env:
     iOS"
   - DESTINATION="platform=OS X" SCHEME="Collections macOS"
   global:
-  - secure: lo7bW1LAwGWD7hiaWiDboR4WMznDD01MiYKEgVMJDyOHhZgC6v+eWCAE73DRoLtBoALCQ+pTXJXKUlQZtoXr+7U0vCLsXlVAXv/wNWg7sgj8avjKO60RJanapb9l8sHgj5gHU0/xm1NE3uSaUaX2ZBRbrV2KexOiRGpMcYFdjJgunFhG4Ie+O4zW+7XzVd9cTw14gf3/Ogb0DvPomEWm/TRXL8NX3vH6Nz5RQ5JUGJeSJ7PGuqVBIx2YTBgp6GPe0WT1p5M0wJ/HArzE9p8xsMI86hyz0iuKLuYNXaYxNwMKkoXASricyNLULhTn7umMX4nOw2+2tRXDvLtG6o6ean2FxOqFxCrw5akzzk0wDWWVILv90IEDyiNs+CXiVxw+vrNRGK5Sw/k1wnXZk2tSc9TEL4jWkk1cltknvjeLUJyzND5Yk7jy3q9j4S7sjN+qAP5U19YIuJ9KqHqmzFVlPrVAARUp5vtBPr2n+E5JH3SzajW0HslHiFg6mMue1rcgEZ3rR9cu1/VHK79K6KJmeehH9AZ9DwAoJGryMkr84pcQhq4gYYwoncDdnch0qbSa0+/HhvIpmRR71F37aLQM7hKrbULP6LeTRo1NkdSAVebNx9KgqrEfn7OdF633cY1pbt5t2kzWiBLNi4z016KPDEb1k7B9fpWawo++A8h+uzQ=
+  - secure: "lo7bW1LAwGWD7hiaWiDboR4WMznDD01MiYKEgVMJDyOHhZgC6v+eWCAE73DRoLtBoALCQ+pTXJXKUlQZtoXr+7U0vCLsXlVAXv/wNWg7sgj8avjKO60RJanapb9l8sHgj5gHU0/xm1NE3uSaUaX2ZBRbrV2KexOiRGpMcYFdjJgunFhG4Ie+O4zW+7XzVd9cTw14gf3/Ogb0DvPomEWm/TRXL8NX3vH6Nz5RQ5JUGJeSJ7PGuqVBIx2YTBgp6GPe0WT1p5M0wJ/HArzE9p8xsMI86hyz0iuKLuYNXaYxNwMKkoXASricyNLULhTn7umMX4nOw2+2tRXDvLtG6o6ean2FxOqFxCrw5akzzk0wDWWVILv90IEDyiNs+CXiVxw+vrNRGK5Sw/k1wnXZk2tSc9TEL4jWkk1cltknvjeLUJyzND5Yk7jy3q9j4S7sjN+qAP5U19YIuJ9KqHqmzFVlPrVAARUp5vtBPr2n+E5JH3SzajW0HslHiFg6mMue1rcgEZ3rR9cu1/VHK79K6KJmeehH9AZ9DwAoJGryMkr84pcQhq4gYYwoncDdnch0qbSa0+/HhvIpmRR71F37aLQM7hKrbULP6LeTRo1NkdSAVebNx9KgqrEfn7OdF633cY1pbt5t2kzWiBLNi4z016KPDEb1k7B9fpWawo++A8h+uzQ="
+
 before_script:
 - if [ -f ./Cartfile ]; then carthage update; fi;
-- gem instal jazzy
+
 script: travis_retry xcodebuild test -project Collections.xcodeproj -scheme "${SCHEME}"
   -destination "${DESTINATION}" TOOLCHAINS=swift
+
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+- git config credential.helper "store --file=.git/credentials"
+
+- gem instal jazzy
+- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 - jazzy
 - git clone https://github.com/dn-m/dn-m.github.io
 - cd dn-m.github.io
