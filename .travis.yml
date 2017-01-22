@@ -15,12 +15,13 @@ script: travis_retry xcodebuild test -project Collections.xcodeproj -scheme "${S
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 - gem install jazzy
-- git config credential.helper "store --file=.git/credentials"
-- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
 
-- cd $HOME
-- git config --global user.email "travis@travis-ci.org"
-- git config --global user.name "travis-ci"
+#- git config credential.helper "store --file=.git/credentials"
+#- echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+
+- git config user.name "travis-ci"
+- git config user.email "jbean46@gmail.com"
+
 - git clone https://github.com/dn-m/dn-m.github.io
 - jazzy
 - cp -r docs dn-m.github.io/Collections
