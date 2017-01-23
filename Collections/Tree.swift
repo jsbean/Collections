@@ -44,6 +44,7 @@ public enum Tree <T> {
 
 extension Tree: CustomStringConvertible {
     
+    /// Printed description.
     public var description: String {
         
         func indents(_ amount: Int) -> String {
