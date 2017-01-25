@@ -73,19 +73,23 @@ categories = {
 
 categories.each do |category, frameworks|
   
-  category_node = page.css(".nav-groups")[0]
+  categories_node = page.css(".nav-groups")[0]
 
-  child = category_node.add_child '
+  category_node = categories_node.add_child '
     <li class="nav-group-name" id="' + category + '"></li>
       <span class="nav-group-name-link">' + category + '</span>
       <ul class="nav-group-tasks"></ul>
     </li>
   '
 
+  # Add link!
   frameworks.each do |framework|
-    child.css(".nav-group-tasks")[0].add_child '
+
+    link = "https://github.com/dn-m/#{framework}"
+
+    category_node.css(".nav-group-tasks")[0].add_child '
       <li class="nav-group-task">
-        <span class="nav-group-task-link">' + framework + '</span>
+        <a class="nav-group-task-link" href="' + link + '">' + framework + '</a>
       </li>
     '
     puts framework
