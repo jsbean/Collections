@@ -22,8 +22,12 @@ script: travis_retry xcodebuild test
 
 after_success:
 - bash <(curl -s https://codecov.io/bash)
+
+
 - git config --global user.name "jsbean"
 - git config --global user.email "jbean46@gmail.com"
+
+# Encapsulate into own shell script
 - gem install jazzy
 - git clone https://${GH_TOKEN}@github.com/dn-m/dn-m.github.io.git
 - jazzy
