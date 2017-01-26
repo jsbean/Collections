@@ -28,6 +28,7 @@ after_success:
 - git clone https://${GH_TOKEN}@github.com/dn-m/dn-m.github.io.git -b nuke
 - jazzy
 - cd dn-m.github.io
+- git pull origin nuke
 - git add .
 - git commit -m "Update docs"
 - git push origin nuke
