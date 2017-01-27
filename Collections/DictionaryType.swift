@@ -21,9 +21,7 @@ public enum DictionaryTypeError: Error {
 }
 
 
-/**
- Interface for Dictionary-like structures.
- */
+/// Interface for Dictionary-like structures.
 public protocol DictionaryType: Collection {
     
     // MARK: - Associated Types
@@ -141,15 +139,15 @@ extension DictionaryType where
     public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
 
         guard
-            keyPath.count == 2,
+            keyPath.count >= 2,
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
             throw DictionaryTypeError.illFormedKeyPath
         }
         
-        self.ensureValue(for: key)
-        self[key]?[subKey] = value
+        ensureValue(for: key)
+        self[key]![subKey] = value
     }
 }
 

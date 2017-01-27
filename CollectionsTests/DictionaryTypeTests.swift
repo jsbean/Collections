@@ -97,6 +97,18 @@ class DictionaryTypeTests: XCTestCase {
         XCTAssertThrowsError(try dict.update(1, keyPath: [1,2]))
     }
     
+    func testEnsureValueForKeyPathIllFormedBadTypes() {
+        
+        var dict: Dictionary<String, Dictionary<Int, Any>> = [:]
+        XCTAssertThrowsError(try dict.update("value", keyPath: [1, "root"]))
+    }
+    
+    func testEnsureValueForKeyPathIllFormedBadKeyPathCount() {
+        
+        var dict: Dictionary<String, Dictionary<Int, Any>> = [:]
+        XCTAssertThrowsError(try dict.update("value", keyPath: [1]))
+    }
+    
     func testUpdateValueForKeyPathThrowsRootIllFormed() {
         
         var dict = ["parent": ["child": 0]]
