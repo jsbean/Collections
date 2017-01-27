@@ -52,6 +52,14 @@ extension DictionaryType {
         self.init()
         zip(xs, ys).forEach { key, value in self[key] = value }
     }
+    
+    /// Create a `DictionaryType` with an array of tuples.
+    public init(_ keysAndValues: [(Key, Value)]) {
+        self.init()
+        for (key, value) in keysAndValues {
+            self[key] = value
+        }
+    }
 }
 
 extension DictionaryType where Iterator.Element == (key: Key, value: Value) {

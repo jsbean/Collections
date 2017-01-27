@@ -190,6 +190,12 @@ class DictionaryTypeTests: XCTestCase {
         XCTAssertEqual(dict[4], "e")
     }
     
+    func testDictionaryInitWithArrayOfTuples() {
+        
+        let keysAndValues = [(1, "one"), (2, "two"), (3, "three")]
+        _ = Dictionary(keysAndValues)
+    }
+    
     func testSortedDictionaryInitWithArraysSorted() {
         
         let xs = [0,3,4,1,2]
