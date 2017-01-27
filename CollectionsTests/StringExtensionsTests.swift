@@ -53,4 +53,34 @@ class StringExtensionsTests: XCTestCase {
         let newVal: String? = string[2]
         XCTAssertEqual(newVal, "r")
     }
+    
+    func testIndentSingleLine() {
+        var string = "abc"
+        string.indent(prefix: "  ")
+        XCTAssertEqual(string, "  abc\n")
+    }
+    
+    func testIndentedSeveralLines() {
+        var string = "abc\ndef\nghi\njkl"
+        string.indent(prefix: "  ")
+        XCTAssertEqual(string, "  abc\n  def\n  ghi\n  jkl\n")
+    }
+    
+    func testPerformanceMutableBigFile() {
+ 
+        var lines = (0..<1000)
+            .map { _ in "abcdefghijklmnopqrstuvwxyz" }
+            .joined(separator: "\n")
+
+        measure { lines.indent(prefix: "  ") }
+    }
+    
+    func testPerformanceImmutableBigFile() {
+        
+        let lines = (0..<1000)
+            .map { _ in "abcdefghijklmnopqrstuvwxyz" }
+            .joined(separator: "\n")
+
+        measure { _ = lines.indented(prefix: "  ") }
+    }
 }
