@@ -11,19 +11,17 @@ public protocol ArrayType: Collection {
     init()
     mutating func append(_ element: Element)
     mutating func append<S: Sequence> (contentsOf newElements: S) where
-    S.Iterator.Element == Iterator.Element
+        S.Iterator.Element == Iterator.Element
 }
 
 extension Array: ArrayType { }
 
-public enum DictinaryTypeError: Error {
+public enum DictionaryTypeError: Error {
     case illFormedKeyPath
 }
 
 
-/**
- Interface for Dictionary-like structures.
- */
+/// Interface for Dictionary-like structures.
 public protocol DictionaryType: Collection {
     
     // MARK: - Associated Types
@@ -128,8 +126,6 @@ extension DictionaryType where
     /// Ensure there is a value for a given `key`.
     public mutating func ensureValue(for key: Key) {
         
-        print("ensure value: \(key); type: \(type(of: key))")
-        
         if self[key] == nil {
             self[key] = Value()
         }
@@ -141,18 +137,17 @@ extension DictionaryType where
      - TODO: Use subscript (keyPath: KeyPath) { get set }
      */
     public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
-        
-        print("keyPathTypes: \(keyPath.map { type(of: $0) })")
-        
+
         guard
+            keyPath.count >= 2,
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictinaryTypeError.illFormedKeyPath
+            throw DictionaryTypeError.illFormedKeyPath
         }
         
-        self.ensureValue(for: key)
-        self[key]?[subKey] = value
+        ensureValue(for: key)
+        self[key]![subKey] = value
     }
 }
 
@@ -199,7 +194,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictinaryTypeError.illFormedKeyPath
+            throw DictionaryTypeError.illFormedKeyPath
         }
         
         ensureValue(for: key)
@@ -218,7 +213,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictinaryTypeError.illFormedKeyPath
+            throw DictionaryTypeError.illFormedKeyPath
         }
         
         try ensureValue(for: keyPath)
@@ -237,7 +232,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictinaryTypeError.illFormedKeyPath
+            throw DictionaryTypeError.illFormedKeyPath
         }
         
         try ensureValue(for: keyPath)
@@ -266,7 +261,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictinaryTypeError.illFormedKeyPath
+            throw DictionaryTypeError.illFormedKeyPath
         }
         
         try ensureValue(for: keyPath)
