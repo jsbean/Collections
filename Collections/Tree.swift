@@ -24,8 +24,8 @@ public enum Tree <T> {
         
         func flattened(accum: [T], node: Tree) -> [T] {
             switch node {
-            case .branch(_, let children):
-                return children.reduce(accum, flattened)
+            case .branch(_, let nodes):
+                return nodes.reduce(accum, flattened)
             case .leaf(let value):
                 return accum + [value]
             }
@@ -56,10 +56,10 @@ extension Tree: CustomStringConvertible {
             switch node {
             case .leaf(let value):
                 return indents(indentation) + "\(value)"
-            case .branch(let value, let children):
+            case .branch(let value, let nodes):
                 return (
                     indents(indentation) + "\(value): (\n" +
-                    children
+                    nodes
                         .map { traverse(node: $0, indentation: indentation + 1) }
                         .joined(separator: "\n") +
                     "\n" + indents(indentation) + ")"
