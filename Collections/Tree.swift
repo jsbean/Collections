@@ -12,7 +12,7 @@ public enum Tree <T> {
     // MARK: - Cases
     
     /// Container node.
-    case container([Tree])
+    indirect case container(T, [Tree])
     
     /// Leaf node.
     case leaf(T)
@@ -24,7 +24,7 @@ public enum Tree <T> {
         
         func flattened(accum: [T], node: Tree) -> [T] {
             switch node {
-            case .container(let children):
+            case .container(_, let children):
                 return children.reduce(accum, flattened)
             case .leaf(let value):
                 return accum + [value]
@@ -37,8 +37,8 @@ public enum Tree <T> {
     // MARK: - Initializers
     
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
-    public init <S: Sequence> (_ sequence: S) where S.Iterator.Element == T {
-        self = .container(sequence.map(Tree.leaf))
+    public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
+        self = .container(value, sequence.map(Tree.leaf))
     }
 }
 
@@ -56,9 +56,9 @@ extension Tree: CustomStringConvertible {
             switch node {
             case .leaf(let value):
                 return indents(indentation) + "\(value)"
-            case .container(let children):
+            case .container(let value, let children):
                 return (
-                    indents(indentation) + "(\n" +
+                    indents(indentation) + "\(value): (\n" +
                     children
                         .map { traverse(node: $0, indentation: indentation + 1) }
                         .joined(separator: "\n") +
