@@ -18,9 +18,9 @@ class TreeNodeTests: XCTestCase {
     func testInitWithSequence() {
         
         let seq = [1,2,3,4,5]
-        let container = Tree(0, seq)
+        let branch = Tree(0, seq)
         
-        guard case .container = container else {
+        guard case .branch = branch else {
             XCTFail()
             return
         }
@@ -31,29 +31,29 @@ class TreeNodeTests: XCTestCase {
         XCTAssertEqual(leaf.leaves, [1])
     }
     
-    func testLeavesContainerSingleChild() {
-        let container: Tree = .container(0, [.leaf(1)])
+    func testLeavesBranchSingleChild() {
+        let container: Tree = .branch(0, [.leaf(1)])
         XCTAssertEqual(container.leaves, [1])
     }
     
-    func testLeavesContainerMultipleChildren() {
-        let container = Tree.container(0, [.leaf(1), .leaf(2), .leaf(3)])
+    func testLeavesBranchMultipleTrees() {
+        let container = Tree.branch(0, [.leaf(1), .leaf(2), .leaf(3)])
         XCTAssertEqual(container.leaves, [1,2,3])
     }
     
     func testLeavesMultipleDepth() {
         
-        let container = Tree.container(0, [
+        let container = Tree.branch(0, [
             .leaf(1),
-            .container(0, [
+            .branch(0, [
                 .leaf(2),
                 .leaf(3),
                 .leaf(4)
             ]),
             .leaf(5),
-            .container(0, [
+            .branch(0, [
                 .leaf(6),
-                .container(0, [
+                .branch(0, [
                     .leaf(7),
                     .leaf(8)
                 ])
