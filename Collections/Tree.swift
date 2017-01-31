@@ -22,16 +22,16 @@ public enum Tree <T> {
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
         
-        func flattened(accum: [T], node: Tree) -> [T] {
-            switch node {
-            case .branch(_, let nodes):
-                return nodes.reduce(accum, flattened)
+        func flattened(accum: [T], tree: Tree) -> [T] {
+            switch tree {
+            case .branch(_, let trees):
+                return trees.reduce(accum, flattened)
             case .leaf(let value):
                 return accum + [value]
             }
         }
         
-        return flattened(accum: [], node: self)
+        return flattened(accum: [], tree: self)
     }
     
     // MARK: - Initializers
@@ -51,22 +51,22 @@ extension Tree: CustomStringConvertible {
             return (0 ..< amount).reduce("") { accum, _ in accum + "  " }
         }
         
-        func traverse(node: Tree, indentation: Int = 0) -> String {
+        func traverse(tree: Tree, indentation: Int = 0) -> String {
             
-            switch node {
+            switch tree {
             case .leaf(let value):
                 return indents(indentation) + "\(value)"
-            case .branch(let value, let nodes):
+            case .branch(let value, let trees):
                 return (
                     indents(indentation) + "\(value): (\n" +
-                    nodes
-                        .map { traverse(node: $0, indentation: indentation + 1) }
+                    trees
+                        .map { traverse(tree: $0, indentation: indentation + 1) }
                         .joined(separator: "\n") +
                     "\n" + indents(indentation) + ")"
                 )
             }
         }
         
-        return traverse(node: self)
+        return traverse(tree: self)
     }
 }

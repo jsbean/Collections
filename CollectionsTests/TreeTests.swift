@@ -31,12 +31,12 @@ class TreeNodeTests: XCTestCase {
         XCTAssertEqual(leaf.leaves, [1])
     }
     
-    func testLeavesContainerSingleChild() {
+    func testLeavesBranchSingleChild() {
         let container: Tree = .branch(0, [.leaf(1)])
         XCTAssertEqual(container.leaves, [1])
     }
     
-    func testLeavesBranchMultipleNodes() {
+    func testLeavesBranchMultipleTrees() {
         let container = Tree.branch(0, [.leaf(1), .leaf(2), .leaf(3)])
         XCTAssertEqual(container.leaves, [1,2,3])
     }
