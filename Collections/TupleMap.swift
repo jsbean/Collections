@@ -18,12 +18,12 @@ public func map <T, U> (_ a: T, _ b: T, _ c: T, _ f: (T) -> U) -> (U, U, U) {
     return (f(a), f(b), f(c))
 }
 
-/// Applies the given transform `f` to values with the given tuple `values`.
+/// Applies the given transform `f` to each value of the given tuple `values`.
 public func map <T, U> (_ values: (T, T), _ f: (T) -> U) -> (U, U) {
     return (f(values.0), f(values.1))
 }
 
-    /// Applies the given transform `f` to values with the given tuple `values`.
+/// Applies the given transform `f` to each value of the given tuple `values`.
 public func map <T, U> (_ values: (T, T, T), _ f: (T) -> U) -> (U, U, U) {
     return (f(values.0), f(values.1), f(values.2))
 }
