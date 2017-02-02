@@ -13,6 +13,10 @@
 		07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */; };
 		07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
 		07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
+		074309711E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
+		074309721E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
+		074309741E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
+		074309751E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
 		0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
 		0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
 		07690BBB1E0D64B90095F1D5 /* AdjacentPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */; };
@@ -181,6 +185,8 @@
 		07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = Collections/SortedDictionary.swift; sourceTree = "<group>"; };
 		07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = CollectionsTests/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
+		074309701E43914E002B88A1 /* TupleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMap.swift; path = Collections/TupleMap.swift; sourceTree = "<group>"; };
+		074309731E43922D002B88A1 /* TupleMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMapTests.swift; path = CollectionsTests/TupleMapTests.swift; sourceTree = "<group>"; };
 		0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnyCollectionWrapping.swift; path = Collections/AnyCollectionWrapping.swift; sourceTree = "<group>"; };
 		07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjacentPairs.swift; path = Collections/AdjacentPairs.swift; sourceTree = "<group>"; };
 		07690BBD1E0D64D00095F1D5 /* AdjacentPairsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjacentPairsTests.swift; path = CollectionsTests/AdjacentPairsTests.swift; sourceTree = "<group>"; };
@@ -383,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				07C582AE1DFBDD67008BE5D0 /* Swap.swift */,
+				074309701E43914E002B88A1 /* TupleMap.swift */,
 			);
 			name = Tuple;
 			sourceTree = "<group>";
@@ -448,6 +455,7 @@
 				07C582B11DFBE174008BE5D0 /* OrderedDictionaryTests.swift */,
 				07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */,
 				07125DD21E0D13AB004E3411 /* SwapTests.swift */,
+				074309731E43922D002B88A1 /* TupleMapTests.swift */,
 				078F49031E0D267F00B8F316 /* KeyPathTests.swift */,
 				078F490F1E0D5C4600B8F316 /* SequenceExtensionsTests.swift */,
 				078F49151E0D5D5F00B8F316 /* StableSortTests.swift */,
@@ -623,6 +631,7 @@
 				6A3575301E14594700646220 /* LinkedListTests.swift in Sources */,
 				076D04881E2D35C50023ED96 /* MutableTreeTests.swift in Sources */,
 				07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
+				074309751E43922D002B88A1 /* TupleMapTests.swift in Sources */,
 				07C582A41DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
 				07C563711E225FA800E73FB2 /* EnumComparableTests.swift in Sources */,
@@ -657,6 +666,7 @@
 				6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */,
 				076D04871E2D35C50023ED96 /* MutableTreeTests.swift in Sources */,
 				07125DD01E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */,
+				074309741E43922D002B88A1 /* TupleMapTests.swift in Sources */,
 				07C582A31DFBC8B6008BE5D0 /* SortedArrayTests.swift in Sources */,
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
 				07C563701E225FA800E73FB2 /* EnumComparableTests.swift in Sources */,
@@ -693,6 +703,7 @@
 				07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49021E0D258700B8F316 /* KeyPath.swift in Sources */,
+				074309721E43914E002B88A1 /* TupleMap.swift in Sources */,
 				076D04551E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
@@ -733,6 +744,7 @@
 				07690BCD1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
 				07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
 				078F49011E0D258700B8F316 /* KeyPath.swift in Sources */,
+				074309711E43914E002B88A1 /* TupleMap.swift in Sources */,
 				076D04541E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
