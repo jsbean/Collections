@@ -7,27 +7,22 @@
 //
 
 /// Value-semantic, immutable Tree structure.
-///
-/// Parameterized over two types:
-///
-/// - `B`: Type of payload carried by `branch` cases
-/// - `L`: Type of payload carried by `leaf` cases
-public enum Tree <B,L> {
+public enum Tree <T> {
     
     // MARK: - Cases
     
     /// Container node.
-    indirect case branch(B, [Tree])
+    indirect case branch(T, [Tree])
     
     /// Leaf node.
-    case leaf(L)
+    case leaf(T)
     
     // MARK: - Instance Properties
     
     /// Leaves of this `TreeNode`.
-    public var leaves: [L] {
+    public var leaves: [T] {
         
-        func flattened(accum: [L], tree: Tree) -> [L] {
+        func flattened(accum: [T], tree: Tree) -> [T] {
             switch tree {
             case .branch(_, let trees):
                 return trees.reduce(accum, flattened)
@@ -42,7 +37,7 @@ public enum Tree <B,L> {
     // MARK: - Initializers
     
     /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
-    public init <S: Sequence> (_ value: B, _ sequence: S) where S.Iterator.Element == L {
+    public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
         self = .branch(value, sequence.map(Tree.leaf))
     }
 }

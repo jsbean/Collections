@@ -12,7 +12,7 @@ import Collections
 class TreeNodeTests: XCTestCase {
     
     func testLeafInit() {
-        let _ = Tree<Int,Int>.leaf(1)
+        let _ = Tree<Int>.leaf(1)
     }
     
     func testInitWithSequence() {
@@ -27,7 +27,7 @@ class TreeNodeTests: XCTestCase {
     }
     
     func testLeavesLeaf() {
-        let leaf: Tree<Int, Int> = .leaf(1)
+        let leaf: Tree<Int> = .leaf(1)
         XCTAssertEqual(leaf.leaves, [1])
     }
     
