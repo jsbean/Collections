@@ -70,9 +70,8 @@ public enum Tree <T> {
         }
     }
     
-    // take in path: [Int], and index: Int
-    // as two separate things
-    
+    /// - returns: A new `Tree` with the given `tree` inserted at the given `index`, through
+    /// the given `path`.
     public func inserting(_ tree: Tree, through path: [Int] = [], at index: Int)
         throws -> Tree
     {
