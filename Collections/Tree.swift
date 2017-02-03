@@ -58,6 +58,16 @@ public enum Tree <T> {
         self = .branch(value, sequence.map(Tree.leaf))
     }
     
+    /// - returns: A new `Tree` with the given `value` as payload.
+    public func updating(value: T) -> Tree {
+        switch self {
+        case .leaf:
+            return .leaf(value)
+        case .branch(_, let trees):
+            return .branch(value, trees)
+        }
+    }
+    
     /// Replace the subtree at the given `index` for the given `tree`.
     ///
     /// - throws: `TreeError` if `self` is a `leaf`.
@@ -72,10 +82,11 @@ public enum Tree <T> {
     
     /// - returns: A new `Tree` with the given `tree` inserted at the given `index`, through
     /// the given `path`.
+    ///
+    /// - throws: `TreeError` in the case of ill-formed index paths and indexes out-of-range.
     public func inserting(_ tree: Tree, through path: [Int] = [], at index: Int)
         throws -> Tree
     {
-        
         func traverse(
             _ tree: Tree,
             inserting newTree: Tree,

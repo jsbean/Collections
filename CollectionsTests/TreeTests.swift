@@ -34,6 +34,16 @@ class TreeNodeTests: XCTestCase {
         }
     }
     
+    func testUpdatingValueLeaf() {
+        let leaf = Tree.leaf(1)
+        XCTAssertEqual(leaf.updating(value: 4).value, 4)
+    }
+    
+    func testUpdateValueBranch() {
+        let branch = Tree.branch(1, [.leaf(1), .leaf(2), .leaf(3)])
+        XCTAssertEqual(branch.updating(value: 4).value, 4)
+    }
+    
     func testLeavesLeaf() {
         let leaf: Tree<Int> = .leaf(1)
         XCTAssertEqual(leaf.leaves, [1])
