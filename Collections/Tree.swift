@@ -75,12 +75,7 @@ public enum Tree <T> {
     /// Insert the given `tree` at the given `indexPath`.
     public func inserting(_ tree: Tree, indexPath: [Int]) throws -> Tree {
         
-        func traverse(
-            _ tree: Tree,
-            toInsert newTree: Tree,
-            indexPath: [Int]
-        ) throws -> Tree
-        {
+        func traverse(_ tree: Tree, toInsert newTree: Tree, indexPath: [Int]) throws -> Tree {
             switch tree {
             case .leaf:
                 throw TreeError.branchOperationPerformedOnLeaf
