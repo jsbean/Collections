@@ -72,35 +72,39 @@ public enum Tree <T> {
     // take in path: [Int], and index: Int
     // as two separate things
     
-    /// Insert the given `tree` at the given `indexPath`.
-    public func inserting(_ tree: Tree, indexPath: [Int]) throws -> Tree {
+    public func inserting(_ tree: Tree, through path: [Int] = [], at index: Int)
+        throws -> Tree
+    {
         
-        func traverse(_ tree: Tree, toInsert newTree: Tree, indexPath: [Int]) throws -> Tree {
+        func traverse(
+            _ tree: Tree,
+            toInsert newTree: Tree,
+            path: [Int],
+            index: Int
+        ) throws -> Tree
+        {
+
             switch tree {
+            
+            // We should never get to a `leaf`.
             case .leaf:
                 throw TreeError.branchOperationPerformedOnLeaf
+                
+            // Either `traverse` further, or insert to accumulated path
             case .branch(let value, let trees):
                 
-                guard let (index, remaining) = indexPath.destructured else {
-                    throw TreeError.illFormedIndexPath
-                }
-                
-                guard indexPath.count > 1 else {
+                guard let (head, tail) = path.destructured else {
                     return Tree.branch(value, try insert(newTree, into: trees, at: index))
                 }
                 
                 return try tree.replacing(
-                    try traverse(
-                        trees[index],
-                        toInsert: newTree,
-                        indexPath: remaining
-                    ),
+                    try traverse(trees[head], toInsert: newTree, path: tail, index: index),
                     forTreeAt: index
                 )
             }
         }
-
-        return try traverse(self, toInsert: tree, indexPath: indexPath)
+        
+        return try traverse(self, toInsert: tree, path: path, index: index)
     }
     
     private func insert(_ tree: Tree, into trees: [Tree], at index: Int) throws -> [Tree] {
