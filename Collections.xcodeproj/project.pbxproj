@@ -17,6 +17,8 @@
 		074309721E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
 		074309741E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
 		074309751E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
+		074309771E43E9D5002B88A1 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309761E43E9D5002B88A1 /* Split.swift */; };
+		074309781E43E9D5002B88A1 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309761E43E9D5002B88A1 /* Split.swift */; };
 		0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
 		0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
 		07690BBB1E0D64B90095F1D5 /* AdjacentPairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */; };
@@ -187,6 +189,7 @@
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
 		074309701E43914E002B88A1 /* TupleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMap.swift; path = Collections/TupleMap.swift; sourceTree = "<group>"; };
 		074309731E43922D002B88A1 /* TupleMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMapTests.swift; path = CollectionsTests/TupleMapTests.swift; sourceTree = "<group>"; };
+		074309761E43E9D5002B88A1 /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Split.swift; path = Collections/Split.swift; sourceTree = "<group>"; };
 		0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnyCollectionWrapping.swift; path = Collections/AnyCollectionWrapping.swift; sourceTree = "<group>"; };
 		07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjacentPairs.swift; path = Collections/AdjacentPairs.swift; sourceTree = "<group>"; };
 		07690BBD1E0D64D00095F1D5 /* AdjacentPairsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AdjacentPairsTests.swift; path = CollectionsTests/AdjacentPairsTests.swift; sourceTree = "<group>"; };
@@ -303,6 +306,7 @@
 				076D04591E2D1A410023ED96 /* String */,
 				07C563681E225EE500E73FB2 /* Tuple */,
 				078F490C1E0D5C1C00B8F316 /* SequenceExtensions.swift */,
+				074309761E43E9D5002B88A1 /* Split.swift */,
 				078F49121E0D5D4C00B8F316 /* StableSort.swift */,
 				078F491E1E0D608800B8F316 /* Subsets.swift */,
 				07690BBA1E0D64B90095F1D5 /* AdjacentPairs.swift */,
@@ -706,6 +710,7 @@
 				074309721E43914E002B88A1 /* TupleMap.swift in Sources */,
 				076D04551E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
 				077AED181DFB82C9004CDD86 /* Tree.swift in Sources */,
+				074309781E43E9D5002B88A1 /* Split.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				076D04951E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */,
 				07C5636B1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
@@ -747,6 +752,7 @@
 				074309711E43914E002B88A1 /* TupleMap.swift in Sources */,
 				076D04541E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */,
 				077AED171DFB82C9004CDD86 /* Tree.swift in Sources */,
+				074309771E43E9D5002B88A1 /* Split.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				076D04941E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */,
 				07C5636A1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,

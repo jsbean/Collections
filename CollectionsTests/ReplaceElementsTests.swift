@@ -49,7 +49,7 @@ class ReplaceElementsTests: XCTestCase {
     func testReplaceElementAtIndexThrows() {
         var array: [Int] = []
         do {
-            try array.replaceElement(at: 0, withElement: 0)
+            try array.replaceElement(at: 0, with: 0)
             XCTFail()
         } catch { }
     }
@@ -57,7 +57,7 @@ class ReplaceElementsTests: XCTestCase {
     func testReplaceElementAtIndex() {
         var array: [Int] = [1,2]
         do {
-            try array.replaceElement(at: 1, withElement: 0)
+            try array.replaceElement(at: 1, with: 0)
             XCTAssertEqual(array, [1,0])
         } catch {
             XCTFail()
