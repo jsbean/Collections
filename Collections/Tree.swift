@@ -93,11 +93,16 @@ public enum Tree <T> {
             // Either `traverse` further, or insert to accumulated path
             case .branch(let value, let trees):
                 
+                // If we have exhausted our path, attempt to insert `newTree` at `index`
                 guard let (head, tail) = path.destructured else {
                     return Tree.branch(value, try insert(newTree, into: trees, at: index))
                 }
                 
-                let newBranch = try traverse(trees[head],
+                guard let subTree = trees[safe: head] else {
+                    throw TreeError.illFormedIndexPath
+                }
+
+                let newBranch = try traverse(subTree,
                     inserting: newTree,
                     through: tail,
                     at: index
