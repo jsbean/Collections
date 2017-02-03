@@ -78,9 +78,9 @@ public enum Tree <T> {
         
         func traverse(
             _ tree: Tree,
-            toInsert newTree: Tree,
-            path: [Int],
-            index: Int
+            inserting newTree: Tree,
+            through path: [Int],
+            at index: Int
         ) throws -> Tree
         {
 
@@ -97,14 +97,17 @@ public enum Tree <T> {
                     return Tree.branch(value, try insert(newTree, into: trees, at: index))
                 }
                 
-                return try tree.replacing(
-                    try traverse(trees[head], toInsert: newTree, path: tail, index: index),
-                    forTreeAt: index
+                let newBranch = try traverse(trees[head],
+                    inserting: newTree,
+                    through: tail,
+                    at: index
                 )
+                
+                return try tree.replacing(newBranch, forTreeAt: index)
             }
         }
         
-        return try traverse(self, toInsert: tree, path: path, index: index)
+        return try traverse(self, inserting: tree, through: path, at: index)
     }
     
     private func insert(_ tree: Tree, into trees: [Tree], at index: Int) throws -> [Tree] {
