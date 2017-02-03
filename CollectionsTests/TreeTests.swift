@@ -11,6 +11,14 @@ import Collections
 
 class TreeNodeTests: XCTestCase {
     
+    private var tree: Tree<Int> {
+        return Tree.branch(0, [
+            .leaf(1),
+            .leaf(2),
+            .leaf(3)
+        ])
+    }
+    
     func testLeafInit() {
         let _ = Tree<Int>.leaf(1)
     }
@@ -61,5 +69,121 @@ class TreeNodeTests: XCTestCase {
         ])
         
         XCTAssertEqual(container.leaves, [1,2,3,4,5,6,7,8])
+    }
+    
+    func testReplacingLeafAtBegining() {
+        
+        let newTree = try! tree.replacing(.leaf(0), forTreeAt: 0)
+        XCTAssertEqual(newTree.leaves, [0,2,3])
+    }
+    
+    func testReplacingLeafInMiddle() {
+        
+        let newTree = try! tree.replacing(.leaf(0), forTreeAt: 1)
+        XCTAssertEqual(newTree.leaves, [1,0,3])
+    }
+    
+    func testReplacingLeafAtEnd() {
+        
+        let newTree = try! tree.replacing(.leaf(0), forTreeAt: 2)
+        XCTAssertEqual(newTree.leaves, [1,2,0])
+    }
+    
+    func testInsertLeafAtBeginningSingleDepth() {
+        
+        let leafToInsert = Tree.leaf(0)
+        let newTree = try! tree.inserting(leafToInsert, indexPath: [0])
+        XCTAssertEqual(newTree.leaves, [0,1,2,3])
+    }
+    
+    func testInsertBranchAtBeginningSingleDepth() {
+        
+        let treeToInsert = Tree.branch(0, [
+            .leaf(-1),
+            .leaf(0)
+        ])
+        
+        let newTree = try! tree.inserting(treeToInsert, indexPath: [0])
+        XCTAssertEqual(newTree.leaves, [-1,0,1,2,3])
+    }
+    
+    func testInsertBranchInMiddleSingleDepth() {
+        
+        let treeToInsert = Tree.branch(0, [
+            .leaf(0),
+            .leaf(0)
+        ])
+        
+        let newTree = try! tree.inserting(treeToInsert, indexPath: [1])
+        XCTAssertEqual(newTree.leaves, [1,0,0,2,3])
+    }
+    
+    func testInsertBranchAtEndSingleDepth() {
+        
+        let treeToInsert = Tree.branch(0, [
+            .leaf(4),
+            .leaf(5)
+        ])
+        
+        let newTree = try! tree.inserting(treeToInsert, indexPath: [3])
+        XCTAssertEqual(newTree.leaves, [1,2,3,4,5])
+    }
+    
+    func testInsertLeafNested() {
+        
+        //          0
+        //        / | \
+        //       0  0  4
+        //         /|\
+        //        1 2(3) insert
+        let tree = Tree.branch(0, [
+            .leaf(0),
+            .branch(0, [
+                .leaf(1),
+                .leaf(2)
+            ]),
+            .leaf(4)
+        ])
+        
+        let newTree = try! tree.inserting(.leaf(3), indexPath: [1,2])
+        XCTAssertEqual(newTree.leaves, [0,1,2,3,4])
+    }
+    
+    func testInsertLeafReallyNested() {
+        
+        let tree = Tree.branch(-1, [
+            .branch(-1, [
+                .leaf(0),
+                .leaf(1)
+            ]),
+            .branch(-1, [
+                .leaf(2),
+                .branch(-1, [
+                    .leaf(3),
+                    .branch(-1, [
+                        .leaf(4),
+                        
+                        // insert branch here!
+                        
+                        .leaf(10)
+                    ]),
+                    .leaf(11)
+                ]),
+                .leaf(12)
+            ])
+        ])
+        
+        let branchToInsert = Tree.branch(-1, [
+            .leaf(5),
+            .leaf(6),
+            .branch(-1, [
+                .leaf(7),
+                .leaf(8),
+                .leaf(9)
+            ])
+        ])
+        
+        let newTree = try! tree.inserting(branchToInsert, indexPath: [1,1,1,1])
+        XCTAssertEqual(newTree.leaves, [0,1,2,3,4,5,6,7,8,9,10,11,12])
     }
 }

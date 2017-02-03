@@ -6,6 +6,12 @@
 //
 //
 
+public enum TreeError: Error {
+    case indexOutOfBounds
+    case branchOperationPerformedOnLeaf
+    case illFormedIndexPath
+}
+
 /// Value-semantic, immutable Tree structure.
 public enum Tree <T> {
     
@@ -18,6 +24,16 @@ public enum Tree <T> {
     case leaf(T)
     
     // MARK: - Instance Properties
+    
+    /// The payload of a given `Tree`.
+    public var value: T {
+        switch self {
+        case .leaf(let value):
+            return value
+        case .branch(let value, _):
+            return value
+        }
+    }
     
     /// Leaves of this `TreeNode`.
     public var leaves: [T] {
@@ -40,6 +56,66 @@ public enum Tree <T> {
     public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
         self = .branch(value, sequence.map(Tree.leaf))
     }
+    
+    /// Replace the subtree at the given `index` for the given `tree`.
+    ///
+    /// - throws: `TreeError` if `self` is a `leaf`.
+    public func replacing(_ tree: Tree, forTreeAt index: Int) throws -> Tree {
+        switch self {
+        case .leaf:
+            throw TreeError.branchOperationPerformedOnLeaf
+        case .branch(let value, let trees):
+            return .branch(value, try trees.replacingElement(at: index, with: tree))
+        }
+    }
+    
+    // take in path: [Int], and index: Int
+    // as two separate things
+    
+    /// Insert the given `tree` at the given `indexPath`.
+    public func inserting(_ tree: Tree, indexPath: [Int]) throws -> Tree {
+        
+        func traverse(
+            _ tree: Tree,
+            toInsert newTree: Tree,
+            indexPath: [Int]
+        ) throws -> Tree
+        {
+            switch tree {
+            case .leaf:
+                throw TreeError.branchOperationPerformedOnLeaf
+            case .branch(let value, let trees):
+                
+                guard let (index, remaining) = indexPath.destructured else {
+                    throw TreeError.illFormedIndexPath
+                }
+                
+                guard indexPath.count > 1 else {
+                    return Tree.branch(value, try insert(newTree, into: trees, at: index))
+                }
+                
+                return try tree.replacing(
+                    try traverse(
+                        trees[index],
+                        toInsert: newTree,
+                        indexPath: remaining
+                    ),
+                    forTreeAt: index
+                )
+            }
+        }
+
+        return try traverse(self, toInsert: tree, indexPath: indexPath)
+    }
+    
+    private func insert(_ tree: Tree, into trees: [Tree], at index: Int) throws -> [Tree] {
+        
+        guard let (left, right) = trees.split(at: index) else {
+            throw TreeError.illFormedIndexPath
+        }
+        
+        return left + [tree] + right
+    }
 }
 
 extension Tree: CustomStringConvertible {
@@ -58,11 +134,10 @@ extension Tree: CustomStringConvertible {
                 return indents(indentation) + "\(value)"
             case .branch(let value, let trees):
                 return (
-                    indents(indentation) + "\(value): (\n" +
+                    indents(indentation) + "\(value)\n" +
                     trees
                         .map { traverse(tree: $0, indentation: indentation + 1) }
-                        .joined(separator: "\n") +
-                    "\n" + indents(indentation) + ")"
+                        .joined(separator: "\n")
                 )
             }
         }
