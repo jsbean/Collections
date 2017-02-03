@@ -163,3 +163,36 @@ extension Tree: CustomStringConvertible {
         return traverse(tree: self)
     }
 }
+
+/// - returns: `true` if two `Tree` values are equivalent. Otherwise, `false`.
+public func == <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {
+    switch (lhs, rhs) {
+    case (.leaf(let a), .leaf(let b)):
+        return a == b
+    case (.branch(let valueA, let treesA), .branch(let valueB, let treesB)):
+        return valueA == valueB && treesA == treesB
+    default:
+        return false
+    }
+}
+
+/// - returns: `true` if two `Tree` values are not equivalent. Otherwise, `false`.
+public func != <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {
+    return !(lhs == rhs)
+}
+
+/// - returns: `true` if two arrays of `Tree` values are equivalent. Otherwise, `false.`
+public func == <T: Equatable> (lhs: [Tree<T>], rhs: [Tree<T>]) -> Bool {
+    
+    guard lhs.count == rhs.count else {
+        return false
+    }
+    
+    for (lhs, rhs) in zip(lhs, rhs) {
+        if lhs != rhs {
+            return false
+        }
+    }
+    
+    return true
+}
