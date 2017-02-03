@@ -61,7 +61,7 @@ public enum Tree <T> {
     /// Replace the subtree at the given `index` for the given `tree`.
     ///
     /// - throws: `TreeError` if `self` is a `leaf`.
-    public func replacing(_ tree: Tree, forTreeAt index: Int) throws -> Tree {
+    public func replacingTree(at index: Int, with tree: Tree) throws -> Tree {
         switch self {
         case .leaf:
             throw TreeError.branchOperationPerformedOnLeaf
@@ -108,7 +108,7 @@ public enum Tree <T> {
                     at: index
                 )
                 
-                return try tree.replacing(newBranch, forTreeAt: index)
+                return try tree.replacingTree(at: index, with: newBranch)
             }
         }
         

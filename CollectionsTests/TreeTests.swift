@@ -73,19 +73,19 @@ class TreeNodeTests: XCTestCase {
     
     func testReplacingLeafAtBegining() {
         
-        let newTree = try! tree.replacing(.leaf(0), forTreeAt: 0)
+        let newTree = try! tree.replacingTree(at: 0, with: .leaf(0))
         XCTAssertEqual(newTree.leaves, [0,2,3])
     }
     
     func testReplacingLeafInMiddle() {
         
-        let newTree = try! tree.replacing(.leaf(0), forTreeAt: 1)
+        let newTree = try! tree.replacingTree(at: 1, with: .leaf(0))
         XCTAssertEqual(newTree.leaves, [1,0,3])
     }
     
     func testReplacingLeafAtEnd() {
         
-        let newTree = try! tree.replacing(.leaf(0), forTreeAt: 2)
+        let newTree = try! tree.replacingTree(at: 2, with: .leaf(0))
         XCTAssertEqual(newTree.leaves, [1,2,0])
     }
     
