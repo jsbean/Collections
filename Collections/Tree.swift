@@ -6,6 +6,7 @@
 //
 //
 
+/// Things that can go wrong when doing things to a `Tree`.
 public enum TreeError: Error {
     case indexOutOfBounds
     case branchOperationPerformedOnLeaf
@@ -17,11 +18,11 @@ public enum Tree <T> {
     
     // MARK: - Cases
     
-    /// Container node.
-    indirect case branch(T, [Tree])
-    
-    /// Leaf node.
+    /// Leaf.
     case leaf(T)
+    
+    /// Branch.
+    indirect case branch(T, [Tree])
     
     // MARK: - Instance Properties
     
@@ -110,13 +111,13 @@ public enum Tree <T> {
         return try traverse(self, inserting: tree, through: path, at: index)
     }
     
-    private func insert(_ tree: Tree, into trees: [Tree], at index: Int) throws -> [Tree] {
+    private func insert <A> (_ element: A, into elements: [A], at index: Int) throws -> [A] {
         
-        guard let (left, right) = trees.split(at: index) else {
+        guard let (left, right) = elements.split(at: index) else {
             throw TreeError.illFormedIndexPath
         }
         
-        return left + [tree] + right
+        return left + [element] + right
     }
 }
 
