@@ -81,4 +81,19 @@ public struct Zipper <T> {
             return Zipper(subTree, crumb + breadcrumbs)
         }
     }
+    
+    /// Transform the value of the wrapped `Tree`.
+    public func update(_ f: (T) -> T) -> Zipper<T> {
+        switch tree {
+        case .leaf(let value):
+            return Zipper(.leaf(f(value)), breadcrumbs)
+        case .branch(let value, let trees):
+            return Zipper(.branch(f(value), trees), breadcrumbs)
+        }
+    }
+    
+    /// Replace the value of the wrapped `Tree` with the given `value`.
+    public func update(value: T) -> Zipper<T> {
+        return update { _ in value }
+    }
 }
