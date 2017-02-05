@@ -18,6 +18,16 @@ public struct Stack <T> {
         return items.last
     }
     
+    /// - TODO: Generalized `destructured` to work with any `Sequence`.
+    public var destructured: (T, Stack<T>)? {
+        
+        guard let (head, tail) = items.destructured else {
+            return nil
+        }
+        
+        return (head, Stack(tail))
+    }
+    
     // MARK: - Initializers
 
     /// Create an empty `Stack`.
@@ -38,6 +48,13 @@ public struct Stack <T> {
     /// Push item to end of `Stack`.
     public mutating func push(_ item: T) {
         items.append(item)
+    }
+    
+    /// - returns: A new `Stack` with the given `item` pushed to the top.
+    public func pushing(_ item: T) -> Stack<T> {
+        var copy = self
+        copy.push(item)
+        return copy
     }
     
     /// - returns: Item from top of `Stack` if there are any. Otherwise, `nil`.

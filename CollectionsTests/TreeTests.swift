@@ -99,6 +99,27 @@ class TreeNodeTests: XCTestCase {
         XCTAssertEqual(newTree.leaves, [1,2,0])
     }
     
+    func testReplaceLeafAtPath() {
+        
+        let newTree = try! tree.replacingTree(through: [1], with: .leaf(0))
+        XCTAssertEqual(newTree.leaves, [1,0,3])
+    }
+    
+    func testReplaceAtPathNested() {
+        
+        let tree = Tree.branch(-1, [
+            .leaf(0),
+            .branch(-1, [
+                .leaf(1),
+                .leaf(2),
+                .leaf(3)
+            ])
+        ])
+        
+        let newTree = try! tree.replacingTree(through: [1,2], with: .leaf(4))
+        XCTAssertEqual(newTree.leaves, [0,1,2,4])
+    }
+    
     func testInsertLeafAtBeginningSingleDepth() {
         
         let leafToInsert = Tree.leaf(0)
