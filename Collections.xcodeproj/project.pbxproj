@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0711EAFF1E47C1CD00FD9138 /* ZipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */; };
+		0711EB001E47C1CD00FD9138 /* ZipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */; };
+		0711EB021E47CC3A00FD9138 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EB011E47CC3A00FD9138 /* SplitTests.swift */; };
+		0711EB031E47CC3A00FD9138 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EB011E47CC3A00FD9138 /* SplitTests.swift */; };
+		0711EB061E47CF3800FD9138 /* Zipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EB051E47CF3800FD9138 /* Zipper.swift */; };
+		0711EB071E47CF3800FD9138 /* Zipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0711EB051E47CF3800FD9138 /* Zipper.swift */; };
 		07125DCD1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */; };
 		07125DCE1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */; };
 		07125DD01E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */; };
@@ -184,6 +190,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ZipperTests.swift; path = CollectionsTests/ZipperTests.swift; sourceTree = "<group>"; };
+		0711EB011E47CC3A00FD9138 /* SplitTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplitTests.swift; path = CollectionsTests/SplitTests.swift; sourceTree = "<group>"; };
+		0711EB051E47CF3800FD9138 /* Zipper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zipper.swift; path = Collections/Zipper.swift; sourceTree = "<group>"; };
 		07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = Collections/SortedDictionary.swift; sourceTree = "<group>"; };
 		07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = CollectionsTests/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
@@ -316,6 +325,7 @@
 				07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */,
 				078F49181E0D5EA500B8F316 /* Combinations.swift */,
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
+				0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -331,11 +341,20 @@
 			);
 			sourceTree = "<group>";
 		};
+		0711EB041E47CF2900FD9138 /* ImmutableTree */ = {
+			isa = PBXGroup;
+			children = (
+				077AED161DFB82C9004CDD86 /* Tree.swift */,
+				0711EB051E47CF3800FD9138 /* Zipper.swift */,
+			);
+			name = ImmutableTree;
+			sourceTree = "<group>";
+		};
 		07690BE81E0D96AA0095F1D5 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
+				0711EB041E47CF2900FD9138 /* ImmutableTree */,
 				076D048C1E2D3C070023ED96 /* MutableGraph */,
-				077AED161DFB82C9004CDD86 /* Tree.swift */,
 				076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */,
 				076D04831E2D34D00023ED96 /* MutableTree.swift */,
 				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
@@ -474,6 +493,7 @@
 				07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */,
 				07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */,
 				076D045D1E2D1ADB0023ED96 /* StringExtensionsTests.swift */,
+				0711EB011E47CC3A00FD9138 /* SplitTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
@@ -628,6 +648,7 @@
 			files = (
 				076D049B1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */,
 				076D04581E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
+				0711EB031E47CC3A00FD9138 /* SplitTests.swift in Sources */,
 				07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */,
@@ -640,6 +661,7 @@
 				07690BC51E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
 				07C563711E225FA800E73FB2 /* EnumComparableTests.swift in Sources */,
 				07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */,
+				0711EB001E47C1CD00FD9138 /* ZipperTests.swift in Sources */,
 				078F49171E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49111E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
 				07690BDA1E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */,
@@ -663,6 +685,7 @@
 			files = (
 				076D049A1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */,
 				076D04571E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
+				0711EB021E47CC3A00FD9138 /* SplitTests.swift in Sources */,
 				07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
 				07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */,
@@ -675,6 +698,7 @@
 				07690BC41E0D66750095F1D5 /* RemoveElementsTests.swift in Sources */,
 				07C563701E225FA800E73FB2 /* EnumComparableTests.swift in Sources */,
 				07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */,
+				0711EAFF1E47C1CD00FD9138 /* ZipperTests.swift in Sources */,
 				078F49161E0D5D5F00B8F316 /* StableSortTests.swift in Sources */,
 				078F49101E0D5C4600B8F316 /* SequenceExtensionsTests.swift in Sources */,
 				07690BD91E0D6E620095F1D5 /* ReplaceElementsTests.swift in Sources */,
@@ -713,6 +737,7 @@
 				074309781E43E9D5002B88A1 /* Split.swift in Sources */,
 				07C582AD1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				076D04951E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */,
+				0711EB071E47CF3800FD9138 /* Zipper.swift in Sources */,
 				07C5636B1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
 				078F49201E0D608800B8F316 /* Subsets.swift in Sources */,
 				076D048B1E2D37E20023ED96 /* MutableGraph.swift in Sources */,
@@ -755,6 +780,7 @@
 				074309771E43E9D5002B88A1 /* Split.swift in Sources */,
 				07C582AC1DFBD877008BE5D0 /* OrderedDictionary.swift in Sources */,
 				076D04941E2D3C560023ED96 /* MutableGraph+EdgeList.swift in Sources */,
+				0711EB061E47CF3800FD9138 /* Zipper.swift in Sources */,
 				07C5636A1E225EF400E73FB2 /* RawRepresentable+Comparable.swift in Sources */,
 				078F491F1E0D608800B8F316 /* Subsets.swift in Sources */,
 				076D048A1E2D37E20023ED96 /* MutableGraph.swift in Sources */,

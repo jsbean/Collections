@@ -13,8 +13,6 @@ public enum TreeError: Error {
     case illFormedIndexPath
 }
 
-// zipper
-
 /// Value-semantic, immutable Tree structure.
 public enum Tree <T> {
     
@@ -205,6 +203,8 @@ extension Tree: CustomStringConvertible {
         return traverse(tree: self)
     }
 }
+
+/// - TODO: Make extension, retroactively conforming to `Equatable` when Swift allows it
 
 /// - returns: `true` if two `Tree` values are equivalent. Otherwise, `false`.
 public func == <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {

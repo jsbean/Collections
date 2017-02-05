@@ -45,4 +45,11 @@ class StackTests: XCTestCase {
         var stack = Stack(1,2,3,4)
         XCTAssertNil(stack.pop(amount: 5))
     }
+    
+    func testDestructured() {
+        let stack: Stack = [1,2,3,4,5]
+        let (head, tail) = stack.destructured!
+        XCTAssertEqual(head, 1)
+        XCTAssert(tail == Stack(2,3,4,5))
+    }
 }
