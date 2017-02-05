@@ -52,5 +52,20 @@ extension Array {
         insert(element, at: 0)
     }
     
+    /// - returns: A new `Array` with the given `element` inserted at the given `index`, if
+    /// possible.
+    ///
+    /// - throws: `ArrayError` if the given `index` is out of range.
+    public func inserting(_ element: Element, at index: Index) throws -> Array {
+        
+        guard index >= startIndex && index <= endIndex else {
+            throw ArrayError.insertionError
+        }
+        
+        var copy = self
+        copy.insert(element, at: index)
+        return copy
+    }
+    
     // TODO: Implement immutable versions (`replacingElement(at:with:) -> Array`)
 }

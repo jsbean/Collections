@@ -13,6 +13,8 @@ public enum TreeError: Error {
     case illFormedIndexPath
 }
 
+// zipper
+
 /// Value-semantic, immutable Tree structure.
 public enum Tree <T> {
     
@@ -78,6 +80,46 @@ public enum Tree <T> {
         case .branch(let value, let trees):
             return .branch(value, try trees.replacingElement(at: index, with: tree))
         }
+    }
+    
+    /// Replace the subtree at the given `path`.
+    ///
+    /// - throws: `TreeError` if the given `path` is valid.
+    public func replacingTree(through path: [Int], with tree: Tree) throws -> Tree {
+        
+        func traverse(_ tree: Tree, inserting newTree: Tree, path: [Int]) throws -> Tree {
+            
+            switch tree {
+                
+            // This should never be called on a leaf
+            case .leaf:
+                throw TreeError.branchOperationPerformedOnLeaf
+                
+            // Either `traverse` futher, or replace at last index specified in `path`.
+            case .branch(let value, let trees):
+                
+                // Ensure that the `indexPath` given is valid
+                guard
+                    let (index, remainingPath) = path.destructured,
+                    let subTree = trees[safe: index]
+                else {
+                    throw TreeError.illFormedIndexPath
+                }
+                
+                // We are done if only one `index` remaining in `indexPath`
+                guard path.count > 1 else {
+                    return .branch(value, try trees.replacingElement(at: index, with: newTree))
+                }
+
+                // Otherwise, keep recursing down
+                return try tree.replacingTree(
+                    at: index,
+                    with: try traverse(subTree, inserting: newTree, path: remainingPath)
+                )
+            }
+        }
+        
+        return try traverse(self, inserting: tree, path: path)
     }
     
     /// - returns: A new `Tree` with the given `tree` inserted at the given `index`, through

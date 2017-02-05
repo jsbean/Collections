@@ -9,4 +9,5 @@
 /// Things that can go wrong when trying to do things with `Array` values.
 enum ArrayError: Error {
     case removalError
+    case insertionError
 }

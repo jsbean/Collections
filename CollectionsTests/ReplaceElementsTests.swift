@@ -63,4 +63,19 @@ class ReplaceElementsTests: XCTestCase {
             XCTFail()
         }
     }
+    
+    func testInsertingAtIndexAtBeginning() {
+        let array = [1,2,3]
+        XCTAssertEqual(try array.inserting(0, at: 0), [0,1,2,3])
+    }
+    
+    func testInsertingAtIndexInMiddle() {
+        let array = [0,1,3]
+        XCTAssertEqual(try array.inserting(2, at: 2), [0,1,2,3])
+    }
+    
+    func testInsertingAtIndexAtEnd() {
+        let array = [0,1,2]
+        XCTAssertEqual(try array.inserting(3, at: 3), [0,1,2,3])
+    }
 }
