@@ -34,11 +34,11 @@ public struct Zipper <T> {
     public let breadcrumbs: Breadcrumbs
     
     /// Move the `Zipper` up in the tree.
-    public var up: Zipper<T> {
+    public var up: Zipper<T>? {
         
         // If we are already at the top, our work is done.
         guard let (latest, remaining) = breadcrumbs.destructured else {
-            return self
+            return nil
         }
         
         let (left, right) = latest.trees
@@ -49,14 +49,25 @@ public struct Zipper <T> {
     
     /// `Zipper` wrapping the `root` of the `Tree`.
     public var top: Zipper<T> {
-        
-        guard !breadcrumbs.isEmpty else {
-            return self
-        }
-        
-        return up.top
+        return up?.top ?? self
     }
     
+    /// - returns: `Zipper` values for each subtree contained by the wrapped `Tree`, if it is
+    /// a `branch`.
+    public var children: [Zipper<T>] {
+        
+        guard case let .branch(_, trees) = tree else {
+            return []
+        }
+        
+        return try! trees.indices.map(move)
+    }
+    
+    /// - returns: `Zipper` values for each sibling subtree of the wrapped `Tree`.
+    public var siblings: [Zipper<T>] {
+        return up?.children ?? []
+    }
+
     // MARK: - Initializers
     
     /// Create a `Zipper` with a `Tree` and a history of remaining parts of the tree that

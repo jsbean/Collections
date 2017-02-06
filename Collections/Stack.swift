@@ -18,8 +18,7 @@ public struct Stack <T> {
         return items.last
     }
     
-    /// - TODO: Generalized `destructured` to work with any `Sequence`.
-    /// - returns:
+    /// - returns: The `top` and the remaining items, if possible. Otherwise, `nil`.
     public var destructured: (T, Stack<T>)? {
         
         guard self.count > 0 else {

@@ -126,7 +126,7 @@ class ZipperTests: XCTestCase {
         ])
         
         let z = Zipper(t)
-        let top = try! z.move(to: 1).up
+        let top = try! z.move(to: 1).up!
         
         XCTAssertEqual(top.tree.leaves, z.tree.leaves)
     }
@@ -145,12 +145,12 @@ class ZipperTests: XCTestCase {
         
         let z = Zipper(t)
         let three = try! z.move(to: 1).move(to: 1)
-        let middle = three.up
-        let top = middle.up
+        let middle = three.up!
+        let top = middle.up!
         
         XCTAssertEqual(middle.tree.leaves, [2,3,4])
         XCTAssertEqual(top.tree.leaves, z.tree.leaves)
-        XCTAssert(three.up.up.tree == z.tree)
+        XCTAssert(three.up!.up!.tree == z.tree)
     }
     
     func testUpdate() {
@@ -199,7 +199,6 @@ class ZipperTests: XCTestCase {
             .leaf(5)
         ])
         
-
         let z = Zipper(t)
         let three = try! z.move(through: [])
         XCTAssert(z.tree == three.tree)
@@ -237,5 +236,43 @@ class ZipperTests: XCTestCase {
         
         let z = Zipper(t)
         XCTAssertThrowsError(try z.move(through: [2,3]))
+    }
+    
+    func testChildren() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let z = Zipper(t)
+        let zChildren = z.children
+        XCTAssertEqual(zChildren.count, 3)
+        
+        let internalBranch = try! z.move(to: 1)
+        let internalBranchChildren = internalBranch.children
+        XCTAssertEqual(internalBranchChildren.count, 3)
+    }
+    
+    func testSiblings() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let z = Zipper(t)
+        
+        XCTAssertEqual(z.siblings.count, 0)
     }
 }
