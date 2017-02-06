@@ -21,7 +21,7 @@ public struct Zipper <T> {
     
     // MARK: - Associated Types
     
-    public typealias Breadcrumbs = [Crumb<T>]
+    public typealias Breadcrumbs = Stack<Crumb<T>>
     
     // MARK: - Instance Properties
     
@@ -83,7 +83,7 @@ public struct Zipper <T> {
             }
             
             let crumb = Crumb(value: value, trees: (left, right))
-            return Zipper(subTree, crumb + breadcrumbs)
+            return Zipper(subTree, breadcrumbs.pushing(crumb))
         }
     }
     

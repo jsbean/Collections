@@ -48,8 +48,8 @@ class StackTests: XCTestCase {
     
     func testDestructured() {
         let stack: Stack = [1,2,3,4,5]
-        let (head, tail) = stack.destructured!
-        XCTAssertEqual(head, 1)
-        XCTAssert(tail == Stack(2,3,4,5))
+        let (top, rest) = stack.destructured!
+        XCTAssertEqual(top, 5)
+        XCTAssert(rest == Stack(1,2,3,4))
     }
 }

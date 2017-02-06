@@ -19,13 +19,22 @@ public struct Stack <T> {
     }
     
     /// - TODO: Generalized `destructured` to work with any `Sequence`.
+    /// - returns:
     public var destructured: (T, Stack<T>)? {
         
-        guard let (head, tail) = items.destructured else {
+        guard self.count > 0 else {
             return nil
         }
         
-        return (head, Stack(tail))
+        var copy = self
+        let top = copy.pop()!
+        return (top, copy)
+//        
+//        guard let (head, tail) = items.destructured else {
+//            return nil
+//        }
+        
+        //return (head, Stack(tail))
     }
     
     // MARK: - Initializers
