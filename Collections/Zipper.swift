@@ -41,6 +41,7 @@ public struct Zipper <T> {
         return Zipper(.branch(latest.value, trees), remaining)
     }
     
+    /// `Zipper` wrapping the `root` of the `Tree`.
     public var top: Zipper<T> {
         
         guard !breadcrumbs.isEmpty else {
@@ -63,6 +64,8 @@ public struct Zipper <T> {
     /// Move focus to the sub-tree with the given `index`.
     ///
     /// - throws: `TreeError` if index is out of bounds.
+    ///
+    /// - TODO: Index path (multiple, add operator ?)
     public func move(to index: Int) throws -> Zipper<T> {
 
         switch tree {
@@ -80,6 +83,16 @@ public struct Zipper <T> {
             let crumb = Crumb(value: value, trees: (left, right))
             return Zipper(subTree, crumb + breadcrumbs)
         }
+    }
+    
+    public func move(through path: [Int]) throws -> Zipper<T> {
+        
+        // base case
+        guard let (index, remaining) = path.destructured else {
+            return self
+        }
+        
+        return try move(to: index).move(through: remaining)
     }
     
     /// Transform the value of the wrapped `Tree`.
