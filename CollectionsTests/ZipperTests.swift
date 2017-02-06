@@ -170,6 +170,23 @@ class ZipperTests: XCTestCase {
         XCTAssertEqual(updated.tree.leaves, [1,2,6,4,5])
     }
     
+    func testUpdateValue() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let z = Zipper(t)
+        let updated = try! z.move(to: 2).update(value: 0)
+        XCTAssertEqual(updated.tree.value, 0)
+    }
+    
     func testMoveThroughPathEmpty() {
         
         let t = Tree.branch(-1, [

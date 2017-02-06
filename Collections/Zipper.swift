@@ -35,6 +35,7 @@ public struct Zipper <T> {
     /// Move the `Zipper` up in the tree.
     public var up: Zipper<T> {
         
+        // If we are already at the top, our work is done.
         guard let (latest, remaining) = breadcrumbs.destructured else {
             return self
         }
@@ -57,7 +58,8 @@ public struct Zipper <T> {
     
     // MARK: - Initializers
     
-    /// Create a `Zipper` with a `Tree` and a
+    /// Create a `Zipper` with a `Tree` and a history of remaining parts of the tree that
+    /// are not currently in focus.
     public init(_ tree: Tree<T>, _ breadcrumbs: Breadcrumbs = Breadcrumbs()) {
         self.tree = tree
         self.breadcrumbs = breadcrumbs
