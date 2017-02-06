@@ -108,7 +108,6 @@ class ZipperTests: XCTestCase {
         ])
         
         let z = Zipper(t)
-        
         let branch = try! z.move(to: 1)
         
         XCTAssertEqual(branch.tree.leaves, [2,3,4])
@@ -127,10 +126,9 @@ class ZipperTests: XCTestCase {
         ])
         
         let z = Zipper(t)
-        let root = try! z.move(to: 1).up
+        let top = try! z.move(to: 1).up
         
-        XCTAssertEqual(root.tree.leaves, z.tree.leaves)
-        
+        XCTAssertEqual(top.tree.leaves, z.tree.leaves)
     }
     
     func testUp() {
@@ -153,5 +151,91 @@ class ZipperTests: XCTestCase {
         XCTAssertEqual(middle.tree.leaves, [2,3,4])
         XCTAssertEqual(top.tree.leaves, z.tree.leaves)
         XCTAssert(three.up.up.tree == z.tree)
+    }
+    
+    func testUpdate() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let z = Zipper(t)
+        let updated = try! z.move(to: 1).move(to: 1).update { $0 * 2 }.top
+        XCTAssertEqual(updated.tree.leaves, [1,2,6,4,5])
+    }
+    
+    func testUpdateValue() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let z = Zipper(t)
+        let updated = try! z.move(to: 2).update(value: 0)
+        XCTAssertEqual(updated.tree.value, 0)
+    }
+    
+    func testMoveThroughPathEmpty() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+
+        let z = Zipper(t)
+        let three = try! z.move(through: [])
+        XCTAssert(z.tree == three.tree)
+    }
+    
+    func testMoveThroughPathNotEmpty() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        
+        let z = Zipper(t)
+        let three = try! z.move(through: [1,1])
+        XCTAssert(three.tree == .leaf(3))
+    }
+    
+    func testMoveThroughPathBadPathError() {
+        
+        let t = Tree.branch(-1, [
+            .leaf(1),
+            .branch(-1, [
+                .leaf(2),
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let z = Zipper(t)
+        XCTAssertThrowsError(try z.move(through: [2,3]))
     }
 }

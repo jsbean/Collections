@@ -21,16 +21,22 @@ public struct Zipper <T> {
     
     // MARK: - Associated Types
     
-    public typealias Breadcrumbs = [Crumb<T>]
+    /// Collection of `Crumb` values.
+    public typealias Breadcrumbs = Stack<Crumb<T>>
     
     // MARK: - Instance Properties
     
+    /// The `Tree` wrapped by the `Zipper`.
     public let tree: Tree<T>
+    
+    /// The stack of `Crumb` values that hold a history of the remaining parts of the tree
+    /// that are not currently in focus.
     public let breadcrumbs: Breadcrumbs
     
     /// Move the `Zipper` up in the tree.
     public var up: Zipper<T> {
         
+        // If we are already at the top, our work is done.
         guard let (latest, remaining) = breadcrumbs.destructured else {
             return self
         }
@@ -41,6 +47,7 @@ public struct Zipper <T> {
         return Zipper(.branch(latest.value, trees), remaining)
     }
     
+    /// `Zipper` wrapping the `root` of the `Tree`.
     public var top: Zipper<T> {
         
         guard !breadcrumbs.isEmpty else {
@@ -52,7 +59,8 @@ public struct Zipper <T> {
     
     // MARK: - Initializers
     
-    /// Create a `Zipper` with a `Tree` and a
+    /// Create a `Zipper` with a `Tree` and a history of remaining parts of the tree that
+    /// are not currently in focus.
     public init(_ tree: Tree<T>, _ breadcrumbs: Breadcrumbs = Breadcrumbs()) {
         self.tree = tree
         self.breadcrumbs = breadcrumbs
@@ -78,12 +86,26 @@ public struct Zipper <T> {
             }
             
             let crumb = Crumb(value: value, trees: (left, right))
-            return Zipper(subTree, crumb + breadcrumbs)
+            return Zipper(subTree, breadcrumbs.pushing(crumb))
         }
+    }
+    
+    /// Move focus to the sub-tree through the given `path`.
+    ///
+    /// - throws: `TreeError` if the given `path` is no good.
+    public func move(through path: [Int]) throws -> Zipper<T> {
+        
+        // If `path` is empty, our work is done
+        guard let (index, remaining) = path.destructured else {
+            return self
+        }
+        
+        return try move(to: index).move(through: remaining)
     }
     
     /// Transform the value of the wrapped `Tree`.
     public func update(_ f: (T) -> T) -> Zipper<T> {
+        
         switch tree {
         case .leaf(let value):
             return Zipper(.leaf(f(value)), breadcrumbs)
