@@ -199,7 +199,6 @@ class ZipperTests: XCTestCase {
             .leaf(5)
         ])
         
-
         let z = Zipper(t)
         let three = try! z.move(through: [])
         XCTAssert(z.tree == three.tree)
