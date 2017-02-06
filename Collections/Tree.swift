@@ -28,6 +28,7 @@ public enum Tree <T> {
     
     /// The payload of a given `Tree`.
     public var value: T {
+        
         switch self {
         case .leaf(let value):
             return value
@@ -40,6 +41,7 @@ public enum Tree <T> {
     public var leaves: [T] {
         
         func flattened(accum: [T], tree: Tree) -> [T] {
+            
             switch tree {
             case .branch(_, let trees):
                 return trees.reduce(accum, flattened)
@@ -71,6 +73,7 @@ public enum Tree <T> {
     
     /// - returns: A new `Tree` with the given `value` as payload.
     public func updating(value: T) -> Tree {
+        
         switch self {
         case .leaf:
             return .leaf(value)
@@ -83,6 +86,7 @@ public enum Tree <T> {
     ///
     /// - throws: `TreeError` if `self` is a `leaf`.
     public func replacingTree(at index: Int, with tree: Tree) throws -> Tree {
+        
         switch self {
         case .leaf:
             throw TreeError.branchOperationPerformedOnLeaf
@@ -219,6 +223,7 @@ extension Tree: CustomStringConvertible {
 
 /// - returns: `true` if two `Tree` values are equivalent. Otherwise, `false`.
 public func == <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {
+    
     switch (lhs, rhs) {
     case (.leaf(let a), .leaf(let b)):
         return a == b
