@@ -58,6 +58,17 @@ public enum Tree <T> {
         self = .branch(value, sequence.map(Tree.leaf))
     }
     
+    /// Apply a given `transform` to all nodes in a `Tree`.
+    public func map(_ transform: (T) -> T) -> Tree {
+        
+        switch self {
+        case .leaf(let value):
+            return .leaf(transform(value))
+        case .branch(let value, let trees):
+            return .branch(transform(value), trees.map { $0.map(transform) })
+        }
+    }
+    
     /// - returns: A new `Tree` with the given `value` as payload.
     public func updating(value: T) -> Tree {
         switch self {

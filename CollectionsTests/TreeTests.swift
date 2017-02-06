@@ -236,4 +236,27 @@ class TreeNodeTests: XCTestCase {
         let newTree = try! tree.inserting(branchToInsert, through: [1,1,1], at: 1)
         XCTAssertEqual(newTree.leaves, [0,1,2,3,4,5,6,7,8,9,10,11,12])
     }
+    
+    func testMap() {
+        
+        let tree = Tree.branch(1, [
+            .leaf(2),
+            .branch(3, [
+                .leaf(4),
+                .leaf(5)
+            ]),
+            .leaf(6)
+        ])
+        
+        let expected = Tree.branch(2, [
+            .leaf(4),
+            .branch(6, [
+                .leaf(8),
+                .leaf(10)
+            ]),
+            .leaf(12)
+        ])
+        
+        XCTAssert(tree.map { $0 * 2 } == expected)
+    }
 }
