@@ -29,12 +29,6 @@ public struct Stack <T> {
         var copy = self
         let top = copy.pop()!
         return (top, copy)
-//        
-//        guard let (head, tail) = items.destructured else {
-//            return nil
-//        }
-        
-        //return (head, Stack(tail))
     }
     
     // MARK: - Initializers
