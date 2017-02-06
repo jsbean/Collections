@@ -21,6 +21,7 @@ public struct Zipper <T> {
     
     // MARK: - Associated Types
     
+    /// Collection of `Crumb` values.
     public typealias Breadcrumbs = Stack<Crumb<T>>
     
     // MARK: - Instance Properties
