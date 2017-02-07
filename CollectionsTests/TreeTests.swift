@@ -289,4 +289,27 @@ class TreeNodeTests: XCTestCase {
         
         XCTAssertEqual(branch.height, 3)
     }
+    
+    func testPath() {
+        
+        let tree = Tree.branch(1, [
+            .leaf(1),
+            .branch(2, [
+                .leaf(3),
+                .leaf(4)
+            ]),
+            .leaf(5)
+        ])
+        
+        let expected = [[1,1],[1,2,3],[1,2,4],[1,5]]
+        
+        zip(tree.paths, expected).forEach { path, expected in
+            XCTAssertEqual(path, expected)
+        }
+    }
+    
+    func testPathLeaf() {
+        XCTAssertEqual(Tree.leaf(1).paths.count, 1)
+        XCTAssertEqual(Tree.leaf(1).paths[0][0], 1)
+    }
 }

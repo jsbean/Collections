@@ -325,7 +325,6 @@
 				07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */,
 				078F49181E0D5EA500B8F316 /* Combinations.swift */,
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
-				0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -494,6 +493,7 @@
 				07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */,
 				076D045D1E2D1ADB0023ED96 /* StringExtensionsTests.swift */,
 				0711EB011E47CC3A00FD9138 /* SplitTests.swift */,
+				0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
