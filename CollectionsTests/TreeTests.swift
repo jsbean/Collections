@@ -259,4 +259,34 @@ class TreeNodeTests: XCTestCase {
         
         XCTAssert(tree.map { $0 * 2 } == expected)
     }
+    
+    func testHeightLeafZero() {
+        XCTAssertEqual(Tree.leaf(0).height, 0)
+    }
+    
+    func testHeightBranchSingleDepthOne() {
+        
+        let branch = Tree.branch(-1, [
+            .leaf(1),
+            .leaf(1)
+        ])
+        
+        XCTAssertEqual(branch.height, 1)
+    }
+    
+    func testHeightNested() {
+        
+        let branch = Tree.branch(-1, [
+            .leaf(1),
+            .branch(1, [
+                .leaf(1),
+                .branch(1, [
+                    .leaf(1),
+                    .leaf(1)
+                ])
+            ])
+        ])
+        
+        XCTAssertEqual(branch.height, 3)
+    }
 }

@@ -37,7 +37,7 @@ public enum Tree <T> {
         }
     }
     
-    /// Leaves of this `TreeNode`.
+    /// Leaves of this `Tree`.
     public var leaves: [T] {
         
         func flattened(accum: [T], tree: Tree) -> [T] {
@@ -53,9 +53,25 @@ public enum Tree <T> {
         return flattened(accum: [], tree: self)
     }
     
+    /// Height of a `Tree`.
+    public var height: Int {
+        
+        func traverse(_ tree: Tree, height: Int) -> Int {
+            
+            switch tree {
+            case .leaf:
+                return height
+            case .branch(_, let trees):
+                return trees.map { traverse($0, height: height + 1) }.max()!
+            }
+        }
+        
+        return traverse(self, height: 0)
+    }
+    
     // MARK: - Initializers
     
-    /// Create a `TreeNode.container` with a `Sequence` parameretized over `T`.
+    /// Create a `TreeNode.branch` with a `Sequence` parameretized over `T`.
     public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
         self = .branch(value, sequence.map(Tree.leaf))
     }
