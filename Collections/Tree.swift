@@ -53,6 +53,26 @@ public enum Tree <T> {
         return flattened(accum: [], tree: self)
     }
     
+    /// All of the values along the paths from this node to each leaf
+    public var paths: [[T]] {
+
+        func traverse(_ tree: Tree, accum: [[T]]) -> [[T]] {
+            
+            var accum = accum
+            let path = accum.popLast() ?? []
+            
+            switch tree {
+            case .leaf(let value):
+                return accum + (path + value)
+
+            case .branch(let value, let trees):
+                return trees.flatMap { traverse($0, accum: accum + (path + value)) }
+            }
+        }
+        
+        return traverse(self, accum: [])
+    }
+    
     /// Height of a `Tree`.
     public var height: Int {
         
