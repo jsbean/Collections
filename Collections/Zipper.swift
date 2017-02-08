@@ -131,7 +131,6 @@ public struct Zipper <T> {
     }
 }
 
-
 /// - returns: A new `Tree` resulting from applying the given function `f` to each 
 /// corresponding node in the given trees `a` and `b`.
 ///

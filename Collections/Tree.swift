@@ -97,7 +97,7 @@ public enum Tree <T> {
     }
     
     /// Apply a given `transform` to all nodes in a `Tree`.
-    public func map(_ transform: (T) -> T) -> Tree {
+    public func map <U> (_ transform: (T) -> U) -> Tree<U> {
         
         switch self {
         case .leaf(let value):
