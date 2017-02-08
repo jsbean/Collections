@@ -312,4 +312,37 @@ class TreeNodeTests: XCTestCase {
         XCTAssertEqual(Tree.leaf(1).paths.count, 1)
         XCTAssertEqual(Tree.leaf(1).paths[0][0], 1)
     }
+    
+    func testTreeZip() {
+        
+        let a = Tree.branch(1, [
+            .leaf(2),
+            .leaf(3),
+            .branch(4, [
+                .leaf(5),
+                .leaf(6)
+                ])
+            ])
+        
+        let b = Tree.branch(0, [
+            .leaf(1),
+            .leaf(2),
+            .branch(3, [
+                .leaf(4),
+                .leaf(5)
+                ])
+            ])
+        
+        let expected = Tree.branch(0, [
+            .leaf(2),
+            .leaf(6),
+            .branch(12, [
+                .leaf(20),
+                .leaf(30)
+                ])
+            ])
+        
+        let result = zip(a,b,*)
+        XCTAssert(result == expected)
+    }
 }
