@@ -345,4 +345,11 @@ class TreeNodeTests: XCTestCase {
         let result = zip(a,b,*)
         XCTAssert(result == expected)
     }
+    
+    func testInitWithEmptyArray() {
+        
+        let tree = Tree(1, [])
+        let expected = Tree.branch(1, [.leaf(1)])
+        XCTAssert(tree == expected)
+    }
 }
