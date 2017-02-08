@@ -91,8 +91,24 @@ public enum Tree <T> {
     
     // MARK: - Initializers
     
-    /// Create a `TreeNode.branch` with a `Sequence` parameretized over `T`.
+    /// Create a single-depth `TreeNode.branch` with leaves defined by a given `Sequence`
+    /// parameretized over `T`.
+    ///
+    /// In the case of initializing with an empty array:
+    ///
+    ///     let tree = Tree(1, [])
+    ///
+    /// A branch is created, populated with a single value matching the given `value`:
+    ///
+    ///     self = .branch(value, [.leaf(value)])
+    ///
     public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
+
+        if let array = sequence as? Array<T>, array.isEmpty {
+            self = .branch(value, [.leaf(value)])
+            return
+        }
+        
         self = .branch(value, sequence.map(Tree.leaf))
     }
     
