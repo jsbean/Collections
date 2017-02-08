@@ -130,3 +130,20 @@ public struct Zipper <T> {
         return update { _ in value }
     }
 }
+
+
+/// - returns: A new `Tree` resulting from applying the given function `f` to each 
+/// corresponding node in the given trees `a` and `b`.
+///
+/// - invariant: `a` and `b` are the same shape. 
+public func zip <T,U,V> (_ a: Tree<T>, _ b: Tree<U>, _ f: (T, U) -> V) -> Tree<V> {
+    
+    switch (a,b) {
+    case (.leaf(let a), .leaf(let b)):
+        return .leaf(f(a,b))
+    case (.branch(let a, let aTrees), .branch(let b, let bTrees)):
+        return .branch(f(a,b), zip(aTrees, bTrees).map { a,b in zip(a,b,f) })
+    default:
+        fatalError("Incompatible trees")
+    }
+}
