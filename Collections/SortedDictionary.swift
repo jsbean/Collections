@@ -42,6 +42,7 @@ public struct SortedDictionary<Key, Value>: DictionaryType
             }
             
             let oldValue = values.updateValue(newValue, forKey: key)
+            
             if oldValue == nil {
                 keys.insert(key)
             }

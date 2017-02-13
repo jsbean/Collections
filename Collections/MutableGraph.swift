@@ -6,6 +6,7 @@
 //
 //
 
+/// - TODO: Make Generic over some type.
 public class MutableGraph {
     
     private var adjacencyList = AdjacencyList()

@@ -19,6 +19,8 @@
 		07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */; };
 		07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
 		07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
+		071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511C41E52304E0003576F /* ArrayExtensions.swift */; };
+		071511C61E52304E0003576F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511C41E52304E0003576F /* ArrayExtensions.swift */; };
 		074309711E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
 		074309721E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
 		074309741E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
@@ -196,6 +198,7 @@
 		07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = Collections/SortedDictionary.swift; sourceTree = "<group>"; };
 		07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = CollectionsTests/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
+		071511C41E52304E0003576F /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Collections/ArrayExtensions.swift; sourceTree = "<group>"; };
 		074309701E43914E002B88A1 /* TupleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMap.swift; path = Collections/TupleMap.swift; sourceTree = "<group>"; };
 		074309731E43922D002B88A1 /* TupleMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMapTests.swift; path = CollectionsTests/TupleMapTests.swift; sourceTree = "<group>"; };
 		074309761E43E9D5002B88A1 /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Split.swift; path = Collections/Split.swift; sourceTree = "<group>"; };
@@ -315,6 +318,7 @@
 				076D04591E2D1A410023ED96 /* String */,
 				07C563681E225EE500E73FB2 /* Tuple */,
 				078F490C1E0D5C1C00B8F316 /* SequenceExtensions.swift */,
+				071511C41E52304E0003576F /* ArrayExtensions.swift */,
 				074309761E43E9D5002B88A1 /* Split.swift */,
 				078F49121E0D5D4C00B8F316 /* StableSort.swift */,
 				078F491E1E0D608800B8F316 /* Subsets.swift */,
@@ -349,13 +353,21 @@
 			name = ImmutableTree;
 			sourceTree = "<group>";
 		};
+		071511C31E52302D0003576F /* MutableTree */ = {
+			isa = PBXGroup;
+			children = (
+				076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */,
+				076D04831E2D34D00023ED96 /* MutableTree.swift */,
+			);
+			name = MutableTree;
+			sourceTree = "<group>";
+		};
 		07690BE81E0D96AA0095F1D5 /* Structures */ = {
 			isa = PBXGroup;
 			children = (
 				0711EB041E47CF2900FD9138 /* ImmutableTree */,
 				076D048C1E2D3C070023ED96 /* MutableGraph */,
-				076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */,
-				076D04831E2D34D00023ED96 /* MutableTree.swift */,
+				071511C31E52302D0003576F /* MutableTree */,
 				07C582A51DFBC9D6008BE5D0 /* Matrix.swift */,
 				07C582991DFBC052008BE5D0 /* Stack.swift */,
 				07C5829F1DFBC635008BE5D0 /* SortedArray.swift */,
@@ -750,6 +762,7 @@
 				076D048F1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
 				076D045C1E2D1A540023ED96 /* StringExtensions.swift in Sources */,
 				07C582B01DFBDD67008BE5D0 /* Swap.swift in Sources */,
+				071511C61E52304E0003576F /* ArrayExtensions.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
 				076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
@@ -793,6 +806,7 @@
 				076D048E1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
 				076D045B1E2D1A540023ED96 /* StringExtensions.swift in Sources */,
 				07C582AF1DFBDD67008BE5D0 /* Swap.swift in Sources */,
+				071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
 				076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
