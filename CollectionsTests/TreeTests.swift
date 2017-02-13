@@ -346,8 +346,7 @@ class TreeNodeTests: XCTestCase {
         XCTAssert(result == expected)
     }
     
-    func testInitWithEmptyArray() {
-        
+    func testInitWithValueAndEmptyArray() {
         let tree = Tree(1, [])
         let expected = Tree.branch(1, [.leaf(1)])
         XCTAssert(tree == expected)

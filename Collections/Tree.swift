@@ -249,7 +249,7 @@ extension Tree: CustomStringConvertible {
     public var description: String {
         
         func indents(_ amount: Int) -> String {
-            return (0 ..< amount).reduce("") { accum, _ in accum + "  " }
+            return (0 ..< amount).reduce("") { accum, _ in accum + "    " }
         }
         
         func traverse(tree: Tree, indentation: Int = 0) -> String {

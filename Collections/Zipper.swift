@@ -6,6 +6,8 @@
 //
 //
 
+/// - TODO: Nest `Crumb` inside `Zipper` inside `Tree`.
+
 /// Value of a `Tree` with its neighboring `Tree` values.
 public struct Crumb <T> {
     
