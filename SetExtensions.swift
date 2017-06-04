@@ -9,7 +9,7 @@
 extension Set {
 
     /// Inserts each of the elements contained by `other`.
-    mutating func insert(contentsOf other: Set) {
+    public mutating func insert(contentsOf other: Set) {
         for el in other {
             insert(el)
         }
