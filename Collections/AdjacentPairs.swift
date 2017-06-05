@@ -6,13 +6,17 @@
 //
 //
 
-extension Collection where IndexDistance == Int, Index == Int {
-    
-    /**
-     - returns: All adjacent pairs of elements, if count > 1. Otherwise `nil`.
-     */
-    public var adjacentPairs: [(Iterator.Element, Iterator.Element)]? {
-        guard count > 1 else { return nil }
-        return (0 ..< count - 1).map { (self[$0], self[$0 + 1]) }
+extension BidirectionalCollection where IndexDistance == Int, Index == Int {
+
+    /// - Parameter wrapped: Whether or not to include the pair of (last,first)
+    /// - Returns: Array containing 2-tuples comprosed of adjacent values.
+    public func adjacentPairs(wrapped: Bool = false) -> [(Iterator.Element, Iterator.Element)] {
+        
+        guard !isEmpty else {
+            return []
+        }
+        
+        let notWrapped = (0..<count-1).map { (self[$0], self[$0+1]) }
+        return wrapped ? notWrapped + (last!, first!) : notWrapped
     }
 }
