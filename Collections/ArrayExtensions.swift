@@ -8,7 +8,7 @@
 
 extension Array {
     
-    /// - Returns: Left-hand-side value appening the right-hand-side value, if it exists.
+    /// - Returns: Left-hand-side value appending the right-hand-side value, if it exists.
     /// Otherwise, the left-hand-side value.
     public static func + (lhs: Array, rhs: Element?) -> Array {
         
