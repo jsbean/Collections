@@ -66,3 +66,11 @@ private func mod <T: Integer> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
     return result < 0 ? result + modulus : result
 }
+
+extension Array {
+    
+    /// - Returns: `CircularArray` containing the elements contained herein.
+    public var circular: CircularArray<Element> {
+        return CircularArray(self)
+    }
+}
