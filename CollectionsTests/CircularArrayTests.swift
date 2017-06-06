@@ -58,4 +58,17 @@ class CircularArrayTests: XCTestCase {
         let expected = [5,0]
         XCTAssertEqual(subrange, expected)
     }
+    
+    func testSequence() {
+        let array = CircularArray([0,1,2,3,4,5])
+        let expected = [0,1,2,3,4,5]
+        let result = array.map { $0 }
+        XCTAssertEqual(result, expected)
+    }
+    
+    func testCollection() {
+        let array = CircularArray([0,1,2,3,4,5])
+        XCTAssertEqual(array.first!, 0)
+        XCTAssertEqual(array.last!, 5)
+    }
 }

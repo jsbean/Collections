@@ -61,6 +61,44 @@ public struct CircularArray<Element> {
     }
 }
 
+extension CircularArray: BidirectionalCollection {
+    
+    /// Start index.
+    public var startIndex: Int {
+        return storage.startIndex
+    }
+    
+    /// End index.
+    public var endIndex: Int {
+        return storage.endIndex
+    }
+    
+    /// Element at index.
+    public subscript (index: Int) -> Element {
+        return storage[index]
+    }
+    
+    /// Index after given `i`.
+    public func index(after i: Int) -> Int {
+        
+        guard i < endIndex else {
+            fatalError("Index \(i) out of range.")
+        }
+        
+        return i + 1
+    }
+    
+    /// Index before given `i`.
+    public func index(before i: Int) -> Int {
+        
+        guard i > startIndex else {
+            fatalError("Index \(i) out of range.")
+        }
+        
+        return i - 1
+    }
+}
+
 /// - returns: "True" modulo (not "remainder", which is implemented by Swift's `%`).
 private func mod <T: Integer> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
