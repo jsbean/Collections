@@ -14,11 +14,9 @@ public struct CircularArray<Element> {
     
     // MARK: - Initializers
     
-    /// Creates a `CircularArray` with an array.
-    ///
-    /// - TODO: Generalize to `Sequence<Element>`
-    public init(_ storage: Array<Element>) {
-        self.storage = storage
+    /// Creates a `CircularArray` with an sequence.
+    public init <S: Sequence> (_ storage: S) where S.Iterator.Element == Element {
+        self.storage = Array(storage)
     }
     
     // MARK: - Instance Methods
