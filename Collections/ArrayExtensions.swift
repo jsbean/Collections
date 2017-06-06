@@ -8,7 +8,7 @@
 
 extension Array {
     
-    /// - returns: Left-hand-side value appening the right-hand-side value, if it exists. 
+    /// - Returns: Left-hand-side value appening the right-hand-side value, if it exists.
     /// Otherwise, the left-hand-side value.
     public static func + (lhs: Array, rhs: Element?) -> Array {
         
@@ -17,5 +17,12 @@ extension Array {
         }
         
         return lhs
+    }
+    
+    /// - Returns: Array with the element at the given `index` removed.
+    public func removing(at index: Int) -> [Element] {
+        var copy = self
+        copy.remove(at: index)
+        return copy
     }
 }
