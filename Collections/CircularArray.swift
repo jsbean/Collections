@@ -117,6 +117,15 @@ extension CircularArray: RandomAccessCollection {
     }
 }
 
+extension CircularArray where Element: Equatable {
+    
+    /// - Returns: `true` if the elements contained both `CircularArray` values are equivalent.
+    /// Otherwise, `false`.
+    public static func == (lhs: CircularArray, rhs: CircularArray) -> Bool {
+        return lhs.storage == rhs.storage
+    }
+}
+
 /// - returns: "True" modulo (not "remainder", which is implemented by Swift's `%`).
 private func mod <T: Integer> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
