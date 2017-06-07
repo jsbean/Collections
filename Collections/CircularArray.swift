@@ -117,6 +117,56 @@ extension CircularArray: RandomAccessCollection {
     }
 }
 
+extension CircularArray: RangeReplaceableCollection {
+
+    /// Replaces the specified subrange of elements with the given collection.
+    ///
+    /// This method has the effect of removing the specified range of elements
+    /// from the collection and inserting the new elements at the same location.
+    /// The number of new elements need not match the number of elements being
+    /// removed.
+    ///
+    /// In this example, three elements in the middle of an array of integers are
+    /// replaced by the five elements of a `Repeated<Int>` instance.
+    ///
+    ///      var nums = [10, 20, 30, 40, 50]
+    ///      nums.replaceSubrange(1...3, with: repeatElement(1, count: 5))
+    ///      print(nums)
+    ///      // Prints "[10, 1, 1, 1, 1, 1, 50]"
+    ///
+    /// If you pass a zero-length range as the `subrange` parameter, this method
+    /// inserts the elements of `newElements` at `subrange.startIndex`. Calling
+    /// the `insert(contentsOf:at:)` method instead is preferred.
+    ///
+    /// Likewise, if you pass a zero-length collection as the `newElements`
+    /// parameter, this method removes the elements in the given subrange
+    /// without replacement. Calling the `removeSubrange(_:)` method instead is
+    /// preferred.
+    ///
+    /// Calling this method may invalidate any existing indices for use with this
+    /// collection.
+    ///
+    /// - Parameters:
+    ///   - subrange: The subrange of the collection to replace. The bounds of
+    ///     the range must be valid indices of the collection.
+    ///   - newElements: The new elements to add to the collection.
+    ///
+    /// - Complexity: O(*m*), where *m* is the combined length of the collection
+    ///   and `newElements`. If the call to `replaceSubrange` simply appends the
+    ///   contents of `newElements` to the collection, the complexity is O(*n*),
+    ///   where *n* is the length of `newElements`.
+    public mutating func replaceSubrange<C>(_ subrange: Range<Int>, with newElements: C)
+        where C : Collection, C.Iterator.Element == Element
+    {
+        self.storage.replaceSubrange(subrange, with: newElements)
+    }
+    
+    /// Creates an empty `CircularArray`.
+    public init() {
+        self.storage = []
+    }
+}
+
 extension CircularArray where Element: Equatable {
     
     /// - Returns: `true` if the elements contained both `CircularArray` values are equivalent.
