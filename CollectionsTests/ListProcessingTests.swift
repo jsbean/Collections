@@ -18,7 +18,7 @@ class ListProcessingTests: XCTestCase {
     
     func testArraySliceTail() {
         let arraySlice: ArraySlice<Int> = [1,2,3]
-        let tail: ArraySlice<Int> = [2,3]
+        let tail = [2,3]
         XCTAssertEqual(arraySlice.tail!, tail)
     }
     
