@@ -109,6 +109,14 @@ extension CircularArray: BidirectionalCollection {
     }
 }
 
+extension CircularArray: RandomAccessCollection {
+    
+    /// - Returns: A reversed copy of `CircularArray`.
+    public func reversed() -> CircularArray {
+        return CircularArray(storage.reversed())
+    }
+}
+
 /// - returns: "True" modulo (not "remainder", which is implemented by Swift's `%`).
 private func mod <T: Integer> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
