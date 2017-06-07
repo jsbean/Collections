@@ -38,13 +38,3 @@ extension Collection where Index == Int, SubSequence.Iterator.Element == Iterato
         return (head, tail)
     }
 }
-
-/// - returns: New `Array` with the first element `head`, and the remaining elements of `tail`.
-public func + <T> (head: T, tail: [T]) -> [T] {
-    return [head] + tail
-}
-
-/// - returns: New `Array` with `item` appended to the end of `list`.
-public func + <T> (list: [T], item: T) -> [T] {
-    return list + [item]
-}

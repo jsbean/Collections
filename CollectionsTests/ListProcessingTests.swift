@@ -68,7 +68,7 @@ class ListProcessingTests: XCTestCase {
     }
     
     func testAddTail() {
-        let head = 1
+        let head: Int = 1
         let tail: Array<Int> = [2,3]
         XCTAssertEqual(head + tail, [1,2,3])
     }
