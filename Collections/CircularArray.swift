@@ -126,6 +126,14 @@ extension CircularArray where Element: Equatable {
     }
 }
 
+extension CircularArray: ExpressibleByArrayLiteral {
+    
+    /// Creates a `CircularArray` with an array literal.
+    public init(arrayLiteral elements: Element...) {
+        self = CircularArray(elements)
+    }
+}
+
 /// - returns: "True" modulo (not "remainder", which is implemented by Swift's `%`).
 private func mod <T: Integer> (_ dividend: T, _ modulus: T) -> T {
     let result = dividend % modulus
