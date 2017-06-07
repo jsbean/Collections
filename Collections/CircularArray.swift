@@ -56,9 +56,14 @@ public struct CircularArray<Element> {
         return self[from: start + 1, through: end - 1]
     }
     
+    /// - Returns: A new `CircularArray` with the given `element` appended.
+    public func appending(_ element: Element) -> CircularArray<Element> {
+        return CircularArray(storage + element)
+    }
+    
     /// - Returns: A new `CircularArray` with the element removed at the given `index`.
     public func removing(at index: Int) -> CircularArray<Element> {
-        return CircularArray(self.storage.removing(at: index))
+        return CircularArray(storage.removing(at: index))
     }
     
     private func circularIndex(_ index: Int) -> Int {
