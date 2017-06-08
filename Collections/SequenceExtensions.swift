@@ -97,7 +97,7 @@ extension Sequence {
     
     /// - returns: `true` if no elements satisfy the given `predicate`. Otherwise, `false`.
     public func none(satisfy predicate: (Iterator.Element) -> Bool) -> Bool {
-        return !(any(satisfy: predicate))
+        return !any(satisfy: predicate)
     }
     
     /// - returns: `true` if all elements satisfy the given `predicate`. Otherwise, `false`.
