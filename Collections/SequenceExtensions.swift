@@ -76,7 +76,36 @@ extension Sequence {
     }
     
     /// - returns: `true` if all elements satisfy the given `predicate`. Otherwise, `false`.
+    public func all(satisfy predicate: (Iterator.Element) -> Bool) -> Bool {
+        for element in self {
+            if !predicate(element) {
+                return false
+            }
+        }
+        return true
+    }
+    
+    /// - returns: `true` if any elements satisfy the given `predicate`. Otherwise, `false`.
+    public func any(satisfy predicate: (Iterator.Element) -> Bool) -> Bool {
+        for element in self {
+            if predicate(element) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    /// - returns: `true` if no elements satisfy the given `predicate`. Otherwise, `false`.
+    public func none(satisfy predicate: (Iterator.Element) -> Bool) -> Bool {
+        return !(any(satisfy: predicate))
+    }
+    
+    /// - returns: `true` if all elements satisfy the given `predicate`. Otherwise, `false`.
+    /// - Warning: Deprecated in 1.19
     public func allSatisfy(_ predicate: (Iterator.Element) -> Bool) -> Bool {
+        
+        print("Deprecated in 1.19. Use `all(satisfy:)` instead.")
+        
         for element in self {
             if !predicate(element) {
                 return false
@@ -87,6 +116,9 @@ extension Sequence {
     
     /// - returns: `true` if any elements satisfy the given `predicate`. Otherwise, `false`.
     public func anySatisfy(_ predicate: (Iterator.Element) -> Bool) -> Bool {
+        
+        print("Deprecated in 1.19. Use `any(satisfy:)` instead.")
+        
         for element in self {
             if predicate(element) {
                 return true
