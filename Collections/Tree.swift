@@ -6,6 +6,55 @@
 //
 //
 
+public enum Either <Left,Right> {
+    case left(Left)
+    case right(Right)
+}
+
+// TODO: Add retroactive Equatable conformance when/if Swift allows it
+public func == <Left: Equatable, Right: Equatable> (
+    lhs: Either<Left,Right>,
+    rhs: Either<Left,Right>
+) -> Bool
+{
+    switch (lhs,rhs) {
+    case let (.left(a), .left(b)):
+        return a == b
+    case let (.right(a), .right(b)):
+        return a == b
+    default:
+        return false
+    }
+}
+
+public func != <Left: Equatable, Right: Equatable> (
+    lhs: Either<Left,Right>,
+    rhs: Either<Left,Right>
+) -> Bool
+{
+    return !(lhs == rhs)
+}
+
+public func == <Left: Equatable, Right: Equatable> (
+    lhs: [Either<Left,Right>],
+    rhs: [Either<Left,Right>]
+) -> Bool
+{
+    
+    guard lhs.count == rhs.count else {
+        return false
+    }
+    
+    for (a,b) in zip(lhs,rhs) {
+        
+        if a != b {
+            return false
+        }
+    }
+    
+    return true
+}
+
 /// Things that can go wrong when doing things to a `Tree`.
 public enum TreeError: Error {
     case indexOutOfBounds
@@ -96,25 +145,27 @@ public enum Tree <Branch,Leaf> {
         return flattened(accum: [], tree: self)
     }
     
-//    /// All of the values along the paths from this node to each leaf
-//    public var paths: [[T]] {
-//
-//        func traverse(_ tree: Tree, accum: [[T]]) -> [[T]] {
-//            
-//            var accum = accum
-//            let path = accum.popLast() ?? []
-//            
-//            switch tree {
-//            case .leaf(let value):
-//                return accum + (path + value)
-//
-//            case .branch(let value, let trees):
-//                return trees.flatMap { traverse($0, accum: accum + (path + value)) }
-//            }
-//        }
-//        
-//        return traverse(self, accum: [])
-//    }
+    /// All of the values along the paths from this node to each leaf
+    public var paths: [[Either<Branch,Leaf>]] {
+
+        func traverse(_ tree: Tree, accum: [[Either<Branch,Leaf>]])
+            -> [[Either<Branch,Leaf>]]
+        {
+            
+            var accum = accum
+            let path = accum.popLast() ?? []
+            
+            switch tree {
+            case .leaf(let value):
+                return accum + (path + .right(value))
+
+            case .branch(let value, let trees):
+                return trees.flatMap { traverse($0, accum: accum + (path + .left(value))) }
+            }
+        }
+        
+        return traverse(self, accum: [])
+    }
     
     /// Height of a `Tree`.
     public var height: Int {
