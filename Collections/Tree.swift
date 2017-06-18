@@ -13,22 +13,10 @@ public enum TreeError: Error {
     case illFormedIndexPath
 }
 
-/// Value-semantic, immutable Tree structure.
-public enum Tree <T> {
-    
-    // MARK: - Cases
-    
-    /// Leaf.
-    case leaf(T)
-    
-    /// Branch.
-    indirect case branch(T, [Tree])
-    
-    // MARK: - Instance Properties
+extension Tree where Branch == Leaf {
     
     /// The payload of a given `Tree`.
-    public var value: T {
-        
+    public var value: Leaf {
         switch self {
         case .leaf(let value):
             return value
@@ -37,10 +25,65 @@ public enum Tree <T> {
         }
     }
     
+    /// Create a single-depth `TreeNode.branch` with leaves defined by a given `Sequence`
+    /// parameretized over `T`.
+    ///
+    /// In the case of initializing with an empty array:
+    ///
+    ///     let tree = Tree(1, [])
+    ///
+    /// A branch is created, populated with a single value matching the given `value`:
+    ///
+    ///     self = .branch(value, [.leaf(value)])
+    ///
+    public init <S: Sequence> (_ value: Leaf, _ sequence: S) where S.Iterator.Element == Leaf {
+
+        if let array = sequence as? Array<Leaf>, array.isEmpty {
+            self = .branch(value, [.leaf(value)])
+            return
+        }
+
+        self = .branch(value, sequence.map(Tree.leaf))
+    }
+    
+    /// - returns: A new `Tree` with the given `value` as payload.
+    public func updating(value: Leaf) -> Tree {
+        switch self {
+        case .leaf:
+            return .leaf(value)
+        case .branch(_, let trees):
+            return .branch(value, trees)
+        }
+    }
+    
+    /// Apply a given `transform` to all nodes in a `Tree`.
+    public func map <Result> (_ transform: (Leaf) -> Result) -> Tree<Result,Result> {
+        switch self {
+        case .leaf(let value):
+            return .leaf(transform(value))
+        case .branch(let value, let trees):
+            return .branch(transform(value), trees.map { $0.map(transform) })
+        }
+    }
+}
+
+/// Value-semantic, immutable Tree structure.
+public enum Tree <Branch,Leaf> {
+    
+    // MARK: - Cases
+    
+    /// Leaf.
+    case leaf(Leaf)
+    
+    /// Branch.
+    indirect case branch(Branch, [Tree])
+    
+    // MARK: - Instance Properties
+    
     /// Leaves of this `Tree`.
-    public var leaves: [T] {
+    public var leaves: [Leaf] {
         
-        func flattened(accum: [T], tree: Tree) -> [T] {
+        func flattened(accum: [Leaf], tree: Tree) -> [Leaf] {
             
             switch tree {
             case .branch(_, let trees):
@@ -53,25 +96,25 @@ public enum Tree <T> {
         return flattened(accum: [], tree: self)
     }
     
-    /// All of the values along the paths from this node to each leaf
-    public var paths: [[T]] {
-
-        func traverse(_ tree: Tree, accum: [[T]]) -> [[T]] {
-            
-            var accum = accum
-            let path = accum.popLast() ?? []
-            
-            switch tree {
-            case .leaf(let value):
-                return accum + (path + value)
-
-            case .branch(let value, let trees):
-                return trees.flatMap { traverse($0, accum: accum + (path + value)) }
-            }
-        }
-        
-        return traverse(self, accum: [])
-    }
+//    /// All of the values along the paths from this node to each leaf
+//    public var paths: [[T]] {
+//
+//        func traverse(_ tree: Tree, accum: [[T]]) -> [[T]] {
+//            
+//            var accum = accum
+//            let path = accum.popLast() ?? []
+//            
+//            switch tree {
+//            case .leaf(let value):
+//                return accum + (path + value)
+//
+//            case .branch(let value, let trees):
+//                return trees.flatMap { traverse($0, accum: accum + (path + value)) }
+//            }
+//        }
+//        
+//        return traverse(self, accum: [])
+//    }
     
     /// Height of a `Tree`.
     public var height: Int {
@@ -90,49 +133,6 @@ public enum Tree <T> {
     }
     
     // MARK: - Initializers
-    
-    /// Create a single-depth `TreeNode.branch` with leaves defined by a given `Sequence`
-    /// parameretized over `T`.
-    ///
-    /// In the case of initializing with an empty array:
-    ///
-    ///     let tree = Tree(1, [])
-    ///
-    /// A branch is created, populated with a single value matching the given `value`:
-    ///
-    ///     self = .branch(value, [.leaf(value)])
-    ///
-    public init <S: Sequence> (_ value: T, _ sequence: S) where S.Iterator.Element == T {
-
-        if let array = sequence as? Array<T>, array.isEmpty {
-            self = .branch(value, [.leaf(value)])
-            return
-        }
-        
-        self = .branch(value, sequence.map(Tree.leaf))
-    }
-    
-    /// Apply a given `transform` to all nodes in a `Tree`.
-    public func map <U> (_ transform: (T) -> U) -> Tree<U> {
-        
-        switch self {
-        case .leaf(let value):
-            return .leaf(transform(value))
-        case .branch(let value, let trees):
-            return .branch(transform(value), trees.map { $0.map(transform) })
-        }
-    }
-    
-    /// - returns: A new `Tree` with the given `value` as payload.
-    public func updating(value: T) -> Tree {
-        
-        switch self {
-        case .leaf:
-            return .leaf(value)
-        case .branch(_, let trees):
-            return .branch(value, trees)
-        }
-    }
     
     /// Replace the subtree at the given `index` for the given `tree`.
     ///
@@ -275,8 +275,7 @@ extension Tree: CustomStringConvertible {
 /// corresponding node in the given trees `a` and `b`.
 ///
 /// - invariant: `a` and `b` are the same shape.
-public func zip <T,U,V> (_ a: Tree<T>, _ b: Tree<U>, _ f: (T, U) -> V) -> Tree<V> {
-    
+public func zip <T,U,V> (_ a: Tree<T,T>, _ b: Tree<U,U>, _ f: (T, U) -> V) -> Tree<V,V> {
     switch (a,b) {
     case (.leaf(let a), .leaf(let b)):
         return .leaf(f(a,b))
@@ -290,7 +289,7 @@ public func zip <T,U,V> (_ a: Tree<T>, _ b: Tree<U>, _ f: (T, U) -> V) -> Tree<V
 /// - TODO: Make extension, retroactively conforming to `Equatable` when Swift allows it
 
 /// - returns: `true` if two `Tree` values are equivalent. Otherwise, `false`.
-public func == <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {
+public func == <T: Equatable, U: Equatable> (lhs: Tree<T,U>, rhs: Tree<T,U>) -> Bool {
     
     switch (lhs, rhs) {
     case (.leaf(let a), .leaf(let b)):
@@ -303,12 +302,12 @@ public func == <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {
 }
 
 /// - returns: `true` if two `Tree` values are not equivalent. Otherwise, `false`.
-public func != <T: Equatable> (lhs: Tree<T>, rhs: Tree<T>) -> Bool {
+public func != <T: Equatable, U: Equatable> (lhs: Tree<T,U>, rhs: Tree<T,U>) -> Bool {
     return !(lhs == rhs)
 }
 
 /// - returns: `true` if two arrays of `Tree` values are equivalent. Otherwise, `false.`
-public func == <T: Equatable> (lhs: [Tree<T>], rhs: [Tree<T>]) -> Bool {
+public func == <T: Equatable, U: Equatable> (lhs: [Tree<T,U>], rhs: [Tree<T,U>]) -> Bool {
     
     guard lhs.count == rhs.count else {
         return false
