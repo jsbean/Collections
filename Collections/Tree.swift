@@ -121,8 +121,14 @@ public enum Tree <Branch,Leaf> {
     
     /// Transforms for `branch` and `leaf` cases.
     public struct Transform <B,L> {
+        
         let branch: (Branch) -> B
         let leaf: (Leaf) -> L
+        
+        public init(branch: @escaping (Branch) -> B, leaf: @escaping (Leaf) -> L) {
+            self.branch = branch
+            self.leaf = leaf
+        }
     }
     
     // MARK: - Cases
