@@ -119,6 +119,12 @@ extension Tree where Branch == Leaf {
 /// Value-semantic, immutable Tree structure.
 public enum Tree <Branch,Leaf> {
     
+    /// Transforms for `branch` and `leaf` cases.
+    public struct Transform <B,L> {
+        let branch: (Branch) -> B
+        let leaf: (Leaf) -> L
+    }
+    
     // MARK: - Cases
     
     /// Leaf.
@@ -171,7 +177,6 @@ public enum Tree <Branch,Leaf> {
     public var height: Int {
         
         func traverse(_ tree: Tree, height: Int) -> Int {
-            
             switch tree {
             case .leaf:
                 return height
@@ -189,7 +194,6 @@ public enum Tree <Branch,Leaf> {
     ///
     /// - throws: `TreeError` if `self` is a `leaf`.
     public func replacingTree(at index: Int, with tree: Tree) throws -> Tree {
-        
         switch self {
         case .leaf:
             throw TreeError.branchOperationPerformedOnLeaf
@@ -284,6 +288,15 @@ public enum Tree <Branch,Leaf> {
         return try traverse(self, inserting: tree, through: path, at: index)
     }
     
+    public func map <B,L> (_ transform: Transform<B,L>) -> Tree<B,L> {
+        switch self {
+        case .leaf(let value):
+            return .leaf(transform.leaf(value))
+        case .branch(let value, let trees):
+            return .branch(transform.branch(value), trees.map { $0.map(transform) })
+        }
+    }
+    
     private func insert <A> (_ element: A, into elements: [A], at index: Int) throws -> [A] {
         
         guard let (left, right) = elements.split(at: index) else {
@@ -304,7 +317,6 @@ extension Tree: CustomStringConvertible {
         }
         
         func traverse(tree: Tree, indentation: Int = 0) -> String {
-            
             switch tree {
             case .leaf(let value):
                 return indents(indentation) + "\(value)"
