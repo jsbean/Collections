@@ -11,7 +11,7 @@ import Collections
 
 class TreeNodeTests: XCTestCase {
     
-    private var tree: Tree<Int> {
+    private var tree: Tree<Int,Int> {
         return Tree.branch(0, [
             .leaf(1),
             .leaf(2),
@@ -20,7 +20,7 @@ class TreeNodeTests: XCTestCase {
     }
     
     func testLeafInit() {
-        let _ = Tree<Int>.leaf(1)
+        let _ = Tree<Int,Int>.leaf(1)
     }
     
     func testInitWithSequence() {
@@ -35,7 +35,7 @@ class TreeNodeTests: XCTestCase {
     }
     
     func testUpdatingValueLeaf() {
-        let leaf = Tree.leaf(1)
+        let leaf = Tree<Int,Int>.leaf(1)
         XCTAssertEqual(leaf.updating(value: 4).value, 4)
     }
     
@@ -45,7 +45,7 @@ class TreeNodeTests: XCTestCase {
     }
     
     func testLeavesLeaf() {
-        let leaf: Tree<Int> = .leaf(1)
+        let leaf: Tree<Int,Int> = .leaf(1)
         XCTAssertEqual(leaf.leaves, [1])
     }
     
@@ -122,7 +122,7 @@ class TreeNodeTests: XCTestCase {
     
     func testInsertLeafAtBeginningSingleDepth() {
         
-        let leafToInsert = Tree.leaf(0)
+        let leafToInsert = Tree<Int,Int>.leaf(0)
         let newTree = try! tree.inserting(leafToInsert, at: 0)
         XCTAssertEqual(newTree.leaves, [0,1,2,3])
     }
@@ -261,7 +261,7 @@ class TreeNodeTests: XCTestCase {
     }
     
     func testHeightLeafZero() {
-        XCTAssertEqual(Tree.leaf(0).height, 0)
+        XCTAssertEqual(Tree<Int,Int>.leaf(0).height, 0)
     }
     
     func testHeightBranchSingleDepthOne() {
@@ -301,16 +301,21 @@ class TreeNodeTests: XCTestCase {
             .leaf(5)
         ])
         
-        let expected = [[1,1],[1,2,3],[1,2,4],[1,5]]
+        let expected: [[Either<Int,Int>]] = [
+            [.left(1), .right(1)],
+            [.left(1), .left(2), .right(3)],
+            [.left(1), .left(2), .right(4)],
+            [.left(1), .right(5)]
+        ]
         
         zip(tree.paths, expected).forEach { path, expected in
-            XCTAssertEqual(path, expected)
+            XCTAssert(path == expected)
         }
     }
     
     func testPathLeaf() {
-        XCTAssertEqual(Tree.leaf(1).paths.count, 1)
-        XCTAssertEqual(Tree.leaf(1).paths[0][0], 1)
+        XCTAssertEqual(Tree<Int,Int>.leaf(1).paths.count, 1)
+        XCTAssert(Tree<Int,Int>.leaf(1).paths[0][0] == .right(1))
     }
     
     func testTreeZip() {
