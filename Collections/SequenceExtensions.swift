@@ -167,3 +167,15 @@ public func == <T: Equatable> (lhs: AnySequence<T>, rhs: AnySequence<T>) -> Bool
     }
     return true
 }
+
+/// - Returns: `true` if the given `array` contains the given `value`.
+public func ~= <S: Sequence> (array: S, value: S.Iterator.Element) -> Bool
+    where S.Iterator.Element: Equatable
+{
+    return array.contains(value)
+}
+
+/// - Returns: `true` if the given `set` contains the given `value`.
+public func ~= <S: SetAlgebra> (set: S, value: S.Element) -> Bool {
+    return set.contains(value)
+}
