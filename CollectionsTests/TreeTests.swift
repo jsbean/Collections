@@ -381,4 +381,29 @@ class TreeNodeTests: XCTestCase {
 
         XCTAssert(zipped == expected)
     }
+    
+    func testZipLeavesWithTransform() {
+        
+        let a = Tree.branch(true, [
+            .leaf(1),
+            .branch(false, [
+                .leaf(2),
+                .leaf(3)
+            ]),
+            .leaf(4)
+        ])
+        
+        let zipped = a.zipLeaves([1,2,3,4], *)
+        
+        let expected = Tree.branch(true, [
+            .leaf(1),
+            .branch(false, [
+                .leaf(4),
+                .leaf(9)
+            ]),
+            .leaf(16)
+        ])
+        
+        XCTAssert(zipped == expected)
+    }
 }
