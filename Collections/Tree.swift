@@ -294,6 +294,15 @@ public enum Tree <Branch,Leaf> {
         return try traverse(self, inserting: tree, through: path, at: index)
     }
     
+    public func mapLeaves <T> (_ transform: @escaping (Leaf) -> T) -> Tree<Branch,T> {
+        switch self {
+        case .leaf(let value):
+            return .leaf(transform(value))
+        case let .branch(value, trees):
+            return .branch(value, trees.map { $0.mapLeaves(transform) })
+        }
+    }
+    
     public func map <B,L> (_ transform: Transform<B,L>) -> Tree<B,L> {
         switch self {
         case .leaf(let value):
