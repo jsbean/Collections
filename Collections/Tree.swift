@@ -303,25 +303,27 @@ public enum Tree <Branch,Leaf> {
         }
     }
     
-    public func zipLeaves <C: RangeReplaceableCollection> (_ collection: C)
-        -> Tree<Branch,C.Iterator.Element>
+    public func zipLeaves <C: RangeReplaceableCollection, T> (
+        _ collection: C,
+        _ transform: @escaping (Leaf, C.Iterator.Element) -> T
+    ) -> Tree<Branch,T>
     {
         var newValues = collection
         
-        func traverse(_ tree: Tree, zipping collection: C) -> Tree<Branch,C.Iterator.Element> {
+        func traverse(_ tree: Tree, zipping collection: C) -> Tree<Branch,T> {
             
             switch tree {
-            case .leaf:
+            case .leaf(let leaf):
                 
                 guard let value = collection.first else {
                     fatalError("Incompatible collection for leaves")
                 }
                 
-                return .leaf(value)
+                return .leaf(transform(leaf,value))
                 
             case let .branch(branch, trees):
 
-                var newTrees: [Tree<Branch,C.Iterator.Element>] = []
+                var newTrees: [Tree<Branch,T>] = []
                 
                 for tree in trees {
                     switch tree {
