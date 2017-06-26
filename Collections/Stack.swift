@@ -8,69 +8,69 @@
 
 /// Stack structure.
 public struct Stack <T> {
-    
+
     fileprivate var items: [T] = []
-    
+
     // MARK: - Instance Properties
-    
+
     /// Last element in `Stack`.
     public var top: T? {
         return items.last
     }
-    
+
     /// - returns: The `top` and the remaining items, if possible. Otherwise, `nil`.
     public var destructured: (T, Stack<T>)? {
-        
+
         guard self.count > 0 else {
             return nil
         }
-        
+
         var copy = self
         let top = copy.pop()!
         return (top, copy)
     }
-    
+
     // MARK: - Initializers
 
     /// Create an empty `Stack`.
     public init() { }
-    
+
     /// Create a `Stack` with the elements of an `Array`.
     public init(_ items: [T]) {
         self.items = items
     }
-    
+
     /// Create a `Stack` with items.
     public init(_ items: T...) {
         self.items = items
     }
-    
+
     // MARK: - Instance Methods
-    
+
     /// Push item to end of `Stack`.
     public mutating func push(_ item: T) {
         items.append(item)
     }
-    
+
     /// - returns: A new `Stack` with the given `item` pushed to the top.
     public func pushing(_ item: T) -> Stack<T> {
         var copy = self
         copy.push(item)
         return copy
     }
-    
+
     /// - returns: Item from top of `Stack` if there are any. Otherwise, `nil`.
     public mutating func pop() -> T? {
         return items.popLast()
     }
-    
+
     /// - returns: `Stack` containing items popped from end of `Stack`
     public mutating func pop(amount: Int) -> Stack<T>? {
-        
+
         guard items.count > amount else {
             return nil
         }
-        
+
         var poppedItems = Stack<T>()
         for _ in 0..<amount { poppedItems.push(pop()!) }
         return poppedItems
