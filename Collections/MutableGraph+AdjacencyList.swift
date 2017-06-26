@@ -48,7 +48,7 @@ extension MutableGraph {
     }
 }
 
-extension MutableGraph.AdjacencyList: AnyCollectionWrapping {
+extension MutableGraph.AdjacencyList: CollectionWrapping {
     
     public var collection: AnyCollection<MutableGraph.EdgeList> {
         return AnyCollection(edgeLists)

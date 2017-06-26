@@ -1,16 +1,16 @@
 //
-//  AnyCollectionWrapping.swift
+//  CollectionWrapping.swift
 //  Collections
 //
 //  Created by James Bean on 1/10/17.
 //
 //
 
-/// `AnyCollectionWrapping` is a type-erasing protocol that allows a `Collection`-conforming
+/// `CollectionWrapping` is a type-erasing protocol that allows a `Collection`-conforming
 /// structure to wrap any underlying `Collection` implementation.
 ///
 /// As a result, all of the `Collection` boilerplate is done for free.
-public protocol AnyCollectionWrapping: Collection {
+public protocol CollectionWrapping: Collection {
     
     // MARK: - Associated Types
     
@@ -23,7 +23,7 @@ public protocol AnyCollectionWrapping: Collection {
     var collection: AnyCollection<Element> { get }
 }
 
-extension AnyCollectionWrapping {
+extension CollectionWrapping {
     
     // MARK: - `Collection`
     
