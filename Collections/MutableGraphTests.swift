@@ -17,7 +17,7 @@ class MutableGraphTests: XCTestCase {
         graph.addVertex(v)
         XCTAssertEqual(graph.vertices.count, 1)
     }
-    
+
     func testEdgeBetweenTwoVertices() {
         let v1 = MutableGraph.Node()
         let v2 = MutableGraph.Node()
@@ -26,7 +26,7 @@ class MutableGraphTests: XCTestCase {
         XCTAssertEqual(graph.vertices.count, 2)
         XCTAssertEqual(graph.edges.count, 1)
     }
-    
+
     func testMultipleAttemptsToAddSameNode() {
         let v = MutableGraph.Node()
         let graph = MutableGraph()
@@ -36,7 +36,7 @@ class MutableGraphTests: XCTestCase {
         XCTAssertEqual(graph.vertices.count, 1)
         XCTAssertEqual(graph.edges.count, 0)
     }
-    
+
     func testBidirectionalRelationshipIsTwoDirectedRelationships() {
         let v1 = MutableGraph.Node()
         let v2 = MutableGraph.Node()
@@ -46,7 +46,7 @@ class MutableGraphTests: XCTestCase {
         XCTAssertEqual(graph.vertices.count, 2)
         XCTAssertEqual(graph.edges.count, 2)
     }
-    
+
     func testWeightFromSingleEdge() {
         let v1 = MutableGraph.Node()
         let v2 = MutableGraph.Node()

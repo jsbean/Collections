@@ -16,7 +16,7 @@ class Zip3SequenceTests: XCTestCase {
         let a = [1,2,3]
         let b = [1,2,3]
         let c = [1,2,3]
-        
+
         zip(a,b,c).forEach { a,b,c in
             XCTAssertEqual(a,b)
             XCTAssertEqual(b,c)

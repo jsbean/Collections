@@ -10,7 +10,7 @@ import XCTest
 import Collections
 
 class CombinationsTests: XCTestCase {
-    
+
     func testCombinations() {
         let array1 = [1,2,3]
         let array2 = [4,5]

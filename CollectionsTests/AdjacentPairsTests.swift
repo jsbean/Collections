@@ -10,12 +10,12 @@ import XCTest
 import Collections
 
 class AdjacentPairsTests: XCTestCase {
-    
+
     func testAdjacentPairsEmpty() {
         let array: [Int] = []
         XCTAssert(array.adjacentPairs().isEmpty)
     }
-    
+
     func testAdjacentPairsNotWrapping() {
         let array = [1,9,2,8,3,7,4,6,5]
         let expected = [(1,9),(9,2),(2,8),(8,3),(3,7),(7,4),(4,6),(6,5)]
@@ -24,7 +24,7 @@ class AdjacentPairsTests: XCTestCase {
             XCTAssertEqual(a.1, b.1)
         }
     }
-    
+
     func testAdjacentPairsWrapping() {
         let array = [1,9,2,8,3,7,4,6,5]
         let expected = [(1,9),(9,2),(2,8),(8,3),(3,7),(7,4),(4,6),(6,5),(5,1)]

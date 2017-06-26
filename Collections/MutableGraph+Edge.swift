@@ -7,22 +7,22 @@
 //
 
 extension MutableGraph {
-    
+
     public class Edge {
-        
+
         // MARK: - Instance Properties
-        
+
         /// Source `Node`.
         public let source: Node
-        
+
         /// Source `Destination`.
         public let destination: Node
-        
+
         /// Weight of the `Edge`.
         public let weight: Float?
-        
+
         // MARK: - Initializers
-        
+
         /**
          Create an `Edge`.
          */

@@ -40,18 +40,18 @@ public func == <Left: Equatable, Right: Equatable> (
     rhs: [Either<Left,Right>]
 ) -> Bool
 {
-    
+
     guard lhs.count == rhs.count else {
         return false
     }
-    
+
     for (a,b) in zip(lhs,rhs) {
-        
+
         if a != b {
             return false
         }
     }
-    
+
     return true
 }
 
@@ -63,7 +63,7 @@ public enum TreeError: Error {
 }
 
 extension Tree where Branch == Leaf {
-    
+
     /// The payload of a given `Tree`.
     public var value: Leaf {
         switch self {
@@ -73,7 +73,7 @@ extension Tree where Branch == Leaf {
             return value
         }
     }
-    
+
     /// Create a single-depth `TreeNode.branch` with leaves defined by a given `Sequence`
     /// parameretized over `T`.
     ///
@@ -94,7 +94,7 @@ extension Tree where Branch == Leaf {
 
         self = .branch(value, sequence.map(Tree.leaf))
     }
-    
+
     /// - returns: A new `Tree` with the given `value` as payload.
     public func updating(value: Leaf) -> Tree {
         switch self {
@@ -104,7 +104,7 @@ extension Tree where Branch == Leaf {
             return .branch(value, trees)
         }
     }
-    
+
     /// Apply a given `transform` to all nodes in a `Tree`.
     public func map <Result> (_ transform: (Leaf) -> Result) -> Tree<Result,Result> {
         switch self {
@@ -118,34 +118,34 @@ extension Tree where Branch == Leaf {
 
 /// Value-semantic, immutable Tree structure.
 public enum Tree <Branch,Leaf> {
-    
+
     /// Transforms for `branch` and `leaf` cases.
     public struct Transform <B,L> {
-        
+
         let branch: (Branch) -> B
         let leaf: (Leaf) -> L
-        
+
         public init(branch: @escaping (Branch) -> B, leaf: @escaping (Leaf) -> L) {
             self.branch = branch
             self.leaf = leaf
         }
     }
-    
+
     // MARK: - Cases
-    
+
     /// Leaf.
     case leaf(Leaf)
-    
+
     /// Branch.
     indirect case branch(Branch, [Tree])
-    
+
     // MARK: - Instance Properties
-    
+
     /// Leaves of this `Tree`.
     public var leaves: [Leaf] {
-        
+
         func flattened(accum: [Leaf], tree: Tree) -> [Leaf] {
-            
+
             switch tree {
             case .branch(_, let trees):
                 return trees.reduce(accum, flattened)
@@ -153,20 +153,20 @@ public enum Tree <Branch,Leaf> {
                 return accum + [value]
             }
         }
-        
+
         return flattened(accum: [], tree: self)
     }
-    
+
     /// All of the values along the paths from this node to each leaf
     public var paths: [[Either<Branch,Leaf>]] {
 
         func traverse(_ tree: Tree, accum: [[Either<Branch,Leaf>]])
             -> [[Either<Branch,Leaf>]]
         {
-            
+
             var accum = accum
             let path = accum.popLast() ?? []
-            
+
             switch tree {
             case .leaf(let value):
                 return accum + (path + .right(value))
@@ -175,13 +175,13 @@ public enum Tree <Branch,Leaf> {
                 return trees.flatMap { traverse($0, accum: accum + (path + .left(value))) }
             }
         }
-        
+
         return traverse(self, accum: [])
     }
-    
+
     /// Height of a `Tree`.
     public var height: Int {
-        
+
         func traverse(_ tree: Tree, height: Int) -> Int {
             switch tree {
             case .leaf:
@@ -190,12 +190,12 @@ public enum Tree <Branch,Leaf> {
                 return trees.map { traverse($0, height: height + 1) }.max()!
             }
         }
-        
+
         return traverse(self, height: 0)
     }
-    
+
     // MARK: - Initializers
-    
+
     /// Replace the subtree at the given `index` for the given `tree`.
     ///
     /// - throws: `TreeError` if `self` is a `leaf`.
@@ -207,23 +207,23 @@ public enum Tree <Branch,Leaf> {
             return .branch(value, try trees.replacingElement(at: index, with: tree))
         }
     }
-    
+
     /// Replace the subtree at the given `path`.
     ///
     /// - throws: `TreeError` if the given `path` is valid.
     public func replacingTree(through path: [Int], with tree: Tree) throws -> Tree {
-        
+
         func traverse(_ tree: Tree, inserting newTree: Tree, path: [Int]) throws -> Tree {
-            
+
             switch tree {
-                
+
             // This should never be called on a leaf
             case .leaf:
                 throw TreeError.branchOperationPerformedOnLeaf
-                
+
             // Either `traverse` futher, or replace at last index specified in `path`.
             case .branch(let value, let trees):
-                
+
                 // Ensure that the `indexPath` given is valid
                 guard
                     let (index, remainingPath) = path.destructured,
@@ -231,7 +231,7 @@ public enum Tree <Branch,Leaf> {
                 else {
                     throw TreeError.illFormedIndexPath
                 }
-                
+
                 // We are done if only one `index` remaining in `indexPath`
                 guard path.count > 1 else {
                     return .branch(value, try trees.replacingElement(at: index, with: newTree))
@@ -244,10 +244,10 @@ public enum Tree <Branch,Leaf> {
                 )
             }
         }
-        
+
         return try traverse(self, inserting: tree, path: path)
     }
-    
+
     /// - returns: A new `Tree` with the given `tree` inserted at the given `index`, through
     /// the given `path`.
     ///
@@ -264,19 +264,19 @@ public enum Tree <Branch,Leaf> {
         {
 
             switch tree {
-            
+
             // We should never get to a `leaf`.
             case .leaf:
                 throw TreeError.branchOperationPerformedOnLeaf
-                
+
             // Either `traverse` further, or insert to accumulated path
             case .branch(let value, let trees):
-                
+
                 // If we have exhausted our path, attempt to insert `newTree` at `index`
                 guard let (head, tail) = path.destructured else {
                     return Tree.branch(value, try insert(newTree, into: trees, at: index))
                 }
-                
+
                 guard let subTree = trees[safe: head] else {
                     throw TreeError.illFormedIndexPath
                 }
@@ -286,14 +286,14 @@ public enum Tree <Branch,Leaf> {
                     through: tail,
                     at: index
                 )
-                
+
                 return try tree.replacingTree(at: index, with: newBranch)
             }
         }
-        
+
         return try traverse(self, inserting: tree, through: path, at: index)
     }
-    
+
     public func mapLeaves <T> (_ transform: @escaping (Leaf) -> T) -> Tree<Branch,T> {
         switch self {
         case .leaf(let value):
@@ -302,35 +302,35 @@ public enum Tree <Branch,Leaf> {
             return .branch(value, trees.map { $0.mapLeaves(transform) })
         }
     }
-    
+
     public func zipLeaves <C: RangeReplaceableCollection> (_ collection: C)
         -> Tree<Branch, C.Iterator.Element>
     {
         return zipLeaves(collection) { _, value in value }
     }
-    
+
     public func zipLeaves <C: RangeReplaceableCollection, T> (
         _ collection: C,
         _ transform: @escaping (Leaf, C.Iterator.Element) -> T
     ) -> Tree<Branch,T>
     {
         var newValues = collection
-        
+
         func traverse(_ tree: Tree) -> Tree<Branch,T> {
-            
+
             switch tree {
             case .leaf(let leaf):
-                
+
                 guard let value = newValues.first else {
                     fatalError("Incompatible collection for leaves")
                 }
-                
+
                 return .leaf(transform(leaf,value))
-                
+
             case let .branch(branch, trees):
 
                 var newTrees: [Tree<Branch,T>] = []
-                
+
                 for tree in trees {
                     switch tree {
                     case .leaf:
@@ -340,14 +340,14 @@ public enum Tree <Branch,Leaf> {
                         newTrees.append(traverse(tree))
                     }
                 }
-                
+
                 return .branch(branch, newTrees)
             }
         }
-        
+
         return traverse(self)
     }
-    
+
     public func map <B,L> (_ transform: Transform<B,L>) -> Tree<B,L> {
         switch self {
         case .leaf(let value):
@@ -356,26 +356,26 @@ public enum Tree <Branch,Leaf> {
             return .branch(transform.branch(value), trees.map { $0.map(transform) })
         }
     }
-    
+
     private func insert <A> (_ element: A, into elements: [A], at index: Int) throws -> [A] {
-        
+
         guard let (left, right) = elements.split(at: index) else {
             throw TreeError.illFormedIndexPath
         }
-        
+
         return left + [element] + right
     }
 }
 
 extension Tree: CustomStringConvertible {
-    
+
     /// Printed description.
     public var description: String {
-        
+
         func indents(_ amount: Int) -> String {
             return (0 ..< amount).reduce("") { accum, _ in accum + "    " }
         }
-        
+
         func traverse(tree: Tree, indentation: Int = 0) -> String {
             switch tree {
             case .leaf(let value):
@@ -389,7 +389,7 @@ extension Tree: CustomStringConvertible {
                 )
             }
         }
-        
+
         return traverse(tree: self)
     }
 }
@@ -413,7 +413,7 @@ public func zip <T,U,V> (_ a: Tree<T,T>, _ b: Tree<U,U>, _ f: (T, U) -> V) -> Tr
 
 /// - returns: `true` if two `Tree` values are equivalent. Otherwise, `false`.
 public func == <T: Equatable, U: Equatable> (lhs: Tree<T,U>, rhs: Tree<T,U>) -> Bool {
-    
+
     switch (lhs, rhs) {
     case (.leaf(let a), .leaf(let b)):
         return a == b
@@ -431,16 +431,16 @@ public func != <T: Equatable, U: Equatable> (lhs: Tree<T,U>, rhs: Tree<T,U>) -> 
 
 /// - returns: `true` if two arrays of `Tree` values are equivalent. Otherwise, `false.`
 public func == <T: Equatable, U: Equatable> (lhs: [Tree<T,U>], rhs: [Tree<T,U>]) -> Bool {
-    
+
     guard lhs.count == rhs.count else {
         return false
     }
-    
+
     for (lhs, rhs) in zip(lhs, rhs) {
         if lhs != rhs {
             return false
         }
     }
-    
+
     return true
 }

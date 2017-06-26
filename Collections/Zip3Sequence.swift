@@ -203,17 +203,17 @@ public struct Zip3Sequence <A: Sequence, B: Sequence, C: Sequence>: Sequence {
 
     /// A type whose instances can produce the elements of this sequence, in order.
     public typealias Iterator = Zip3Iterator<A.Iterator, B.Iterator, C.Iterator>
-    
+
     private let a: A
     private let b: B
     private let c: C
-    
+
     /// Creates an instance that makes pairs of elements from `sequence1` and
     /// `sequence2`.
     public init(_ a: A, _ b: B, _ c: C) {
         (self.a, self.b, self.c) = (a, b, c)
     }
-    
+
     /// Returns an iterator over the elements of this sequence.
     public func makeIterator() -> Iterator {
         return Iterator(
@@ -226,19 +226,19 @@ public struct Zip3Sequence <A: Sequence, B: Sequence, C: Sequence>: Sequence {
 public struct Zip3Iterator <A: IteratorProtocol, B: IteratorProtocol, C: IteratorProtocol>
     : IteratorProtocol
 {
-    
+
     /// The type of element returned by `next()`.
     public typealias Element = (A.Element, B.Element, C.Element)
-    
+
     private var a: A
     private var b: B
     private var c: C
-    
+
     /// Creates an instance around a pair of underlying iterators.
     internal init(_ a: A, _ b: B, _ c: C) {
         (self.a, self.b, self.c) = (a, b, c)
     }
-    
+
     /// Advances to the next element and returns it, or `nil` if no next element
     /// exists.
     ///
@@ -252,7 +252,7 @@ public struct Zip3Iterator <A: IteratorProtocol, B: IteratorProtocol, C: Iterato
         else {
             return nil
         }
-        
+
         return (a, b, c)
     }
 }

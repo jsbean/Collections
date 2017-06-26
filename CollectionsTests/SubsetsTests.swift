@@ -9,27 +9,27 @@
 import XCTest
 
 class SubsetsTests: XCTestCase {
-    
+
     func testSubsetsEmptyEmpty() {
         let array: [Int] = []
         XCTAssert(array.subsets(cardinality: 2).isEmpty)
     }
-    
+
     func testSubsetsCarinalityGreaterThanCountEmpty() {
         let array = [1,2]
         XCTAssert(array.subsets(cardinality: 3).isEmpty)
     }
-    
+
     func testSubsetsDouble() {
         let array = [1,2]
         XCTAssert([[1],[2]] == array.subsets(cardinality: 1))
     }
-    
+
     func testSubsetsTriple() {
         let array = [1,2,3]
         XCTAssert([[1,2],[1,3],[2,3]] == array.subsets(cardinality: 2))
     }
-    
+
     func testSubsetsQuadruple() {
         let array = [1,2,3,4]
         XCTAssert(

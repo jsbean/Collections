@@ -23,28 +23,28 @@ public enum DictionaryTypeError: Error {
 
 /// Interface for Dictionary-like structures.
 public protocol DictionaryType: Collection {
-    
+
     // MARK: - Associated Types
-    
+
     /// Key type.
     associatedtype Key: Hashable
-    
+
     /// Value type.
     associatedtype Value
-    
+
     // MARK: - Initializers
-    
+
     /// Create an empty `DictionaryType` value.
     init()
-    
+
     // MARK: - Subscripts
-    
+
     /// - returns: `Value` for the given `key`, if present. Otherwise, `nil`.
     subscript (key: Key) -> Value? { get set }
 }
 
 extension DictionaryType {
-    
+
     /// Create a `DictionaryType` with two parallel arrays.
     ///
     /// - Note: Usefule for creating a dataset from x- and y-value arrays.
@@ -52,7 +52,7 @@ extension DictionaryType {
         self.init()
         zip(xs, ys).forEach { key, value in self[key] = value }
     }
-    
+
     /// Create a `DictionaryType` with an array of tuples.
     public init(_ keysAndValues: [(Key, Value)]) {
         self.init()
@@ -63,14 +63,14 @@ extension DictionaryType {
 }
 
 extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
-    
+
     // MARK: - Instance Methods
-    
+
     /// Merge the contents of the given `dictionary` destructively into this one.
     public mutating func merge(with dictionary: Self) {
         for (k,v) in dictionary { self[k] = v }
     }
-    
+
     /// - returns: A new `Dictionary` with the contents of the given `dictionary` merged `self`
     /// over those of `self`.
     public func merged(with dictionary: Self) -> Self {
@@ -81,20 +81,20 @@ extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
 }
 
 extension DictionaryType where Value: ArrayType {
-    
+
     /// Ensure that an Array-type value exists for the given `key`.
     public mutating func ensureValue(for key: Key) {
         if self[key] == nil {
             self[key] = Value()
         }
     }
-    
+
     /// Safely append the given `value` to the Array-type `value` for the given `key`.
     public mutating func safelyAppend(_ value: Value.Element, toArrayWith key: Key) {
         ensureValue(for: key)
         self[key]!.append(value)
     }
-    
+
     /// Safely append the contents of an array to the Array-type `value` for the given `key`.
     public mutating func safelyAppendContents(of values: Value, toArrayWith key: Key) {
         ensureValue(for: key)
@@ -103,10 +103,10 @@ extension DictionaryType where Value: ArrayType {
 }
 
 extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
-    
+
     /**
      Safely append value to the array value for a given key.
-     
+
      If this value already exists in desired array, the new value will not be added.
      */
     public mutating func safelyAndUniquelyAppend(
@@ -114,14 +114,14 @@ extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
         toArrayWith key: Key
     )
     {
-        
+
         ensureValue(for: key)
-        
+
         // FIXME: Find a way to not cast to Array!
         if (self[key] as! Array).contains(value) {
             return
         }
-        
+
         self[key]!.append(value)
     }
 }
@@ -130,18 +130,18 @@ extension DictionaryType where
     Value: DictionaryType,
     Value.Key: Hashable
 {
-    
+
     /// Ensure there is a value for a given `key`.
     public mutating func ensureValue(for key: Key) {
-        
+
         if self[key] == nil {
             self[key] = Value()
         }
     }
-    
+
     /**
      Update the `value` for the given `keyPath`.
-     
+
      - TODO: Use subscript (keyPath: KeyPath) { get set }
      */
     public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
@@ -153,7 +153,7 @@ extension DictionaryType where
         else {
             throw DictionaryTypeError.illFormedKeyPath
         }
-        
+
         ensureValue(for: key)
         self[key]![subKey] = value
     }
@@ -166,7 +166,7 @@ extension DictionaryType where
 {
     /// Merge the contents of the given `dictionary` destructively into this one.
     ///
-    /// - warning: The value of a given key of the given `dictionary` will override that of 
+    /// - warning: The value of a given key of the given `dictionary` will override that of
     /// this one.
     public mutating func merge(with dictionary: Self) {
         for (key, subDict) in dictionary {
@@ -176,7 +176,7 @@ extension DictionaryType where
             }
         }
     }
-    
+
     /// - returns: A new `Dictionary` with the contents of the given `dictionary` merged `self`
     /// over those of `self`.
     public mutating func merged(with dictionary: Self) -> Self {
@@ -192,23 +192,23 @@ extension DictionaryType where
     Value.Iterator.Element == (Value.Key, Value.Value),
     Value.Value: ArrayType
 {
-    
+
     /// Ensure that there is an Array-type value for the given `keyPath`.
     ///
     /// - TODO: Make `throws`.
     public mutating func ensureValue(for keyPath: KeyPath) throws {
-        
+
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
             throw DictionaryTypeError.illFormedKeyPath
         }
-        
+
         ensureValue(for: key)
         self[key]!.ensureValue(for: subKey)
     }
-    
+
     /// Append the given `value` to the array at the given `keyPath`.
     ///
     /// > If no such subdictionary or array exists, these structures will be created.
@@ -223,11 +223,11 @@ extension DictionaryType where
         else {
             throw DictionaryTypeError.illFormedKeyPath
         }
-        
+
         try ensureValue(for: keyPath)
         self[key]!.safelyAppend(value, toArrayWith: subKey)
     }
-    
+
     /// Append the given `values` to the array at the given `keyPath`.
     ///
     /// > If no such subdictionary or array exists, these structures will be created.
@@ -242,7 +242,7 @@ extension DictionaryType where
         else {
             throw DictionaryTypeError.illFormedKeyPath
         }
-        
+
         try ensureValue(for: keyPath)
         self[key]!.safelyAppendContents(of: values, toArrayWith: subKey)
     }
@@ -255,7 +255,7 @@ extension DictionaryType where
     Value.Value: ArrayType,
     Value.Value.Element: Equatable
 {
-    
+
     /// Append given `value` to the array at the given `keyPath`, ensuring that there are no
     /// duplicates.
     ///
@@ -271,7 +271,7 @@ extension DictionaryType where
         else {
             throw DictionaryTypeError.illFormedKeyPath
         }
-        
+
         try ensureValue(for: keyPath)
         self[key]!.safelyAndUniquelyAppend(value, toArrayWith: subKey)
     }
@@ -367,11 +367,11 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     D.Value.Value.Index == Int // FIXME: Find a way to do without this constraint
 {
     for (key, lhsDict) in lhs {
-        
+
         guard let rhsDict = rhs[key] else {
             return false
         }
-        
+
         if lhsDict != rhsDict {
             return false
         }
@@ -394,6 +394,6 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 }
 
 extension Dictionary: DictionaryType {
-    
+
     // MARK: - `DictionaryType`
 }
