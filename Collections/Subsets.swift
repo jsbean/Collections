@@ -7,24 +7,24 @@
 //
 
 extension Collection where Index == Int, IndexDistance == Int {
-    
+
     // MARK: - Subsets
-    
+
     /// - returns: All combinations of with a given cardinality
     /// (how many elements chosen per combination).
     public func subsets(cardinality k: Int) -> [[Iterator.Element]] {
-        
+
         func subsets(
             cardinality k: Int,
             combinedWith prefix: [Iterator.Element],
             startingAt index: Int
         ) -> [[Iterator.Element]]
         {
-            
+
             guard k > 0 else {
                 return [prefix]
             }
-            
+
             if index < count {
                 let first = self[index]
                 return (
@@ -40,10 +40,10 @@ extension Collection where Index == Int, IndexDistance == Int {
                     )
                 )
             }
-            
+
             return []
         }
-        
+
         return subsets(cardinality: k, combinedWith: [], startingAt: 0)
     }
 }

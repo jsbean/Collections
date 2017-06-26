@@ -23,19 +23,19 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssertEqual(parent.children.count, 1)
         XCTAssert(child.parent! === parent)
     }
-    
+
     func testAddChildrenVariadic() {
         let parent = Node()
         parent.addChildren([Node(), Node(), Node()])
         XCTAssertEqual(parent.children.count, 3)
     }
-    
+
     func testAddChildrenArray() {
         let parent = Node()
         parent.addChildren([Node(), Node(), Node()])
         XCTAssertEqual(parent.children.count, 3)
     }
-    
+
     func testInsertChildAtIndexThrows() {
         let parent = Node()
         let child = Node()
@@ -44,20 +44,20 @@ class MutableTreeProtocolTests: XCTestCase {
             XCTFail()
         } catch { }
     }
-    
+
     func testInsertChildAtIndexValidEmpty() {
         let parent = Node()
         do { try parent.insertChild(Node(), at: 0) }
         catch { XCTFail() }
     }
-    
+
     func testInsertChildAtIndexValidNotEmpty() {
         let parent = Node()
         parent.addChild(Node())
         do { try parent.insertChild(Node(), at: 0) }
         catch { XCTFail() }
     }
-    
+
     func testRemoveChildAtIndexThrows() {
         let parent = Node()
         do {
@@ -65,15 +65,15 @@ class MutableTreeProtocolTests: XCTestCase {
             XCTFail()
         } catch { }
     }
-    
+
     func testRemoveChildAtIndexValid() {
         let parent = Node()
         parent.addChild(Node())
         do { try parent.removeChild(at: 0) }
         catch { XCTFail() }
-        
+
     }
-    
+
     func testRemoveChildThrows() {
         let parent = Node()
         let child = Node()
@@ -82,7 +82,7 @@ class MutableTreeProtocolTests: XCTestCase {
             XCTFail()
         } catch { }
     }
-    
+
     func testRemoveChildValid() {
         let parent = Node()
         let child = Node()
@@ -90,43 +90,43 @@ class MutableTreeProtocolTests: XCTestCase {
         do { try parent.removeChild(child) }
         catch { XCTFail() }
     }
-    
+
     func testHasChildFalseEmpty() {
         let parent = Node()
         XCTAssertFalse(parent.hasChild(Node()))
     }
-    
+
     func testHasChildFalse() {
         let parent = Node()
         parent.addChild(Node())
         XCTAssertFalse(parent.hasChild(Node()))
     }
-    
+
     func testHasChildTrue() {
         let parent = Node()
         let child = Node()
         parent.addChild(child)
         XCTAssert(parent.hasChild(child))
     }
-    
+
     func testChildAtIndexNilEmpty() {
         let parent = Node()
         XCTAssertNil(parent.child(at: 0))
     }
-    
+
     func testChildAtIndexNil() {
         let parent = Node()
         parent.addChild(Node())
         XCTAssertNil(parent.child(at: 1))
     }
-    
+
     func testChildAtIndexValidSingle() {
         let parent = Node()
         let child = Node()
         parent.addChild(child)
         XCTAssert(parent.child(at: 0) === child)
     }
-    
+
     func testChildAtIndexValidMultiple() {
         let parent = Node()
         let child1 = Node()
@@ -135,23 +135,23 @@ class MutableTreeProtocolTests: XCTestCase {
         parent.addChild(child2)
         XCTAssert(parent.child(at: 1) === child2)
     }
-    
+
     func testLeafAtIndexSelf() {
         let leaf = Node()
         XCTAssert(leaf.leaf(at: 0) === leaf)
     }
-    
+
     func testLeafAtIndexNilLeaf() {
         let leaf = Node()
         XCTAssertNil(leaf.leaf(at: 1))
     }
-    
+
     func testLeafAtIndexNilSingleDepth() {
         let parent = Node()
         for _ in 0..<5 { parent.addChild(Node()) }
         XCTAssertNil(parent.leaf(at: 5))
     }
-    
+
     func testLeafAtIndexNilMultipleDepth() {
         let root = Node()
         let internal1 = Node()
@@ -162,7 +162,7 @@ class MutableTreeProtocolTests: XCTestCase {
         root.addChild(internal2)
         XCTAssertNil(root.leaf(at: 4))
     }
-    
+
     func testLeafAtIndexValidSingleDepth() {
         let parent = Node()
         let child1 = Node()
@@ -170,7 +170,7 @@ class MutableTreeProtocolTests: XCTestCase {
         parent.addChildren([child1, child2])
         XCTAssert(parent.leaf(at: 1) === child2)
     }
-    
+
     func testLeafAtIndexValidMultipleDepth() {
         let root = Node()
         let internal1 = Node()
@@ -184,56 +184,56 @@ class MutableTreeProtocolTests: XCTestCase {
         root.addChildren([internal1, internal2])
         XCTAssert(root.leaf(at: 3) === leaf4)
     }
-    
+
     func testIsRootTrueSingleNode() {
         let root = Node()
         XCTAssert(root.isRoot)
     }
-    
+
     func testIsRootTrueContainer() {
         let root = Node()
         root.addChildren([Node(), Node(), Node()])
         XCTAssert(root.isRoot)
     }
-    
+
     func testIsLeafTrueRoot() {
         let root = Node()
         XCTAssert(root.isLeaf)
     }
-    
+
     func testIsLeafTrueLeaf() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssert(child.isLeaf)
     }
-    
+
     func testIsLeafFalse() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssertFalse(root.isLeaf)
     }
-    
+
     func testIsContainerTrue() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssert(root.isContainer)
     }
-    
+
     func testRootSelfSingleNode() {
         let root = Node()
         XCTAssert(root.root === root)
     }
-    
+
     func testRootOnlyChild() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssert(child.root === root)
     }
-    
+
     func testRootGrandchild() {
         let root = Node()
         let child = Node()
@@ -242,26 +242,26 @@ class MutableTreeProtocolTests: XCTestCase {
         root.addChild(child)
         XCTAssert(grandchild.root === root)
     }
-    
+
     func testIsContainerFalse() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssertFalse(child.isContainer)
     }
-    
+
     func testPathToRootSingleNode() {
         let root = Node()
         XCTAssert(root.pathToRoot == [root])
     }
-    
+
     func testPathToRootOnlyChild() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssert(child.pathToRoot == [child, root])
     }
-    
+
     func testPathToRootGrandchild() {
         let root = Node()
         let child = Node()
@@ -270,19 +270,19 @@ class MutableTreeProtocolTests: XCTestCase {
         root.addChild(child)
         XCTAssert(grandchild.pathToRoot == [grandchild, child, root])
     }
-    
+
     func testHasAncestorSingleNode() {
         let root = Node()
         XCTAssertFalse(root.hasAncestor(root))
     }
-    
+
     func testHasAncestorOnlyChild() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssert(child.hasAncestor(root))
     }
-    
+
     func testHasAncestorGrandchild() {
         let root = Node()
         let child = Node()
@@ -292,24 +292,24 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssert(grandchild.hasAncestor(root))
         XCTAssert(child.hasAncestor(root))
     }
-    
+
     func testAncestorAtDistanceSingleValid() {
         let root = Node()
         XCTAssert(root.ancestor(at: 0) === root)
     }
-    
+
     func testAncestorAtDistanceSingleNil() {
         let root = Node()
         XCTAssertNil(root.ancestor(at: 1))
     }
-    
+
     func testAncestorAtDistanceOnlyChild() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssert(child.ancestor(at: 1) === root)
     }
-    
+
     func testAncestorAtDistanceGrandchild() {
         let root = Node()
         let child = Node()
@@ -319,19 +319,19 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssert(grandchild.ancestor(at: 1) === child)
         XCTAssert(grandchild.ancestor(at: 2) === root)
     }
-    
+
     func testDepthRoot_1() {
         let root = Node()
         XCTAssertEqual(root.depth, 0)
     }
-    
+
     func testDepthOnlyChild_1() {
         let root = Node()
         let child = Node()
         root.addChild(child)
         XCTAssertEqual(child.depth, 1)
     }
-    
+
     func testDepthGrandchild_2() {
         let root = Node()
         let child = Node()
@@ -340,18 +340,18 @@ class MutableTreeProtocolTests: XCTestCase {
         root.addChild(child)
         XCTAssertEqual(grandchild.depth, 2)
     }
-    
+
     func testHeightSingleNode_0() {
         let root = Node()
         XCTAssertEqual(root.height, 0)
     }
-    
+
     func testHeightParent_1() {
         let parent = Node()
         parent.addChild(Node())
         XCTAssertEqual(parent.height, 1)
     }
-    
+
     func testHeightGrandparent_2() {
         let grandparent = Node()
         let parent = Node()
@@ -360,7 +360,7 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssertEqual(grandparent.height, 2)
         XCTAssertEqual(parent.height, 1)
     }
-    
+
     func testUnbalancedGrandParent_2() {
         let grandparent = Node()
         let parent1 = Node()
@@ -371,13 +371,13 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssertEqual(grandparent.height, 2)
         XCTAssertEqual(parent2.heightOfTree, 2)
     }
-    
+
     func testHasDescendentFalseSingleNode() {
         let root = Node()
         let other = Node()
         XCTAssertFalse(root.hasDescendent(other))
     }
-    
+
     func testHasDescendentParent() {
         let parent = Node()
         let child = Node()
@@ -385,7 +385,7 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssert(parent.hasDescendent(child))
         XCTAssertFalse(child.hasDescendent(parent))
     }
-    
+
     func testHasDescendentGrandparent() {
         let grandparent = Node()
         let parent = Node()
@@ -395,7 +395,7 @@ class MutableTreeProtocolTests: XCTestCase {
         XCTAssert(grandparent.hasDescendent(child))
         XCTAssertFalse(child.hasDescendent(grandparent))
     }
-    
+
     func testLeafAtIndexNilNoLeaves() {
         let root = Node()
         XCTAssertNil(root.leaf(at: 2))

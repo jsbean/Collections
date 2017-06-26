@@ -7,7 +7,7 @@
 //
 
 extension MutableGraph {
-    
+
     public class Node {
         public init() { }
     }

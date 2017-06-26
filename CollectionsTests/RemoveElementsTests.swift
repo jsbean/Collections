@@ -10,7 +10,7 @@ import XCTest
 import Collections
 
 class RemoveElementsTests: XCTestCase {
-    
+
     func testRemoveFirstThrows() {
         var array: [Int] = []
         do {
@@ -18,7 +18,7 @@ class RemoveElementsTests: XCTestCase {
             XCTFail()
         } catch { }
     }
-    
+
     func testRemoveFirst() {
         var array = [1]
         do {
@@ -28,7 +28,7 @@ class RemoveElementsTests: XCTestCase {
             XCTFail()
         }
     }
-    
+
     func testRemoveFirstAmountThrows() {
         var array = [1]
         do {
@@ -36,7 +36,7 @@ class RemoveElementsTests: XCTestCase {
             XCTFail()
         } catch { }
     }
-    
+
     func testRemoveFirstAmount() {
         var array = [1,2,3]
         do {
@@ -46,7 +46,7 @@ class RemoveElementsTests: XCTestCase {
             XCTFail()
         }
     }
-    
+
     func testRemoveLastAmountThrows() {
         var array: [Int] = []
         do {
@@ -54,7 +54,7 @@ class RemoveElementsTests: XCTestCase {
             XCTFail()
         } catch { }
     }
-    
+
     func testRemoveLastAmount() {
         var array = [1,2,3]
         do {

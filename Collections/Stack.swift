@@ -78,24 +78,24 @@ public struct Stack <T> {
 }
 
 extension Stack: Collection {
-    
+
     // MARK: - `Collection`
-    
+
     /// - Index after given index `i`.
     public func index(after i: Int) -> Int {
-        
+
         guard i != endIndex else {
             fatalError("Cannot increment endIndex")
         }
-        
+
         return i + 1
     }
-    
+
     /// - Start index.
     public var startIndex: Int {
         return 0
     }
-    
+
     /// - End index.
     public var endIndex: Int {
         return items.count
@@ -108,9 +108,9 @@ extension Stack: Collection {
 }
 
 extension Stack: ExpressibleByArrayLiteral {
-    
+
     // MARK: - `ExpressibleByArrayLiteral`.
-    
+
     /// - returns: Create a `SortedArray` with an array literal.
     public init(arrayLiteral elements: T...) {
         self.init(elements)

@@ -7,16 +7,16 @@
 //
 
 extension MutableGraph {
-    
+
     public class EdgeList {
-        
+
         var edges: [Edge] = []
         let vertex: Node
-        
+
         init(vertex: Node) {
             self.vertex = vertex
         }
-        
+
         func weight(to destination: Node) -> Float? {
             for edge in edges {
                 if edge.destination === destination {
@@ -25,12 +25,12 @@ extension MutableGraph {
             }
             return nil
         }
-        
+
         func addEdge(to destination: Node, weight: Float? = nil) {
             let edge = Edge(from: vertex, to: destination, weight: weight)
             addEdge(edge)
         }
-        
+
         func addEdge(_ edge: Edge) {
             edges.append(edge)
         }

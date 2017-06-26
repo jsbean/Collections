@@ -7,13 +7,13 @@
 //
 
 public extension RawRepresentable where Self: Hashable {
-    
+
     /// All cases of a given `enum`.
     ///
     /// **Example:**
     /// ```
     /// enum ABOrC: String { case a,b,c }
-    /// 
+    ///
     /// print(ABorC.allCases.joined(separator: ","))
     /// ```
     static var cases: [Self] {
@@ -25,7 +25,7 @@ public extension RawRepresentable where Self: Hashable {
  Iterate over an Enum type.
  */
 private func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
-    
+
     var i = 0
     return AnyIterator {
         let next = withUnsafePointer(to: &i) {
@@ -35,5 +35,5 @@ private func iterateEnum<T: Hashable>(_: T.Type) -> AnyIterator<T> {
         i += 1
         return next
     }
-    
+
 }
