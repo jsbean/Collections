@@ -60,7 +60,7 @@ public struct Stack <T> {
     }
 
     /// - returns: Item from top of `Stack` if there are any. Otherwise, `nil`.
-    @discardableResult public mutating func pop() -> T? {
+    public mutating func pop() -> T? {
         return items.popLast()
     }
 
