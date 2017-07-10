@@ -1,6 +1,6 @@
 //
-//  Collections_macOS_Performance_Tests.swift
-//  Collections macOS Performance Tests
+//  SortedArrayPerformanceTests.swift
+//  Collections
 //
 //  Created by Brian Heim on 7/10/17.
 //

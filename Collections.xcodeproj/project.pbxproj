@@ -153,10 +153,10 @@
 		6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		6A3575301E14594700646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
-		9067BD421F141DC200EBCB28 /* Collections_macOS_Performance_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* Collections_macOS_Performance_Tests.swift */; };
+		9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
 		9067BD441F141DC200EBCB28 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF94A4596C6F0B263CB6B2B /* Collections.framework */; };
 		9067BD541F14208C00EBCB28 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE87C52FF3F3B876D69FE38 /* Collections.framework */; };
-		9067BD5A1F1420FF00EBCB28 /* Collections_macOS_Performance_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* Collections_macOS_Performance_Tests.swift */; };
+		9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		E8BEBD1072209908063E20CA /* Collections.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA78A611E34DD8CE3E264DA5 /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -297,7 +297,7 @@
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9067BD411F141DC200EBCB28 /* Collections_macOS_Performance_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collections_macOS_Performance_Tests.swift; sourceTree = "<group>"; };
+		9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedArrayPerformanceTests.swift; sourceTree = "<group>"; };
 		9067BD431F141DC200EBCB28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections iOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -507,7 +507,7 @@
 		9067BD401F141DC200EBCB28 /* CollectionsPerfTests */ = {
 			isa = PBXGroup;
 			children = (
-				9067BD411F141DC200EBCB28 /* Collections_macOS_Performance_Tests.swift */,
+				9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */,
 				9067BD4A1F141DE700EBCB28 /* Supporting Files */,
 			);
 			name = CollectionsPerfTests;
@@ -953,7 +953,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067BD421F141DC200EBCB28 /* Collections_macOS_Performance_Tests.swift in Sources */,
+				9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -961,7 +961,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067BD5A1F1420FF00EBCB28 /* Collections_macOS_Performance_Tests.swift in Sources */,
+				9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
