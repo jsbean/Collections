@@ -154,8 +154,6 @@
 		6A3575301E14594700646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
 		9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
-		9067BD441F141DC200EBCB28 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCF94A4596C6F0B263CB6B2B /* Collections.framework */; };
-		9067BD541F14208C00EBCB28 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EE87C52FF3F3B876D69FE38 /* Collections.framework */; };
 		9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
@@ -335,7 +333,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067BD441F141DC200EBCB28 /* Collections.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -343,7 +340,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067BD541F14208C00EBCB28 /* Collections.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
