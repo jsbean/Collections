@@ -768,10 +768,10 @@
 			targets = (
 				2C7332CF1A5D0F4344C04F0B /* Collections iOS */,
 				7EA6ACCE3473DB3C33263FD3 /* Collections iOS Tests */,
+				9067BD4E1F14208C00EBCB28 /* Collections iOS Performance Tests */,
 				D738D360F99D76CDA19CC372 /* Collections macOS */,
 				9DB1D14D284DEE05F91E466D /* Collections macOS Tests */,
 				9067BD3E1F141DC200EBCB28 /* Collections macOS Performance Tests */,
-				9067BD4E1F14208C00EBCB28 /* Collections iOS Performance Tests */,
 			);
 		};
 /* End PBXProject section */
