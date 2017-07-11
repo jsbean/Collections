@@ -531,9 +531,9 @@
 			isa = PBXGroup;
 			children = (
 				0712F47D1F14D2A50037BB2B /* Utils.swift */,
+				0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */,
 				07B8AB671F14F6BD00E5616B /* SortedArrayPerformanceTests.swift */,
 				07B8AB7B1F15239100E5616B /* SortedDictionaryPerformanceTests.swift */,
-				0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */,
 				07B8AB751F1509F700E5616B /* TreePerformanceTests.swift */,
 				9067BD4A1F141DE700EBCB28 /* Supporting Files */,
 			);
