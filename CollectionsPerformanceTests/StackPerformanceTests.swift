@@ -16,21 +16,41 @@ class StackPerformanceTests: XCTestCase {
         return Stack((0..<count).map { _ in .random })
     }
 
-    func testCountPerformanceThousandInts() {
+    func testStartIndexPerformanceMillionInts() {
 
-        let array = randomStack(count: 1_000)
+        let stack = randomStack(count: 1_000_000)
 
         measure {
-            let _ = array.count
+            let _ = stack.startIndex
+        }
+    }
+
+    func testEndIndexPerformanceMillionInts() {
+
+        let stack = randomStack(count: 1_000_000)
+
+        measure {
+            let _ = stack.endIndex
+        }
+    }
+
+    func testCountPerformanceThousandInts() {
+
+        let stack = randomStack(count: 1_000)
+
+        measure {
+            let _ = stack.count
         }
     }
 
     func testCountPerformanceMillionInts() {
 
-        let array = randomStack(count: 1_000_000)
+        let stack = randomStack(count: 1_000_000)
 
         measure {
-            let _ = array.count
+            let _ = stack.count
         }
     }
+
+
 }
