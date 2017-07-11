@@ -110,6 +110,11 @@ extension SortedArray: Collection {
     public func sorted() -> [Element] {
         return elements
     }
+
+    /// - Returns: `true` if the given `element` is contained herein. Otherwise, `false`.
+    public func contains(_ element: Element) -> Bool {
+        return index(of: element) != nil
+    }
 }
 
 extension SortedArray: BidirectionalCollection {
