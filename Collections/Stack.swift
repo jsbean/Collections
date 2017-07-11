@@ -79,14 +79,10 @@ extension Stack: Collection {
 
     // MARK: - `Collection`
 
-    /// - Index after given index `i`.
-    public func index(after i: Int) -> Int {
-
-        guard i != endIndex else {
-            fatalError("Cannot increment endIndex")
-        }
-
-        return i + 1
+    /// - Returns: Index after the given `index`.
+    public func index(after index: Int) -> Int {
+        assert(index < endIndex, "Cannot increment to \(index + 1).")
+        return index + 1
     }
 
     /// - Start index.
@@ -102,6 +98,15 @@ extension Stack: Collection {
     /// - returns: Element at the given `index`.
     public subscript (index: Int) -> Element {
         return elements[index]
+    }
+}
+
+extension BidirectionalCollection {
+
+    /// - Returns: Index before the given `index`.
+    public func index(before index: Int) -> Int {
+        assert(index > 0, "Cannot decrement to \(index - 1)")
+        return index - 1
     }
 }
 
