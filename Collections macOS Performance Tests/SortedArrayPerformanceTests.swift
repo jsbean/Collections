@@ -12,7 +12,7 @@ import Collections
 class SortedArrayPerformanceTests: XCTestCase {
 
     func testPerformanceExample() {
-        self.measure {
+        measure {
             // TODO: fill out tests
         }
     }
