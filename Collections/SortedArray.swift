@@ -67,11 +67,11 @@ public struct SortedArray <T: Comparable> {
 
 extension SortedArray: Collection {
 
-    // MARK: - `Collection`
+    // MARK: - Collection
 
     /// - Index after given index `i`.
     public func index(after i: Int) -> Int {
-        guard i != endIndex else { fatalError("Cannot increment endIndex") }
+        assert(i < endIndex, "Cannot increment index to \(i + 1)")
         return i + 1
     }
 
@@ -89,6 +89,13 @@ extension SortedArray: Collection {
     public subscript (index: Int) -> T {
         return elements[index]
     }
+}
+
+extension SortedArray: BidirectionalCollection {
+
+    // MARK: - BidirectionalCollection
+
+
 }
 
 extension SortedArray: Equatable {
