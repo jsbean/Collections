@@ -6,10 +6,10 @@
 //
 //
 
+import Foundation
+
 /// Ordered dictionary which has sorted `keys`.
-public struct SortedDictionary<Key, Value>: DictionaryType
-    where Key: Hashable, Key: Comparable
-{
+public struct SortedDictionary<Key, Value>: DictionaryType where Key: Hashable & Comparable {
 
     // MARK: - Instance Properties
 
@@ -61,7 +61,6 @@ public struct SortedDictionary<Key, Value>: DictionaryType
     public mutating func insertContents(of sortedDictionary: SortedDictionary<Key, Value>) {
         sortedDictionary.forEach { insert($0.1, key: $0.0) }
     }
-
 
     /// - returns: Value at the given `index`, if present. Otherwise, `nil`.
     public func value(at index: Int) -> Value? {

@@ -6,6 +6,8 @@
 //
 //
 
+import Algebra
+
 /// Stack structure.
 public struct Stack <Element> {
 
@@ -79,14 +81,10 @@ extension Stack: Collection {
 
     // MARK: - `Collection`
 
-    /// - Index after given index `i`.
-    public func index(after i: Int) -> Int {
-
-        guard i != endIndex else {
-            fatalError("Cannot increment endIndex")
-        }
-
-        return i + 1
+    /// - Returns: Index after the given `index`.
+    public func index(after index: Int) -> Int {
+        assert(index < endIndex, "Cannot increment to \(index + 1).")
+        return index + 1
     }
 
     /// - Start index.
@@ -105,6 +103,23 @@ extension Stack: Collection {
     }
 }
 
+extension Stack: BidirectionalCollection {
+
+    /// - Returns: Index before the given `index`.
+    public func index(before index: Int) -> Int {
+        assert(index > 0, "Cannot decrement index to \(index - 1)")
+        return index - 1
+    }
+
+    /// Count of elements contained herein.
+    ///
+    /// - Complexity: O(_1_)
+    ///
+    public var count: Int {
+        return elements.count
+    }
+}
+
 extension Stack: ExpressibleByArrayLiteral {
 
     // MARK: - `ExpressibleByArrayLiteral`.
@@ -115,6 +130,35 @@ extension Stack: ExpressibleByArrayLiteral {
     }
 }
 
+extension Stack: Additive {
+
+    // MARK: - Additive
+
+    /// - Returns: Empty `Stack`.
+    public static var zero: Stack<Element> {
+        return Stack()
+    }
+
+    /// - Returns: `Stack` with the contents of two `Stack` values.
+    public static func + (lhs: Stack, rhs: Stack) -> Stack {
+        return Stack(lhs.elements + rhs.elements)
+    }
+}
+
+extension Stack: Monoid {
+
+    // MARK: - Monoid
+
+    /// - Returns: Empty `Stack`.
+    public static var identity: Stack<Element> {
+        return .zero
+    }
+
+    /// - Returns: Composition of two of the same `Semigroup` type values.
+    public static func <> (lhs: Stack<Element>, rhs: Stack<Element>) -> Stack<Element> {
+        return lhs + rhs
+    }
+}
 
 /// - returns: `true` if all items in both `Stack` structs are equivalent. Otherwise `false`.
 public func == <T: Equatable> (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
