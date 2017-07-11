@@ -95,6 +95,13 @@ extension SortedArray: BidirectionalCollection {
 
     // MARK: - BidirectionalCollection
 
+    /// Count of elements contained herein.
+    ///
+    /// - Complexity: O(_n_)
+    ///
+    public var count: Int {
+        return elements.count
+    }
 }
 
 extension SortedArray: Equatable {
