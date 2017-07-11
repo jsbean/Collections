@@ -91,9 +91,19 @@ extension SortedArray: Collection {
         return elements.count
     }
 
-    /// - returns: Element at the given `index`.
+    /// - Returns: Element at the given `index`.
     public subscript (index: Int) -> Element {
         return elements[index]
+    }
+
+    /// - Returns: Element with the least value.
+    public func min() -> Element? {
+        return first
+    }
+
+    /// - Returns: Element with the greatest value.
+    public func max() -> Element? {
+        return last
     }
 }
 

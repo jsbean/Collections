@@ -68,4 +68,14 @@ class SortedArrayPerformanceTests: XCTestCase {
             }
         }
     }
+
+    func testMinMillionInts() {
+        let array = randomSortedArray(count: 1_000_000)
+        measure { _ = array.min() }
+    }
+
+    func testMaxMillionInts() {
+        let array = randomSortedArray(count: 1_000_000)
+        measure { _ = array.max() }
+    }
 }
