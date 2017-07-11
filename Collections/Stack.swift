@@ -155,12 +155,10 @@ extension Stack: Monoid {
     }
 
     /// - Returns: Composition of two of the same `Semigroup` type values.
-    public static func <> (lhs: Stack<Element>, rhs: Stack<Element>) -> Stack<Element>
-    {
+    public static func <> (lhs: Stack<Element>, rhs: Stack<Element>) -> Stack<Element> {
         return lhs + rhs
     }
 }
-
 
 /// - returns: `true` if all items in both `Stack` structs are equivalent. Otherwise `false`.
 public func == <T: Equatable> (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
