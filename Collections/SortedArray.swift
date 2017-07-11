@@ -92,10 +92,14 @@ extension SortedArray: Collection {
     }
 
     /// Start index.
-    public var startIndex: Int { return 0 }
+    public var startIndex: Int {
+        return 0
+    }
 
     /// End index.
-    public var endIndex: Int { return array.count }
+    public var endIndex: Int {
+        return array.count
+    }
 
     /// - returns: Element at the given `index`.
     public subscript (index: Int) -> T {
