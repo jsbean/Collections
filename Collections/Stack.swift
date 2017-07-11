@@ -111,7 +111,13 @@ extension Stack: BidirectionalCollection {
         return index - 1
     }
 
-    
+    /// Count of elements contained herein.
+    ///
+    /// - Complexity: O(_1_)
+    ///
+    public var count: Int {
+        return elements.count
+    }
 }
 
 extension Stack: ExpressibleByArrayLiteral {
