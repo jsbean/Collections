@@ -103,11 +103,11 @@ extension Stack: Collection {
     }
 }
 
-extension BidirectionalCollection {
+extension Stack: BidirectionalCollection {
 
     /// - Returns: Index before the given `index`.
     public func index(before index: Int) -> Int {
-        assert(index > 0, "Cannot decrement to \(index - 1)")
+        assert(index > 0, "Cannot decrement index to \(index - 1)")
         return index - 1
     }
 }

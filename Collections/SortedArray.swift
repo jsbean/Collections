@@ -69,7 +69,7 @@ extension SortedArray: Collection {
 
     // MARK: - Collection
 
-    /// - Index after given index `i`.
+    /// - Returns: Index after the given `index`.
     public func index(after i: Int) -> Int {
         assert(i < endIndex, "Cannot increment index to \(i + 1)")
         return i + 1
@@ -94,6 +94,12 @@ extension SortedArray: Collection {
 extension SortedArray: BidirectionalCollection {
 
     // MARK: - BidirectionalCollection
+
+    /// - Returns: Index before the given `index`.
+    public func index(before index: Int) -> Int {
+        assert(index > 0, "Cannot decrement index to \(index - 1)")
+        return index - 1
+    }
 
     /// Count of elements contained herein.
     ///
