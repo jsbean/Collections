@@ -6,7 +6,7 @@
 //
 //
 
-import protocol Algebra.Monoid
+import Algebra
 
 /// `Array` that keeps itself sorted.
 ///
@@ -103,13 +103,32 @@ extension SortedArray: Equatable {
     }
 }
 
-/// - returns: `SortedArray` with the contents of two `SortedArray` values.
-///
-/// - FIXME: Move to `Monoid` conformance.
-public func + <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
-    var result = lhs
-    result.insertContents(of: rhs)
-    return result
+extension SortedArray: Additive {
+
+    /// - Returns: Empty `SortedArray<T>`.
+    public static var zero: SortedArray<T> {
+        return SortedArray()
+    }
+
+    /// - returns: `SortedArray` with the contents of two `SortedArray` values.
+    public static func + <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
+        var result = lhs
+        result.insertContents(of: rhs)
+        return result
+    }
+}
+
+extension SortedArray: Monoid {
+
+    /// - Returns: Empty `SortedArray<T>`.
+    public static var identity: SortedArray<T> {
+        return .zero
+    }
+
+    /// - Returns: Composition of two of the same `Semigroup` type values.
+    public static func <> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
+        return lhs + rhs
+    }
 }
 
 extension SortedArray: ExpressibleByArrayLiteral {
