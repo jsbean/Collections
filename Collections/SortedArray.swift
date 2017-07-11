@@ -9,18 +9,18 @@
 import Algebra
 
 /// `Array` that keeps itself sorted.
-public struct SortedArray <T: Comparable> {
+public struct SortedArray <Element: Comparable> {
 
-    fileprivate var elements: [T] = []
+    fileprivate var elements: [Element] = []
 
     // MARK: - Initializers
 
     /// Create an empty `SortedArray`.
     public init() { }
 
-    /// Create a `SortedArray` with another `Array` value.
-    public init(_ array: [T]) {
-        self.elements = array.sorted()
+    /// Create a `SortedArray` with the given sequence of `elements`.
+    public init <S: Sequence> (_ elements: S) where S.Iterator.Element == Element {
+        self.elements = Array(elements).sorted()
     }
 
     // MARK: - Instance Methods
@@ -28,20 +28,20 @@ public struct SortedArray <T: Comparable> {
     /// Remove the given `element`, if it is contained herein.
     ///
     /// - TODO: Make `throws` instead of returning silently.
-    public mutating func remove(_ element: T) {
+    public mutating func remove(_ element: Element) {
         guard let index = elements.index(of: element) else { return }
         elements.remove(at: index)
     }
 
     /// Insert the given `element`. Order will be kept.
-    public mutating func insert(_ element: T) {
+    public mutating func insert(_ element: Element) {
         let index = insertionPoint(for: element)
         elements.insert(element, at: index)
     }
 
     /// Insert the contents of another sequence of `T`.
     public mutating func insert <S: Sequence> (contentsOf elements: S)
-        where S.Iterator.Element == T
+        where S.Iterator.Element == Element
     {
         elements.forEach { insert($0) }
     }
@@ -49,7 +49,7 @@ public struct SortedArray <T: Comparable> {
     /// Binary search to find insertion point
     ///
     /// - TODO: Move to extension on `BidirectionCollection where Element: Comparable`.
-    private func insertionPoint(for element: T) -> Int {
+    private func insertionPoint(for element: Element) -> Int {
         var range = 0 ..< elements.count
         while range.startIndex < range.endIndex {
             let midIndex = range.startIndex + (range.endIndex - range.startIndex) / 2
@@ -86,7 +86,7 @@ extension SortedArray: Collection {
     }
 
     /// - returns: Element at the given `index`.
-    public subscript (index: Int) -> T {
+    public subscript (index: Int) -> Element {
         return elements[index]
     }
 }
@@ -119,7 +119,7 @@ extension SortedArray: Additive {
     // MARK: - Additive
 
     /// - Returns: Empty `SortedArray<T>`.
-    public static var zero: SortedArray<T> {
+    public static var zero: SortedArray<Element> {
         return SortedArray()
     }
 
@@ -136,12 +136,14 @@ extension SortedArray: Monoid {
     // MARK: - Monoid
 
     /// - Returns: Empty `SortedArray<T>`.
-    public static var identity: SortedArray<T> {
+    public static var identity: SortedArray<Element> {
         return .zero
     }
 
     /// - Returns: Composition of two of the same `Semigroup` type values.
-    public static func <> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
+    public static func <> (lhs: SortedArray<Element>, rhs: SortedArray<Element>)
+        -> SortedArray<Element>
+    {
         return lhs + rhs
     }
 }
@@ -151,7 +153,7 @@ extension SortedArray: ExpressibleByArrayLiteral {
     // MARK: - ExpressibleByArrayLiteral
 
     /// - returns: Create a `SortedArray` with an array literal.
-    public init(arrayLiteral elements: T...) {
+    public init(arrayLiteral elements: Element...) {
         self.init(elements)
     }
 }

@@ -50,7 +50,7 @@ class SortedArrayTests: XCTestCase {
     func testInsertElements() {
         var a: SortedArray = [1,3,5]
         let b: SortedArray = [2,4,6]
-        a.insertContents(of: b)
+        a.insert(contentsOf: b)
         XCTAssertEqual(a, [1,2,3,4,5,6])
     }
 
