@@ -6,6 +6,8 @@
 //
 //
 
+import protocol Algebra.Monoid
+
 /// `Array` that keeps itself sorted.
 ///
 /// - note: Qol: Consider implementing with self-balancing BST or heap.
@@ -65,22 +67,6 @@ public struct SortedArray <T: Comparable> {
     }
 }
 
-/// - returns: `SortedArray` with the contents of two `SortedArray` values.
-public func + <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
-    var result = lhs
-    result.insertContents(of: rhs)
-    return result
-}
-
-// MARK: - `Equatable`
-
-extension SortedArray: Equatable { }
-
-/// - returns: `true` if all elements in both arrays are equivalent. Otherwise, `false`.
-public func == <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> Bool {
-    return lhs.array == rhs.array
-}
-
 extension SortedArray: Collection {
 
     // MARK: - `Collection`
@@ -107,9 +93,28 @@ extension SortedArray: Collection {
     }
 }
 
+extension SortedArray: Equatable {
+
+    // MARK: - Equatable
+
+    /// - returns: `true` if all elements in both arrays are equivalent. Otherwise, `false`.
+    public static func == <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> Bool {
+        return lhs.array == rhs.array
+    }
+}
+
+/// - returns: `SortedArray` with the contents of two `SortedArray` values.
+///
+/// - FIXME: Move to `Monoid` conformance.
+public func + <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
+    var result = lhs
+    result.insertContents(of: rhs)
+    return result
+}
+
 extension SortedArray: ExpressibleByArrayLiteral {
 
-    // MARK: - `ExpressibleByArrayLiteral`
+    // MARK: - ExpressibleByArrayLiteral
 
     /// - returns: Create a `SortedArray` with an array literal.
     public init(arrayLiteral elements: T...) {
