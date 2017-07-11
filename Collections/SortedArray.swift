@@ -124,7 +124,7 @@ extension SortedArray: Additive {
 
     // MARK: - Additive
 
-    /// - Returns: Empty `SortedArray<T>`.
+    /// - Returns: Empty `SortedArray`.
     public static var zero: SortedArray<Element> {
         return SortedArray()
     }
@@ -141,7 +141,7 @@ extension SortedArray: Monoid {
 
     // MARK: - Monoid
 
-    /// - Returns: Empty `SortedArray<T>`.
+    /// - Returns: Empty `SortedArray`.
     public static var identity: SortedArray<Element> {
         return .zero
     }

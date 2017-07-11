@@ -130,6 +130,39 @@ extension Stack: ExpressibleByArrayLiteral {
     }
 }
 
+extension Stack: Additive {
+
+    // MARK: - Additive
+
+    /// - Returns: Empty `Stack`.
+    public static var zero: Stack<Element> {
+        return Stack()
+    }
+
+    /// - Returns: `Stack` with the contents of two `Stack` values.
+    /// 
+    /// - Warning: Not yet implemented!
+    public static func + <T> (lhs: Stack<T>, rhs: Stack<T>) -> Stack<T> {
+        fatalError()
+    }
+}
+
+extension Stack: Monoid {
+
+    // MARK: - Monoid
+
+    /// - Returns: Empty `Stack`.
+    public static var identity: Stack<Element> {
+        return .zero
+    }
+
+    /// - Returns: Composition of two of the same `Semigroup` type values.
+    public static func <> (lhs: Stack<Element>, rhs: Stack<Element>) -> Stack<Element>
+    {
+        return lhs + rhs
+    }
+}
+
 
 /// - returns: `true` if all items in both `Stack` structs are equivalent. Otherwise `false`.
 public func == <T: Equatable> (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
