@@ -153,6 +153,8 @@
 		6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		6A3575301E14594700646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
+		9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
+		9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		E8BEBD1072209908063E20CA /* Collections.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA78A611E34DD8CE3E264DA5 /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -166,6 +168,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 2C7332CF1A5D0F4344C04F0B;
 			remoteInfo = Collections;
+		};
+		9067BD451F141DC200EBCB28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A52D08EED292400C2D93AE99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D738D360F99D76CDA19CC372;
+			remoteInfo = "Collections macOS";
+		};
+		9067BD551F14208C00EBCB28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A52D08EED292400C2D93AE99 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C7332CF1A5D0F4344C04F0B;
+			remoteInfo = "Collections iOS";
 		};
 		B42F20C9B1FBBC0E9C52BAC6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -278,6 +294,10 @@
 		6A35752C1E14592B00646220 /* LinkedListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListTests.swift; path = CollectionsTests/LinkedListTests.swift; sourceTree = "<group>"; };
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedArrayPerformanceTests.swift; sourceTree = "<group>"; };
+		9067BD431F141DC200EBCB28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections iOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F3BB5A4A059D9090F60C3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CollectionsTests/Info.plist; sourceTree = "<group>"; };
 		DA78A611E34DD8CE3E264DA5 /* Collections.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -306,6 +326,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9067BD3C1F141DC200EBCB28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9067BD4C1F14208C00EBCB28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +388,7 @@
 				B56DC3544D1F7178A1245286 /* Frameworks */,
 				00DC35FEB35FC3DB0D8F8627 /* Collections */,
 				CAB2BE6E4455A917AA0EF6EE /* CollectionsTests */,
+				9067BD401F141DC200EBCB28 /* CollectionsPerfTests */,
 				5C8092CA26121C80EEFDE45C /* Collections.h */,
 			);
 			sourceTree = "<group>";
@@ -451,6 +486,8 @@
 				114F7E877A2B51AD889245B0 /* Collections iOS Tests.xctest */,
 				FCF94A4596C6F0B263CB6B2B /* Collections.framework */,
 				B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */,
+				9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */,
+				9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -461,6 +498,24 @@
 				5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */,
 			);
 			name = "OS X";
+			sourceTree = "<group>";
+		};
+		9067BD401F141DC200EBCB28 /* CollectionsPerfTests */ = {
+			isa = PBXGroup;
+			children = (
+				9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */,
+				9067BD4A1F141DE700EBCB28 /* Supporting Files */,
+			);
+			name = CollectionsPerfTests;
+			path = "Collections macOS Performance Tests";
+			sourceTree = "<group>";
+		};
+		9067BD4A1F141DE700EBCB28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9067BD431F141DC200EBCB28 /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B56DC3544D1F7178A1245286 /* Frameworks */ = {
@@ -592,6 +647,42 @@
 			productReference = 114F7E877A2B51AD889245B0 /* Collections iOS Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		9067BD3E1F141DC200EBCB28 /* Collections macOS Performance Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9067BD471F141DC200EBCB28 /* Build configuration list for PBXNativeTarget "Collections macOS Performance Tests" */;
+			buildPhases = (
+				9067BD3B1F141DC200EBCB28 /* Sources */,
+				9067BD3C1F141DC200EBCB28 /* Frameworks */,
+				9067BD3D1F141DC200EBCB28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9067BD461F141DC200EBCB28 /* PBXTargetDependency */,
+			);
+			name = "Collections macOS Performance Tests";
+			productName = "Collections macOS Performance Tests";
+			productReference = 9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9067BD4E1F14208C00EBCB28 /* Collections iOS Performance Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9067BD571F14208C00EBCB28 /* Build configuration list for PBXNativeTarget "Collections iOS Performance Tests" */;
+			buildPhases = (
+				9067BD4B1F14208C00EBCB28 /* Sources */,
+				9067BD4C1F14208C00EBCB28 /* Frameworks */,
+				9067BD4D1F14208C00EBCB28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9067BD561F14208C00EBCB28 /* PBXTargetDependency */,
+			);
+			name = "Collections iOS Performance Tests";
+			productName = "Collections iOS Performance Tests";
+			productReference = 9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		9DB1D14D284DEE05F91E466D /* Collections macOS Tests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F3D840385BF51B7CB384E02F /* Build configuration list for PBXNativeTarget "Collections macOS Tests" */;
@@ -634,7 +725,7 @@
 		A52D08EED292400C2D93AE99 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0820;
 				TargetAttributes = {
 					2C7332CF1A5D0F4344C04F0B = {
@@ -642,6 +733,14 @@
 					};
 					7EA6ACCE3473DB3C33263FD3 = {
 						LastSwiftMigration = 0810;
+					};
+					9067BD3E1F141DC200EBCB28 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					9067BD4E1F14208C00EBCB28 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Manual;
 					};
 					9DB1D14D284DEE05F91E466D = {
 						LastSwiftMigration = 0810;
@@ -665,11 +764,30 @@
 			targets = (
 				2C7332CF1A5D0F4344C04F0B /* Collections iOS */,
 				7EA6ACCE3473DB3C33263FD3 /* Collections iOS Tests */,
+				9067BD4E1F14208C00EBCB28 /* Collections iOS Performance Tests */,
 				D738D360F99D76CDA19CC372 /* Collections macOS */,
 				9DB1D14D284DEE05F91E466D /* Collections macOS Tests */,
+				9067BD3E1F141DC200EBCB28 /* Collections macOS Performance Tests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9067BD3D1F141DC200EBCB28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9067BD4D1F14208C00EBCB28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		75DC9AB0D3A888B06E769AE2 /* ShellScript */ = {
@@ -827,6 +945,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9067BD3B1F141DC200EBCB28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9067BD4B1F14208C00EBCB28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FC87AEDF4DDDFDA8920CA781 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -887,6 +1021,16 @@
 			name = Collections;
 			target = 2C7332CF1A5D0F4344C04F0B /* Collections iOS */;
 			targetProxy = 7592ABE63203290E66B647AA /* PBXContainerItemProxy */;
+		};
+		9067BD461F141DC200EBCB28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D738D360F99D76CDA19CC372 /* Collections macOS */;
+			targetProxy = 9067BD451F141DC200EBCB28 /* PBXContainerItemProxy */;
+		};
+		9067BD561F14208C00EBCB28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2C7332CF1A5D0F4344C04F0B /* Collections iOS */;
+			targetProxy = 9067BD551F14208C00EBCB28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1141,6 +1285,106 @@
 			};
 			name = Release;
 		};
+		9067BD481F141DC200EBCB28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Collections macOS Performance Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "dn-m.Collections-macOS-Performance-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9067BD491F141DC200EBCB28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Collections macOS Performance Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "dn-m.Collections-macOS-Performance-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		9067BD581F14208C00EBCB28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Collections iOS Performance Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "dn-m.Collections-iOS-Performance-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		9067BD591F14208C00EBCB28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = "";
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = "Collections iOS Performance Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "dn-m.Collections-iOS-Performance-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		C4CCCE16DDD85309F4BF0DA2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1202,6 +1446,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		9067BD471F141DC200EBCB28 /* Build configuration list for PBXNativeTarget "Collections macOS Performance Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9067BD481F141DC200EBCB28 /* Debug */,
+				9067BD491F141DC200EBCB28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9067BD571F14208C00EBCB28 /* Build configuration list for PBXNativeTarget "Collections iOS Performance Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9067BD581F14208C00EBCB28 /* Debug */,
+				9067BD591F14208C00EBCB28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 		A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "Collections macOS" */ = {
 			isa = XCConfigurationList;
