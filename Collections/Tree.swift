@@ -207,6 +207,7 @@ public enum Tree <Branch,Leaf> {
         return zipLeaves(collection) { _, value in value }
     }
 
+    // FIXME: Instead of copying `collection`, increment an `index`, pointing to `collection`.
     public func zipLeaves <C: RangeReplaceableCollection, T> (
         _ collection: C,
         _ transform: @escaping (Leaf, C.Iterator.Element) -> T
