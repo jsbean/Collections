@@ -6,6 +6,8 @@
 //
 //
 
+import Foundation
+
 /// Ordered dictionary which has sorted `keys`.
 public struct SortedDictionary<Key, Value>: DictionaryType where Key: Hashable & Comparable {
 

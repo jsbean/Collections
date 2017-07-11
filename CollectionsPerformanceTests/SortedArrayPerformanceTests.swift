@@ -47,8 +47,9 @@ class SortedArrayPerformanceTests: XCTestCase {
 
     // Expected complexity: O(1)
     func testSubscriptGetterPerformanceThousandTimes() {
-        var array = millionSortedInts
-        measure { stride(from: 0, to: 1_000_000, by: 999).forEach { _ = array[$0] } }
+        measure {
+            stride(from: 0, to: 1_000_000, by: 999).forEach { _ = self.millionSortedInts[$0] }
+        }
     }
 
     // Expected complexity: O(log_n_)
@@ -65,6 +66,11 @@ class SortedArrayPerformanceTests: XCTestCase {
     func testInsertThousandIntsInSortedArrayWithMillionInts() {
         var array = millionSortedInts
         measure { (0..<1_000).forEach { _ in array.insert(.random) } }
+    }
+
+    func testInsertTenThousandIntsInSortedArrayWithMillionInts() {
+        var array = millionSortedInts
+        measure { (0..<10_000).forEach { _ in array.insert(.random) } }
     }
 
     func testIndexOfElementMillionInts() {

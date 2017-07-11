@@ -33,7 +33,9 @@ public struct SortedArray <Element: Comparable> {
         elements.remove(at: index)
     }
 
-    /// Insert the given `element`. Order will be kept.
+    /// Insert the given `element`.
+    ///
+    /// - Complexity: O(_n_)
     public mutating func insert(_ element: Element) {
         let index = self.index(for: element)
         elements.insert(element, at: index)
@@ -129,7 +131,7 @@ extension SortedArray: BidirectionalCollection {
 
     /// Count of elements contained herein.
     ///
-    /// - Complexity: O(_1_)
+    /// - Complexity: O(1)
     ///
     public var count: Int {
         return elements.count
