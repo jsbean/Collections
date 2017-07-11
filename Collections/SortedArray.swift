@@ -35,7 +35,7 @@ public struct SortedArray <Element: Comparable> {
 
     /// Insert the given `element`. Order will be kept.
     public mutating func insert(_ element: Element) {
-        let index = insertionPoint(for: element)
+        let index = self.index(for: element)
         elements.insert(element, at: index)
     }
 
@@ -46,22 +46,28 @@ public struct SortedArray <Element: Comparable> {
         elements.forEach { insert($0) }
     }
 
+    /// - Returns: Index for the given `element`, if it exists. Otherwise, `nil`.
+    public func index(of element: Element) -> Int? {
+        let index = self.index(for: element)
+        guard index < count, elements[index] == element else { return nil }
+        return index
+    }
+
     /// Binary search to find insertion point
     ///
     /// - TODO: Move to extension on `BidirectionCollection where Element: Comparable`.
-    private func insertionPoint(for element: Element) -> Int {
-        var range = 0 ..< elements.count
-        while range.startIndex < range.endIndex {
-            let midIndex = range.startIndex + (range.endIndex - range.startIndex) / 2
-            if elements[midIndex] == element {
-                return midIndex
-            } else if elements[midIndex] < element {
-                range = (midIndex + 1) ..< range.endIndex
+    private func index(for element: Element) -> Int {
+        var start = 0
+        var end = elements.count
+        while start < end {
+            let middle = start + (end - start) / 2
+            if element > elements[middle] {
+                start = middle + 1
             } else {
-                range = range.startIndex ..< midIndex
+                end = middle
             }
         }
-        return range.startIndex
+        return start
     }
 }
 
