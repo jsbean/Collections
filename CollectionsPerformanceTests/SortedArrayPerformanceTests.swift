@@ -19,21 +19,19 @@ class SortedArrayPerformanceTests: XCTestCase {
         return SortedArray((0..<count).map { _ in .random })
     }
 
-    func testCountPerformanceThousandInts() {
+    func testStartIndexPerformanceMillionInts() {
+        let array = randomSortedArray(count: 1_000_000)
+        measure { let _ = array.startIndex }
+    }
 
-        let array = randomSortedArray(count: 1_000)
+    func testEndIndexPerformanceMillionInts() {
 
-        measure {
-            let _ = array.count
-        }
+        let array = randomSortedArray(count: 1_000_000)
+        measure { let _ = array.endIndex }
     }
 
     func testCountPerformanceMillionInts() {
-
         let array = randomSortedArray(count: 1_000_000)
-
-        measure {
-            let _ = array.count
-        }
+        measure { let _ = array.count }
     }
 }

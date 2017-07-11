@@ -16,41 +16,33 @@ class StackPerformanceTests: XCTestCase {
         return Stack((0..<count).map { _ in .random })
     }
 
+    // Expected complexity: O(1)
     func testStartIndexPerformanceMillionInts() {
-
         let stack = randomStack(count: 1_000_000)
-
-        measure {
-            let _ = stack.startIndex
-        }
+        measure { let _ = stack.startIndex }
     }
 
+    // Expected complexity: O(1)
     func testEndIndexPerformanceMillionInts() {
-
         let stack = randomStack(count: 1_000_000)
-
-        measure {
-            let _ = stack.endIndex
-        }
+        measure { let _ = stack.endIndex }
     }
 
-    func testCountPerformanceThousandInts() {
-
-        let stack = randomStack(count: 1_000)
-
-        measure {
-            let _ = stack.count
-        }
-    }
-
+    // Expected complexity: O(1)
     func testCountPerformanceMillionInts() {
-
         let stack = randomStack(count: 1_000_000)
-
-        measure {
-            let _ = stack.count
-        }
+        measure { let _ = stack.count }
     }
 
+    // Expected complexity: O(1)
+    func testPushPerformanceMillionInts() {
+        var stack = randomStack(count: 1_000_000)
+        measure { stack.push(.random) }
+    }
 
+    // Expected complexity: O(1)
+    func testPopPerformanceMillionInts() {
+        var stack = randomStack(count: 1_000_000)
+        measure { _ = stack.pop() }
+    }
 }
