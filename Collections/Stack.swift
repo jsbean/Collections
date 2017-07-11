@@ -7,19 +7,19 @@
 //
 
 /// Stack structure.
-public struct Stack <T> {
+public struct Stack <Element> {
 
-    fileprivate var items: [T] = []
+    fileprivate var elements: [Element] = []
 
     // MARK: - Instance Properties
 
-    /// Last element in `Stack`.
-    public var top: T? {
-        return items.last
+    /// Top element of `Stack`.
+    public var top: Element? {
+        return elements.last
     }
 
     /// - returns: The `top` and the remaining items, if possible. Otherwise, `nil`.
-    public var destructured: (T, Stack<T>)? {
+    public var destructured: (Element, Stack<Element>)? {
 
         guard self.count > 0 else {
             return nil
@@ -35,46 +35,44 @@ public struct Stack <T> {
     /// Create an empty `Stack`.
     public init() { }
 
-    /// Create a `Stack` with the elements of an `Array`.
-    public init(_ items: [T]) {
-        self.items = items
-    }
-
-    /// Create a `Stack` with items.
-    public init(_ items: T...) {
-        self.items = items
+    /// Create a `Stack` with the given sequence of `elements`.
+    public init <S: Sequence> (_ elements: S) where S.Iterator.Element == Element {
+        self.elements = Array(elements)
     }
 
     // MARK: - Instance Methods
 
     /// Push item to end of `Stack`.
-    public mutating func push(_ item: T) {
-        items.append(item)
+    public mutating func push(_ item: Element) {
+        elements.append(item)
     }
 
     /// - returns: A new `Stack` with the given `item` pushed to the top.
-    public func pushing(_ item: T) -> Stack<T> {
+    public func pushing(_ item: Element) -> Stack<Element> {
         var copy = self
         copy.push(item)
         return copy
     }
 
     /// - returns: Item from top of `Stack` if there are any. Otherwise, `nil`.
-    @discardableResult public mutating func pop() -> T? {
-        return items.popLast()
+    @discardableResult public mutating func pop() -> Element? {
+        return elements.popLast()
     }
 
     /// - returns: `Stack` containing items popped from end of `Stack`
-    public mutating func pop(amount: Int) -> Stack<T>? {
+    public mutating func pop(amount: Int) -> Stack<Element>? {
 
-        guard items.count > amount else {
+        guard elements.count > amount else {
             return nil
         }
 
-        var poppedItems = Stack<T>()
+        var poppedItems = Stack<Element>()
         for _ in 0..<amount { poppedItems.push(pop()!) }
         return poppedItems
     }
+
+    // TODO: - Returns: original, modified stack, with popped items, if possible. Otherwise, `nil`.
+    // func popping(amount: Int) -> (Stack<Element>, Stack<Element>)? { ... }
 }
 
 extension Stack: Collection {
@@ -98,12 +96,12 @@ extension Stack: Collection {
 
     /// - End index.
     public var endIndex: Int {
-        return items.count
+        return elements.count
     }
 
     /// - returns: Element at the given `index`.
-    public subscript (index: Int) -> T {
-        return items[index]
+    public subscript (index: Int) -> Element {
+        return elements[index]
     }
 }
 
@@ -112,7 +110,7 @@ extension Stack: ExpressibleByArrayLiteral {
     // MARK: - `ExpressibleByArrayLiteral`.
 
     /// - returns: Create a `SortedArray` with an array literal.
-    public init(arrayLiteral elements: T...) {
+    public init(arrayLiteral elements: Element...) {
         self.init(elements)
     }
 }
@@ -120,5 +118,5 @@ extension Stack: ExpressibleByArrayLiteral {
 
 /// - returns: `true` if all items in both `Stack` structs are equivalent. Otherwise `false`.
 public func == <T: Equatable> (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
-    return lhs.items == rhs.items
+    return lhs.elements == rhs.elements
 }

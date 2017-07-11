@@ -74,8 +74,8 @@ extension Tree where Branch == Leaf {
         }
     }
 
-    /// Create a single-depth `TreeNode.branch` with leaves defined by a given `Sequence`
-    /// parameretized over `T`.
+    /// Create a single-depth `TreeNode.branch` with leaves defined by a given `Collection`
+    /// parameretized over `Branch`/`Leaf`.
     ///
     /// In the case of initializing with an empty array:
     ///
@@ -85,14 +85,15 @@ extension Tree where Branch == Leaf {
     ///
     ///     self = .branch(value, [.leaf(value)])
     ///
-    public init <S: Sequence> (_ value: Leaf, _ sequence: S) where S.Iterator.Element == Leaf {
+    ///
+    public init <C: Collection> (_ value: Leaf, _ leaves: C) where C.Iterator.Element == Leaf {
 
-        if let array = sequence as? Array<Leaf>, array.isEmpty {
+        if leaves.isEmpty {
             self = .branch(value, [.leaf(value)])
             return
         }
 
-        self = .branch(value, sequence.map(Tree.leaf))
+        self = .branch(value, leaves.map(Tree.leaf))
     }
 
     /// - returns: A new `Tree` with the given `value` as payload.

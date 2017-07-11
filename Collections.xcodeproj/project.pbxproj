@@ -19,6 +19,10 @@
 		07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */; };
 		07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
 		07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
+		0712F4791F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */; };
+		0712F47A1F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */; };
+		0712F47B1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */; };
+		0712F47C1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */; };
 		071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511C41E52304E0003576F /* ArrayExtensions.swift */; };
 		071511C61E52304E0003576F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511C41E52304E0003576F /* ArrayExtensions.swift */; };
 		071511D11E5266C50003576F /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511D01E5266C50003576F /* Zip3Sequence.swift */; };
@@ -153,8 +157,6 @@
 		6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		6A3575301E14594700646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
-		9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
-		9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		E8BEBD1072209908063E20CA /* Collections.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA78A611E34DD8CE3E264DA5 /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -222,6 +224,9 @@
 		07125DCC1E0D0D9B004E3411 /* SortedDictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionary.swift; path = Collections/SortedDictionary.swift; sourceTree = "<group>"; };
 		07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = CollectionsTests/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
+		0712F4741F14CF870037BB2B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CollectionsPerformanceTests/Info.plist; sourceTree = SOURCE_ROOT; };
+		0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayPerformanceTests.swift; path = CollectionsPerformanceTests/SortedArrayPerformanceTests.swift; sourceTree = SOURCE_ROOT; };
+		0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackPerformanceTests.swift; path = CollectionsPerformanceTests/StackPerformanceTests.swift; sourceTree = SOURCE_ROOT; };
 		071511C41E52304E0003576F /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Collections/ArrayExtensions.swift; sourceTree = "<group>"; };
 		071511D01E5266C50003576F /* Zip3Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3Sequence.swift; path = Collections/Zip3Sequence.swift; sourceTree = "<group>"; };
 		071511D31E526BD80003576F /* Zip3SequenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3SequenceTests.swift; path = CollectionsTests/Zip3SequenceTests.swift; sourceTree = "<group>"; };
@@ -295,8 +300,6 @@
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortedArrayPerformanceTests.swift; sourceTree = "<group>"; };
-		9067BD431F141DC200EBCB28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections iOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F3BB5A4A059D9090F60C3A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = CollectionsTests/Info.plist; sourceTree = "<group>"; };
@@ -388,7 +391,7 @@
 				B56DC3544D1F7178A1245286 /* Frameworks */,
 				00DC35FEB35FC3DB0D8F8627 /* Collections */,
 				CAB2BE6E4455A917AA0EF6EE /* CollectionsTests */,
-				9067BD401F141DC200EBCB28 /* CollectionsPerfTests */,
+				9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */,
 				5C8092CA26121C80EEFDE45C /* Collections.h */,
 			);
 			sourceTree = "<group>";
@@ -500,20 +503,21 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		9067BD401F141DC200EBCB28 /* CollectionsPerfTests */ = {
+		9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */,
+				0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */,
+				0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */,
 				9067BD4A1F141DE700EBCB28 /* Supporting Files */,
 			);
-			name = CollectionsPerfTests;
+			name = CollectionsPerformanceTests;
 			path = "Collections macOS Performance Tests";
 			sourceTree = "<group>";
 		};
 		9067BD4A1F141DE700EBCB28 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9067BD431F141DC200EBCB28 /* Info.plist */,
+				0712F4741F14CF870037BB2B /* Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -736,10 +740,12 @@
 					};
 					9067BD3E1F141DC200EBCB28 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					9067BD4E1F14208C00EBCB28 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Manual;
 					};
 					9DB1D14D284DEE05F91E466D = {
@@ -949,7 +955,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067BD421F141DC200EBCB28 /* SortedArrayPerformanceTests.swift in Sources */,
+				0712F47A1F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */,
+				0712F47C1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,7 +964,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9067BD5A1F1420FF00EBCB28 /* SortedArrayPerformanceTests.swift in Sources */,
+				0712F4791F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */,
+				0712F47B1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1289,6 +1297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
@@ -1297,7 +1306,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Collections macOS Performance Tests/Info.plist";
+				INFOPLIST_FILE = CollectionsPerformanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1314,6 +1323,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
@@ -1323,7 +1333,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Collections macOS Performance Tests/Info.plist";
+				INFOPLIST_FILE = CollectionsPerformanceTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1338,6 +1348,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
@@ -1346,7 +1357,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Collections iOS Performance Tests/Info.plist";
+				INFOPLIST_FILE = CollectionsPerformanceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1364,6 +1375,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
@@ -1373,7 +1385,7 @@
 				DEVELOPMENT_TEAM = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				INFOPLIST_FILE = "Collections iOS Performance Tests/Info.plist";
+				INFOPLIST_FILE = CollectionsPerformanceTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1454,6 +1466,7 @@
 				9067BD491F141DC200EBCB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9067BD571F14208C00EBCB28 /* Build configuration list for PBXNativeTarget "Collections iOS Performance Tests" */ = {
 			isa = XCConfigurationList;
@@ -1462,6 +1475,7 @@
 				9067BD591F14208C00EBCB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "Collections macOS" */ = {
 			isa = XCConfigurationList;
