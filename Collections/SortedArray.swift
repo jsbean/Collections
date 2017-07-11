@@ -105,6 +105,11 @@ extension SortedArray: Collection {
     public func max() -> Element? {
         return last
     }
+
+    /// - Returns: Elements, sorted.
+    public func sorted() -> [Element] {
+        return elements
+    }
 }
 
 extension SortedArray: BidirectionalCollection {
