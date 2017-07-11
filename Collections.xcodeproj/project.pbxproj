@@ -19,10 +19,12 @@
 		07125DD11E0D0F5D004E3411 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */; };
 		07125DD31E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
 		07125DD41E0D13AB004E3411 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07125DD21E0D13AB004E3411 /* SwapTests.swift */; };
-		0712F4791F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */; };
-		0712F47A1F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */; };
 		0712F47B1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */; };
 		0712F47C1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */; };
+		0712F47E1F14D2A50037BB2B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F47D1F14D2A50037BB2B /* Utils.swift */; };
+		0712F47F1F14D2A50037BB2B /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F47D1F14D2A50037BB2B /* Utils.swift */; };
+		0712F4811F14D3C90037BB2B /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4801F14D3C90037BB2B /* SortedArrayPerformanceTests.swift */; };
+		0712F4821F14D3C90037BB2B /* SortedArrayPerformanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0712F4801F14D3C90037BB2B /* SortedArrayPerformanceTests.swift */; };
 		071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511C41E52304E0003576F /* ArrayExtensions.swift */; };
 		071511C61E52304E0003576F /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511C41E52304E0003576F /* ArrayExtensions.swift */; };
 		071511D11E5266C50003576F /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511D01E5266C50003576F /* Zip3Sequence.swift */; };
@@ -225,8 +227,9 @@
 		07125DCF1E0D0F5D004E3411 /* SortedDictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedDictionaryTests.swift; path = CollectionsTests/SortedDictionaryTests.swift; sourceTree = "<group>"; };
 		07125DD21E0D13AB004E3411 /* SwapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwapTests.swift; path = CollectionsTests/SwapTests.swift; sourceTree = "<group>"; };
 		0712F4741F14CF870037BB2B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = CollectionsPerformanceTests/Info.plist; sourceTree = SOURCE_ROOT; };
-		0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayPerformanceTests.swift; path = CollectionsPerformanceTests/SortedArrayPerformanceTests.swift; sourceTree = SOURCE_ROOT; };
 		0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackPerformanceTests.swift; path = CollectionsPerformanceTests/StackPerformanceTests.swift; sourceTree = SOURCE_ROOT; };
+		0712F47D1F14D2A50037BB2B /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Utils.swift; path = CollectionsPerformanceTests/Utils.swift; sourceTree = SOURCE_ROOT; };
+		0712F4801F14D3C90037BB2B /* SortedArrayPerformanceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedArrayPerformanceTests.swift; path = ../CollectionsPerformanceTests/SortedArrayPerformanceTests.swift; sourceTree = "<group>"; };
 		071511C41E52304E0003576F /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Collections/ArrayExtensions.swift; sourceTree = "<group>"; };
 		071511D01E5266C50003576F /* Zip3Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3Sequence.swift; path = Collections/Zip3Sequence.swift; sourceTree = "<group>"; };
 		071511D31E526BD80003576F /* Zip3SequenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3SequenceTests.swift; path = CollectionsTests/Zip3SequenceTests.swift; sourceTree = "<group>"; };
@@ -506,7 +509,8 @@
 		9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
-				0712F4771F14CF940037BB2B /* SortedArrayPerformanceTests.swift */,
+				0712F47D1F14D2A50037BB2B /* Utils.swift */,
+				0712F4801F14D3C90037BB2B /* SortedArrayPerformanceTests.swift */,
 				0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */,
 				9067BD4A1F141DE700EBCB28 /* Supporting Files */,
 			);
@@ -955,8 +959,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0712F47A1F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */,
 				0712F47C1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */,
+				0712F4821F14D3C90037BB2B /* SortedArrayPerformanceTests.swift in Sources */,
+				0712F47F1F14D2A50037BB2B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -964,8 +969,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0712F4791F14CF940037BB2B /* SortedArrayPerformanceTests.swift in Sources */,
 				0712F47B1F14CF940037BB2B /* StackPerformanceTests.swift in Sources */,
+				0712F4811F14D3C90037BB2B /* SortedArrayPerformanceTests.swift in Sources */,
+				0712F47E1F14D2A50037BB2B /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

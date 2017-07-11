@@ -2,7 +2,7 @@
 //  SortedArrayPerformanceTests.swift
 //  Collections
 //
-//  Created by Brian Heim on 7/10/17.
+//  Created by James Bean on 7/11/17.
 //
 //
 
@@ -16,12 +16,24 @@ class SortedArrayPerformanceTests: XCTestCase {
     // TODO: Add version reference type element
     func randomSortedArray(count: Int) -> SortedArray<Int> {
         assert(count > 0)
-        return SortedArray((0..<count).map { _ in numericCast(arc4random_uniform(UInt32.max)) })
+        return SortedArray((0..<count).map { _ in .random })
     }
 
-    func testPerformanceExample() {
-        measure {
+    func testCountPerformanceThousandInts() {
 
+        let array = randomSortedArray(count: 1_000)
+
+        measure {
+            let _ = array.count
+        }
+    }
+
+    func testCountPerformanceMillionInts() {
+
+        let array = randomSortedArray(count: 1_000_000)
+
+        measure {
+            let _ = array.count
         }
     }
 }
