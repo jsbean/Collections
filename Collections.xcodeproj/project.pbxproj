@@ -682,7 +682,6 @@
 				9067BD3B1F141DC200EBCB28 /* Sources */,
 				9067BD3C1F141DC200EBCB28 /* Frameworks */,
 				9067BD3D1F141DC200EBCB28 /* Resources */,
-				0712F4871F14DCA40037BB2B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -701,7 +700,6 @@
 				9067BD4B1F14208C00EBCB28 /* Sources */,
 				9067BD4C1F14208C00EBCB28 /* Frameworks */,
 				9067BD4D1F14208C00EBCB28 /* Resources */,
-				0712F4861F14DC4F0037BB2B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -822,34 +820,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0712F4861F14DC4F0037BB2B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Algebra.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
-		0712F4871F14DCA40037BB2B /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/Mac/Algebra.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		75DC9AB0D3A888B06E769AE2 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
