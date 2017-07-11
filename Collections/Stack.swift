@@ -110,6 +110,8 @@ extension Stack: BidirectionalCollection {
         assert(index > 0, "Cannot decrement index to \(index - 1)")
         return index - 1
     }
+
+    
 }
 
 extension Stack: ExpressibleByArrayLiteral {

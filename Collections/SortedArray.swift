@@ -103,7 +103,7 @@ extension SortedArray: BidirectionalCollection {
 
     /// Count of elements contained herein.
     ///
-    /// - Complexity: O(_n_)
+    /// - Complexity: O(_1_)
     ///
     public var count: Int {
         return elements.count
