@@ -19,9 +19,6 @@ public struct Stack <Element> {
     }
 
     /// - returns: The `top` and the remaining items, if possible. Otherwise, `nil`.
-    ///
-    /// - FIXME: This should not be necessary (as `destructured` is implemented over `Collection`).
-    ///
     public var destructured: (Element, Stack<Element>)? {
 
         guard self.count > 0 else {
