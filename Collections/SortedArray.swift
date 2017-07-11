@@ -95,7 +95,6 @@ extension SortedArray: BidirectionalCollection {
 
     // MARK: - BidirectionalCollection
 
-
 }
 
 extension SortedArray: Equatable {
