@@ -9,13 +9,13 @@
 /// Stack structure.
 public struct Stack <T> {
 
-    fileprivate var items: [T] = []
+    fileprivate var storage: [T] = []
 
     // MARK: - Instance Properties
 
-    /// Last element in `Stack`.
+    /// Top element of `Stack`.
     public var top: T? {
-        return items.last
+        return storage.last
     }
 
     /// - returns: The `top` and the remaining items, if possible. Otherwise, `nil`.
@@ -37,19 +37,19 @@ public struct Stack <T> {
 
     /// Create a `Stack` with the elements of an `Array`.
     public init(_ items: [T]) {
-        self.items = items
+        self.storage = items
     }
 
     /// Create a `Stack` with items.
     public init(_ items: T...) {
-        self.items = items
+        self.storage = items
     }
 
     // MARK: - Instance Methods
 
     /// Push item to end of `Stack`.
     public mutating func push(_ item: T) {
-        items.append(item)
+        storage.append(item)
     }
 
     /// - returns: A new `Stack` with the given `item` pushed to the top.
@@ -61,13 +61,13 @@ public struct Stack <T> {
 
     /// - returns: Item from top of `Stack` if there are any. Otherwise, `nil`.
     @discardableResult public mutating func pop() -> T? {
-        return items.popLast()
+        return storage.popLast()
     }
 
     /// - returns: `Stack` containing items popped from end of `Stack`
     public mutating func pop(amount: Int) -> Stack<T>? {
 
-        guard items.count > amount else {
+        guard storage.count > amount else {
             return nil
         }
 
@@ -98,12 +98,12 @@ extension Stack: Collection {
 
     /// - End index.
     public var endIndex: Int {
-        return items.count
+        return storage.count
     }
 
     /// - returns: Element at the given `index`.
     public subscript (index: Int) -> T {
-        return items[index]
+        return storage[index]
     }
 }
 
@@ -120,5 +120,5 @@ extension Stack: ExpressibleByArrayLiteral {
 
 /// - returns: `true` if all items in both `Stack` structs are equivalent. Otherwise `false`.
 public func == <T: Equatable> (lhs: Stack<T>, rhs: Stack<T>) -> Bool {
-    return lhs.items == rhs.items
+    return lhs.storage == rhs.storage
 }
