@@ -140,10 +140,8 @@ extension Stack: Additive {
     }
 
     /// - Returns: `Stack` with the contents of two `Stack` values.
-    /// 
-    /// - Warning: Not yet implemented!
-    public static func + <T> (lhs: Stack<T>, rhs: Stack<T>) -> Stack<T> {
-        fatalError()
+    public static func + (lhs: Stack, rhs: Stack) -> Stack {
+        return Stack(lhs.elements + rhs.elements)
     }
 }
 
