@@ -40,7 +40,7 @@ public struct SortedArray <T: Comparable> {
     }
 
     /// Insert the contents of another sequence of `T`.
-    public mutating func insertContents <S: Sequence> (of elements: S)
+    public mutating func insert <S: Sequence> (contentsOf elements: S)
         where S.Iterator.Element == T
     {
         elements.forEach { insert($0) }
@@ -116,6 +116,8 @@ extension SortedArray: Equatable {
 
 extension SortedArray: Additive {
 
+    // MARK: - Additive
+
     /// - Returns: Empty `SortedArray<T>`.
     public static var zero: SortedArray<T> {
         return SortedArray()
@@ -124,12 +126,14 @@ extension SortedArray: Additive {
     /// - returns: `SortedArray` with the contents of two `SortedArray` values.
     public static func + <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> SortedArray<T> {
         var result = lhs
-        result.insertContents(of: rhs)
+        result.insert(contentsOf: rhs)
         return result
     }
 }
 
 extension SortedArray: Monoid {
+
+    // MARK: - Monoid
 
     /// - Returns: Empty `SortedArray<T>`.
     public static var identity: SortedArray<T> {
