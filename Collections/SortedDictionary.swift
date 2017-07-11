@@ -60,7 +60,6 @@ public struct SortedDictionary<Key, Value>: DictionaryType where Key: Hashable &
         sortedDictionary.forEach { insert($0.1, key: $0.0) }
     }
 
-
     /// - returns: Value at the given `index`, if present. Otherwise, `nil`.
     public func value(at index: Int) -> Value? {
         if index >= keys.count { return nil }

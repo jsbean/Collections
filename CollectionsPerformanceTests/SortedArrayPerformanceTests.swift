@@ -11,6 +11,8 @@ import Collections
 
 class SortedArrayPerformanceTests: XCTestCase {
 
+    let millionSortedInts = SortedArray((0..<1_000_000).map { _ in Int.random })
+
     // TODO: Add numbers in range
     // TODO: Add version with struct element
     // TODO: Add version reference type element
@@ -21,37 +23,37 @@ class SortedArrayPerformanceTests: XCTestCase {
 
     // Expected complexity: O(1)
     func testStartIndexPerformanceMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
-        measure { let _ = array.startIndex }
+        measure { _ = self.millionSortedInts.startIndex }
     }
 
     // Expected complexity: O(1)
     func testEndIndexPerformanceMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
-        measure { let _ = array.endIndex }
+        measure { _ = self.millionSortedInts.endIndex }
     }
 
     // Expected complexity: O(1)
     func testCountPerformanceMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
-        measure { let _ = array.count }
+        measure { _ = self.millionSortedInts.count }
+    }
+
+    func testIsEmptyPerformanceMillionInts() {
+        measure { _ = self.millionSortedInts.isEmpty }
     }
 
     // Expected complexity: O(1)
     func testSubscriptGetterPerformanceMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
-        measure { let _ = array[65_4321] }
+        measure { _ = self.millionSortedInts[65_4321] }
     }
 
     // Expected complexity: O(1)
     func testSubscriptGetterPerformanceThousandTimes() {
-        let array = randomSortedArray(count: 1_000_000)
+        var array = millionSortedInts
         measure { stride(from: 0, to: 1_000_000, by: 999).forEach { _ = array[$0] } }
     }
 
     // Expected complexity: O(log_n_)
     func testInsertSingleIntInSortedArrayWithMillionInts() {
-        var array = randomSortedArray(count: 1_000_000)
+        var array = millionSortedInts
         measure { array.insert(.random) }
     }
 
@@ -61,12 +63,12 @@ class SortedArrayPerformanceTests: XCTestCase {
     }
 
     func testInsertThousandIntsInSortedArrayWithMillionInts() {
-        var array = randomSortedArray(count: 1_000_000)
+        var array = millionSortedInts
         measure { (0..<1_000).forEach { _ in array.insert(.random) } }
     }
 
     func testIndexOfElementMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
+        let array = millionSortedInts
         measure {
             stride(from: 0, to: 1_000_000, by: 999).forEach { element in
                 _ = array.index(of: element)
@@ -76,25 +78,25 @@ class SortedArrayPerformanceTests: XCTestCase {
 
     // Expected complexity: O(1)
     func testMinMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
+        let array = millionSortedInts
         measure { _ = array.min() }
     }
 
     // Expected complexity: O(1)
     func testMaxMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
+        let array = millionSortedInts
         measure { _ = array.max() }
     }
 
     // Expected complexity: O(1)
     // This should never be called, but it is part of the API surface, so in case.
     func testSortedMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
+        let array = millionSortedInts
         measure { _ = array.sorted() }
     }
 
     func testContainsMillionInts() {
-        let array = randomSortedArray(count: 1_000_000)
+        let array = millionSortedInts
         measure { _ = array.contains(.random) }
     }
 }

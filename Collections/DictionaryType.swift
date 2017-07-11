@@ -20,7 +20,6 @@ public enum DictionaryTypeError: Error {
     case illFormedKeyPath
 }
 
-
 /// Interface for Dictionary-like structures.
 public protocol DictionaryType: Collection {
 
