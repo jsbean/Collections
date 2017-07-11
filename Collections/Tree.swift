@@ -5,7 +5,6 @@
 //  Created by James Bean on 12/9/16.
 //
 //
-//
 
 /// Value-semantic, immutable Tree structure.
 public enum Tree <Branch,Leaf> {
