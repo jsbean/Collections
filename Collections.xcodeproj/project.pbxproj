@@ -388,7 +388,7 @@
 				B56DC3544D1F7178A1245286 /* Frameworks */,
 				00DC35FEB35FC3DB0D8F8627 /* Collections */,
 				CAB2BE6E4455A917AA0EF6EE /* CollectionsTests */,
-				9067BD401F141DC200EBCB28 /* CollectionsPerfTests */,
+				9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */,
 				5C8092CA26121C80EEFDE45C /* Collections.h */,
 			);
 			sourceTree = "<group>";
@@ -500,13 +500,13 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
-		9067BD401F141DC200EBCB28 /* CollectionsPerfTests */ = {
+		9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
 				9067BD411F141DC200EBCB28 /* SortedArrayPerformanceTests.swift */,
 				9067BD4A1F141DE700EBCB28 /* Supporting Files */,
 			);
-			name = CollectionsPerfTests;
+			name = CollectionsPerformanceTests;
 			path = "Collections macOS Performance Tests";
 			sourceTree = "<group>";
 		};
@@ -1454,6 +1454,7 @@
 				9067BD491F141DC200EBCB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9067BD571F14208C00EBCB28 /* Build configuration list for PBXNativeTarget "Collections iOS Performance Tests" */ = {
 			isa = XCConfigurationList;
@@ -1462,6 +1463,7 @@
 				9067BD591F14208C00EBCB28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A831105EB386042A48C6556F /* Build configuration list for PBXNativeTarget "Collections macOS" */ = {
 			isa = XCConfigurationList;
