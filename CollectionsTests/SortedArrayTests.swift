@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import Algebra
 import Collections
 
 class SortedArrayTests: XCTestCase {

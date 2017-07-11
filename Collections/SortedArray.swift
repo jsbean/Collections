@@ -9,11 +9,9 @@
 import Algebra
 
 /// `Array` that keeps itself sorted.
-///
-/// - note: Qol: Consider implementing with self-balancing BST or heap.
 public struct SortedArray <T: Comparable> {
 
-    fileprivate var array: [T] = []
+    fileprivate var elements: [T] = []
 
     // MARK: - Initializers
 
@@ -22,7 +20,7 @@ public struct SortedArray <T: Comparable> {
 
     /// Create a `SortedArray` with another `Array` value.
     public init(_ array: [T]) {
-        self.array = array.sorted()
+        self.elements = array.sorted()
     }
 
     // MARK: - Instance Methods
@@ -31,14 +29,14 @@ public struct SortedArray <T: Comparable> {
     ///
     /// - TODO: Make `throws` instead of returning silently.
     public mutating func remove(_ element: T) {
-        guard let index = array.index(of: element) else { return }
-        array.remove(at: index)
+        guard let index = elements.index(of: element) else { return }
+        elements.remove(at: index)
     }
 
     /// Insert the given `element`. Order will be kept.
     public mutating func insert(_ element: T) {
         let index = insertionPoint(for: element)
-        array.insert(element, at: index)
+        elements.insert(element, at: index)
     }
 
     /// Insert the contents of another sequence of `T`.
@@ -52,12 +50,12 @@ public struct SortedArray <T: Comparable> {
     ///
     /// - TODO: Move to extension on `BidirectionCollection where Element: Comparable`.
     private func insertionPoint(for element: T) -> Int {
-        var range = 0 ..< array.count
+        var range = 0 ..< elements.count
         while range.startIndex < range.endIndex {
             let midIndex = range.startIndex + (range.endIndex - range.startIndex) / 2
-            if array[midIndex] == element {
+            if elements[midIndex] == element {
                 return midIndex
-            } else if array[midIndex] < element {
+            } else if elements[midIndex] < element {
                 range = (midIndex + 1) ..< range.endIndex
             } else {
                 range = range.startIndex ..< midIndex
@@ -84,12 +82,12 @@ extension SortedArray: Collection {
 
     /// End index.
     public var endIndex: Int {
-        return array.count
+        return elements.count
     }
 
     /// - returns: Element at the given `index`.
     public subscript (index: Int) -> T {
-        return array[index]
+        return elements[index]
     }
 }
 
@@ -99,7 +97,7 @@ extension SortedArray: Equatable {
 
     /// - returns: `true` if all elements in both arrays are equivalent. Otherwise, `false`.
     public static func == <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> Bool {
-        return lhs.array == rhs.array
+        return lhs.elements == rhs.elements
     }
 }
 
