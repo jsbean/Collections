@@ -45,4 +45,10 @@ class StackPerformanceTests: XCTestCase {
         var stack = randomStack(count: 1_000_000)
         measure { _ = stack.pop() }
     }
+
+    // Expected complexity: O(1)
+    func testSubscriptGetterPerformanceMillionInts() {
+        let stack = randomStack(count: 1_000_000)
+        measure { let _ = stack[12_345] }
+    }
 }
