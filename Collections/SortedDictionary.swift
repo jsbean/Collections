@@ -7,7 +7,7 @@
 //
 
 /// Ordered dictionary which has sorted `keys`.
-public struct SortedDictionary<Key, Value>: DictionaryType where Key: Hashable, Key: Comparable {
+public struct SortedDictionary<Key, Value>: DictionaryType where Key: Hashable & Comparable {
 
     // MARK: - Instance Properties
 
