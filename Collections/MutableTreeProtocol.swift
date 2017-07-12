@@ -159,7 +159,7 @@ public extension MutableTreeProtocol {
 
     /// - returns: `true` if the given node is contained herein. Otherwise, `false`.
     func hasChild(_ child: Self) -> Bool {
-        return children.anySatisfy { $0 === child }
+        return children.any { $0 === child }
     }
 
     /// - returns: Child node at the given `index`, if present. Otherwise, `nil`.
@@ -243,7 +243,7 @@ public extension MutableTreeProtocol {
 
     /// - returns: `true` if the given node is an ancestor. Otherwise, `false`.
     func hasAncestor(_ node: Self) -> Bool {
-        return self === node ? false : pathToRoot.anySatisfy { $0 === node }
+        return self === node ? false : pathToRoot.any { $0 === node }
     }
 
     /// - returns: Ancestor at the given distance, if present. Otherwise, `nil`.
