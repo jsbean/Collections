@@ -183,7 +183,7 @@ public class MutableTree {
      - returns: `true` if the given node is contained herein. Otherwise, `false`.
      */
     public func hasChild(_ child: MutableTree) -> Bool {
-        return children.anySatisfy { $0 === child }
+        return children.any { $0 === child }
     }
 
     /**
@@ -213,7 +213,7 @@ public class MutableTree {
      - returns: `true` if the given node is an ancestor. Otherwise, `false`.
      */
     public func hasAncestor(_ node: MutableTree) -> Bool {
-        return self === node ? false : pathToRoot.anySatisfy { $0 === node }
+        return self === node ? false : pathToRoot.any { $0 === node }
     }
 
     /**
