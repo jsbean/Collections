@@ -75,11 +75,7 @@ extension SortedDictionary: Collection {
 
     /// Index after given index `i`.
     public func index(after i: Int) -> Int {
-
-        guard i != endIndex else {
-            fatalError("Cannot increment endIndex")
-        }
-
+        assert(i < endIndex, "Cannot decrement index to \(i - 1)")
         return i + 1
     }
 
@@ -98,6 +94,14 @@ extension SortedDictionary: Collection {
         let key = keys[index]
         let value = values[key]!
         return (key, value)
+    }
+}
+
+extension SortedDictionary: BidirectionalCollection {
+
+    public func index(before i: Int) -> Int {
+        assert(i > 0, "Cannot decrement index to \(i - 1)")
+        return i - 1
     }
 }
 
