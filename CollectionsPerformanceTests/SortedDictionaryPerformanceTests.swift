@@ -24,6 +24,16 @@ class SortedDictionaryPerformanceTests: XCTestCase {
     }
 
     // Expected complexity: O(1)
+    func testFirstPerformanceThousandInts() {
+        measure { _ = self.thousandRandomInts.first }
+    }
+
+    // Expected complexity: O(1)
+    func testLastPerformanceThousandInts() {
+        measure { _ = self.thousandRandomInts.first }
+    }
+
+    // Expected complexity: O(1)
     func testCountPerformanceThousandInts() {
         measure { _ = self.thousandRandomInts.count }
     }
