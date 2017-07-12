@@ -7,9 +7,9 @@ env:
     - DESTINATION="platform=iOS Simulator,OS=9.3,name=iPad 2"
       SCHEME="Collections iOS (Performance)"
     - DESTINATION="platform=iOS Simulator,OS=10.0,name=iPad Pro (12.9-inch)"
-      SCHEME="Collections iOS (Performance)"
+      SCHEME="Collections iOS"
     - DESTINATION="platform=OS X"
-      SCHEME="Collections macOS (Performance)"
+      SCHEME="Collections macOS"
 
 before_script:
 - if [ -f ./Cartfile ]; then carthage update; fi;
