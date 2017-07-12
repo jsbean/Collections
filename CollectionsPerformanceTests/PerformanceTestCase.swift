@@ -38,7 +38,7 @@ class CollectionPerformanceTestCase: XCTestCase {
     func calculateLinearPerformanceResults<C>(
         after setup: (Int) -> C,
         of block: (Int, C) -> ()
-        ) -> [(Int, Double)]
+    ) -> [(Int, Double)]
     {
         return stride(from: 100_000, through: 1_000_000, by: 100_000).map { n in
             return (n, calculateAveragePerformance(after: setup, of: block, times: n))
@@ -94,9 +94,9 @@ class CollectionPerformanceTestCase: XCTestCase {
                     b.push(i)
                 }
                 return (a, b)
-        }, of: { _, stackPair in
-            _ = stackPair.0 == stackPair.1
-        }
+            }, of: { _, stackPair in
+                _ = stackPair.0 == stackPair.1
+            }
         )
     }
 }
