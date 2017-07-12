@@ -399,8 +399,6 @@
 				07690BD21E0D6B720095F1D5 /* ElementsAtIndices.swift */,
 				078F49181E0D5EA500B8F316 /* Combinations.swift */,
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
-				071511D31E526BD80003576F /* Zip3SequenceTests.swift */,
-				07B8DFC61EE6D70D00BBB814 /* CircularArrayTests.swift */,
 				07B8AB6A1F14FD3700E5616B /* Comparison.swift */,
 				07B8AB721F1507E200E5616B /* Either.swift */,
 			);
@@ -609,6 +607,8 @@
 				0711EB011E47CC3A00FD9138 /* SplitTests.swift */,
 				0711EAFE1E47C1CD00FD9138 /* ZipperTests.swift */,
 				07B8AB6D1F14FD4E00E5616B /* ComparisonTests.swift */,
+				071511D31E526BD80003576F /* Zip3SequenceTests.swift */,
+				07B8DFC61EE6D70D00BBB814 /* CircularArrayTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
