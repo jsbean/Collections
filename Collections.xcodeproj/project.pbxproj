@@ -35,8 +35,8 @@
 		074309751E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
 		074309771E43E9D5002B88A1 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309761E43E9D5002B88A1 /* Split.swift */; };
 		074309781E43E9D5002B88A1 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309761E43E9D5002B88A1 /* Split.swift */; };
-		0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
-		0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
+		0748EE861E25168B003F19FD /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* CollectionWrapping.swift */; };
+		0748EE871E25168B003F19FD /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* CollectionWrapping.swift */; };
 		07690BBB1E0D64B90095F1D5 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* Pairs.swift */; };
 		07690BBC1E0D64B90095F1D5 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* Pairs.swift */; };
 		07690BBE1E0D64D00095F1D5 /* PairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBD1E0D64D00095F1D5 /* PairsTests.swift */; };
@@ -141,8 +141,8 @@
 		07C563711E225FA800E73FB2 /* EnumComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */; };
 		07C563731E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */; };
 		07C563741E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */; };
-		07C582941DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */; };
-		07C582951DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */; };
+		07C582941DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */; };
+		07C582951DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */; };
 		07C582971DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */; };
 		07C582981DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */; };
 		07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582991DFBC052008BE5D0 /* Stack.swift */; };
@@ -247,7 +247,7 @@
 		074309701E43914E002B88A1 /* TupleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMap.swift; path = Collections/TupleMap.swift; sourceTree = "<group>"; };
 		074309731E43922D002B88A1 /* TupleMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMapTests.swift; path = CollectionsTests/TupleMapTests.swift; sourceTree = "<group>"; };
 		074309761E43E9D5002B88A1 /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Split.swift; path = Collections/Split.swift; sourceTree = "<group>"; };
-		0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnyCollectionWrapping.swift; path = Collections/AnyCollectionWrapping.swift; sourceTree = "<group>"; };
+		0748EE851E25168B003F19FD /* CollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionWrapping.swift; path = Collections/CollectionWrapping.swift; sourceTree = "<group>"; };
 		07690BBA1E0D64B90095F1D5 /* Pairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pairs.swift; path = Collections/Pairs.swift; sourceTree = "<group>"; };
 		07690BBD1E0D64D00095F1D5 /* PairsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PairsTests.swift; path = CollectionsTests/PairsTests.swift; sourceTree = "<group>"; };
 		07690BC01E0D65690095F1D5 /* RemoveElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveElements.swift; path = Collections/RemoveElements.swift; sourceTree = "<group>"; };
@@ -300,7 +300,7 @@
 		07C5636C1E225F5E00E73FB2 /* RawRepresentable+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RawRepresentable+Equatable.swift"; path = "Collections/RawRepresentable+Equatable.swift"; sourceTree = "<group>"; };
 		07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumComparableTests.swift; path = CollectionsTests/EnumComparableTests.swift; sourceTree = "<group>"; };
 		07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumEquatableTests.swift; path = CollectionsTests/EnumEquatableTests.swift; sourceTree = "<group>"; };
-		07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceWrapping.swift; path = Collections/AnySequenceWrapping.swift; sourceTree = "<group>"; };
+		07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceWrapping.swift; path = Collections/SequenceWrapping.swift; sourceTree = "<group>"; };
 		07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceWrappingTests.swift; path = CollectionsTests/AnySequenceWrappingTests.swift; sourceTree = "<group>"; };
 		07C582991DFBC052008BE5D0 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Collections/Stack.swift; sourceTree = "<group>"; };
 		07C5829C1DFBC26B008BE5D0 /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackTests.swift; path = CollectionsTests/StackTests.swift; sourceTree = "<group>"; };
@@ -458,8 +458,8 @@
 		07690BE91E0D96BC0095F1D5 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */,
-				0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */,
+				07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */,
+				0748EE851E25168B003F19FD /* CollectionWrapping.swift */,
 				07690BEA1E0D97500095F1D5 /* DictionaryType.swift */,
 			);
 			name = Protocols;
@@ -968,7 +968,7 @@
 				07690BBC1E0D64B90095F1D5 /* Pairs.swift in Sources */,
 				07C5829B1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07690BC81E0D669B0095F1D5 /* ReplaceElements.swift in Sources */,
-				07C582951DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */,
+				07C582951DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */,
 				07690BC21E0D65690095F1D5 /* RemoveElements.swift in Sources */,
 				078F490E1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				076D048F1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
@@ -976,7 +976,7 @@
 				07C582B01DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				071511C61E52304E0003576F /* ArrayExtensions.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
-				0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
+				0748EE871E25168B003F19FD /* CollectionWrapping.swift in Sources */,
 				076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDD1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
@@ -1041,7 +1041,7 @@
 				07690BBB1E0D64B90095F1D5 /* Pairs.swift in Sources */,
 				07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07690BC71E0D669B0095F1D5 /* ReplaceElements.swift in Sources */,
-				07C582941DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */,
+				07C582941DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */,
 				07690BC11E0D65690095F1D5 /* RemoveElements.swift in Sources */,
 				078F490D1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				076D048E1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
@@ -1049,7 +1049,7 @@
 				07C582AF1DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
-				0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
+				0748EE861E25168B003F19FD /* CollectionWrapping.swift in Sources */,
 				076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDC1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
