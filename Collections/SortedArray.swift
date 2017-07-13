@@ -57,7 +57,8 @@ public struct SortedArray <Element: Comparable> {
 
     /// Binary search to find insertion point
     ///
-    /// - TODO: Move to extension on `BidirectionCollection where Element: Comparable`.
+    // FIXME: Move to extension on `BidirectionCollection where Element: Comparable`.
+    // FIXME: Add to `SortedCollection`
     private func index(for element: Element) -> Int {
         var start = 0
         var end = elements.count
