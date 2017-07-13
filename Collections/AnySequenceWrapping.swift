@@ -1,12 +1,12 @@
 //
-//  AnySequenceWrapping.swift
+//  SequenceWrapping.swift
 //  Collections
 //
 //  Created by James Bean on 12/9/16.
 //
 //
 
-/// `AnySequenceWrapping` is a type-erasing protocol that allows a `Sequence`-conforming
+/// `SequenceWrapping` is a type-erasing protocol that allows a `Sequence`-conforming
 /// structure to wrap any underlying `Sequence` implementation.
 ///
 /// For example, `PitchSet` and `PitchCollection` are both containers for `Pitch` values, and
@@ -23,7 +23,7 @@
 /// the given `sequence`.
 ///
 /// - TODO: Consider removing `ExpressibleByArrayLiteral` and `init` requirements.
-public protocol AnySequenceWrapping: Sequence, ExpressibleByArrayLiteral {
+public protocol SequenceWrapping: Sequence, ExpressibleByArrayLiteral {
 
     // MARK: Associated Types
 
@@ -37,11 +37,11 @@ public protocol AnySequenceWrapping: Sequence, ExpressibleByArrayLiteral {
 
     // MARK: - Initializers
 
-    /// Create an `AnySequenceWrapping` with a `Sequence`.
+    /// Create an `SequenceWrapping` with a `Sequence`.
     init <S: Sequence> (_ sequence: S) where S.Iterator.Element == Element
 }
 
-extension AnySequenceWrapping {
+extension SequenceWrapping {
 
     // MARK: - `Sequence`
 
