@@ -40,17 +40,17 @@ class SortedArrayPerformanceTests: XCTestCase {
         measure { _ = self.millionSortedInts.isEmpty }
     }
 
-    // Expected complexity: O(1)
-    func testSubscriptGetterPerformanceMillionInts() {
-        measure { _ = self.millionSortedInts[65_4321] }
-    }
-
-    // Expected complexity: O(1)
-    func testSubscriptGetterPerformanceThousandTimes() {
-        measure {
-            stride(from: 0, to: 1_000_000, by: 999).forEach { _ = self.millionSortedInts[$0] }
-        }
-    }
+//    // Expected complexity: O(1)
+//    func testSubscriptGetterPerformanceMillionInts() {
+//        measure { _ = self.millionSortedInts[65_4321] }
+//    }
+//
+//    // Expected complexity: O(1)
+//    func testSubscriptGetterPerformanceThousandTimes() {
+//        measure {
+//            stride(from: 0, to: 1_000_000, by: 999).forEach { _ = self.millionSortedInts[$0] }
+//        }
+//    }
 
     // Expected complexity: O(log_n_)
     func testInsertSingleIntInSortedArrayWithMillionInts() {

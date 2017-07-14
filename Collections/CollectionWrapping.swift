@@ -14,36 +14,36 @@ public protocol CollectionWrapping: Collection {
 
     // MARK: - Associated Types
 
-    /// The contained type.
-    associatedtype Element
+    /// Wrapped `Collection`-conforming type.
+    associatedtype Base: Collection
 
     // MARK: - Instance Properties
 
-    /// `AnyCollection` wrapper that provides shade for the domain specific implementation.
-    var collection: AnyCollection<Element> { get }
+    /// Wrapped `Collection`-conforming type.
+    var base: Base { get }
 }
 
 extension CollectionWrapping {
 
     // MARK: - `Collection`
 
-    /// Index after given index `i`.
-    public func index(after i: AnyIndex) -> AnyIndex {
-        return collection.index(after: i)
-    }
-
     /// Start index.
-    public var startIndex: AnyIndex {
-        return collection.startIndex
+    public var startIndex: Base.Index {
+        return base.startIndex
     }
 
     /// End index.
-    public var endIndex: AnyIndex {
-        return collection.endIndex
+    public var endIndex: Base.Index {
+        return base.endIndex
+    }
+
+    /// Index after given index `i`.
+    public func index(after i: Base.Index) -> Base.Index {
+        return base.index(after: i)
     }
 
     /// - returns: Element at the given `index`.
-    public subscript (index: AnyIndex) -> Element {
-        return collection[index]
+    public subscript (index: Base.Index) -> Base.Iterator.Element {
+        return base[index]
     }
 }
