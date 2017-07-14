@@ -65,7 +65,7 @@ final class Measuring<T> {
     private func calculateAveragePerformance<C>(
         after setup: (Int) -> C,
         of block: (Int, C) -> (),
-        times n: Int
+        times n: Int,
         over trials: Int = 10
     ) -> Double
     {
