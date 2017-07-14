@@ -29,9 +29,8 @@ final class Measuring<T> {
 
     var resource: T
 
-    init(_ resource: T, setUp: ((inout T) -> Void)? = nil) {
+    init(_ resource: T) {
         self.resource = resource
-        setUp?(&self.resource)
     }
 
     @discardableResult func assertComplexity <U> (
