@@ -67,18 +67,16 @@ final class Measuring<T> {
         after setup: (Int) -> C,
         of block: (Int, C) -> (),
         times n: Int
+        over trials: Int = 10
     ) -> Double
     {
-        let indices = (1...10)
-        let timings: [Double] = indices.map { _ in
+        return (1...trials).map { _ in
             let mock = setup(n)
             let startTime = CFAbsoluteTimeGetCurrent()
             block(n, mock)
             let finishTime = CFAbsoluteTimeGetCurrent()
             return finishTime - startTime
-        }
-        let mean = timings.reduce(0, +) / Double(timings.count)
-        return mean
+            }.reduce(0, +) / Double(trials)
     }
 
     /// Runs the `after` setup block, then times the `of` block. Performs this sequence 10 times,
