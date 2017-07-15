@@ -9,7 +9,10 @@
 import Algebra
 
 /// `Array` that keeps itself sorted.
-public struct SortedArray <Element: Comparable>: RandomAccessCollectionWrapping {
+public struct SortedArray <Element: Comparable>:
+    RandomAccessCollectionWrapping,
+    SortedCollectionWrapping
+{
 
     public var base: [Element] = []
 

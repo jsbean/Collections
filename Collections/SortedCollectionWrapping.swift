@@ -6,7 +6,7 @@
 //
 //
 
-public protocol SortedCollectionWrapping {
+public protocol SortedCollectionWrapping: Collection {
     associatedtype Base: BidirectionalCollection
     var base: Base { get }
 }
