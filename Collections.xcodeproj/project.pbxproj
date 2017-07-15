@@ -29,14 +29,16 @@
 		071511D21E5266C50003576F /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511D01E5266C50003576F /* Zip3Sequence.swift */; };
 		071511D41E526BD80003576F /* Zip3SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511D31E526BD80003576F /* Zip3SequenceTests.swift */; };
 		071511D51E526BD80003576F /* Zip3SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511D31E526BD80003576F /* Zip3SequenceTests.swift */; };
+		073CB1AC1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */; };
+		073CB1AD1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */; };
 		074309711E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
 		074309721E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
 		074309741E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
 		074309751E43922D002B88A1 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309731E43922D002B88A1 /* TupleMapTests.swift */; };
 		074309771E43E9D5002B88A1 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309761E43E9D5002B88A1 /* Split.swift */; };
 		074309781E43E9D5002B88A1 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309761E43E9D5002B88A1 /* Split.swift */; };
-		0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
-		0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */; };
+		0748EE861E25168B003F19FD /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* CollectionWrapping.swift */; };
+		0748EE871E25168B003F19FD /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748EE851E25168B003F19FD /* CollectionWrapping.swift */; };
 		07690BBB1E0D64B90095F1D5 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* Pairs.swift */; };
 		07690BBC1E0D64B90095F1D5 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBA1E0D64B90095F1D5 /* Pairs.swift */; };
 		07690BBE1E0D64D00095F1D5 /* PairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BBD1E0D64D00095F1D5 /* PairsTests.swift */; };
@@ -63,8 +65,8 @@
 		07690BDD1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDB1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift */; };
 		07690BDF1E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
 		07690BE01E0D729A0095F1D5 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */; };
-		07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryType.swift */; };
-		07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryType.swift */; };
+		07690BEB1E0D97500095F1D5 /* DictionaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryProtocol.swift */; };
+		07690BEC1E0D97500095F1D5 /* DictionaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BEA1E0D97500095F1D5 /* DictionaryProtocol.swift */; };
 		07690BEE1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */; };
 		07690BEF1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */; };
 		076D04541E2D14BC0023ED96 /* MutableTreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */; };
@@ -95,6 +97,8 @@
 		077AED181DFB82C9004CDD86 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED161DFB82C9004CDD86 /* Tree.swift */; };
 		077AED1A1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
 		077AED1B1DFB8520004CDD86 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077AED191DFB8520004CDD86 /* TreeTests.swift */; };
+		077E2EAD1F179C83003D14FA /* RandomAccessCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E2EAC1F179C83003D14FA /* RandomAccessCollectionWrapping.swift */; };
+		077E2EAE1F179C83003D14FA /* RandomAccessCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 077E2EAC1F179C83003D14FA /* RandomAccessCollectionWrapping.swift */; };
 		078F49011E0D258700B8F316 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F49001E0D258700B8F316 /* KeyPath.swift */; };
 		078F49021E0D258700B8F316 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F49001E0D258700B8F316 /* KeyPath.swift */; };
 		078F49041E0D267F00B8F316 /* KeyPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 078F49031E0D267F00B8F316 /* KeyPathTests.swift */; };
@@ -141,8 +145,8 @@
 		07C563711E225FA800E73FB2 /* EnumComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */; };
 		07C563731E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */; };
 		07C563741E2260BA00E73FB2 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */; };
-		07C582941DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */; };
-		07C582951DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */; };
+		07C582941DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */; };
+		07C582951DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */; };
 		07C582971DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */; };
 		07C582981DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */; };
 		07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07C582991DFBC052008BE5D0 /* Stack.swift */; };
@@ -244,10 +248,11 @@
 		071511C41E52304E0003576F /* ArrayExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArrayExtensions.swift; path = Collections/ArrayExtensions.swift; sourceTree = "<group>"; };
 		071511D01E5266C50003576F /* Zip3Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3Sequence.swift; path = Collections/Zip3Sequence.swift; sourceTree = "<group>"; };
 		071511D31E526BD80003576F /* Zip3SequenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3SequenceTests.swift; path = CollectionsTests/Zip3SequenceTests.swift; sourceTree = "<group>"; };
+		073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedCollectionWrapping.swift; path = Collections/SortedCollectionWrapping.swift; sourceTree = "<group>"; };
 		074309701E43914E002B88A1 /* TupleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMap.swift; path = Collections/TupleMap.swift; sourceTree = "<group>"; };
 		074309731E43922D002B88A1 /* TupleMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMapTests.swift; path = CollectionsTests/TupleMapTests.swift; sourceTree = "<group>"; };
 		074309761E43E9D5002B88A1 /* Split.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Split.swift; path = Collections/Split.swift; sourceTree = "<group>"; };
-		0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnyCollectionWrapping.swift; path = Collections/AnyCollectionWrapping.swift; sourceTree = "<group>"; };
+		0748EE851E25168B003F19FD /* CollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionWrapping.swift; path = Collections/CollectionWrapping.swift; sourceTree = "<group>"; };
 		07690BBA1E0D64B90095F1D5 /* Pairs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pairs.swift; path = Collections/Pairs.swift; sourceTree = "<group>"; };
 		07690BBD1E0D64D00095F1D5 /* PairsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PairsTests.swift; path = CollectionsTests/PairsTests.swift; sourceTree = "<group>"; };
 		07690BC01E0D65690095F1D5 /* RemoveElements.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RemoveElements.swift; path = Collections/RemoveElements.swift; sourceTree = "<group>"; };
@@ -261,7 +266,7 @@
 		07690BD81E0D6E620095F1D5 /* ReplaceElementsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReplaceElementsTests.swift; path = CollectionsTests/ReplaceElementsTests.swift; sourceTree = "<group>"; };
 		07690BDB1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RawRepresentable+AllCases.swift"; path = "Collections/RawRepresentable+AllCases.swift"; sourceTree = "<group>"; };
 		07690BDE1E0D729A0095F1D5 /* EnumIterationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumIterationTests.swift; path = CollectionsTests/EnumIterationTests.swift; sourceTree = "<group>"; };
-		07690BEA1E0D97500095F1D5 /* DictionaryType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryType.swift; path = Collections/DictionaryType.swift; sourceTree = "<group>"; };
+		07690BEA1E0D97500095F1D5 /* DictionaryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryProtocol.swift; path = Collections/DictionaryProtocol.swift; sourceTree = "<group>"; };
 		07690BED1E0D98BA0095F1D5 /* DictionaryTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DictionaryTypeTests.swift; path = CollectionsTests/DictionaryTypeTests.swift; sourceTree = "<group>"; };
 		076D04531E2D14BC0023ED96 /* MutableTreeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeProtocol.swift; path = Collections/MutableTreeProtocol.swift; sourceTree = "<group>"; };
 		076D04561E2D16DF0023ED96 /* MutableTreeProtocolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableTreeProtocolTests.swift; path = CollectionsTests/MutableTreeProtocolTests.swift; sourceTree = "<group>"; };
@@ -277,6 +282,7 @@
 		076D04991E2D3D310023ED96 /* MutableGraphTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MutableGraphTests.swift; path = Collections/MutableGraphTests.swift; sourceTree = "<group>"; };
 		077AED161DFB82C9004CDD86 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Tree.swift; path = Collections/Tree.swift; sourceTree = "<group>"; };
 		077AED191DFB8520004CDD86 /* TreeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TreeTests.swift; path = CollectionsTests/TreeTests.swift; sourceTree = "<group>"; };
+		077E2EAC1F179C83003D14FA /* RandomAccessCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RandomAccessCollectionWrapping.swift; path = Collections/RandomAccessCollectionWrapping.swift; sourceTree = "<group>"; };
 		078F49001E0D258700B8F316 /* KeyPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPath.swift; path = Collections/KeyPath.swift; sourceTree = "<group>"; };
 		078F49031E0D267F00B8F316 /* KeyPathTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KeyPathTests.swift; path = CollectionsTests/KeyPathTests.swift; sourceTree = "<group>"; };
 		078F490C1E0D5C1C00B8F316 /* SequenceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceExtensions.swift; path = Collections/SequenceExtensions.swift; sourceTree = "<group>"; };
@@ -300,7 +306,7 @@
 		07C5636C1E225F5E00E73FB2 /* RawRepresentable+Equatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "RawRepresentable+Equatable.swift"; path = "Collections/RawRepresentable+Equatable.swift"; sourceTree = "<group>"; };
 		07C5636F1E225FA800E73FB2 /* EnumComparableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumComparableTests.swift; path = CollectionsTests/EnumComparableTests.swift; sourceTree = "<group>"; };
 		07C563721E2260BA00E73FB2 /* EnumEquatableTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EnumEquatableTests.swift; path = CollectionsTests/EnumEquatableTests.swift; sourceTree = "<group>"; };
-		07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceWrapping.swift; path = Collections/AnySequenceWrapping.swift; sourceTree = "<group>"; };
+		07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SequenceWrapping.swift; path = Collections/SequenceWrapping.swift; sourceTree = "<group>"; };
 		07C582961DFBBF21008BE5D0 /* AnySequenceWrappingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnySequenceWrappingTests.swift; path = CollectionsTests/AnySequenceWrappingTests.swift; sourceTree = "<group>"; };
 		07C582991DFBC052008BE5D0 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Stack.swift; path = Collections/Stack.swift; sourceTree = "<group>"; };
 		07C5829C1DFBC26B008BE5D0 /* StackTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StackTests.swift; path = CollectionsTests/StackTests.swift; sourceTree = "<group>"; };
@@ -458,9 +464,11 @@
 		07690BE91E0D96BC0095F1D5 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				07C582931DFBBEE8008BE5D0 /* AnySequenceWrapping.swift */,
-				0748EE851E25168B003F19FD /* AnyCollectionWrapping.swift */,
-				07690BEA1E0D97500095F1D5 /* DictionaryType.swift */,
+				07C582931DFBBEE8008BE5D0 /* SequenceWrapping.swift */,
+				0748EE851E25168B003F19FD /* CollectionWrapping.swift */,
+				077E2EAC1F179C83003D14FA /* RandomAccessCollectionWrapping.swift */,
+				073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */,
+				07690BEA1E0D97500095F1D5 /* DictionaryProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -940,6 +948,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07125DCE1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
+				077E2EAE1F179C83003D14FA /* RandomAccessCollectionWrapping.swift in Sources */,
+				073CB1AD1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */,
 				07B8DFC51EE6D66B00BBB814 /* CircularArray.swift in Sources */,
 				07690BCB1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
 				076D04851E2D34D00023ED96 /* MutableTree.swift in Sources */,
@@ -951,7 +961,7 @@
 				07C5636E1E225F5E00E73FB2 /* RawRepresentable+Equatable.swift in Sources */,
 				07B8AB7A1F150A8C00E5616B /* SingleTypedTree.swift in Sources */,
 				07690BCE1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
-				07690BEC1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
+				07690BEC1E0D97500095F1D5 /* DictionaryProtocol.swift in Sources */,
 				078F49021E0D258700B8F316 /* KeyPath.swift in Sources */,
 				074309721E43914E002B88A1 /* TupleMap.swift in Sources */,
 				071511D21E5266C50003576F /* Zip3Sequence.swift in Sources */,
@@ -968,7 +978,7 @@
 				07690BBC1E0D64B90095F1D5 /* Pairs.swift in Sources */,
 				07C5829B1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07690BC81E0D669B0095F1D5 /* ReplaceElements.swift in Sources */,
-				07C582951DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */,
+				07C582951DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */,
 				07690BC21E0D65690095F1D5 /* RemoveElements.swift in Sources */,
 				078F490E1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				076D048F1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
@@ -976,7 +986,7 @@
 				07C582B01DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				071511C61E52304E0003576F /* ArrayExtensions.swift in Sources */,
 				078F49141E0D5D4C00B8F316 /* StableSort.swift in Sources */,
-				0748EE871E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
+				0748EE871E25168B003F19FD /* CollectionWrapping.swift in Sources */,
 				076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDD1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
@@ -1013,6 +1023,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				07125DCD1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
+				077E2EAD1F179C83003D14FA /* RandomAccessCollectionWrapping.swift in Sources */,
+				073CB1AC1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */,
 				07B8DFC41EE6D66B00BBB814 /* CircularArray.swift in Sources */,
 				07690BCA1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
 				076D04841E2D34D00023ED96 /* MutableTree.swift in Sources */,
@@ -1024,7 +1036,7 @@
 				07C5636D1E225F5E00E73FB2 /* RawRepresentable+Equatable.swift in Sources */,
 				07B8AB791F150A8C00E5616B /* SingleTypedTree.swift in Sources */,
 				07690BCD1E0D68CD0095F1D5 /* ListProcessing.swift in Sources */,
-				07690BEB1E0D97500095F1D5 /* DictionaryType.swift in Sources */,
+				07690BEB1E0D97500095F1D5 /* DictionaryProtocol.swift in Sources */,
 				078F49011E0D258700B8F316 /* KeyPath.swift in Sources */,
 				074309711E43914E002B88A1 /* TupleMap.swift in Sources */,
 				071511D11E5266C50003576F /* Zip3Sequence.swift in Sources */,
@@ -1041,7 +1053,7 @@
 				07690BBB1E0D64B90095F1D5 /* Pairs.swift in Sources */,
 				07C5829A1DFBC052008BE5D0 /* Stack.swift in Sources */,
 				07690BC71E0D669B0095F1D5 /* ReplaceElements.swift in Sources */,
-				07C582941DFBBEE8008BE5D0 /* AnySequenceWrapping.swift in Sources */,
+				07C582941DFBBEE8008BE5D0 /* SequenceWrapping.swift in Sources */,
 				07690BC11E0D65690095F1D5 /* RemoveElements.swift in Sources */,
 				078F490D1E0D5C1C00B8F316 /* SequenceExtensions.swift in Sources */,
 				076D048E1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
@@ -1049,7 +1061,7 @@
 				07C582AF1DFBDD67008BE5D0 /* Swap.swift in Sources */,
 				071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
-				0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
+				0748EE861E25168B003F19FD /* CollectionWrapping.swift in Sources */,
 				076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDC1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,

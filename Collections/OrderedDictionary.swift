@@ -7,7 +7,7 @@
 //
 
 /// Ordered Dictionary.
-public struct OrderedDictionary <Key: Hashable, Value>: DictionaryType {
+public struct OrderedDictionary <Key: Hashable, Value>: DictionaryProtocol {
 
     // MARK: - Instance Properties
 

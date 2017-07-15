@@ -9,9 +9,12 @@
 import Algebra
 
 /// `Array` that keeps itself sorted.
-public struct SortedArray <Element: Comparable> {
+public struct SortedArray <Element: Comparable>:
+    RandomAccessCollectionWrapping,
+    SortedCollectionWrapping
+{
 
-    fileprivate var elements: [Element] = []
+    public var base: [Element] = []
 
     // MARK: - Initializers
 
@@ -19,8 +22,8 @@ public struct SortedArray <Element: Comparable> {
     public init() { }
 
     /// Create a `SortedArray` with the given sequence of `elements`.
-    public init <S: Sequence> (_ elements: S) where S.Iterator.Element == Element {
-        self.elements = Array(elements).sorted()
+    public init <S> (_ elements: S) where S: Sequence, S.Iterator.Element == Element {
+        self.base = Array(elements).sorted()
     }
 
     // MARK: - Instance Methods
@@ -29,8 +32,8 @@ public struct SortedArray <Element: Comparable> {
     ///
     /// - TODO: Make `throws` instead of returning silently.
     public mutating func remove(_ element: Element) {
-        guard let index = elements.index(of: element) else { return }
-        elements.remove(at: index)
+        guard let index = base.index(of: element) else { return }
+        base.remove(at: index)
     }
 
     /// Insert the given `element`.
@@ -38,7 +41,7 @@ public struct SortedArray <Element: Comparable> {
     /// - Complexity: O(_n_)
     public mutating func insert(_ element: Element) {
         let index = self.index(for: element)
-        elements.insert(element, at: index)
+        base.insert(element, at: index)
     }
 
     /// Insert the contents of another sequence of `T`.
@@ -51,19 +54,20 @@ public struct SortedArray <Element: Comparable> {
     /// - Returns: Index for the given `element`, if it exists. Otherwise, `nil`.
     public func index(of element: Element) -> Int? {
         let index = self.index(for: element)
-        guard index < count, elements[index] == element else { return nil }
+        guard index < count, base[index] == element else { return nil }
         return index
     }
 
     /// Binary search to find insertion point
     ///
-    /// - TODO: Move to extension on `BidirectionCollection where Element: Comparable`.
+    // FIXME: Move to extension on `BidirectionCollection where Element: Comparable`.
+    // FIXME: Add to `SortedCollection`
     private func index(for element: Element) -> Int {
         var start = 0
-        var end = elements.count
+        var end = base.count
         while start < end {
             let middle = start + (end - start) / 2
-            if element > elements[middle] {
+            if element > base[middle] {
                 start = middle + 1
             } else {
                 end = middle
@@ -73,78 +77,13 @@ public struct SortedArray <Element: Comparable> {
     }
 }
 
-extension SortedArray: Collection {
-
-    // MARK: - Collection
-
-    /// - Returns: Index after the given `index`.
-    public func index(after i: Int) -> Int {
-        assert(i < endIndex, "Cannot increment index to \(i + 1)")
-        return i + 1
-    }
-
-    /// Start index.
-    public var startIndex: Int {
-        return 0
-    }
-
-    /// End index.
-    public var endIndex: Int {
-        return elements.count
-    }
-
-    /// - Returns: Element at the given `index`.
-    public subscript (index: Int) -> Element {
-        return elements[index]
-    }
-
-    /// - Returns: Element with the least value.
-    public func min() -> Element? {
-        return first
-    }
-
-    /// - Returns: Element with the greatest value.
-    public func max() -> Element? {
-        return last
-    }
-
-    /// - Returns: Elements, sorted.
-    public func sorted() -> [Element] {
-        return elements
-    }
-
-    /// - Returns: `true` if the given `element` is contained herein. Otherwise, `false`.
-    public func contains(_ element: Element) -> Bool {
-        return index(of: element) != nil
-    }
-}
-
-extension SortedArray: BidirectionalCollection {
-
-    // MARK: - BidirectionalCollection
-
-    /// - Returns: Index before the given `index`.
-    public func index(before index: Int) -> Int {
-        assert(index > 0, "Cannot decrement index to \(index - 1)")
-        return index - 1
-    }
-
-    /// Count of elements contained herein.
-    ///
-    /// - Complexity: O(1)
-    ///
-    public var count: Int {
-        return elements.count
-    }
-}
-
 extension SortedArray: Equatable {
 
     // MARK: - Equatable
 
     /// - returns: `true` if all elements in both arrays are equivalent. Otherwise, `false`.
     public static func == <T> (lhs: SortedArray<T>, rhs: SortedArray<T>) -> Bool {
-        return lhs.elements == rhs.elements
+        return lhs.base == rhs.base
     }
 }
 

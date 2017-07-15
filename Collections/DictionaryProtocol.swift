@@ -1,27 +1,27 @@
 //
-//  DictionaryType.swift
+//  DictionaryProtocol.swift
 //  Collections
 //
 //  Created by James Bean on 12/23/16.
 //
 //
 
-public protocol ArrayType: Collection {
+public protocol ArrayProtocol: Collection {
     associatedtype Element
     init()
     mutating func append(_ element: Element)
-    mutating func append<S: Sequence> (contentsOf newElements: S) where
-        S.Iterator.Element == Iterator.Element
+    mutating func append<S> (contentsOf newElements: S)
+        where S: Sequence, S.Iterator.Element == Iterator.Element
 }
 
-extension Array: ArrayType { }
+extension Array: ArrayProtocol { }
 
-public enum DictionaryTypeError: Error {
+public enum DictionaryProtocolError: Error {
     case illFormedKeyPath
 }
 
 /// Interface for Dictionary-like structures.
-public protocol DictionaryType: Collection {
+public protocol DictionaryProtocol: Collection {
 
     // MARK: - Associated Types
 
@@ -33,7 +33,7 @@ public protocol DictionaryType: Collection {
 
     // MARK: - Initializers
 
-    /// Create an empty `DictionaryType` value.
+    /// Create an empty `DictionaryProtocol` value.
     init()
 
     // MARK: - Subscripts
@@ -42,9 +42,9 @@ public protocol DictionaryType: Collection {
     subscript (key: Key) -> Value? { get set }
 }
 
-extension DictionaryType {
+extension DictionaryProtocol {
 
-    /// Create a `DictionaryType` with two parallel arrays.
+    /// Create a `DictionaryProtocol` with two parallel arrays.
     ///
     /// - Note: Usefule for creating a dataset from x- and y-value arrays.
     public init(_ xs: [Key], _ ys: [Value]) {
@@ -52,7 +52,7 @@ extension DictionaryType {
         zip(xs, ys).forEach { key, value in self[key] = value }
     }
 
-    /// Create a `DictionaryType` with an array of tuples.
+    /// Create a `DictionaryProtocol` with an array of tuples.
     public init(_ keysAndValues: [(Key, Value)]) {
         self.init()
         for (key, value) in keysAndValues {
@@ -61,7 +61,7 @@ extension DictionaryType {
     }
 }
 
-extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
+extension DictionaryProtocol where Iterator.Element == (key: Key, value: Value) {
 
     // MARK: - Instance Methods
 
@@ -79,7 +79,7 @@ extension DictionaryType where Iterator.Element == (key: Key, value: Value) {
     }
 }
 
-extension DictionaryType where Value: ArrayType {
+extension DictionaryProtocol where Value: ArrayProtocol {
 
     /// Ensure that an Array-type value exists for the given `key`.
     public mutating func ensureValue(for key: Key) {
@@ -101,7 +101,7 @@ extension DictionaryType where Value: ArrayType {
     }
 }
 
-extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
+extension DictionaryProtocol where Value: ArrayProtocol, Value.Element: Equatable {
 
     /**
      Safely append value to the array value for a given key.
@@ -125,8 +125,8 @@ extension DictionaryType where Value: ArrayType, Value.Element: Equatable {
     }
 }
 
-extension DictionaryType where
-    Value: DictionaryType,
+extension DictionaryProtocol where
+    Value: DictionaryProtocol,
     Value.Key: Hashable
 {
 
@@ -150,7 +150,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictionaryTypeError.illFormedKeyPath
+            throw DictionaryProtocolError.illFormedKeyPath
         }
 
         ensureValue(for: key)
@@ -158,8 +158,8 @@ extension DictionaryType where
     }
 }
 
-extension DictionaryType where
-    Value: DictionaryType,
+extension DictionaryProtocol where
+    Value: DictionaryProtocol,
     Iterator.Element == (Key, Value),
     Value.Iterator.Element == (Value.Key, Value.Value)
 {
@@ -185,23 +185,21 @@ extension DictionaryType where
     }
 }
 
-extension DictionaryType where
-    Value: DictionaryType,
+extension DictionaryProtocol where
+    Value: DictionaryProtocol,
     Iterator.Element == (Key, Value),
     Value.Iterator.Element == (Value.Key, Value.Value),
-    Value.Value: ArrayType
+    Value.Value: ArrayProtocol
 {
 
     /// Ensure that there is an Array-type value for the given `keyPath`.
-    ///
-    /// - TODO: Make `throws`.
     public mutating func ensureValue(for keyPath: KeyPath) throws {
 
         guard
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictionaryTypeError.illFormedKeyPath
+            throw DictionaryProtocolError.illFormedKeyPath
         }
 
         ensureValue(for: key)
@@ -220,7 +218,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictionaryTypeError.illFormedKeyPath
+            throw DictionaryProtocolError.illFormedKeyPath
         }
 
         try ensureValue(for: keyPath)
@@ -239,7 +237,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictionaryTypeError.illFormedKeyPath
+            throw DictionaryProtocolError.illFormedKeyPath
         }
 
         try ensureValue(for: keyPath)
@@ -247,11 +245,11 @@ extension DictionaryType where
     }
 }
 
-extension DictionaryType where
-    Value: DictionaryType,
+extension DictionaryProtocol where
+    Value: DictionaryProtocol,
     Iterator.Element == (Key, Value),
     Value.Iterator.Element == (Value.Key, Value.Value),
-    Value.Value: ArrayType,
+    Value.Value: ArrayProtocol,
     Value.Value.Element: Equatable
 {
 
@@ -268,7 +266,7 @@ extension DictionaryType where
             let key = keyPath[0] as? Key,
             let subKey = keyPath[1] as? Value.Key
         else {
-            throw DictionaryTypeError.illFormedKeyPath
+            throw DictionaryProtocolError.illFormedKeyPath
         }
 
         try ensureValue(for: keyPath)
@@ -276,10 +274,10 @@ extension DictionaryType where
     }
 }
 
-// MARK: - Evaluating the equality of `DictionaryType` values
+// MARK: - Evaluating the equality of `DictionaryProtocol` values
 
 /// - returns: `true` if all values in `[H: T]` types are equivalent. Otherwise, `false`.
-public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func == <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Equatable
 {
@@ -293,7 +291,7 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 
 
 /// - returns: `true` if any values in `[H: T]` types are not equivalent. Otherwise, `false`.
-public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func != <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Equatable
 {
@@ -301,7 +299,7 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 }
 
 /// - returns: `true` if all values in `[H: [T]]` types are equivalent. Otherwise, `false`.
-public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func == <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Collection,
     D.Value.Iterator.Element: Equatable,
@@ -318,7 +316,7 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 }
 
 /// - returns: `true` if any values in `[H: [T]]` types are not equivalent. Otherwise, `false`.
-public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func != <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
     D.Value: Collection,
     D.Value.Iterator.Element: Equatable,
@@ -329,9 +327,9 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 
 
 /// - returns: `true` if all values in `[H: [HH: T]]` types are equivalent. Otherwise, `false`.
-public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func == <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
-    D.Value: DictionaryType,
+    D.Value: DictionaryProtocol,
     D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
     D.Value.Value: Equatable
 {
@@ -346,9 +344,9 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 
 /// - returns: `true` if any values in `[H: [HH: T]]` types are not equivalent. Otherwise,
 /// `false`.
-public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func != <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
-    D.Value: DictionaryType,
+    D.Value: DictionaryProtocol,
     D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
     D.Value.Value: Equatable
 {
@@ -357,9 +355,9 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 
 /// - returns: `true` if all values in `[H: [HH: [T]]]` types are equivalent. Otherwise,
 /// `false`.
-public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func == <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
-    D.Value: DictionaryType,
+    D.Value: DictionaryProtocol,
     D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
     D.Value.Value: Collection,
     D.Value.Value.Iterator.Element: Equatable,
@@ -381,9 +379,9 @@ public func == <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
 
 /// - returns: `true` if any values in `[H: [HH: [T]]]` types are not equivalent.
 // Otherwise, `false`.
-public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
+public func != <D: DictionaryProtocol> (lhs: D, rhs: D) -> Bool where
     D.Iterator.Element == (D.Key, D.Value),
-    D.Value: DictionaryType,
+    D.Value: DictionaryProtocol,
     D.Value.Iterator.Element == (D.Value.Key, D.Value.Value),
     D.Value.Value: Collection,
     D.Value.Value.Iterator.Element: Equatable,
@@ -392,7 +390,7 @@ public func != <D: DictionaryType> (lhs: D, rhs: D) -> Bool where
     return !(lhs == rhs)
 }
 
-extension Dictionary: DictionaryType {
+extension Dictionary: DictionaryProtocol {
 
-    // MARK: - `DictionaryType`
+    // MARK: - `DictionaryProtocol`
 }

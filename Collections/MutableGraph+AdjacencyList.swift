@@ -8,14 +8,14 @@
 
 extension MutableGraph {
 
-    public class AdjacencyList {
+    public class AdjacencyList: CollectionWrapping {
 
-        fileprivate var edgeLists: [EdgeList] = []
+        public var base: [EdgeList] = []
 
         init() { }
 
         subscript (vertex: Node) -> EdgeList? {
-            for edgeList in edgeLists {
+            for edgeList in base {
                 if edgeList.vertex === vertex {
                     return edgeList
                 }
@@ -42,15 +42,8 @@ extension MutableGraph {
 
         func addEdgeList(_ edgeList: EdgeList) {
             if self[edgeList.vertex] == nil {
-                edgeLists.append(edgeList)
+                base.append(edgeList)
             }
         }
-    }
-}
-
-extension MutableGraph.AdjacencyList: AnyCollectionWrapping {
-
-    public var collection: AnyCollection<MutableGraph.EdgeList> {
-        return AnyCollection(edgeLists)
     }
 }
