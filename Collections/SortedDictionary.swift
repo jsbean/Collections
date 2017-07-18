@@ -11,15 +11,20 @@ import Foundation
 /// Ordered dictionary which has sorted `keys`.
 public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashable & Comparable {
 
-    // MARK: - Instance Properties
-
-    /// Sorted keys.
-    public var keys: SortedArray<Key> = []
-
     /// Backing dictionary.
     ///
     // FIXME: Make `private` in Swift 4
     internal var unsorted: [Key: Value] = [:]
+
+    // MARK: - Instance Properties
+
+    /// Values contained herein, in order sorted by their associated keys.
+    public var values: [Value] {
+        return keys.map { unsorted[$0]! }
+    }
+
+    /// Sorted keys.
+    public var keys: SortedArray<Key> = []
 
     // MARK: - Initializers
 
