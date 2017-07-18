@@ -6,8 +6,6 @@
 //
 //
 
-import Foundation
-
 /// Ordered dictionary which has sorted `keys`.
 public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashable & Comparable {
 
@@ -95,13 +93,6 @@ extension SortedDictionary: Collection {
     public var endIndex: Int {
         return keys.count
     }
-
-    /// - returns: Element at the given `index`.
-    public subscript (index: Int) -> (Key, Value) {
-        let key = keys[index]
-        let value = unsorted[key]!
-        return (key, value)
-    }
 }
 
 extension SortedDictionary: BidirectionalCollection {
@@ -109,6 +100,16 @@ extension SortedDictionary: BidirectionalCollection {
     public func index(before i: Int) -> Int {
         assert(i > 0, "Cannot decrement index to \(i - 1)")
         return i - 1
+    }
+}
+
+extension SortedDictionary: RandomAccessCollection {
+
+    /// - Returns: Element at the given `index`.
+    public subscript (index: Int) -> (Key, Value) {
+        let key = keys[index]
+        let value = unsorted[key]!
+        return (key, value)
     }
 }
 
