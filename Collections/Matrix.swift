@@ -7,8 +7,6 @@
 //
 
 /// 2-dimensional matrix with user-definable dimensions, parameterized over any type `T`.
-///
-/// - TODO: Conform to `CustomStringConvertible`.
 public struct Matrix <T> {
 
     /// Amount of rows.
