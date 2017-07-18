@@ -17,7 +17,7 @@ public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashab
     public var keys: SortedArray<Key> = []
 
     /// Backing dictionary.
-    public var values: [Key: Value] = [:]
+    public var unsorted: [Key: Value] = [:]
 
     // MARK: - Initializers
 
@@ -30,18 +30,18 @@ public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashab
     public subscript(key: Key) -> Value? {
 
         get {
-            return values[key]
+            return unsorted[key]
         }
 
         set {
 
             guard let newValue = newValue else {
-                values.removeValue(forKey: key)
+                unsorted.removeValue(forKey: key)
                 keys.remove(key)
                 return
             }
 
-            let oldValue = values.updateValue(newValue, forKey: key)
+            let oldValue = unsorted.updateValue(newValue, forKey: key)
 
             if oldValue == nil {
                 keys.insert(key)
@@ -54,7 +54,7 @@ public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashab
     /// Insert the given `value` for the given `key`. Order will be maintained.
     public mutating func insert(_ value: Value, key: Key) {
         keys.insert(key)
-        values[key] = value
+        unsorted[key] = value
     }
 
     /// Insert the contents of another `SortedDictionary` value.
@@ -65,7 +65,7 @@ public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashab
     /// - returns: Value at the given `index`, if present. Otherwise, `nil`.
     public func value(at index: Int) -> Value? {
         if index >= keys.count { return nil }
-        return values[keys[index]]
+        return unsorted[keys[index]]
     }
 }
 
@@ -92,7 +92,7 @@ extension SortedDictionary: Collection {
     /// - returns: Element at the given `index`.
     public subscript (index: Int) -> (Key, Value) {
         let key = keys[index]
-        let value = values[key]!
+        let value = unsorted[key]!
         return (key, value)
     }
 }
@@ -132,14 +132,14 @@ public func == <K, V: Equatable> (lhs: SortedDictionary<K,V>, rhs: SortedDiction
 
     for key in lhs.keys {
 
-        if rhs.values[key] == nil || rhs.values[key]! != lhs.values[key]! {
+        if rhs.unsorted[key] == nil || rhs.unsorted[key]! != lhs.unsorted[key]! {
             return false
         }
     }
 
     for key in rhs.keys {
 
-        if lhs.values[key] == nil || lhs.values[key]! != rhs.values[key]! {
+        if lhs.unsorted[key] == nil || lhs.unsorted[key]! != rhs.unsorted[key]! {
             return false
         }
     }
