@@ -22,6 +22,6 @@ extension SortedCollectionWrapping {
     }
 
     public func sorted() -> [Iterator.Element] {
-        return map { $0 }
+        return Array(self)
     }
 }

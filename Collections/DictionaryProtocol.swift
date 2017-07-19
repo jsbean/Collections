@@ -49,7 +49,7 @@ extension DictionaryProtocol {
     /// - Note: Usefule for creating a dataset from x- and y-value arrays.
     public init(_ xs: [Key], _ ys: [Value]) {
         self.init()
-        zip(xs, ys).forEach { key, value in self[key] = value }
+        zip(xs,ys).forEach { key, value in self[key] = value }
     }
 
     /// Create a `DictionaryProtocol` with an array of tuples.
