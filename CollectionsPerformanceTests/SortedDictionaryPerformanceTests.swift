@@ -76,12 +76,4 @@ class SortedDictionaryPerformanceTests: XCTestCase {
     func testValues() {
         measure { _ = self.thousandRandomInts.values[800] }
     }
-
-    // TODO: count O(1)
-    // TODO: subscript O(1)
-    // TODO: insert O(n)
-    // TODO: insert contents O(n)
-    // TODO: value(at:) O(1)
-    // TODO: min() O(1)
-    // TODO: max() O(1)
 }
