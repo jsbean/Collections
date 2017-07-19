@@ -31,6 +31,8 @@
 		071511D51E526BD80003576F /* Zip3SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 071511D31E526BD80003576F /* Zip3SequenceTests.swift */; };
 		072199E61F1F77EE00E66534 /* Set+Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072199E51F1F77EE00E66534 /* Set+Algebra.swift */; };
 		072199E71F1F77EE00E66534 /* Set+Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072199E51F1F77EE00E66534 /* Set+Algebra.swift */; };
+		0724050F1F1FAFED00E266B3 /* Sequence+Monoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724050E1F1FAFED00E266B3 /* Sequence+Monoid.swift */; };
+		072405101F1FAFED00E266B3 /* Sequence+Monoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0724050E1F1FAFED00E266B3 /* Sequence+Monoid.swift */; };
 		073CB1AC1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */; };
 		073CB1AD1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */; };
 		074309711E43914E002B88A1 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074309701E43914E002B88A1 /* TupleMap.swift */; };
@@ -251,6 +253,7 @@
 		071511D01E5266C50003576F /* Zip3Sequence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3Sequence.swift; path = Collections/Zip3Sequence.swift; sourceTree = "<group>"; };
 		071511D31E526BD80003576F /* Zip3SequenceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Zip3SequenceTests.swift; path = CollectionsTests/Zip3SequenceTests.swift; sourceTree = "<group>"; };
 		072199E51F1F77EE00E66534 /* Set+Algebra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Set+Algebra.swift"; path = "Collections/Set+Algebra.swift"; sourceTree = "<group>"; };
+		0724050E1F1FAFED00E266B3 /* Sequence+Monoid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Sequence+Monoid.swift"; path = "Collections/Sequence+Monoid.swift"; sourceTree = "<group>"; };
 		073CB1AB1F19936800A3BA5E /* SortedCollectionWrapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SortedCollectionWrapping.swift; path = Collections/SortedCollectionWrapping.swift; sourceTree = "<group>"; };
 		074309701E43914E002B88A1 /* TupleMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMap.swift; path = Collections/TupleMap.swift; sourceTree = "<group>"; };
 		074309731E43922D002B88A1 /* TupleMapTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TupleMapTests.swift; path = CollectionsTests/TupleMapTests.swift; sourceTree = "<group>"; };
@@ -397,6 +400,7 @@
 				076D04591E2D1A410023ED96 /* String */,
 				07C563681E225EE500E73FB2 /* Tuple */,
 				078F490C1E0D5C1C00B8F316 /* SequenceExtensions.swift */,
+				0724050E1F1FAFED00E266B3 /* Sequence+Monoid.swift */,
 				072199E51F1F77EE00E66534 /* Set+Algebra.swift */,
 				071511C41E52304E0003576F /* ArrayExtensions.swift */,
 				074309761E43E9D5002B88A1 /* Split.swift */,
@@ -953,6 +957,7 @@
 			files = (
 				07125DCE1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
 				077E2EAE1F179C83003D14FA /* RandomAccessCollectionWrapping.swift in Sources */,
+				072405101F1FAFED00E266B3 /* Sequence+Monoid.swift in Sources */,
 				073CB1AD1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */,
 				07B8DFC51EE6D66B00BBB814 /* CircularArray.swift in Sources */,
 				07690BCB1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
@@ -1029,6 +1034,7 @@
 			files = (
 				07125DCD1E0D0D9B004E3411 /* SortedDictionary.swift in Sources */,
 				077E2EAD1F179C83003D14FA /* RandomAccessCollectionWrapping.swift in Sources */,
+				0724050F1F1FAFED00E266B3 /* Sequence+Monoid.swift in Sources */,
 				073CB1AC1F19936800A3BA5E /* SortedCollectionWrapping.swift in Sources */,
 				07B8DFC41EE6D66B00BBB814 /* CircularArray.swift in Sources */,
 				07690BCA1E0D66D40095F1D5 /* ArrayError.swift in Sources */,
