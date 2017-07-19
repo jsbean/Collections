@@ -17,8 +17,8 @@ public struct SortedDictionary<Key, Value>: DictionaryProtocol where Key: Hashab
     // MARK: - Instance Properties
 
     /// Values contained herein, in order sorted by their associated keys.
-    public var values: [Value] {
-        return keys.map { unsorted[$0]! }
+    public var values: LazyMapRandomAccessCollection<SortedArray<Key>,Value> {
+        return keys.lazy.map { self.unsorted[$0]! }
     }
 
     /// Sorted keys.
@@ -110,6 +110,19 @@ extension SortedDictionary: RandomAccessCollection {
         let key = keys[index]
         let value = unsorted[key]!
         return (key, value)
+    }
+}
+
+extension SortedDictionary {
+
+    public func min() -> (Key,Value)? {
+        guard let firstKey = keys.first else { return nil }
+        return (firstKey, unsorted[firstKey]!)
+    }
+
+    public func max() -> (Key,Value)? {
+        guard let lastKey = keys.last else { return nil }
+        return (lastKey, unsorted[lastKey]!)
     }
 }
 

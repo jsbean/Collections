@@ -11,7 +11,9 @@ import Collections
 
 class SortedDictionaryPerformanceTests: XCTestCase {
 
-    let thousandRandomInts = SortedDictionary((0..<1_000).map { _ in (Int.random, Int.random) })
+    lazy var thousandRandomInts = {
+        SortedDictionary((0..<1_000).map { _ in (Int.random, Int.random) })
+    }()
 
     // Expected complexity: O(1)
     func testStartIndexPerformanceThousandInts() {
@@ -60,22 +62,26 @@ class SortedDictionaryPerformanceTests: XCTestCase {
     }
 
     func testMin() {
-        measure { _ = self.thousandRandomInts.min }
+        measure { _ = self.thousandRandomInts.min() }
     }
 
     func testMax() {
-        measure { _ = self.thousandRandomInts.max }
+        measure { _ = self.thousandRandomInts.max() }
     }
 
     func testCount() {
-        
+        measure { _ = self.thousandRandomInts.count }
+    }
+
+    func testValues() {
+        measure { _ = self.thousandRandomInts.values[800] }
     }
 
     // TODO: count O(1)
     // TODO: subscript O(1)
-    // TODO: insert O(logn)
-    // TODO: insert contents O(logn)
+    // TODO: insert O(n)
+    // TODO: insert contents O(n)
     // TODO: value(at:) O(1)
-    // TODO: min() O(logn)
-    // TODO: max() O(logn)
+    // TODO: min() O(1)
+    // TODO: max() O(1)
 }
