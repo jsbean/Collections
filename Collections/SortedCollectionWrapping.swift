@@ -20,4 +20,8 @@ extension SortedCollectionWrapping {
     public func max() -> Base.Iterator.Element? {
         return base.last
     }
+
+    public func sorted() -> [Iterator.Element] {
+        return Array(self)
+    }
 }

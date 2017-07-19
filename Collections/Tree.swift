@@ -301,7 +301,7 @@ public func zip <T,U,V> (_ a: Tree<T,T>, _ b: Tree<U,U>, _ f: (T, U) -> V) -> Tr
     case (.leaf(let a), .leaf(let b)):
         return .leaf(f(a,b))
     case (.branch(let a, let aTrees), .branch(let b, let bTrees)):
-        return .branch(f(a,b), zip(aTrees, bTrees).map { a,b in zip(a,b,f) })
+        return .branch(f(a,b), zip(aTrees,bTrees).map { a,b in zip(a,b,f) })
     default:
         fatalError("Incompatible trees")
     }
