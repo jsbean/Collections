@@ -6,7 +6,7 @@
 //
 //
 
-extension Collection where Index == Int, SubSequence.Iterator.Element == Iterator.Element {
+extension Collection where SubSequence.Iterator.Element == Iterator.Element {
 
     // MARK: - List Processing
 
@@ -22,7 +22,7 @@ extension Collection where Index == Int, SubSequence.Iterator.Element == Iterato
             return nil
         }
 
-        return Array(self[1..<endIndex])
+        return Array(dropFirst())
     }
 
     /// 2-tuple containing the `head` `Element` and `tail` `[Element]` of `Self`

@@ -18,3 +18,10 @@ extension Set: Additive {
         return lhs.union(rhs)
     }
 }
+
+extension Set: MultiplicativeSemigroup {
+
+    public static func * (lhs: Set, rhs: Set) -> Set {
+        return lhs.intersection(rhs)
+    }
+}
