@@ -9,11 +9,11 @@
 /* Begin PBXAggregateTarget section */
 		"Collections::CollectionsPackageTests::ProductTarget" /* CollectionsPackageTests */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = OBJ_228 /* Build configuration list for PBXAggregateTarget "CollectionsPackageTests" */;
+			buildConfigurationList = OBJ_227 /* Build configuration list for PBXAggregateTarget "CollectionsPackageTests" */;
 			buildPhases = (
 			);
 			dependencies = (
-				OBJ_231 /* PBXTargetDependency */,
+				OBJ_230 /* PBXTargetDependency */,
 			);
 			name = CollectionsPackageTests;
 			productName = CollectionsPackageTests;
@@ -21,126 +21,126 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		OBJ_116 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* AnySequenceWrappingTests.swift */; };
-		OBJ_117 /* CircularArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* CircularArrayTests.swift */; };
-		OBJ_118 /* CollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* CollectionsTests.swift */; };
-		OBJ_119 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* CombinationsTests.swift */; };
-		OBJ_120 /* ComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* ComparisonTests.swift */; };
-		OBJ_121 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* DictionaryTypeTests.swift */; };
-		OBJ_122 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* ElementsAtIndicesTests.swift */; };
-		OBJ_123 /* EnumComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* EnumComparableTests.swift */; };
-		OBJ_124 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* EnumEquatableTests.swift */; };
-		OBJ_125 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* EnumIterationTests.swift */; };
-		OBJ_126 /* KeyPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* KeyPathTests.swift */; };
-		OBJ_127 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* LinkedListTests.swift */; };
-		OBJ_128 /* ListProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* ListProcessingTests.swift */; };
-		OBJ_129 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* MatrixTests.swift */; };
-		OBJ_130 /* MutableTreeProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* MutableTreeProtocolTests.swift */; };
-		OBJ_131 /* MutableTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* MutableTreeTests.swift */; };
-		OBJ_132 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* OrderedDictionaryTests.swift */; };
-		OBJ_133 /* PairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* PairsTests.swift */; };
-		OBJ_134 /* RemoveElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* RemoveElementsTests.swift */; };
-		OBJ_135 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* ReplaceElementsTests.swift */; };
-		OBJ_136 /* SequenceAlgebraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* SequenceAlgebraTests.swift */; };
-		OBJ_137 /* SequenceExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* SequenceExtensionsTests.swift */; };
-		OBJ_138 /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* SortedArrayTests.swift */; };
-		OBJ_139 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* SortedDictionaryTests.swift */; };
-		OBJ_140 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* SplitTests.swift */; };
-		OBJ_141 /* StableSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* StableSortTests.swift */; };
-		OBJ_142 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* StackTests.swift */; };
-		OBJ_143 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* StringExtensionsTests.swift */; };
-		OBJ_144 /* SubsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* SubsetsTests.swift */; };
-		OBJ_145 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* SwapTests.swift */; };
-		OBJ_146 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* TreeTests.swift */; };
-		OBJ_147 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* TupleMapTests.swift */; };
-		OBJ_148 /* Zip3SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* Zip3SequenceTests.swift */; };
-		OBJ_149 /* ZipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* ZipperTests.swift */; };
-		OBJ_151 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Collections::Collections::Product" /* Collections.framework */; };
-		OBJ_152 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Algebra::Algebra::Product" /* Algebra.framework */; };
-		OBJ_161 /* ArrayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* ArrayError.swift */; };
-		OBJ_162 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ArrayExtensions.swift */; };
-		OBJ_163 /* CircularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CircularArray.swift */; };
-		OBJ_164 /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* CollectionWrapping.swift */; };
-		OBJ_165 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Combinations.swift */; };
-		OBJ_166 /* Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Comparison.swift */; };
-		OBJ_167 /* DictionaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* DictionaryProtocol.swift */; };
-		OBJ_168 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Either.swift */; };
-		OBJ_169 /* ElementsAtIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ElementsAtIndices.swift */; };
-		OBJ_170 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* KeyPath.swift */; };
-		OBJ_171 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* LinkedList.swift */; };
-		OBJ_172 /* ListProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ListProcessing.swift */; };
-		OBJ_173 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Matrix.swift */; };
-		OBJ_174 /* MutableGraph+AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* MutableGraph+AdjacencyList.swift */; };
-		OBJ_175 /* MutableGraph+Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* MutableGraph+Edge.swift */; };
-		OBJ_176 /* MutableGraph+EdgeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* MutableGraph+EdgeList.swift */; };
-		OBJ_177 /* MutableGraph+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* MutableGraph+Node.swift */; };
-		OBJ_178 /* MutableGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* MutableGraph.swift */; };
-		OBJ_179 /* MutableGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* MutableGraphTests.swift */; };
-		OBJ_180 /* MutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* MutableTree.swift */; };
-		OBJ_181 /* MutableTreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* MutableTreeProtocol.swift */; };
-		OBJ_182 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* OrderedDictionary.swift */; };
-		OBJ_183 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Pairs.swift */; };
-		OBJ_184 /* RandomAccessCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* RandomAccessCollectionWrapping.swift */; };
-		OBJ_185 /* RawRepresentable+AllCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* RawRepresentable+AllCases.swift */; };
-		OBJ_186 /* RawRepresentable+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* RawRepresentable+Comparable.swift */; };
-		OBJ_187 /* RawRepresentable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* RawRepresentable+Equatable.swift */; };
-		OBJ_188 /* RemoveElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* RemoveElements.swift */; };
-		OBJ_189 /* ReplaceElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* ReplaceElements.swift */; };
-		OBJ_190 /* Sequence+Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Sequence+Algebra.swift */; };
-		OBJ_191 /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* SequenceExtensions.swift */; };
-		OBJ_192 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* SequenceWrapping.swift */; };
-		OBJ_193 /* Set+Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Set+Algebra.swift */; };
-		OBJ_194 /* SingleTypedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* SingleTypedTree.swift */; };
-		OBJ_195 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* SortedArray.swift */; };
-		OBJ_196 /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* SortedCollectionWrapping.swift */; };
-		OBJ_197 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* SortedDictionary.swift */; };
-		OBJ_198 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* Split.swift */; };
-		OBJ_199 /* StableSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* StableSort.swift */; };
-		OBJ_200 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Stack.swift */; };
-		OBJ_201 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* StringExtensions.swift */; };
-		OBJ_202 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* Subsets.swift */; };
-		OBJ_203 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* Swap.swift */; };
-		OBJ_204 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* Tree.swift */; };
-		OBJ_205 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* TupleMap.swift */; };
-		OBJ_206 /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* Zip3Sequence.swift */; };
-		OBJ_207 /* Zipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* Zipper.swift */; };
-		OBJ_209 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Algebra::Algebra::Product" /* Algebra.framework */; };
-		OBJ_215 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* Additive.swift */; };
-		OBJ_216 /* AdditiveSemigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* AdditiveSemigroup.swift */; };
-		OBJ_217 /* Monoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* Monoid.swift */; };
-		OBJ_218 /* MonoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* MonoidView.swift */; };
-		OBJ_219 /* Multiplicative.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* Multiplicative.swift */; };
-		OBJ_220 /* MultiplicativeSemigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* MultiplicativeSemigroup.swift */; };
-		OBJ_221 /* One.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* One.swift */; };
-		OBJ_222 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* Product.swift */; };
-		OBJ_223 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* Semigroup.swift */; };
-		OBJ_224 /* Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* Sum.swift */; };
-		OBJ_225 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_106 /* Zero.swift */; };
+		OBJ_115 /* AnySequenceWrappingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_58 /* AnySequenceWrappingTests.swift */; };
+		OBJ_116 /* CircularArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_59 /* CircularArrayTests.swift */; };
+		OBJ_117 /* CollectionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_60 /* CollectionsTests.swift */; };
+		OBJ_118 /* CombinationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_61 /* CombinationsTests.swift */; };
+		OBJ_119 /* ComparisonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_62 /* ComparisonTests.swift */; };
+		OBJ_120 /* DictionaryTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_63 /* DictionaryTypeTests.swift */; };
+		OBJ_121 /* ElementsAtIndicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_64 /* ElementsAtIndicesTests.swift */; };
+		OBJ_122 /* EnumComparableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_65 /* EnumComparableTests.swift */; };
+		OBJ_123 /* EnumEquatableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_66 /* EnumEquatableTests.swift */; };
+		OBJ_124 /* EnumIterationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_67 /* EnumIterationTests.swift */; };
+		OBJ_125 /* KeyPathTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_68 /* KeyPathTests.swift */; };
+		OBJ_126 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_69 /* LinkedListTests.swift */; };
+		OBJ_127 /* ListProcessingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_70 /* ListProcessingTests.swift */; };
+		OBJ_128 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_71 /* MatrixTests.swift */; };
+		OBJ_129 /* MutableTreeProtocolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_72 /* MutableTreeProtocolTests.swift */; };
+		OBJ_130 /* MutableTreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_73 /* MutableTreeTests.swift */; };
+		OBJ_131 /* OrderedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_74 /* OrderedDictionaryTests.swift */; };
+		OBJ_132 /* PairsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_75 /* PairsTests.swift */; };
+		OBJ_133 /* RemoveElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_76 /* RemoveElementsTests.swift */; };
+		OBJ_134 /* ReplaceElementsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_77 /* ReplaceElementsTests.swift */; };
+		OBJ_135 /* SequenceAlgebraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_78 /* SequenceAlgebraTests.swift */; };
+		OBJ_136 /* SequenceExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_79 /* SequenceExtensionsTests.swift */; };
+		OBJ_137 /* SortedArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_80 /* SortedArrayTests.swift */; };
+		OBJ_138 /* SortedDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_81 /* SortedDictionaryTests.swift */; };
+		OBJ_139 /* SplitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_82 /* SplitTests.swift */; };
+		OBJ_140 /* StableSortTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_83 /* StableSortTests.swift */; };
+		OBJ_141 /* StackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_84 /* StackTests.swift */; };
+		OBJ_142 /* StringExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_85 /* StringExtensionsTests.swift */; };
+		OBJ_143 /* SubsetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_86 /* SubsetsTests.swift */; };
+		OBJ_144 /* SwapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_87 /* SwapTests.swift */; };
+		OBJ_145 /* TreeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_88 /* TreeTests.swift */; };
+		OBJ_146 /* TupleMapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_89 /* TupleMapTests.swift */; };
+		OBJ_147 /* Zip3SequenceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_90 /* Zip3SequenceTests.swift */; };
+		OBJ_148 /* ZipperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_91 /* ZipperTests.swift */; };
+		OBJ_150 /* Collections.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Collections::Collections::Product" /* Collections.framework */; };
+		OBJ_151 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Algebra::Algebra::Product" /* Algebra.framework */; };
+		OBJ_160 /* ArrayError.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* ArrayError.swift */; };
+		OBJ_161 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* ArrayExtensions.swift */; };
+		OBJ_162 /* CircularArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* CircularArray.swift */; };
+		OBJ_163 /* CollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_12 /* CollectionWrapping.swift */; };
+		OBJ_164 /* Combinations.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_13 /* Combinations.swift */; };
+		OBJ_165 /* Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_14 /* Comparison.swift */; };
+		OBJ_166 /* DictionaryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_15 /* DictionaryProtocol.swift */; };
+		OBJ_167 /* Either.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_16 /* Either.swift */; };
+		OBJ_168 /* ElementsAtIndices.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_17 /* ElementsAtIndices.swift */; };
+		OBJ_169 /* KeyPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_18 /* KeyPath.swift */; };
+		OBJ_170 /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_19 /* LinkedList.swift */; };
+		OBJ_171 /* ListProcessing.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_20 /* ListProcessing.swift */; };
+		OBJ_172 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_21 /* Matrix.swift */; };
+		OBJ_173 /* MutableGraph+AdjacencyList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_22 /* MutableGraph+AdjacencyList.swift */; };
+		OBJ_174 /* MutableGraph+Edge.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_23 /* MutableGraph+Edge.swift */; };
+		OBJ_175 /* MutableGraph+EdgeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_24 /* MutableGraph+EdgeList.swift */; };
+		OBJ_176 /* MutableGraph+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_25 /* MutableGraph+Node.swift */; };
+		OBJ_177 /* MutableGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_26 /* MutableGraph.swift */; };
+		OBJ_178 /* MutableGraphTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_27 /* MutableGraphTests.swift */; };
+		OBJ_179 /* MutableTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_28 /* MutableTree.swift */; };
+		OBJ_180 /* MutableTreeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_29 /* MutableTreeProtocol.swift */; };
+		OBJ_181 /* OrderedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_30 /* OrderedDictionary.swift */; };
+		OBJ_182 /* Pairs.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_31 /* Pairs.swift */; };
+		OBJ_183 /* RandomAccessCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_32 /* RandomAccessCollectionWrapping.swift */; };
+		OBJ_184 /* RawRepresentable+AllCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_33 /* RawRepresentable+AllCases.swift */; };
+		OBJ_185 /* RawRepresentable+Comparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_34 /* RawRepresentable+Comparable.swift */; };
+		OBJ_186 /* RawRepresentable+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_35 /* RawRepresentable+Equatable.swift */; };
+		OBJ_187 /* RemoveElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_36 /* RemoveElements.swift */; };
+		OBJ_188 /* ReplaceElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_37 /* ReplaceElements.swift */; };
+		OBJ_189 /* Sequence+Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_38 /* Sequence+Algebra.swift */; };
+		OBJ_190 /* SequenceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_39 /* SequenceExtensions.swift */; };
+		OBJ_191 /* SequenceWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_40 /* SequenceWrapping.swift */; };
+		OBJ_192 /* Set+Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_41 /* Set+Algebra.swift */; };
+		OBJ_193 /* SingleTypedTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_42 /* SingleTypedTree.swift */; };
+		OBJ_194 /* SortedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_43 /* SortedArray.swift */; };
+		OBJ_195 /* SortedCollectionWrapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_44 /* SortedCollectionWrapping.swift */; };
+		OBJ_196 /* SortedDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_45 /* SortedDictionary.swift */; };
+		OBJ_197 /* Split.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_46 /* Split.swift */; };
+		OBJ_198 /* StableSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_47 /* StableSort.swift */; };
+		OBJ_199 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_48 /* Stack.swift */; };
+		OBJ_200 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_49 /* StringExtensions.swift */; };
+		OBJ_201 /* Subsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_50 /* Subsets.swift */; };
+		OBJ_202 /* Swap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_51 /* Swap.swift */; };
+		OBJ_203 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_52 /* Tree.swift */; };
+		OBJ_204 /* TupleMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_53 /* TupleMap.swift */; };
+		OBJ_205 /* Zip3Sequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_54 /* Zip3Sequence.swift */; };
+		OBJ_206 /* Zipper.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_55 /* Zipper.swift */; };
+		OBJ_208 /* Algebra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = "Algebra::Algebra::Product" /* Algebra.framework */; };
+		OBJ_214 /* Additive.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_95 /* Additive.swift */; };
+		OBJ_215 /* AdditiveSemigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_96 /* AdditiveSemigroup.swift */; };
+		OBJ_216 /* Monoid.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_97 /* Monoid.swift */; };
+		OBJ_217 /* MonoidView.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_98 /* MonoidView.swift */; };
+		OBJ_218 /* Multiplicative.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_99 /* Multiplicative.swift */; };
+		OBJ_219 /* MultiplicativeSemigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_100 /* MultiplicativeSemigroup.swift */; };
+		OBJ_220 /* One.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_101 /* One.swift */; };
+		OBJ_221 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_102 /* Product.swift */; };
+		OBJ_222 /* Semigroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_103 /* Semigroup.swift */; };
+		OBJ_223 /* Sum.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_104 /* Sum.swift */; };
+		OBJ_224 /* Zero.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_105 /* Zero.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		07F98B511F26A539003C6783 /* PBXContainerItemProxy */ = {
+		076E04E31F26A92800725508 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Algebra::Algebra";
 			remoteInfo = Algebra;
 		};
-		07F98B521F26A539003C6783 /* PBXContainerItemProxy */ = {
+		076E04E41F26A92800725508 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Collections::Collections";
 			remoteInfo = Collections;
 		};
-		07F98B531F26A539003C6783 /* PBXContainerItemProxy */ = {
+		076E04E51F26A92800725508 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = "Algebra::Algebra";
 			remoteInfo = Algebra;
 		};
-		07F98B541F26A53A003C6783 /* PBXContainerItemProxy */ = {
+		076E04E61F26A92900725508 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = OBJ_1 /* Project object */;
 			proxyType = 1;
@@ -154,13 +154,12 @@
 		"Collections::Collections::Product" /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		"Collections::CollectionsTests::Product" /* CollectionsTests.xctest */ = {isa = PBXFileReference; lastKnownFileType = file; path = CollectionsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		OBJ_10 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
-		OBJ_100 /* Multiplicative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplicative.swift; sourceTree = "<group>"; };
-		OBJ_101 /* MultiplicativeSemigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicativeSemigroup.swift; sourceTree = "<group>"; };
-		OBJ_102 /* One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One.swift; sourceTree = "<group>"; };
-		OBJ_103 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
-		OBJ_104 /* Semigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
-		OBJ_105 /* Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sum.swift; sourceTree = "<group>"; };
-		OBJ_106 /* Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zero.swift; sourceTree = "<group>"; };
+		OBJ_100 /* MultiplicativeSemigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicativeSemigroup.swift; sourceTree = "<group>"; };
+		OBJ_101 /* One.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = One.swift; sourceTree = "<group>"; };
+		OBJ_102 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		OBJ_103 /* Semigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Semigroup.swift; sourceTree = "<group>"; };
+		OBJ_104 /* Sum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sum.swift; sourceTree = "<group>"; };
+		OBJ_105 /* Zero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zero.swift; sourceTree = "<group>"; };
 		OBJ_11 /* CircularArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularArray.swift; sourceTree = "<group>"; };
 		OBJ_12 /* CollectionWrapping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionWrapping.swift; sourceTree = "<group>"; };
 		OBJ_13 /* Combinations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Combinations.swift; sourceTree = "<group>"; };
@@ -242,32 +241,32 @@
 		OBJ_9 /* ArrayError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayError.swift; sourceTree = "<group>"; };
 		OBJ_90 /* Zip3SequenceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zip3SequenceTests.swift; sourceTree = "<group>"; };
 		OBJ_91 /* ZipperTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZipperTests.swift; sourceTree = "<group>"; };
-		OBJ_92 /* PerformanceTests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PerformanceTests; sourceTree = SOURCE_ROOT; };
-		OBJ_96 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
-		OBJ_97 /* AdditiveSemigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditiveSemigroup.swift; sourceTree = "<group>"; };
-		OBJ_98 /* Monoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monoid.swift; sourceTree = "<group>"; };
-		OBJ_99 /* MonoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonoidView.swift; sourceTree = "<group>"; };
+		OBJ_95 /* Additive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additive.swift; sourceTree = "<group>"; };
+		OBJ_96 /* AdditiveSemigroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditiveSemigroup.swift; sourceTree = "<group>"; };
+		OBJ_97 /* Monoid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monoid.swift; sourceTree = "<group>"; };
+		OBJ_98 /* MonoidView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonoidView.swift; sourceTree = "<group>"; };
+		OBJ_99 /* Multiplicative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplicative.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		OBJ_150 /* Frameworks */ = {
+		OBJ_149 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_151 /* Collections.framework in Frameworks */,
-				OBJ_152 /* Algebra.framework in Frameworks */,
+				OBJ_150 /* Collections.framework in Frameworks */,
+				OBJ_151 /* Algebra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_208 /* Frameworks */ = {
+		OBJ_207 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_209 /* Algebra.framework in Frameworks */,
+				OBJ_208 /* Algebra.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_226 /* Frameworks */ = {
+		OBJ_225 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 0;
 			files = (
@@ -277,7 +276,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		OBJ_107 /* Products */ = {
+		OBJ_106 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				"Collections::CollectionsTests::Product" /* CollectionsTests.xctest */,
@@ -293,9 +292,8 @@
 				OBJ_6 /* Package.swift */,
 				OBJ_7 /* Sources */,
 				OBJ_56 /* Tests */,
-				OBJ_92 /* PerformanceTests */,
-				OBJ_93 /* Dependencies */,
-				OBJ_107 /* Products */,
+				OBJ_92 /* Dependencies */,
+				OBJ_106 /* Products */,
 			);
 			name = "";
 			sourceTree = "<group>";
@@ -413,36 +411,36 @@
 			path = Sources/Collections;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_93 /* Dependencies */ = {
+		OBJ_92 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_94 /* Algebra */,
+				OBJ_93 /* Algebra */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
 		};
-		OBJ_94 /* Algebra */ = {
+		OBJ_93 /* Algebra */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_95 /* Algebra */,
+				OBJ_94 /* Algebra */,
 			);
 			name = Algebra;
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_95 /* Algebra */ = {
+		OBJ_94 /* Algebra */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_96 /* Additive.swift */,
-				OBJ_97 /* AdditiveSemigroup.swift */,
-				OBJ_98 /* Monoid.swift */,
-				OBJ_99 /* MonoidView.swift */,
-				OBJ_100 /* Multiplicative.swift */,
-				OBJ_101 /* MultiplicativeSemigroup.swift */,
-				OBJ_102 /* One.swift */,
-				OBJ_103 /* Product.swift */,
-				OBJ_104 /* Semigroup.swift */,
-				OBJ_105 /* Sum.swift */,
-				OBJ_106 /* Zero.swift */,
+				OBJ_95 /* Additive.swift */,
+				OBJ_96 /* AdditiveSemigroup.swift */,
+				OBJ_97 /* Monoid.swift */,
+				OBJ_98 /* MonoidView.swift */,
+				OBJ_99 /* Multiplicative.swift */,
+				OBJ_100 /* MultiplicativeSemigroup.swift */,
+				OBJ_101 /* One.swift */,
+				OBJ_102 /* Product.swift */,
+				OBJ_103 /* Semigroup.swift */,
+				OBJ_104 /* Sum.swift */,
+				OBJ_105 /* Zero.swift */,
 			);
 			name = Algebra;
 			path = ".build/checkouts/Algebra--3273037139595469453/Sources/Algebra";
@@ -453,10 +451,10 @@
 /* Begin PBXNativeTarget section */
 		"Algebra::Algebra" /* Algebra */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_211 /* Build configuration list for PBXNativeTarget "Algebra" */;
+			buildConfigurationList = OBJ_210 /* Build configuration list for PBXNativeTarget "Algebra" */;
 			buildPhases = (
-				OBJ_214 /* Sources */,
-				OBJ_226 /* Frameworks */,
+				OBJ_213 /* Sources */,
+				OBJ_225 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -469,15 +467,15 @@
 		};
 		"Collections::Collections" /* Collections */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_157 /* Build configuration list for PBXNativeTarget "Collections" */;
+			buildConfigurationList = OBJ_156 /* Build configuration list for PBXNativeTarget "Collections" */;
 			buildPhases = (
-				OBJ_160 /* Sources */,
-				OBJ_208 /* Frameworks */,
+				OBJ_159 /* Sources */,
+				OBJ_207 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_210 /* PBXTargetDependency */,
+				OBJ_209 /* PBXTargetDependency */,
 			);
 			name = Collections;
 			productName = Collections;
@@ -486,16 +484,16 @@
 		};
 		"Collections::CollectionsTests" /* CollectionsTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = OBJ_112 /* Build configuration list for PBXNativeTarget "CollectionsTests" */;
+			buildConfigurationList = OBJ_111 /* Build configuration list for PBXNativeTarget "CollectionsTests" */;
 			buildPhases = (
-				OBJ_115 /* Sources */,
-				OBJ_150 /* Frameworks */,
+				OBJ_114 /* Sources */,
+				OBJ_149 /* Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				OBJ_153 /* PBXTargetDependency */,
-				OBJ_155 /* PBXTargetDependency */,
+				OBJ_152 /* PBXTargetDependency */,
+				OBJ_154 /* PBXTargetDependency */,
 			);
 			name = CollectionsTests;
 			productName = CollectionsTests;
@@ -518,7 +516,7 @@
 				en,
 			);
 			mainGroup = OBJ_5 /*  */;
-			productRefGroup = OBJ_107 /* Products */;
+			productRefGroup = OBJ_106 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -531,146 +529,146 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		OBJ_115 /* Sources */ = {
+		OBJ_114 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_116 /* AnySequenceWrappingTests.swift in Sources */,
-				OBJ_117 /* CircularArrayTests.swift in Sources */,
-				OBJ_118 /* CollectionsTests.swift in Sources */,
-				OBJ_119 /* CombinationsTests.swift in Sources */,
-				OBJ_120 /* ComparisonTests.swift in Sources */,
-				OBJ_121 /* DictionaryTypeTests.swift in Sources */,
-				OBJ_122 /* ElementsAtIndicesTests.swift in Sources */,
-				OBJ_123 /* EnumComparableTests.swift in Sources */,
-				OBJ_124 /* EnumEquatableTests.swift in Sources */,
-				OBJ_125 /* EnumIterationTests.swift in Sources */,
-				OBJ_126 /* KeyPathTests.swift in Sources */,
-				OBJ_127 /* LinkedListTests.swift in Sources */,
-				OBJ_128 /* ListProcessingTests.swift in Sources */,
-				OBJ_129 /* MatrixTests.swift in Sources */,
-				OBJ_130 /* MutableTreeProtocolTests.swift in Sources */,
-				OBJ_131 /* MutableTreeTests.swift in Sources */,
-				OBJ_132 /* OrderedDictionaryTests.swift in Sources */,
-				OBJ_133 /* PairsTests.swift in Sources */,
-				OBJ_134 /* RemoveElementsTests.swift in Sources */,
-				OBJ_135 /* ReplaceElementsTests.swift in Sources */,
-				OBJ_136 /* SequenceAlgebraTests.swift in Sources */,
-				OBJ_137 /* SequenceExtensionsTests.swift in Sources */,
-				OBJ_138 /* SortedArrayTests.swift in Sources */,
-				OBJ_139 /* SortedDictionaryTests.swift in Sources */,
-				OBJ_140 /* SplitTests.swift in Sources */,
-				OBJ_141 /* StableSortTests.swift in Sources */,
-				OBJ_142 /* StackTests.swift in Sources */,
-				OBJ_143 /* StringExtensionsTests.swift in Sources */,
-				OBJ_144 /* SubsetsTests.swift in Sources */,
-				OBJ_145 /* SwapTests.swift in Sources */,
-				OBJ_146 /* TreeTests.swift in Sources */,
-				OBJ_147 /* TupleMapTests.swift in Sources */,
-				OBJ_148 /* Zip3SequenceTests.swift in Sources */,
-				OBJ_149 /* ZipperTests.swift in Sources */,
+				OBJ_115 /* AnySequenceWrappingTests.swift in Sources */,
+				OBJ_116 /* CircularArrayTests.swift in Sources */,
+				OBJ_117 /* CollectionsTests.swift in Sources */,
+				OBJ_118 /* CombinationsTests.swift in Sources */,
+				OBJ_119 /* ComparisonTests.swift in Sources */,
+				OBJ_120 /* DictionaryTypeTests.swift in Sources */,
+				OBJ_121 /* ElementsAtIndicesTests.swift in Sources */,
+				OBJ_122 /* EnumComparableTests.swift in Sources */,
+				OBJ_123 /* EnumEquatableTests.swift in Sources */,
+				OBJ_124 /* EnumIterationTests.swift in Sources */,
+				OBJ_125 /* KeyPathTests.swift in Sources */,
+				OBJ_126 /* LinkedListTests.swift in Sources */,
+				OBJ_127 /* ListProcessingTests.swift in Sources */,
+				OBJ_128 /* MatrixTests.swift in Sources */,
+				OBJ_129 /* MutableTreeProtocolTests.swift in Sources */,
+				OBJ_130 /* MutableTreeTests.swift in Sources */,
+				OBJ_131 /* OrderedDictionaryTests.swift in Sources */,
+				OBJ_132 /* PairsTests.swift in Sources */,
+				OBJ_133 /* RemoveElementsTests.swift in Sources */,
+				OBJ_134 /* ReplaceElementsTests.swift in Sources */,
+				OBJ_135 /* SequenceAlgebraTests.swift in Sources */,
+				OBJ_136 /* SequenceExtensionsTests.swift in Sources */,
+				OBJ_137 /* SortedArrayTests.swift in Sources */,
+				OBJ_138 /* SortedDictionaryTests.swift in Sources */,
+				OBJ_139 /* SplitTests.swift in Sources */,
+				OBJ_140 /* StableSortTests.swift in Sources */,
+				OBJ_141 /* StackTests.swift in Sources */,
+				OBJ_142 /* StringExtensionsTests.swift in Sources */,
+				OBJ_143 /* SubsetsTests.swift in Sources */,
+				OBJ_144 /* SwapTests.swift in Sources */,
+				OBJ_145 /* TreeTests.swift in Sources */,
+				OBJ_146 /* TupleMapTests.swift in Sources */,
+				OBJ_147 /* Zip3SequenceTests.swift in Sources */,
+				OBJ_148 /* ZipperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_160 /* Sources */ = {
+		OBJ_159 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_161 /* ArrayError.swift in Sources */,
-				OBJ_162 /* ArrayExtensions.swift in Sources */,
-				OBJ_163 /* CircularArray.swift in Sources */,
-				OBJ_164 /* CollectionWrapping.swift in Sources */,
-				OBJ_165 /* Combinations.swift in Sources */,
-				OBJ_166 /* Comparison.swift in Sources */,
-				OBJ_167 /* DictionaryProtocol.swift in Sources */,
-				OBJ_168 /* Either.swift in Sources */,
-				OBJ_169 /* ElementsAtIndices.swift in Sources */,
-				OBJ_170 /* KeyPath.swift in Sources */,
-				OBJ_171 /* LinkedList.swift in Sources */,
-				OBJ_172 /* ListProcessing.swift in Sources */,
-				OBJ_173 /* Matrix.swift in Sources */,
-				OBJ_174 /* MutableGraph+AdjacencyList.swift in Sources */,
-				OBJ_175 /* MutableGraph+Edge.swift in Sources */,
-				OBJ_176 /* MutableGraph+EdgeList.swift in Sources */,
-				OBJ_177 /* MutableGraph+Node.swift in Sources */,
-				OBJ_178 /* MutableGraph.swift in Sources */,
-				OBJ_179 /* MutableGraphTests.swift in Sources */,
-				OBJ_180 /* MutableTree.swift in Sources */,
-				OBJ_181 /* MutableTreeProtocol.swift in Sources */,
-				OBJ_182 /* OrderedDictionary.swift in Sources */,
-				OBJ_183 /* Pairs.swift in Sources */,
-				OBJ_184 /* RandomAccessCollectionWrapping.swift in Sources */,
-				OBJ_185 /* RawRepresentable+AllCases.swift in Sources */,
-				OBJ_186 /* RawRepresentable+Comparable.swift in Sources */,
-				OBJ_187 /* RawRepresentable+Equatable.swift in Sources */,
-				OBJ_188 /* RemoveElements.swift in Sources */,
-				OBJ_189 /* ReplaceElements.swift in Sources */,
-				OBJ_190 /* Sequence+Algebra.swift in Sources */,
-				OBJ_191 /* SequenceExtensions.swift in Sources */,
-				OBJ_192 /* SequenceWrapping.swift in Sources */,
-				OBJ_193 /* Set+Algebra.swift in Sources */,
-				OBJ_194 /* SingleTypedTree.swift in Sources */,
-				OBJ_195 /* SortedArray.swift in Sources */,
-				OBJ_196 /* SortedCollectionWrapping.swift in Sources */,
-				OBJ_197 /* SortedDictionary.swift in Sources */,
-				OBJ_198 /* Split.swift in Sources */,
-				OBJ_199 /* StableSort.swift in Sources */,
-				OBJ_200 /* Stack.swift in Sources */,
-				OBJ_201 /* StringExtensions.swift in Sources */,
-				OBJ_202 /* Subsets.swift in Sources */,
-				OBJ_203 /* Swap.swift in Sources */,
-				OBJ_204 /* Tree.swift in Sources */,
-				OBJ_205 /* TupleMap.swift in Sources */,
-				OBJ_206 /* Zip3Sequence.swift in Sources */,
-				OBJ_207 /* Zipper.swift in Sources */,
+				OBJ_160 /* ArrayError.swift in Sources */,
+				OBJ_161 /* ArrayExtensions.swift in Sources */,
+				OBJ_162 /* CircularArray.swift in Sources */,
+				OBJ_163 /* CollectionWrapping.swift in Sources */,
+				OBJ_164 /* Combinations.swift in Sources */,
+				OBJ_165 /* Comparison.swift in Sources */,
+				OBJ_166 /* DictionaryProtocol.swift in Sources */,
+				OBJ_167 /* Either.swift in Sources */,
+				OBJ_168 /* ElementsAtIndices.swift in Sources */,
+				OBJ_169 /* KeyPath.swift in Sources */,
+				OBJ_170 /* LinkedList.swift in Sources */,
+				OBJ_171 /* ListProcessing.swift in Sources */,
+				OBJ_172 /* Matrix.swift in Sources */,
+				OBJ_173 /* MutableGraph+AdjacencyList.swift in Sources */,
+				OBJ_174 /* MutableGraph+Edge.swift in Sources */,
+				OBJ_175 /* MutableGraph+EdgeList.swift in Sources */,
+				OBJ_176 /* MutableGraph+Node.swift in Sources */,
+				OBJ_177 /* MutableGraph.swift in Sources */,
+				OBJ_178 /* MutableGraphTests.swift in Sources */,
+				OBJ_179 /* MutableTree.swift in Sources */,
+				OBJ_180 /* MutableTreeProtocol.swift in Sources */,
+				OBJ_181 /* OrderedDictionary.swift in Sources */,
+				OBJ_182 /* Pairs.swift in Sources */,
+				OBJ_183 /* RandomAccessCollectionWrapping.swift in Sources */,
+				OBJ_184 /* RawRepresentable+AllCases.swift in Sources */,
+				OBJ_185 /* RawRepresentable+Comparable.swift in Sources */,
+				OBJ_186 /* RawRepresentable+Equatable.swift in Sources */,
+				OBJ_187 /* RemoveElements.swift in Sources */,
+				OBJ_188 /* ReplaceElements.swift in Sources */,
+				OBJ_189 /* Sequence+Algebra.swift in Sources */,
+				OBJ_190 /* SequenceExtensions.swift in Sources */,
+				OBJ_191 /* SequenceWrapping.swift in Sources */,
+				OBJ_192 /* Set+Algebra.swift in Sources */,
+				OBJ_193 /* SingleTypedTree.swift in Sources */,
+				OBJ_194 /* SortedArray.swift in Sources */,
+				OBJ_195 /* SortedCollectionWrapping.swift in Sources */,
+				OBJ_196 /* SortedDictionary.swift in Sources */,
+				OBJ_197 /* Split.swift in Sources */,
+				OBJ_198 /* StableSort.swift in Sources */,
+				OBJ_199 /* Stack.swift in Sources */,
+				OBJ_200 /* StringExtensions.swift in Sources */,
+				OBJ_201 /* Subsets.swift in Sources */,
+				OBJ_202 /* Swap.swift in Sources */,
+				OBJ_203 /* Tree.swift in Sources */,
+				OBJ_204 /* TupleMap.swift in Sources */,
+				OBJ_205 /* Zip3Sequence.swift in Sources */,
+				OBJ_206 /* Zipper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		OBJ_214 /* Sources */ = {
+		OBJ_213 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
-				OBJ_215 /* Additive.swift in Sources */,
-				OBJ_216 /* AdditiveSemigroup.swift in Sources */,
-				OBJ_217 /* Monoid.swift in Sources */,
-				OBJ_218 /* MonoidView.swift in Sources */,
-				OBJ_219 /* Multiplicative.swift in Sources */,
-				OBJ_220 /* MultiplicativeSemigroup.swift in Sources */,
-				OBJ_221 /* One.swift in Sources */,
-				OBJ_222 /* Product.swift in Sources */,
-				OBJ_223 /* Semigroup.swift in Sources */,
-				OBJ_224 /* Sum.swift in Sources */,
-				OBJ_225 /* Zero.swift in Sources */,
+				OBJ_214 /* Additive.swift in Sources */,
+				OBJ_215 /* AdditiveSemigroup.swift in Sources */,
+				OBJ_216 /* Monoid.swift in Sources */,
+				OBJ_217 /* MonoidView.swift in Sources */,
+				OBJ_218 /* Multiplicative.swift in Sources */,
+				OBJ_219 /* MultiplicativeSemigroup.swift in Sources */,
+				OBJ_220 /* One.swift in Sources */,
+				OBJ_221 /* Product.swift in Sources */,
+				OBJ_222 /* Semigroup.swift in Sources */,
+				OBJ_223 /* Sum.swift in Sources */,
+				OBJ_224 /* Zero.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		OBJ_153 /* PBXTargetDependency */ = {
+		OBJ_152 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Collections::Collections" /* Collections */;
-			targetProxy = 07F98B521F26A539003C6783 /* PBXContainerItemProxy */;
+			targetProxy = 076E04E41F26A92800725508 /* PBXContainerItemProxy */;
 		};
-		OBJ_155 /* PBXTargetDependency */ = {
+		OBJ_154 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Algebra::Algebra" /* Algebra */;
-			targetProxy = 07F98B531F26A539003C6783 /* PBXContainerItemProxy */;
+			targetProxy = 076E04E51F26A92800725508 /* PBXContainerItemProxy */;
 		};
-		OBJ_210 /* PBXTargetDependency */ = {
+		OBJ_209 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Algebra::Algebra" /* Algebra */;
-			targetProxy = 07F98B511F26A539003C6783 /* PBXContainerItemProxy */;
+			targetProxy = 076E04E31F26A92800725508 /* PBXContainerItemProxy */;
 		};
-		OBJ_231 /* PBXTargetDependency */ = {
+		OBJ_230 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = "Collections::CollectionsTests" /* CollectionsTests */;
-			targetProxy = 07F98B541F26A53A003C6783 /* PBXContainerItemProxy */;
+			targetProxy = 076E04E61F26A92900725508 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		OBJ_113 /* Debug */ = {
+		OBJ_112 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -687,7 +685,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_114 /* Release */ = {
+		OBJ_113 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
@@ -704,7 +702,7 @@
 			};
 			name = Release;
 		};
-		OBJ_158 /* Debug */ = {
+		OBJ_157 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -725,7 +723,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_159 /* Release */ = {
+		OBJ_158 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -746,7 +744,7 @@
 			};
 			name = Release;
 		};
-		OBJ_212 /* Debug */ = {
+		OBJ_211 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -767,7 +765,7 @@
 			};
 			name = Debug;
 		};
-		OBJ_213 /* Release */ = {
+		OBJ_212 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ENABLE_TESTABILITY = YES;
@@ -788,13 +786,13 @@
 			};
 			name = Release;
 		};
-		OBJ_229 /* Debug */ = {
+		OBJ_228 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
 			name = Debug;
 		};
-		OBJ_230 /* Release */ = {
+		OBJ_229 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 			};
@@ -847,20 +845,20 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		OBJ_112 /* Build configuration list for PBXNativeTarget "CollectionsTests" */ = {
+		OBJ_111 /* Build configuration list for PBXNativeTarget "CollectionsTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_113 /* Debug */,
-				OBJ_114 /* Release */,
+				OBJ_112 /* Debug */,
+				OBJ_113 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_157 /* Build configuration list for PBXNativeTarget "Collections" */ = {
+		OBJ_156 /* Build configuration list for PBXNativeTarget "Collections" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_158 /* Debug */,
-				OBJ_159 /* Release */,
+				OBJ_157 /* Debug */,
+				OBJ_158 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
@@ -874,20 +872,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_211 /* Build configuration list for PBXNativeTarget "Algebra" */ = {
+		OBJ_210 /* Build configuration list for PBXNativeTarget "Algebra" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_212 /* Debug */,
-				OBJ_213 /* Release */,
+				OBJ_211 /* Debug */,
+				OBJ_212 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		OBJ_228 /* Build configuration list for PBXAggregateTarget "CollectionsPackageTests" */ = {
+		OBJ_227 /* Build configuration list for PBXAggregateTarget "CollectionsPackageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				OBJ_229 /* Debug */,
-				OBJ_230 /* Release */,
+				OBJ_228 /* Debug */,
+				OBJ_229 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
