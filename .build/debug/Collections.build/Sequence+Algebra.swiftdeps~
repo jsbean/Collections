@@ -1,0 +1,186 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["s8SequenceP", ""]
+- ["s10CollectionP", ""]
+- ["s8SequenceP", "reduced"]
+- ["s8SequenceP", "reduced"]
+- ["s8SequenceP", "product"]
+- ["s8SequenceP", "sum"]
+- ["s10CollectionP", "nonEmptySum"]
+- ["s10CollectionP", "nonEmptyProduct"]
+provides-dynamic-lookup:
+depends-top-level:
+- !private "*"
+- !private "+"
+- !private "<>"
+- "Additive"
+- "AdditiveSemigroup"
+- "Collection"
+- "Monoid"
+- "MonoidView"
+- "Multiplicative"
+- "MultiplicativeSemigroup"
+- "Sequence"
+depends-member:
+- !private ["7Algebra8AdditiveP", "sum"]
+- !private ["7Algebra17AdditiveSemigroupP", "sum"]
+- !private ["Sa", "reduce"]
+- !private ["Sa", "reduced"]
+- !private ["11Collections13ArrayProtocolP", "reduce"]
+- !private ["11Collections13ArrayProtocolP", "reduced"]
+- !private ["s23BidirectionalCollectionP", "reduce"]
+- !private ["s23BidirectionalCollectionP", "reduced"]
+- !private ["s7CVarArgP", "reduce"]
+- !private ["s7CVarArgP", "reduced"]
+- ["s10CollectionP", "AdditiveSemigroup"]
+- ["s10CollectionP", "Iterator"]
+- ["s10CollectionP", "MultiplicativeSemigroup"]
+- ["s10CollectionP", "SubSequence"]
+- !private ["s10CollectionP", "destructured"]
+- ["s10CollectionP", "nonEmptyProduct"]
+- ["s10CollectionP", "nonEmptySum"]
+- !private ["s10CollectionP", "reduce"]
+- !private ["s10CollectionP", "reduced"]
+- !private ["s28CustomDebugStringConvertibleP", "reduce"]
+- !private ["s28CustomDebugStringConvertibleP", "reduced"]
+- !private ["s17CustomReflectableP", "reduce"]
+- !private ["s17CustomReflectableP", "reduced"]
+- !private ["s23CustomStringConvertibleP", "reduce"]
+- !private ["s23CustomStringConvertibleP", "reduced"]
+- !private ["s9DecodableP", "reduce"]
+- !private ["s9DecodableP", "reduced"]
+- !private ["s9EncodableP", "reduce"]
+- !private ["s9EncodableP", "reduced"]
+- !private ["s25ExpressibleByArrayLiteralP", "reduce"]
+- !private ["s25ExpressibleByArrayLiteralP", "reduced"]
+- ["s16IteratorProtocolP", "Element"]
+- ["7Algebra6MonoidP", "Value"]
+- !private ["7Algebra6MonoidP", "identity"]
+- !private ["7Algebra6MonoidP", "value"]
+- ["7Algebra10MonoidViewP", "Value"]
+- !private ["7Algebra10MonoidViewP", "identity"]
+- !private ["7Algebra10MonoidViewP", "value"]
+- !private ["7Algebra14MultiplicativeP", "product"]
+- !private ["7Algebra23MultiplicativeSemigroupP", "product"]
+- !private ["s17MutableCollectionP", "reduce"]
+- !private ["s17MutableCollectionP", "reduced"]
+- !private ["7Algebra3OneP", "product"]
+- !private ["s22RandomAccessCollectionP", "reduce"]
+- !private ["s22RandomAccessCollectionP", "reduced"]
+- !private ["s26RangeReplaceableCollectionP", "reduce"]
+- !private ["s26RangeReplaceableCollectionP", "reduced"]
+- ["7Algebra9SemigroupP", "Value"]
+- !private ["7Algebra9SemigroupP", "identity"]
+- !private ["7Algebra9SemigroupP", "value"]
+- ["s8SequenceP", "Additive"]
+- ["s8SequenceP", "AdditiveSemigroup"]
+- ["s8SequenceP", "Iterator"]
+- ["s8SequenceP", "Monoid"]
+- ["s8SequenceP", "MonoidView"]
+- ["s8SequenceP", "Multiplicative"]
+- ["s8SequenceP", "MultiplicativeSemigroup"]
+- ["s8SequenceP", "SubSequence"]
+- !private ["s8SequenceP", "destructured"]
+- !private ["s8SequenceP", "map"]
+- ["s8SequenceP", "product"]
+- !private ["s8SequenceP", "reduce"]
+- ["s8SequenceP", "reduced"]
+- ["s8SequenceP", "sum"]
+- !private ["7Algebra4ZeroP", "sum"]
+- !private ["s14_ArrayProtocolP", "reduce"]
+- !private ["s14_ArrayProtocolP", "reduced"]
+- !private ["s23_BidirectionalIndexableP", "reduce"]
+- !private ["s23_BidirectionalIndexableP", "reduced"]
+- !private ["s24_DestructorSafeContainerP", "reduce"]
+- !private ["s24_DestructorSafeContainerP", "reduced"]
+- ["s10_IndexableP", "AdditiveSemigroup"]
+- ["s10_IndexableP", "Iterator"]
+- ["s10_IndexableP", "MultiplicativeSemigroup"]
+- ["s10_IndexableP", "SubSequence"]
+- !private ["s10_IndexableP", "destructured"]
+- !private ["s10_IndexableP", "reduce"]
+- !private ["s10_IndexableP", "reduced"]
+- ["s14_IndexableBaseP", "AdditiveSemigroup"]
+- ["s14_IndexableBaseP", "Iterator"]
+- ["s14_IndexableBaseP", "MultiplicativeSemigroup"]
+- ["s14_IndexableBaseP", "SubSequence"]
+- !private ["s14_IndexableBaseP", "destructured"]
+- !private ["s14_IndexableBaseP", "reduce"]
+- !private ["s14_IndexableBaseP", "reduced"]
+- !private ["s17_MutableIndexableP", "reduce"]
+- !private ["s17_MutableIndexableP", "reduced"]
+- !private ["s21_ObjectiveCBridgeableP", "reduce"]
+- !private ["s21_ObjectiveCBridgeableP", "reduced"]
+- !private ["s22_RandomAccessIndexableP", "reduce"]
+- !private ["s22_RandomAccessIndexableP", "reduced"]
+- !private ["s26_RangeReplaceableIndexableP", "reduce"]
+- !private ["s26_RangeReplaceableIndexableP", "reduced"]
+depends-nominal:
+- !private "7Algebra8AdditiveP"
+- !private "7Algebra17AdditiveSemigroupP"
+- !private "Sa"
+- !private "11Collections13ArrayProtocolP"
+- !private "s23BidirectionalCollectionP"
+- !private "s7CVarArgP"
+- "s10CollectionP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s25ExpressibleByArrayLiteralP"
+- "s16IteratorProtocolP"
+- "7Algebra6MonoidP"
+- "7Algebra10MonoidViewP"
+- !private "7Algebra14MultiplicativeP"
+- !private "7Algebra23MultiplicativeSemigroupP"
+- !private "s17MutableCollectionP"
+- !private "7Algebra3OneP"
+- !private "s22RandomAccessCollectionP"
+- !private "s26RangeReplaceableCollectionP"
+- "7Algebra9SemigroupP"
+- "s8SequenceP"
+- !private "7Algebra4ZeroP"
+- !private "s14_ArrayProtocolP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s24_DestructorSafeContainerP"
+- "s10_IndexableP"
+- "s14_IndexableBaseP"
+- !private "s17_MutableIndexableP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s22_RandomAccessIndexableP"
+- !private "s26_RangeReplaceableIndexableP"
+depends-dynamic-lookup:
+depends-external:
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.apinotesc"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XPC.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/ObjectiveC.swiftmodule"
+- "/Users/BEAN/dn-m/Frameworks/Collections/.build/debug/Algebra.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreData.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreImage.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/QuartzCore.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Dispatch.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Darwin.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Foundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreFoundation.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/CoreGraphics.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/Swift.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/IOKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/AppKit.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/macosx/x86_64/XCTest.swiftmodule"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/xpc/XPC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/AppKit.framework/Headers/AppKit.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.apinotes"
+- "/Users/BEAN/Downloads/Xcode-beta.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.13.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
+interface-hash: "bb40b0c312130cd586d36c1a2cc838c1"

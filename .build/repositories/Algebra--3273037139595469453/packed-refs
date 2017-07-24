@@ -1,0 +1,17 @@
+# pack-refs with: peeled fully-peeled 
+ba4c9d9712d81528880b4f7dc9d3ca0b8a29bbc2 refs/heads/ease-constraint
+54c415e819972fd949460b1c64a8e3cd991a82fb refs/heads/gardening
+cebcacf82f6b21f7d4754b5cf36009c8b3e9da1b refs/heads/master
+46a4edb2689c3c7b7325b1f587bff88dbe592928 refs/heads/migrate-to-collections
+c24846cbfa56fb8ee962c80823a14eccd84c5be4 refs/heads/swiftpm
+ba4c9d9712d81528880b4f7dc9d3ca0b8a29bbc2 refs/pull/1/head
+46a4edb2689c3c7b7325b1f587bff88dbe592928 refs/pull/3/head
+54c415e819972fd949460b1c64a8e3cd991a82fb refs/pull/4/head
+c24846cbfa56fb8ee962c80823a14eccd84c5be4 refs/pull/5/head
+776b4b65af18b341ab0f25b52de43244da8e81dc refs/pull/5/merge
+f583a17533f6cde81238260d0d8b1fe784ef3400 refs/tags/0.1
+5eafe503e4ba6985346facd85bc45dcb4fef0e54 refs/tags/0.2
+7ec3e5c75e7a4e468f40f1b50f6daa60b6537dd3 refs/tags/0.2.1
+f5c4d07893f43a014278feac7fd4d07f8b8cff4f refs/tags/0.2.2
+cbab5a856135413ac3fe9ec1f45b87810d9c82d3 refs/tags/0.3
+cebcacf82f6b21f7d4754b5cf36009c8b3e9da1b refs/tags/0.4
