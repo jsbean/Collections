@@ -1,1 +1,0 @@
-{"object": {"dependencies": [{"basedOn": null, "name": "Algebra", "repositoryURL": "https://github.com/dn-m/Algebra", "state": {"checkoutState": {"branch": "swiftpm", "revision": "9d602fa59b085568fe028a03028bc02aae509672", "version": null}, "name": "checkout"}, "subpath": "Algebra--3273037139595469453"}]}, "version": 1}
