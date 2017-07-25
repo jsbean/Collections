@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Algebra",
+        "repositoryURL": "https://github.com/dn-m/Algebra",
+        "state": {
+          "branch": "swiftpm",
+          "revision": "9d602fa59b085568fe028a03028bc02aae509672",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}

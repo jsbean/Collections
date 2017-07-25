@@ -1,4 +1,5 @@
 ## Build generated
+.build/
 build/
 DerivedData/
 
@@ -14,6 +15,7 @@ DerivedData/
 xcuserdata/
 
 ## Other
+.DS_Store
 *.moved-aside
 *.xcuserstate
 

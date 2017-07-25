@@ -7,11 +7,10 @@
 //
 
 public protocol ArrayProtocol: Collection {
-    associatedtype Element
+    //associatedtype Element
     init()
     mutating func append(_ element: Element)
-    mutating func append<S> (contentsOf newElements: S)
-        where S: Sequence, S.Iterator.Element == Iterator.Element
+    mutating func append<S> (contentsOf newElements: S) where S: Sequence, S.Element == Element
 }
 
 extension Array: ArrayProtocol { }
@@ -138,24 +137,24 @@ extension DictionaryProtocol where
         }
     }
 
-    /**
-     Update the `value` for the given `keyPath`.
-
-     - TODO: Use subscript (keyPath: KeyPath) { get set }
-     */
-    public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
-
-        guard
-            keyPath.count >= 2,
-            let key = keyPath[0] as? Key,
-            let subKey = keyPath[1] as? Value.Key
-        else {
-            throw DictionaryProtocolError.illFormedKeyPath
-        }
-
-        ensureValue(for: key)
-        self[key]![subKey] = value
-    }
+//    /**
+//     Update the `value` for the given `keyPath`.
+//
+//     - TODO: Use subscript (keyPath: KeyPath) { get set }
+//     */
+//    public mutating func update(_ value: Value.Value, keyPath: KeyPath) throws {
+//
+//        guard
+//            keyPath.count >= 2,
+//            let key = keyPath[0] as? Key,
+//            let subKey = keyPath[1] as? Value.Key
+//        else {
+//            throw DictionaryProtocolError.illFormedKeyPath
+//        }
+//
+//        ensureValue(for: key)
+//        self[key]![subKey] = value
+//    }
 }
 
 extension DictionaryProtocol where
@@ -192,57 +191,57 @@ extension DictionaryProtocol where
     Value.Value: ArrayProtocol
 {
 
-    /// Ensure that there is an Array-type value for the given `keyPath`.
-    public mutating func ensureValue(for keyPath: KeyPath) throws {
+//    /// Ensure that there is an Array-type value for the given `keyPath`.
+//    public mutating func ensureValue(for keyPath: KeyPath) throws {
+//
+//        guard
+//            let key = keyPath[0] as? Key,
+//            let subKey = keyPath[1] as? Value.Key
+//        else {
+//            throw DictionaryProtocolError.illFormedKeyPath
+//        }
+//
+//        ensureValue(for: key)
+//        self[key]!.ensureValue(for: subKey)
+//    }
 
-        guard
-            let key = keyPath[0] as? Key,
-            let subKey = keyPath[1] as? Value.Key
-        else {
-            throw DictionaryProtocolError.illFormedKeyPath
-        }
+//    /// Append the given `value` to the array at the given `keyPath`.
+//    ///
+//    /// > If no such subdictionary or array exists, these structures will be created.
+//    public mutating func safelyAppend(
+//        _ value: Value.Value.Element,
+//        toArrayWith keyPath: KeyPath
+//    ) throws
+//    {
+//        guard
+//            let key = keyPath[0] as? Key,
+//            let subKey = keyPath[1] as? Value.Key
+//        else {
+//            throw DictionaryProtocolError.illFormedKeyPath
+//        }
+//
+//        try ensureValue(for: keyPath)
+//        self[key]!.safelyAppend(value, toArrayWith: subKey)
+//    }
 
-        ensureValue(for: key)
-        self[key]!.ensureValue(for: subKey)
-    }
-
-    /// Append the given `value` to the array at the given `keyPath`.
-    ///
-    /// > If no such subdictionary or array exists, these structures will be created.
-    public mutating func safelyAppend(
-        _ value: Value.Value.Element,
-        toArrayWith keyPath: KeyPath
-    ) throws
-    {
-        guard
-            let key = keyPath[0] as? Key,
-            let subKey = keyPath[1] as? Value.Key
-        else {
-            throw DictionaryProtocolError.illFormedKeyPath
-        }
-
-        try ensureValue(for: keyPath)
-        self[key]!.safelyAppend(value, toArrayWith: subKey)
-    }
-
-    /// Append the given `values` to the array at the given `keyPath`.
-    ///
-    /// > If no such subdictionary or array exists, these structures will be created.
-    public mutating func safelyAppendContents(
-        of values: Value.Value,
-        toArrayWith keyPath: KeyPath
-    ) throws
-    {
-        guard
-            let key = keyPath[0] as? Key,
-            let subKey = keyPath[1] as? Value.Key
-        else {
-            throw DictionaryProtocolError.illFormedKeyPath
-        }
-
-        try ensureValue(for: keyPath)
-        self[key]!.safelyAppendContents(of: values, toArrayWith: subKey)
-    }
+//    /// Append the given `values` to the array at the given `keyPath`.
+//    ///
+//    /// > If no such subdictionary or array exists, these structures will be created.
+//    public mutating func safelyAppendContents(
+//        of values: Value.Value,
+//        toArrayWith keyPath: KeyPath
+//    ) throws
+//    {
+//        guard
+//            let key = keyPath[0] as? Key,
+//            let subKey = keyPath[1] as? Value.Key
+//        else {
+//            throw DictionaryProtocolError.illFormedKeyPath
+//        }
+//
+//        try ensureValue(for: keyPath)
+//        self[key]!.safelyAppendContents(of: values, toArrayWith: subKey)
+//    }
 }
 
 extension DictionaryProtocol where
@@ -253,25 +252,25 @@ extension DictionaryProtocol where
     Value.Value.Element: Equatable
 {
 
-    /// Append given `value` to the array at the given `keyPath`, ensuring that there are no
-    /// duplicates.
-    ///
-    /// > If no such subdictionary or array exists, these structures will be created.
-    public mutating func safelyAndUniquelyAppend(
-        _ value: Value.Value.Element,
-        toArrayWith keyPath: KeyPath
-    ) throws
-    {
-        guard
-            let key = keyPath[0] as? Key,
-            let subKey = keyPath[1] as? Value.Key
-        else {
-            throw DictionaryProtocolError.illFormedKeyPath
-        }
-
-        try ensureValue(for: keyPath)
-        self[key]!.safelyAndUniquelyAppend(value, toArrayWith: subKey)
-    }
+//    /// Append given `value` to the array at the given `keyPath`, ensuring that there are no
+//    /// duplicates.
+//    ///
+//    /// > If no such subdictionary or array exists, these structures will be created.
+//    public mutating func safelyAndUniquelyAppend(
+//        _ value: Value.Value.Element,
+//        toArrayWith keyPath: KeyPath
+//    ) throws
+//    {
+//        guard
+//            let key = keyPath[0] as? Key,
+//            let subKey = keyPath[1] as? Value.Key
+//        else {
+//            throw DictionaryProtocolError.illFormedKeyPath
+//        }
+//
+//        try ensureValue(for: keyPath)
+//        self[key]!.safelyAndUniquelyAppend(value, toArrayWith: subKey)
+//    }
 }
 
 // MARK: - Evaluating the equality of `DictionaryProtocol` values

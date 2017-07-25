@@ -91,51 +91,51 @@ class DictionaryTypeTests: XCTestCase {
         XCTAssertNotNil(dict[1])
     }
 
-    func testUpdateValueForKeyPathThrowsAllIllFormed() {
-
-        var dict = ["parent": ["child": 0]]
-        XCTAssertThrowsError(try dict.update(1, keyPath: [1,2]))
-    }
-
-    func testEnsureValueForKeyPathIllFormedBadTypes() {
-
-        var dict: Dictionary<String, Dictionary<Int, Any>> = [:]
-        XCTAssertThrowsError(try dict.update("value", keyPath: [1, "root"]))
-    }
-
-    func testEnsureValueForKeyPathIllFormedBadKeyPathCount() {
-
-        var dict: Dictionary<String, Dictionary<Int, Any>> = [:]
-        XCTAssertThrowsError(try dict.update("value", keyPath: [1]))
-    }
-
-    func testUpdateValueForKeyPathThrowsRootIllFormed() {
-
-        var dict = ["parent": ["child": 0]]
-        XCTAssertThrowsError(try dict.update(1, keyPath: ["parent", 0]))
-    }
-
-    func testUpdateValueForKeyPathThrowsNestedIllFormed() {
-
-        var dict = ["parent": ["child": 0]]
-        XCTAssertThrowsError(try dict.update(1, keyPath: [1, "child"]))
-    }
-
-    func testUpdateValueForKeyPathStringKeys() {
-
-        var dict = ["parent": ["child": 0]]
-        try! dict.update(1, keyPath: "parent.child")
-
-        XCTAssertEqual(dict["parent"]!["child"], 1)
-    }
-
-    func testUpdateValueForKeyPathHeterogeneousKeys() {
-
-        var dict = ["0": [1: 2.0]]
-        try! dict.update(2.1, keyPath: ["0", 1])
-
-        XCTAssertEqual(dict["0"]![1], 2.1)
-    }
+//    func testUpdateValueForKeyPathThrowsAllIllFormed() {
+//
+//        var dict = ["parent": ["child": 0]]
+//        XCTAssertThrowsError(try dict.update(1, keyPath: [1,2]))
+//    }
+//
+//    func testEnsureValueForKeyPathIllFormedBadTypes() {
+//
+//        var dict: Dictionary<String, Dictionary<Int, Any>> = [:]
+//        XCTAssertThrowsError(try dict.update("value", keyPath: [1, "root"]))
+//    }
+//
+//    func testEnsureValueForKeyPathIllFormedBadKeyPathCount() {
+//
+//        var dict: Dictionary<String, Dictionary<Int, Any>> = [:]
+//        XCTAssertThrowsError(try dict.update("value", keyPath: [1]))
+//    }
+//
+//    func testUpdateValueForKeyPathThrowsRootIllFormed() {
+//
+//        var dict = ["parent": ["child": 0]]
+//        XCTAssertThrowsError(try dict.update(1, keyPath: ["parent", 0]))
+//    }
+//
+//    func testUpdateValueForKeyPathThrowsNestedIllFormed() {
+//
+//        var dict = ["parent": ["child": 0]]
+//        XCTAssertThrowsError(try dict.update(1, keyPath: [1, "child"]))
+//    }
+//
+//    func testUpdateValueForKeyPathStringKeys() {
+//
+//        var dict = ["parent": ["child": 0]]
+//        try! dict.update(1, keyPath: "parent.child")
+//
+//        XCTAssertEqual(dict["parent"]!["child"], 1)
+//    }
+//
+//    func testUpdateValueForKeyPathHeterogeneousKeys() {
+//
+//        var dict = ["0": [1: 2.0]]
+//        try! dict.update(2.1, keyPath: ["0", 1])
+//
+//        XCTAssertEqual(dict["0"]![1], 2.1)
+//    }
 
     func testMergeNewDictOvercomesOriginal() {
 
