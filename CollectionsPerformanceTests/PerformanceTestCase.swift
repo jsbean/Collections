@@ -101,6 +101,7 @@ final class Measuring<T> {
         }
     }
 
+    
     /// Asserts that the performance of the `block` after running `setup` is linear.
     /// The `setup` block is passed a complexity parameter as an argument (the `n` in `O(n)`)
     /// and must create a mock object. The `block` block is passed the complexity parameter and the
@@ -124,16 +125,38 @@ final class Measuring<T> {
         let ratioVariance = normalizedSlopes.reduce(0, { a, b in a + (b-1) * (b-1) } )
 
         print("ratioVariance: \(ratioVariance)")
-        
+
         XCTAssert(ratioVariance < 2)
+    }
+}
+
+struct performanceAssertion<C> {
+    typealias SetupFunction = (inout C, Int) -> ()
+    typealias RunFunction = (inout C, Int) -> ()
+
+    func testMutatingOperation(mock object: C, setupFunction: SetupFunction, trialCode: RunFunction, testPoints: [Int], trialCount: Int = 10) -> [(Int, Double)] {
+        return testPoints.map { point in
+            var pointMock = object
+            setupFunction(&pointMock, point)
+            let average = (0..<trialCount).map { _ in
+                    var trialMock = pointMock
+                    let startTime = CFAbsoluteTimeGetCurrent()
+                    trialCode(&trialMock, point)
+                    let finishTime = CFAbsoluteTimeGetCurrent()
+                    return finishTime - startTime
+                }.reduce(0, +) / Double(trialCount)
+            return (point, average)
+        }
     }
 }
 
 class CollectionPerformanceTestCase: XCTestCase {
 
-
     func testRefactor() {
 
+        // ideal API:
+        // Measuring(resource)
+        //   .assertComplexity(.complexity, after: { <setup code> }, of: { <measured code> })
 
         let resource: Array<Int> = []
         Measuring(resource)
