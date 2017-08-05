@@ -101,7 +101,7 @@ final class Measuring<T> {
         }
     }
 
-    
+
     /// Asserts that the performance of the `block` after running `setup` is linear.
     /// The `setup` block is passed a complexity parameter as an argument (the `n` in `O(n)`)
     /// and must create a mock object. The `block` block is passed the complexity parameter and the
@@ -130,23 +130,44 @@ final class Measuring<T> {
     }
 }
 
-struct performanceAssertion<C> {
-    typealias SetupFunction = (inout C, Int) -> ()
-    typealias RunFunction = (inout C, Int) -> ()
+func testNonMutatingOperation<C>(
+    mock object: C,
+    setupFunction: (inout C, Int),
+    trialCode: (inout C, Int),
+    testPoints: [Int],
+    trialCount: Int = 10
+) -> [(Int, Double)] {
+    return testPoints.map { point in
+        var pointMock = object
+        setupFunction(&pointMock, point)
+        let average = (0..<trialCount).map { _ in
+            let startTime = CFAbsoluteTimeGetCurrent()
+            trialCode(&pointMock, point)
+            let finishTime = CFAbsoluteTimeGetCurrent()
+            return finishTime - startTime
+        }.reduce(0, +) / Double(trialCount)
+        return (point, average)
+    }
+}
 
-    func testMutatingOperation(mock object: C, setupFunction: SetupFunction, trialCode: RunFunction, testPoints: [Int], trialCount: Int = 10) -> [(Int, Double)] {
-        return testPoints.map { point in
-            var pointMock = object
-            setupFunction(&pointMock, point)
-            let average = (0..<trialCount).map { _ in
-                    var trialMock = pointMock
-                    let startTime = CFAbsoluteTimeGetCurrent()
-                    trialCode(&trialMock, point)
-                    let finishTime = CFAbsoluteTimeGetCurrent()
-                    return finishTime - startTime
-                }.reduce(0, +) / Double(trialCount)
-            return (point, average)
-        }
+func testMutatingOperation<C>(
+    mock object: C,
+    setupFunction: (inout C, Int),
+    trialCode: (inout C, Int),
+    testPoints: [Int],
+    trialCount: Int = 10
+) -> [(Int, Double)] {
+    return testPoints.map { point in
+        var pointMock = object
+        setupFunction(&pointMock, point)
+        let average = (0..<trialCount).map { _ in
+            var trialMock = pointMock
+            let startTime = CFAbsoluteTimeGetCurrent()
+            trialCode(&trialMock, point)
+            let finishTime = CFAbsoluteTimeGetCurrent()
+            return finishTime - startTime
+        }.reduce(0, +) / Double(trialCount)
+        return (point, average)
     }
 }
 
