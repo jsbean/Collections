@@ -259,6 +259,11 @@ func calculateRegressionCoefficient(_ data: [(Double, Double)], sumOfXs: Double,
 
 class CollectionPerformanceTestCase: XCTestCase {
 
+    func testBasic() {
+        assertLinearPerformance([(1, 1.01), (2, 2.01), (3, 3.05), (4, 3.99)])
+        assertConstantPerformance([(1, 1.01), (2, 1.01), (3, 1.05), (4, 1.99)])
+        assertLogPerformance([(1, 16), (2, 8), (3, 4), (4, 2)])
+    }
     func testRefactor() {
 
         // ideal API:
