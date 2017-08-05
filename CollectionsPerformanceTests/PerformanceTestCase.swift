@@ -132,8 +132,8 @@ final class Measuring<T> {
 
 func testNonMutatingOperation<C>(
     mock object: C,
-    setupFunction: (inout C, Double),
-    trialCode: (inout C, Double),
+    setupFunction: (inout C, Double) -> (),
+    trialCode: (inout C, Double) -> (),
     testPoints: [Double],
     trialCount: Int = 10
 ) -> [(Double, Double)] {
@@ -152,8 +152,8 @@ func testNonMutatingOperation<C>(
 
 func testMutatingOperation<C>(
     mock object: C,
-    setupFunction: (inout C, Double),
-    trialCode: (inout C, Double),
+    setupFunction: (inout C, Double) -> (),
+    trialCode: (inout C, Double) -> (),
     testPoints: [Double],
     trialCount: Int = 10
 ) -> [(Double, Double)] {
