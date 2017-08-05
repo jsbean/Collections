@@ -132,11 +132,11 @@ final class Measuring<T> {
 
 func testNonMutatingOperation<C>(
     mock object: C,
-    setupFunction: (inout C, Int),
-    trialCode: (inout C, Int),
-    testPoints: [Int],
+    setupFunction: (inout C, Double),
+    trialCode: (inout C, Double),
+    testPoints: [Double],
     trialCount: Int = 10
-) -> [(Int, Double)] {
+) -> [(Double, Double)] {
     return testPoints.map { point in
         var pointMock = object
         setupFunction(&pointMock, point)
@@ -152,11 +152,11 @@ func testNonMutatingOperation<C>(
 
 func testMutatingOperation<C>(
     mock object: C,
-    setupFunction: (inout C, Int),
-    trialCode: (inout C, Int),
-    testPoints: [Int],
+    setupFunction: (inout C, Double),
+    trialCode: (inout C, Double),
+    testPoints: [Double],
     trialCount: Int = 10
-) -> [(Int, Double)] {
+) -> [(Double, Double)] {
     return testPoints.map { point in
         var pointMock = object
         setupFunction(&pointMock, point)
