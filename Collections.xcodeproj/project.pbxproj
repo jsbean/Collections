@@ -171,8 +171,9 @@
 		6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		6A3575301E14594700646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
-		9033A75F1F36CE3D005B0A56 /* PerformanceComplexityAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A75E1F36CE3D005B0A56 /* PerformanceComplexityAssertion.swift */; };
-		9033A7671F36CF15005B0A56 /* PerformanceComplexityAssertionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A7661F36CF15005B0A56 /* PerformanceComplexityAssertionTests.swift */; };
+		9033A76A1F36CF9F005B0A56 /* PerformanceComplexityAssertionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A7661F36CF15005B0A56 /* PerformanceComplexityAssertionTests.swift */; };
+		9033A76B1F36CFA0005B0A56 /* PerformanceComplexityAssertionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A7661F36CF15005B0A56 /* PerformanceComplexityAssertionTests.swift */; };
+		9033A7721F36D0AB005B0A56 /* PerformanceComplexityAssertion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9033A7711F36D0AB005B0A56 /* PerformanceComplexityAssertion.swift */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		E8BEBD1072209908063E20CA /* Collections.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA78A611E34DD8CE3E264DA5 /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -322,8 +323,8 @@
 		6A35752C1E14592B00646220 /* LinkedListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListTests.swift; path = CollectionsTests/LinkedListTests.swift; sourceTree = "<group>"; };
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9033A75E1F36CE3D005B0A56 /* PerformanceComplexityAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformanceComplexityAssertion.swift; path = Collections/PerformanceComplexityAssertion.swift; sourceTree = "<group>"; };
 		9033A7661F36CF15005B0A56 /* PerformanceComplexityAssertionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformanceComplexityAssertionTests.swift; path = CollectionsTests/PerformanceComplexityAssertionTests.swift; sourceTree = "<group>"; };
+		9033A7711F36D0AB005B0A56 /* PerformanceComplexityAssertion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerformanceComplexityAssertion.swift; path = CollectionsPerformanceTests/PerformanceComplexityAssertion.swift; sourceTree = SOURCE_ROOT; };
 		9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections iOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -405,7 +406,6 @@
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
 				07B8AB6A1F14FD3700E5616B /* Comparison.swift */,
 				07B8AB721F1507E200E5616B /* Either.swift */,
-				9033A75E1F36CE3D005B0A56 /* PerformanceComplexityAssertion.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -543,6 +543,7 @@
 		9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
+				9033A7711F36D0AB005B0A56 /* PerformanceComplexityAssertion.swift */,
 				0712F47D1F14D2A50037BB2B /* Utils.swift */,
 				0712F4781F14CF940037BB2B /* StackPerformanceTests.swift */,
 				07B8AB671F14F6BD00E5616B /* SortedArrayPerformanceTests.swift */,
@@ -908,6 +909,7 @@
 				07B8AB711F14FD7100E5616B /* ComparisonTests.swift in Sources */,
 				078F491D1E0D5F0300B8F316 /* CombinationsTests.swift in Sources */,
 				07690BEF1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */,
+				9033A76A1F36CF9F005B0A56 /* PerformanceComplexityAssertionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -948,6 +950,7 @@
 				07B8AB701F14FD7100E5616B /* ComparisonTests.swift in Sources */,
 				078F491C1E0D5F0300B8F316 /* CombinationsTests.swift in Sources */,
 				07690BEE1E0D98BA0095F1D5 /* DictionaryTypeTests.swift in Sources */,
+				9033A76B1F36CFA0005B0A56 /* PerformanceComplexityAssertionTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1063,9 +1066,8 @@
 				076D048E1E2D3C1B0023ED96 /* MutableGraph+Node.swift in Sources */,
 				076D045B1E2D1A540023ED96 /* StringExtensions.swift in Sources */,
 				07C582AF1DFBDD67008BE5D0 /* Swap.swift in Sources */,
-				9033A7671F36CF15005B0A56 /* PerformanceComplexityAssertionTests.swift in Sources */,
 				071511C51E52304E0003576F /* ArrayExtensions.swift in Sources */,
-				9033A75F1F36CE3D005B0A56 /* PerformanceComplexityAssertion.swift in Sources */,
+				9033A7721F36D0AB005B0A56 /* PerformanceComplexityAssertion.swift in Sources */,
 				078F49131E0D5D4C00B8F316 /* StableSort.swift in Sources */,
 				0748EE861E25168B003F19FD /* AnyCollectionWrapping.swift in Sources */,
 				076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,

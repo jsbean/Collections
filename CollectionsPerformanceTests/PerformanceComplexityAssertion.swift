@@ -6,6 +6,9 @@
 //
 //
 
+import CoreFoundation
+import XCTest
+
 struct PerformanceComplexityAssertionConfig {
 
     // Controls whether any methods in this file print debugging information
