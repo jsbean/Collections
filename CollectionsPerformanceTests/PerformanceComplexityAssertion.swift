@@ -129,7 +129,7 @@ func assertPerformanceComplexity(
     // FIXME: should split into two methods, add accuracy arg
     switch complexity {
     case .constant:
-        XCTAssertEqual(slope, 0, accuracy: 0.01)
+        XCTAssertEqualWithAccuracy(slope, 0, accuracy: 0.01)
     default:
         XCTAssert(correlation >= minimumCorrelation)
     }
