@@ -181,6 +181,10 @@
 		6A35752F1E14594600646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		6A3575301E14594700646220 /* LinkedListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A35752C1E14592B00646220 /* LinkedListTests.swift */; };
 		8C433FEFF4D031303771D231 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E0CB8A07A410B8ADAAEB9FC /* Cocoa.framework */; };
+		90615D8F20016B420038DF93 /* ComparableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90615D8E20016B420038DF93 /* ComparableExtensions.swift */; };
+		90615D9020016B420038DF93 /* ComparableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90615D8E20016B420038DF93 /* ComparableExtensions.swift */; };
+		90615D9220016B7C0038DF93 /* ComparableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90615D9120016B7C0038DF93 /* ComparableExtensionsTests.swift */; };
+		90615D9320016B7C0038DF93 /* ComparableExtensionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90615D9120016B7C0038DF93 /* ComparableExtensionsTests.swift */; };
 		A35FEE3EEDE112584DB8D8DA /* Collections.h in Headers */ = {isa = PBXBuildFile; fileRef = 5C8092CA26121C80EEFDE45C /* Collections.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E48AA8A6DDF4B69122D3F2D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D91735A338138BE9F0D559B /* Foundation.framework */; };
 		E8BEBD1072209908063E20CA /* Collections.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DA78A611E34DD8CE3E264DA5 /* Collections.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
@@ -335,6 +339,8 @@
 		6A35752C1E14592B00646220 /* LinkedListTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LinkedListTests.swift; path = CollectionsTests/LinkedListTests.swift; sourceTree = "<group>"; };
 		6D91735A338138BE9F0D559B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EE87C52FF3F3B876D69FE38 /* Collections.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Collections.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90615D8E20016B420038DF93 /* ComparableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComparableExtensions.swift; path = Collections/ComparableExtensions.swift; sourceTree = "<group>"; };
+		90615D9120016B7C0038DF93 /* ComparableExtensionsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ComparableExtensionsTests.swift; path = CollectionsTests/ComparableExtensionsTests.swift; sourceTree = "<group>"; };
 		9067BD3F1F141DC200EBCB28 /* Collections macOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9067BD4F1F14208C00EBCB28 /* Collections iOS Performance Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections iOS Performance Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0FE25EF15345DBA6825B742 /* Collections macOS Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Collections macOS Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -418,6 +424,7 @@
 				07690BCC1E0D68CD0095F1D5 /* ListProcessing.swift */,
 				07B8AB6A1F14FD3700E5616B /* Comparison.swift */,
 				07B8AB721F1507E200E5616B /* Either.swift */,
+				90615D8E20016B420038DF93 /* ComparableExtensions.swift */,
 			);
 			name = Collections;
 			sourceTree = "<group>";
@@ -431,6 +438,7 @@
 				CAB2BE6E4455A917AA0EF6EE /* CollectionsTests */,
 				9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */,
 				5C8092CA26121C80EEFDE45C /* Collections.h */,
+				90615D8D20016B070038DF93 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -544,6 +552,15 @@
 			name = "OS X";
 			sourceTree = "<group>";
 		};
+		90615D8D20016B070038DF93 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				DA78A611E34DD8CE3E264DA5 /* Collections.framework */,
+				3C94A0D81FFA92F1DD68894C /* Collections.framework */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		9067BD401F141DC200EBCB28 /* CollectionsPerformanceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -629,6 +646,7 @@
 				07B8AB6D1F14FD4E00E5616B /* ComparisonTests.swift */,
 				071511D31E526BD80003576F /* Zip3SequenceTests.swift */,
 				07B8DFC61EE6D70D00BBB814 /* CircularArrayTests.swift */,
+				90615D9120016B7C0038DF93 /* ComparableExtensionsTests.swift */,
 			);
 			name = CollectionsTests;
 			sourceTree = "<group>";
@@ -882,6 +900,7 @@
 				076D049B1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */,
 				076D04581E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
 				0711EB031E47CC3A00FD9138 /* SplitTests.swift in Sources */,
+				90615D9320016B7C0038DF93 /* ComparableExtensionsTests.swift in Sources */,
 				071511D51E526BD80003576F /* Zip3SequenceTests.swift in Sources */,
 				07690BD71E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD11E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
@@ -923,6 +942,7 @@
 				076D049A1E2D3D310023ED96 /* MutableGraphTests.swift in Sources */,
 				076D04571E2D16DF0023ED96 /* MutableTreeProtocolTests.swift in Sources */,
 				0711EB021E47CC3A00FD9138 /* SplitTests.swift in Sources */,
+				90615D9220016B7C0038DF93 /* ComparableExtensionsTests.swift in Sources */,
 				071511D41E526BD80003576F /* Zip3SequenceTests.swift in Sources */,
 				07690BD61E0D6BFC0095F1D5 /* ElementsAtIndicesTests.swift in Sources */,
 				07690BD01E0D6A800095F1D5 /* ListProcessingTests.swift in Sources */,
@@ -1006,6 +1026,7 @@
 				076D04981E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDD1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F491A1E0D5EA500B8F316 /* Combinations.swift in Sources */,
+				90615D9020016B420038DF93 /* ComparableExtensions.swift in Sources */,
 				076D04921E2D3C390023ED96 /* MutableGraph+Edge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1083,6 +1104,7 @@
 				076D04971E2D3C9C0023ED96 /* MutableGraph+AdjacencyList.swift in Sources */,
 				07690BDC1E0D6F4B0095F1D5 /* RawRepresentable+AllCases.swift in Sources */,
 				078F49191E0D5EA500B8F316 /* Combinations.swift in Sources */,
+				90615D8F20016B420038DF93 /* ComparableExtensions.swift in Sources */,
 				076D04911E2D3C390023ED96 /* MutableGraph+Edge.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
