@@ -9,13 +9,6 @@
 /// Value-semantic, immutable Tree structure.
 public enum Tree <Branch,Leaf> {
 
-    /// Things that can go wrong when doing things to a `Tree`.
-    public enum Error: Swift.Error {
-        case indexOutOfBounds
-        case branchOperationPerformedOnLeaf
-        case illFormedIndexPath
-    }
-
     /// Transforms for `branch` and `leaf` cases.
     public struct Transform <B,L> {
 
@@ -94,29 +87,25 @@ public enum Tree <Branch,Leaf> {
     // MARK: - Initializers
 
     /// Replace the subtree at the given `index` for the given `tree`.
-    ///
-    /// - throws: `TreeError` if `self` is a `leaf`.
-    public func replacingTree(at index: Int, with tree: Tree) throws -> Tree {
+    public func replacingTree(at index: Int, with tree: Tree) -> Tree {
         switch self {
         case .leaf:
-            throw Error.branchOperationPerformedOnLeaf
+            assert(false, "Branch operation performed on leaf")
         case .branch(let value, let trees):
-            return .branch(value, try trees.replacingElement(at: index, with: tree))
+            return .branch(value, trees.replacingElement(at: index, with: tree))
         }
     }
 
     /// Replace the subtree at the given `path`.
-    ///
-    /// - throws: `TreeError` if the given `path` is valid.
-    public func replacingTree(through path: [Int], with tree: Tree) throws -> Tree {
+    public func replacingTree(through path: [Int], with tree: Tree) -> Tree {
 
-        func traverse(_ tree: Tree, inserting newTree: Tree, path: [Int]) throws -> Tree {
+        func traverse(_ tree: Tree, inserting newTree: Tree, path: [Int]) -> Tree {
 
             switch tree {
 
             // This should never be called on a leaf
             case .leaf:
-                throw Error.branchOperationPerformedOnLeaf
+                assert(false, "Branch operation performed on leaf")
 
             // Either `traverse` futher, or replace at last index specified in `path`.
             case .branch(let value, let trees):
@@ -126,69 +115,67 @@ public enum Tree <Branch,Leaf> {
                     let (index, remainingPath) = path.destructured,
                     let subTree = trees[safe: index]
                 else {
-                    throw Error.illFormedIndexPath
+                    assert(false, "Ill-formed index path")
                 }
 
                 // We are done if only one `index` remaining in `indexPath`
                 guard path.count > 1 else {
-                    return .branch(value, try trees.replacingElement(at: index, with: newTree))
+                    return .branch(value, trees.replacingElement(at: index, with: newTree))
                 }
 
                 // Otherwise, keep recursing down
-                return try tree.replacingTree(
+                return tree.replacingTree(
                     at: index,
-                    with: try traverse(subTree, inserting: newTree, path: remainingPath)
+                    with: traverse(subTree, inserting: newTree, path: remainingPath)
                 )
             }
         }
 
-        return try traverse(self, inserting: tree, path: path)
+        return traverse(self, inserting: tree, path: path)
     }
 
     /// - returns: A new `Tree` with the given `tree` inserted at the given `index`, through
     /// the given `path`.
-    ///
-    /// - throws: `TreeError` in the case of ill-formed index paths and indexes out-of-range.
     public func inserting(_ tree: Tree, through path: [Int] = [], at index: Int)
-        throws -> Tree
+        -> Tree
     {
         func traverse(
             _ tree: Tree,
             inserting newTree: Tree,
             through path: [Int],
             at index: Int
-        ) throws -> Tree
+        ) -> Tree
         {
 
             switch tree {
 
             // We should never get to a `leaf`.
             case .leaf:
-                throw Error.branchOperationPerformedOnLeaf
+                assert(false, "Branch operation performed on leaf")
 
             // Either `traverse` further, or insert to accumulated path
             case .branch(let value, let trees):
 
                 // If we have exhausted our path, attempt to insert `newTree` at `index`
                 guard let (head, tail) = path.destructured else {
-                    return Tree.branch(value, try insert(newTree, into: trees, at: index))
+                    return Tree.branch(value, insert(newTree, into: trees, at: index))
                 }
 
                 guard let subTree = trees[safe: head] else {
-                    throw Error.illFormedIndexPath
+                    assert(false, "Ill-formed path index")
                 }
 
-                let newBranch = try traverse(subTree,
+                let newBranch = traverse(subTree,
                     inserting: newTree,
                     through: tail,
                     at: index
                 )
 
-                return try tree.replacingTree(at: index, with: newBranch)
+                return tree.replacingTree(at: index, with: newBranch)
             }
         }
 
-        return try traverse(self, inserting: tree, through: path, at: index)
+        return traverse(self, inserting: tree, through: path, at: index)
     }
 
     public func mapLeaves <T> (_ transform: @escaping (Leaf) -> T) -> Tree<Branch,T> {
@@ -255,10 +242,10 @@ public enum Tree <Branch,Leaf> {
         }
     }
 
-    private func insert <A> (_ element: A, into elements: [A], at index: Int) throws -> [A] {
+    private func insert <A> (_ element: A, into elements: [A], at index: Int) -> [A] {
 
         guard let (left, right) = elements.split(at: index) else {
-            throw Error.illFormedIndexPath
+            assert(false)
         }
 
         return left + [element] + right
