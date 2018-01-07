@@ -406,4 +406,44 @@ class TreeNodeTests: XCTestCase {
 
         XCTAssert(zipped == expected)
     }
+
+    func testReduceSimple() {
+
+        let a = Tree.branch(5, [
+            .leaf(1),
+            .branch(2, [
+                .leaf(2),
+                .leaf(3)
+            ]),
+            .leaf(4)
+        ])
+
+        let expected = 17
+
+        let f: (Int, Tree<Int, Int>) -> Int = { accum, tree in
+            switch tree {
+            case .leaf(let value):
+                return accum + value
+            case .branch(let value, _):
+                return accum + value
+            }
+        }
+
+        XCTAssertEqual(a.reduce(0, f), expected)
+    }
+
+    func testReduceBranchEqLeaf() {
+        let a = Tree.branch(1, [
+            .leaf(2),
+            .branch(0, [
+                .leaf(4),
+                .leaf(0)
+            ]),
+            .leaf(8)
+        ])
+
+        let expected = 15
+
+        XCTAssertEqual(a.reduceValues(0, |), expected)
+    }
 }

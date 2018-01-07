@@ -6,6 +6,8 @@
 //
 //
 
+import Algebra
+
 /// Value-semantic, immutable Tree structure.
 public enum Tree <Branch,Leaf> {
 
@@ -262,6 +264,26 @@ public enum Tree <Branch,Leaf> {
         }
 
         return left + [element] + right
+    }
+
+    public func reduce <A> (_ initial: A, _ nextPartial: (A, Tree) -> A) -> A {
+        switch self {
+        case .leaf(_):
+            return nextPartial(initial, self)
+        case .branch(_, let trees):
+            return nextPartial(trees.reduce(initial) { $1.reduce($0, nextPartial) }, self)
+        }
+    }
+}
+
+extension Tree where Branch == Leaf {
+    public func reduceValues <A> (_ initial: A, _ nextPartial: (A, Leaf) -> A) -> A {
+        switch self {
+        case .leaf(let value):
+            return nextPartial(initial, value)
+        case .branch(let value, let trees):
+            return nextPartial(trees.reduce(initial) { $1.reduceValues($0, nextPartial) }, value)
+        }
     }
 }
 
