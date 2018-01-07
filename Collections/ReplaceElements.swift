@@ -13,11 +13,10 @@ extension Array {
 
     /// Replace element at given `index` with the given `element`.
     public mutating func replaceElement(at index: Int, with element: Element)
-        throws
     {
 
         guard index >= startIndex && index < endIndex else {
-            throw ArrayError.removalError
+            assert(false)
         }
 
         remove(at: index)
@@ -25,9 +24,9 @@ extension Array {
     }
 
     /// Immutable version of `replaceElement(at:with:)`
-    public func replacingElement(at index: Int, with element: Element) throws -> Array {
+    public func replacingElement(at index: Int, with element: Element) -> Array {
         var copy = self
-        try copy.replaceElement(at: index, with: element)
+        copy.replaceElement(at: index, with: element)
         return copy
     }
 
