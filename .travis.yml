@@ -12,11 +12,11 @@ env:
       SCHEME="Collections macOS (Performance)"
 
 before_install:
-- if echo "$DESTINATION" | grep "iPad 2"; then \
-- export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPad 2 (9.3" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'` \
-- echo $IOS_SIMULATOR_UDID \
-- open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID \
-- fi
+- if echo "$DESTINATION" | grep "iPad 2"; then
+    export IOS_SIMULATOR_UDID=`instruments -s devices | grep "iPad 2 (9.3" | awk -F '[ ]' '{print $4}' | awk -F '[\[]' '{print $2}' | sed 's/.$//'`
+    echo $IOS_SIMULATOR_UDID
+    open -a "simulator" --args -CurrentDeviceUDID $IOS_SIMULATOR_UDID
+  fi
 
 before_script:
 - if [ -f ./Cartfile ]; then carthage update; fi;
